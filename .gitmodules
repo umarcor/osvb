@@ -1,0 +1,6 @@
+[submodule "vunit"]
+	path = vunit
+	url = git@github.com:ktbarrett/vunit.git
+[submodule "cocotb"]
+	path = cocotb
+	url = git@github.com:ktbarrett/cocotb.git
