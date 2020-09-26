@@ -7,13 +7,20 @@ import cocotb
 
 VU = VUnit.from_argv()
 
-VU.add_library("lib").add_source_files("*.vhd")
+LIB = VU.add_library("lib")
+LIB.add_source_files("*.vhd")
 
-VU.set_sim_option("ghdl.sim_flags", ["--vpi=%s" %
-    str(Path(cocotb.__file__).parent.resolve() / 'libs' / 'libcocotbvpi_ghdl.so')
-])
+def pre_cfg():
+    os.environ["MODULE"] = "dff_cocotb"
+    #os.environ["PYTHONPATH"] = "tests"
+    return True
 
-os.environ["MODULE"] = "dff_cocotb"
-os.environ["PYTHONPATH"] = "tests"
+for testbench in LIB.get_test_benches("*tb_dff*"):
+    for test in testbench.get_tests():
+        if test.name == "cocotb":
+            test.set_sim_option("ghdl.sim_flags", ["--vpi=%s" %
+                str(Path(cocotb.__file__).parent.resolve() / 'libs' / 'libcocotbvpi_ghdl.so')
+            ])
+            test.set_pre_config(pre_cfg)
 
 VU.main()
