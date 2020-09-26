@@ -1,18 +1,19 @@
+import os
+from pathlib import Path
+
 from vunit import VUnit
 import cocotb
-from os.path import dirname
-from pathlib import Path
-import os
 
-vu = VUnit.from_argv()
 
-lib = vu.add_library("lib")
-lib.add_source_files("hdl/*.vhd")
+VU = VUnit.from_argv()
 
-ghdl_cocotb_lib = Path(dirname(cocotb.__file__)) / 'libs' / 'libcocotbvpi_ghdl.so'
-vu.set_sim_option("ghdl.sim_flags", [f"--vpi={ghdl_cocotb_lib}"])
+VU.add_library("lib").add_source_files("*.vhd")
+
+VU.set_sim_option("ghdl.sim_flags", ["--vpi=%s" %
+    str(Path(cocotb.__file__).parent.resolve() / 'libs' / 'libcocotbvpi_ghdl.so')
+])
 
 os.environ["MODULE"] = "dff_cocotb"
 os.environ["PYTHONPATH"] = "tests"
 
-vu.main()
+VU.main()
