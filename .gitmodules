@@ -1,0 +1,3 @@
+[submodule "cocotb"]
+	path = cocotb
+	url = https://github.com/cocotb/cocotb
