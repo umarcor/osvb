@@ -13,7 +13,9 @@ jobs:
     steps:
 
     - uses: actions/checkout@v2
+      with:
+        submodules: recursive
 
-    - run: docker build -t vunit/cocotb - < .github/Dockerfile
+    - run: docker build -t vunit/cocotb -f .github/Dockerfile cocotb
 
     - run: docker run --rm -v $(pwd):/src -w /src -e CI vunit/cocotb python3 run.py -v
