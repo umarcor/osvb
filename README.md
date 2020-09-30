@@ -30,7 +30,7 @@ There is a CI workflow for executing all the tests (2 in `tb_dff.vhd` and 1 in `
 ### To Do
 
 - cocotb can force signals by wrapping values in `Force()`. See [docs.cocotb.org: Quickstart Guide > Assigning values to signals](https://docs.cocotb.org/en/stable/quickstart.html#assigning-values-to-signals). Therefore, it should be possible to override the HDL description of `c` in `tb_dff.vhd`. I.e., to drive the simulation time through cocotb, while preserving other behavioural descriptions in the HDL testbench.
-- Can cocotb declare additional signals in the testbench (which are not declared in HDL)? Can it instantiate itself as component? Can it instantiate some other component that exists in a previously analised library? Can it connect the signals to the component?
+- <strike>Can cocotb declare additional signals in the testbench (which are not declared in HDL)? Can it instantiate itself as component? Can it instantiate some other component that exists in a previously analised library? Can it connect the signals to the component?</strike> cocotb runs after elaboration, and GHDL's VPI works after elaboration only.
 
 ## Conclusions and future work
 
