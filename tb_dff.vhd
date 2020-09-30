@@ -3,6 +3,7 @@ context ieee.ieee_std_context;
 
 library vunit_lib;
 context vunit_lib.vunit_context;
+use vunit_lib.runner_pkg.p_disable_simulation_exit;
 
 entity tb_dff is
   generic ( runner_cfg : string );
@@ -35,7 +36,7 @@ begin
       elsif run("cocotb") then
 
         report "Test DFF (cocotb)";
-        wait for 5 ms;
+        p_disable_simulation_exit(runner_state);
 
       end if;
     end loop;
