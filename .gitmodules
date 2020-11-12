@@ -1,3 +1,6 @@
 [submodule "cocotb"]
 	path = cocotb
 	url = https://github.com/cocotb/cocotb
+[submodule "vunit"]
+	path = vunit
+	url = https://github.com/VUnit/vunit
