@@ -1,0 +1,39 @@
+name: Doc
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+env:
+  CI: true
+  DOCKER_BUILDKIT: 1
+
+jobs:
+
+  doc:
+    runs-on: ubuntu-latest
+    name: '📓 Docs'
+    steps:
+
+    - name: '🧰 Checkout'
+      uses: actions/checkout@v2
+
+    - name: '🛳️ Build osvb/doc'
+      run: |
+        docker build -t osvb/doc - <<-EOF
+        FROM btdi/sphinx:featured
+        ENV PYTHONPATH=/src/mods
+        EOF
+
+    - name: '📓 BuildTheDocs (BTD)'
+      if: github.event_name != 'pull_request'
+      uses: buildthedocs/btd@v0
+      with:
+        token: ${{ github.token }}
+
+    - name: '📤 Upload artifact: HTML'
+      if: github.event_name != 'pull_request'
+      uses: actions/upload-artifact@v2
+      with:
+        path: doc/_build/html

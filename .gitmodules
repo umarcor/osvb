@@ -1,6 +1,15 @@
 [submodule "cocotb"]
-	path = cocotb
+	path = mods/cocotb
 	url = https://github.com/cocotb/cocotb
 [submodule "vunit"]
-	path = vunit
+	path = mods/vunit
 	url = https://github.com/VUnit/vunit
+[submodule "osvvm"]
+	path = mods/osvvm
+	url = https://github.com/osvvm/OsvvmLibraries
+[submodule "uvvm"]
+	path = mods/uvvm
+	url = https://github.com/uvvm/uvvm
+[submodule "svunit"]
+	path = mods/svunit
+	url = https://github.com/tudortimi/svunit

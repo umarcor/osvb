@@ -5,14 +5,19 @@ from vunit import VUnit
 import cocotb
 
 
+ROOT = Path(__file__).parent.resolve()
+
 VU = VUnit.from_argv()
 
 LIB = VU.add_library("lib")
-LIB.add_source_files("*.vhd")
+LIB.add_source_files([
+    ROOT.parent / "src" / "*.vhd",
+    ROOT / "*.vhd"
+])
 
 def pre_cfg():
     os.environ["MODULE"] = "dff_cocotb"
-    #os.environ["PYTHONPATH"] = "tests"
+    os.environ["PYTHONPATH"] += ":%s" % str(ROOT)
     return True
 
 for testbench in LIB.get_test_benches("*tb_dff*"):

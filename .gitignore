@@ -1,0 +1,4 @@
+/doc/_build/
+/doc/_theme/
+__pycache__/
+vunit_out/

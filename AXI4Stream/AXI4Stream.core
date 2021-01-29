@@ -1,0 +1,22 @@
+CAPI: 3
+
+ipcore:
+  namespace: umarcor/osvb
+  name: AXI4Stream
+  version: 0.0.0
+
+filesets:
+# TODO Needs a Union for supporting either Dict[str,str] or Dict[str,FilesetConfig]
+#  file_type: vhdlSource-2008
+
+  common:
+    file_type: vhdlSource-2008
+    path: src
+    files:
+    - '*.vhd'
+
+  test_vunit:
+    file_type: vhdlSource-2008
+    path: test/vunit
+    files:
+    - '*.vhd'

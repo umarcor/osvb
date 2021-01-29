@@ -1,0 +1,29 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+env:
+  CI: true
+  DOCKER_BUILDKIT: 1
+
+jobs:
+
+  pytest:
+    runs-on: ubuntu-latest
+    env:
+      DOCKER_BUILDKIT: 1
+    steps:
+
+    - name: '🧰 Checkout'
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: '🛳️ Build osvb'
+      run: docker build -t osvb -f .github/Dockerfile .
+
+    - name: '🚧 Run tests'
+      run: docker run --rm -v $(pwd):/src -w /src -e CI osvb pytest -v -s -ra test.py --color=yes
