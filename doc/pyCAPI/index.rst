@@ -57,6 +57,9 @@ files. Still, pyCAPI does already allow VUnit to read ``*.core`` files for decla
 the libraries where they need to be compiled. I.e., it allows providing a working proof of concept, constrainted to the
 simulation/verification scope of this bundle.
 
+Feedback and contributions for making pyCAPI compatible with and supported by FuseSoC, VUnit, PyFPGA, pyIPCMI, etc. are very
+welcome! `Open an issue <https://github.com/umarcor/osvb/issues/new/choose>`__ or `join the chat <https://gitter.im/hdl/community>`__!
+
 * `yukihiko-shinoda/yaml-dataclass-config <https://github.com/yukihiko-shinoda/yaml-dataclass-config>`__
 * `su0.io: Strict YAML deserialization with marshmallow <http://su0.io/2020/08/05/python-strict-yaml-deserialization.html>`__
 * `antonblanchard/microwatt: microwatt.core <https://github.com/antonblanchard/microwatt/blob/master/microwatt.core>`__
