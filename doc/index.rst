@@ -41,8 +41,8 @@ for VHDL and System Verilog:
 `OSVVM <https://hdl.github.io/awesome/items/osvvm/>`__,
 `SVUnit <https://hdl.github.io/awesome/items/svunit/>`__,
 `UVVM <https://hdl.github.io/awesome/items/uvvm/>`__,
-`VUnit <https://hdl.github.io/awesome/items/vunit/>`__,
-. Each of them was created and is maintained by different groups of people, in different contexts and with different backgrounds.
+`VUnit <https://hdl.github.io/awesome/items/vunit/>`__.
+Each of them was created and is maintained by different groups of people, in different contexts and with different backgrounds.
 All evolved into standalonish solutions involving build and test execution helpers, along with verification components for
 standard interfaces. However, each project prioritised certain features, while others didn't receive so much care. The purpose
 of this bundle is twofold:
@@ -53,19 +53,35 @@ of this bundle is twofold:
   framework/methodology, instead of reinventing the wheel.
 
 All the frameworks support multiple vendor tools as well as open source simulators. However, due to licensing restrictions,
-it is not possible to test non FLOSS simulators on public Continuous Integration (CI) services. Therefore, the :ref:`OSVB:Examples`
+it is not possible to test non FLOSS simulators on public Continuous Integration (CI) services. Therefore, the examples
 in this bundle are tested on CI with open source simulators/compilers only (see :ref:`OSVB:Simulators`).
 
 .. IMPORTANT:: This project is a proof of concept for gathering several integration efforts involving the target projects by
   pairs. For instance, VUnit and cocotb, or VUnit and OSVVM. Not all the features described in this home page are implemented
-  yet. See :ref:`OSVB:Examples` for an specific reference about what is ready to be used.
+  yet. See the available examples for an specific reference about what is ready to be used.
 
 .. toctree::
+  :caption: Introduction
   :hidden:
 
-  overview
-  prj/index
-  sim/index
-  cosim/index
-  pyCAPI/index
-  egs/index
+  intro/index
+  intro/frameworks
+  intro/sim
+  intro/cosim
+
+.. toctree::
+  :caption: API
+  :hidden:
+
+  apis/core
+  apis/project
+  apis/tool
+  apis/runner
+  apis/logging
+
+.. toctree::
+  :caption: Examples
+  :hidden:
+
+  egs/sff
+  egs/axi4stream

@@ -5,8 +5,9 @@ Overview
 
 The block diagram below illustrates how the components fit together in this bundle:
 
-.. figure:: _static/osvb.png
+.. figure:: ../_static/osvb.png
   :alt: Block diagram of the OSVB
+  :width: 100%
   :align: center
 
   Block diagram of the Open Source Verification Bundle.
@@ -34,11 +35,11 @@ it increases the maintenance burden of VUnit and it's not an scalable approach. 
 custom syntax for defining sources and the compilation order. Those files are used by OSVVM's own TCL scripts and also by
 `GHDL's vendor scripts <https://github.com/ghdl/ghdl/tree/master/scripts/vendors>`__ (written in PowerShell and Bash). Yet,
 writing a custom Python module for reading those files doesn't feel worth. Instead, the proposal in this bundle is to use
-``*.core`` (YAML) files. See :ref:`OSVB:pyCAPI`.
+``*.core`` (YAML) files. See :ref:`OSVB:API:Core`.
 
 Similarly, UVVM is not supported as a built-in feature in VUnit, but ``compile_order.txt`` files are provided. Those are used
 by UVVM's own TCL scripts and also by GHDL's vendor scripts (written in PowerShell and Bash). As with OSVVM, the proposal in
-this bundle is to use ``*.core`` (YAML) files. See :ref:`OSVB:pyCAPI`.
+this bundle is to use ``*.core`` (YAML) files. See :ref:`OSVB:API:Core`.
 
 While VUnit provides multiple optional helper VHDL libraries, the SystemVerilog infrastructure is limited to the HDL runner and
 some `check` features. Conversely, SVUnit is for SystemVerilog mostly. The test management features in SVUnit are implemented
@@ -47,5 +48,5 @@ through VUnit's simulator interface and runner. There is no work in progress in 
 
 Since this bundle is focused on simulation of HDL-centric testbenches, synthesis and formal verification are out of the scope. However,
 most projects are to be implemented in practice, and the sources of Units Under Test (UUTs) are to be used for both simulation
-and implementation. Therefore, the usage of :ref:`OSVB:pyCAPI` in this bundle is not limited to adding verification frameworks
+and implementation. Therefore, the usage of :ref:`OSVB:API:Core` in this bundle is not limited to adding verification frameworks
 and/or methodologies; it is also the proposed solution for users to declare the sources of their designs.

@@ -29,7 +29,7 @@ VUnit run script with pyCAPI
 ----------------------------
 
 :ghsrc:`AXI4Stream/test/vunit/run_capi.py <AXI4Stream/test/vunit/run_capi.py>` is a variant of the default script, which uses
-:ref:`OSVB:pyCAPI` for retrieving the filesets. Testbenches are found and executed as usual.
+:ref:`OSVB:API:Core` for retrieving the filesets. Testbenches are found and executed as usual.
 
 OSVVM TBStream
 ==============

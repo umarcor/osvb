@@ -1,16 +1,10 @@
-.. _OSVB:pyCAPI:
+.. _OSVB:API:Core:
 
-pyCAPI
-######
+Core
+####
 
 Introduction
 ------------
-
-.. figure:: ../_static/pyCAPI.png
-  :alt: pyCAPI usage block diagram
-  :align: center
-
-  Usage of pyCAPI as a utility library for multiple EDA management projects.
 
 `FuseSoC <https://hdl.github.io/awesome/items/fusesoc/>`__ is a package manager and build abstraction tool for FPGA/ASIC
 development, written in Python. It is based on a declarative data sctructure, defined as a YAML configuration file format
@@ -43,7 +37,14 @@ The proposal in this bundle is to provide a reusable Python module named pyCAPI,
 data through a pythonic API. pyCAPI allows FPGA/ASIC tool management projects to consume ``*.core`` configuration files
 non-intrusively, by providing complementary import APIs. Thus the CLIs in the existing workflows are preserved,
 without forcing FuseSoC as a frontend and/or Edalize as a backend. Hopefully, pyCAPI reduces the burden for users to try and
-learn new tools, while developers/maintainers can carefully analyse possible integration strategies.
+learn new tools, while developers/maintainers can carefully analyse possible integration strategies with regard to the other
+APIs in the architecture.
+
+.. figure:: ../_static/pyCAPI.png
+  :alt: pyCAPI usage block diagram
+  :align: center
+
+  Usage of pyCAPI as a utility library for multiple EDA management projects.
 
 FuseSoC does contain some Python code for reading and parsing CAPI2 files (see `olofk/fusesoc: fusesoc/capi2 <https://github.com/olofk/fusesoc/tree/master/fusesoc/capi2>`__).
 Unfortunately, it is challenging to work with. On the one hand, it uses `pyyaml <https://pyyaml.org/>`__ for reading ``*.core``
@@ -63,6 +64,7 @@ welcome! `Open an issue <https://github.com/umarcor/osvb/issues/new/choose>`__ o
 * `yukihiko-shinoda/yaml-dataclass-config <https://github.com/yukihiko-shinoda/yaml-dataclass-config>`__
 * `su0.io: Strict YAML deserialization with marshmallow <http://su0.io/2020/08/05/python-strict-yaml-deserialization.html>`__
 * `antonblanchard/microwatt: microwatt.core <https://github.com/antonblanchard/microwatt/blob/master/microwatt.core>`__
+* `VLSI-EDA/PoC: .pyIPCMI <https://github.com/VLSI-EDA/PoC/tree/master/.pyIPCMI>`__
 
 Reference
 ---------

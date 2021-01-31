@@ -130,7 +130,7 @@ in a Python script, using VUnit's API. Users have three options:
   Python script.
 
 None of them is ideal. The first one requires all users to repeat some code which might be easily reused. Others require dealing
-with paths/locations specific to each host/system. Instead, the approach in this bundle uses ``*.core`` files and :ref:`OSVB:pyCAPI`.
+with paths/locations specific to each host/system. Instead, the approach in this bundle uses ``*.core`` files and :ref:`OSVB:API:Core`.
 
 * `VUnit/vunit <https://github.com/VUnit/vunit>`__
 * `VUnit/vunit_action <https://github.com/VUnit/vunit_action>`__
