@@ -56,7 +56,7 @@ VFFI/VDPI
 
 Back in 2005-2006, the author of GHDL implemented a co-simulation feature named VHPIDIRECT. It is, essentially, a Foreign
 Function Interface (FFI) for executing foreign subprograms from VHDL. Function/procedure prototypes are declared in VHDL with
-an specific ``FOREIGM`` attribute. Matching foreign (C/C++) bodies can be provided through pre-built shared libraries and/or
+an specific ``FOREIGN`` attribute. Matching foreign (C/C++) bodies can be provided through pre-built shared libraries and/or
 as C sources/objects to be used during elaboration/linking.
 
 The implementation of VHPIDIRECT in GHDL was inspired on some draft of VHPI, which was apparently modified before making it
