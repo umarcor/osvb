@@ -25,7 +25,7 @@ was split, and an API named EDA Metadata (EDAM) was proposed for the interaction
 Nevertheless, the proposal for funneling all open source project management tools through Edalize didn't engage the
 broad open source hardware tooling community. Multiple projects (such as
 `VUnit <https://hdl.github.io/awesome/items/vunit/>`__,
-`pyIPCMI <https://hdl.github.io/awesome/items/poc/>`__,
+`pyIPCMI <https://hdl.github.io/awesome/items/pyipcmi/>`__,
 `PyFPGA <https://hdl.github.io/awesome/items/pyfpga/>`__,
 `tsfpga <https://hdl.github.io/awesome/items/tsfpga/>`__
 or
