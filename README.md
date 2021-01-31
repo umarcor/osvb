@@ -22,4 +22,4 @@ Simulators/compilers:
 - [GHDL](https://hdl.github.io/awesome/items/ghdl)
 - [Icarus Verilog (iverilog)](https://hdl.github.io/awesome/items/iverilog)
 - [Verilator](https://hdl.github.io/awesome/items/verilator)
-- [Yosys](https://hdl.github.io/awesome/items/yosys)
+- [Yosys/CXXRTL](https://hdl.github.io/awesome/items/yosys)
