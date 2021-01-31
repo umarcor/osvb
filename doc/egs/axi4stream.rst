@@ -61,3 +61,7 @@ VUnit with pyCAPI
 -----------------
 
 *TBC*
+
+.. HINT::
+  Probably, use GHDL's `compile-osvvm.ps1 <https://github.com/ghdl/ghdl/blob/master/scripts/vendors/compile-osvvm.ps1>`__ for
+  generating ``*.core`` files automatically.
