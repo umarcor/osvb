@@ -12,7 +12,7 @@
 .. |shieldUVVM| image:: https://img.shields.io/badge/UVVM-fe9932.svg?longCache=true&style=flat-square&logo=github
 .. _shieldUVVM: https://hdl.github.io/awesome/items/uvvm/
 
-.. |shieldVUnit| image:: https://img.shields.io/badge/VUnit/vunit-0c479d.svg?longCache=true&style=flat-square&logo=github
+.. |shieldVUnit| image:: https://img.shields.io/badge/VUnit-0c479d.svg?longCache=true&style=flat-square&logo=github
 .. _shieldVUnit: https://hdl.github.io/awesome/items/vunit/
 
 .. |shieldGHDL| image:: https://img.shields.io/badge/GHDL-222222.svg?longCache=true&style=flat-square&logo=github
