@@ -165,6 +165,8 @@ cocotb uses VPI or VHPI interfaces for interacting with simulators at runtime. I
 
 Analogously, MyHDL allows deriving from the `Signal` class and adding custom hooks/rules. However, MyHDL's purpose is describing circuits in Python and optionally generating HDL sources.
 
+* `Potential replacement for BinaryValue as seen in cocotb <https://github.com/ktbarrett/bv2/tree/vector-2>`__
+
 Analyzing simulation statistics
 *******************************
 
