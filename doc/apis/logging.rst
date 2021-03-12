@@ -41,8 +41,8 @@ Waveforms
 * *TCL plumbing for automatic/interactive waveform loading/saving*.
 * *Post-processing of waveforms*:
 
-  * `dbhi/fpconv <https://github.com/dbhi/fpconv>`__, `vcd_parsealyze <https://github.com/umarcor/vcd_parsealyze>`__.
-  * `Reading waveforms from HDL simulators with PulseView <https://github.com/umarcor/pulseview/tree/ghdl/ghdl>`__.
+  * :ref:`OSVB:Notebook:fpconv`
+  * :ref:`OSVB:Notebook:sigrok`
 
 xUnit
 =====
