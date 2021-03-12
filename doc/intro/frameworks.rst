@@ -93,6 +93,17 @@ SVUnit
 
 * `tudortimi/svunit <https://github.com/tudortimi/svunit>`__
 
+UVM
+===
+
+*TBC*
+
+* `uvm.io <http://uvm.io/>`__
+* `tpoikela/uvm-python <https://github.com/tpoikela/uvm-python>`__
+* `pyuvm/pyuvm <https://github.com/pyuvm/pyuvm>`__
+
+  * `cocotb/cocotb#2418 <https://github.com/cocotb/cocotb/issues/2418>`__
+
 UVVM
 ====
 
