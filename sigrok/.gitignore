@@ -1,0 +1,8 @@
+*.cf
+*.exe
+*.ghw
+*.fst
+*.o
+*.vcd
+*.vcdgz
+/resolution/logs/*

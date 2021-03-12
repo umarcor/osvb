@@ -85,3 +85,10 @@ in this bundle are tested on CI with open source simulators/compilers only (see 
 
   egs/sff
   egs/axi4stream
+
+.. toctree::
+  :caption: Notebook
+  :hidden:
+
+  notebook/fpconv
+  notebook/sigrok

@@ -11,10 +11,9 @@ env:
 
 jobs:
 
+
   pytest:
     runs-on: ubuntu-latest
-    env:
-      DOCKER_BUILDKIT: 1
     steps:
 
     - name: '🧰 Checkout'
@@ -27,3 +26,32 @@ jobs:
 
     - name: '🚧 Run tests'
       run: docker run --rm -v $(pwd):/src -w /src -e CI osvb pytest -v -s -ra test.py --color=yes
+
+
+  sigrok:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: '🧰 Checkout'
+      uses: actions/checkout@v2
+
+    - name: '🚧 Generate waveforms'
+      run: |
+        cd sigrok/resolution
+        for img in buster-mcode buster-llvm-7; do
+          docker pull ghdl/ghdl:"$img"
+          docker run --rm -tv $(pwd):/src -e CI ghdl/ghdl:"$img" /src/run.sh
+        done
+
+        cd ../hierarchy
+        docker run --rm -tv $(pwd):/src -e CI ghdl/ghdl:buster-mcode /src/run.sh
+
+    - name: '🛳️ Build docker image with libsigork and sigrok-cli'
+      run: |
+        cd sigrok
+        docker build -t umarcor/sigrok .
+
+    - name: '🚧 Run sigrok-cli'
+      run: |
+        cd sigrok
+        docker run --rm -tv $(pwd):/src -e CI umarcor/sigrok /src/test.sh
