@@ -65,6 +65,7 @@ welcome! `Open an issue <https://github.com/umarcor/osvb/issues/new/choose>`__ o
 * `su0.io: Strict YAML deserialization with marshmallow <http://su0.io/2020/08/05/python-strict-yaml-deserialization.html>`__
 * `antonblanchard/microwatt: microwatt.core <https://github.com/antonblanchard/microwatt/blob/master/microwatt.core>`__
 * `VLSI-EDA/PoC: .pyIPCMI <https://github.com/VLSI-EDA/PoC/tree/master/.pyIPCMI>`__
+* `j.mp/openfpga-diagram: Open Source (FOSS) FPGA (EDA) Tooling Interchange Formats + Toolchain parts <https://docs.google.com/document/d/1DWZ0G8vehkuZTPs5N3AQqIvZZtLMGzC8i0MWPRP54O4>`__
 
 Reference
 ---------
