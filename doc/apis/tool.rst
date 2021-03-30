@@ -17,6 +17,9 @@ the same results, the purpose of this interface is to provide homogeneous wrappe
   natively. By default, containers from `hdl/containers <https://github.com/hdl/containers>`__ are used. By combining
   both solutions, users can use Edalize with containers.
 
+References
+==========
+
 * `Open Source EDA: building, packaging, installing <https://docs.google.com/document/d/10_MqFjTIYVVuOJlusJydsp4KOcmrrHk03__7ME5thOI>`__
 * `Invoke <http://www.pyinvoke.org/>`__
 * `dbhi/run <https://github.com/dbhi/run>`__
