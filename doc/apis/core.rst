@@ -6,6 +6,9 @@ Core
 Introduction
 ------------
 
+This section covers the definition of configuration/declaration files for users to describe the sources and parameters
+that compose an HDL project, as well as a Python module from interacting with those files.
+
 `FuseSoC <https://hdl.github.io/awesome/items/fusesoc/>`__ is a package manager and build abstraction tool for FPGA/ASIC
 development, written in Python. It is based on a declarative data sctructure, defined as a YAML configuration file format
 named Core API (CAPI). The current version 2 of the format is named ``CAPI2`` (see `fusesoc.rtfd.io: ref/capi2 <https://fusesoc.rtfd.io/en/latest/ref/capi2.html>`__).
@@ -61,14 +64,8 @@ simulation/verification scope of this bundle.
 Feedback and contributions for making pyCAPI compatible with and supported by FuseSoC, VUnit, PyFPGA, pyIPCMI, etc. are very
 welcome! `Open an issue <https://github.com/umarcor/osvb/issues/new/choose>`__ or `join the chat <https://gitter.im/hdl/community>`__!
 
-* `yukihiko-shinoda/yaml-dataclass-config <https://github.com/yukihiko-shinoda/yaml-dataclass-config>`__
-* `su0.io: Strict YAML deserialization with marshmallow <http://su0.io/2020/08/05/python-strict-yaml-deserialization.html>`__
-* `antonblanchard/microwatt: microwatt.core <https://github.com/antonblanchard/microwatt/blob/master/microwatt.core>`__
-* `VLSI-EDA/PoC: .pyIPCMI <https://github.com/VLSI-EDA/PoC/tree/master/.pyIPCMI>`__
-* `j.mp/openfpga-diagram: Open Source (FOSS) FPGA (EDA) Tooling Interchange Formats + Toolchain parts <https://docs.google.com/document/d/1DWZ0G8vehkuZTPs5N3AQqIvZZtLMGzC8i0MWPRP54O4>`__
-
-Reference
----------
+CAPI reference
+--------------
 
 .. autoclass:: pyCAPI.IpCoreConfig()
   :exclude-members: _abc_impl
@@ -82,3 +79,12 @@ Reference
 .. autofunction:: pyCAPI.LoadCoreFile
 
 .. autofunction:: pyCAPI.VUnit.AddCoreFilesets
+
+References
+----------
+
+* `yukihiko-shinoda/yaml-dataclass-config <https://github.com/yukihiko-shinoda/yaml-dataclass-config>`__
+* `su0.io: Strict YAML deserialization with marshmallow <http://su0.io/2020/08/05/python-strict-yaml-deserialization.html>`__
+* `antonblanchard/microwatt: microwatt.core <https://github.com/antonblanchard/microwatt/blob/master/microwatt.core>`__
+* `VLSI-EDA/PoC: .pyIPCMI <https://github.com/VLSI-EDA/PoC/tree/master/.pyIPCMI>`__
+* `j.mp/openfpga-diagram: Open Source (FOSS) FPGA (EDA) Tooling Interchange Formats + Toolchain parts <https://docs.google.com/document/d/1DWZ0G8vehkuZTPs5N3AQqIvZZtLMGzC8i0MWPRP54O4>`__
