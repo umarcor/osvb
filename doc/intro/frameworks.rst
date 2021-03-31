@@ -6,19 +6,19 @@ Frameworks and Methodologies
 cocotb
 ======
 
-Cocotb is a coroutine based cosimulation library for writing VHDL and Verilog testbenches in Python. It was initially written
+Cocotb is a coroutine based co-simulation library for writing VHDL and Verilog testbenches in Python. It was initially written
 and open sourced by `Potential Ventures <http://potential.ventures/cocotb>`__ in 2013. The project went dead for some months
 between 2017 and 2018. Since 2019, it is maintained by members of the `FOSSI Foundation <https://www.fossi-foundation.org/>`__
 and other contributors.
 
 Cocotb provides shared libraries written in C++, which allows simulators to load Python scripts and interact with them at
-runtime through VPI, VHPI or FLI (see :ref:`OSVB:Co-simulation`). Therefore, users can write testbenches for existing HDL
-designs using Python only.
+runtime through indirect co-simulation interfaces: VPI, VHPI or FLI (see :ref:`OSVB:Co-simulation`). Therefore, users can
+write testbenches for existing HDL designs using Python only. Direct interfaces such as DPI or CXXRTL are not supported.
 
-However, the provided compile and execution plumbing is based on Makefiles and environment variables. That is loved by
-some users and hated by others. There is work in progress for providing alternative build/execution workflows, without
-explicitly forcing users to use an specific approach. Using VUnit's simulator interface is one of such alternatives,
-which would provide a Python based solution to the most pythonic cocotb users.
+The provided compile and execution plumbing is based on Makefiles and environment variables. That is loved by some users
+and hated by others. There is work in progress for providing alternative build/execution workflows, without explicitly
+forcing users to use an specific approach. Using VUnit's simulator interface is one of such alternatives, which would
+provide a Python based solution to the most pythonic cocotb users.
 
 Cocotb provides logging features based on Python's ``logging`` library. Integration of this logging approach into VUnit's
 Python runner is not straightforward. Since cocotb's co-simulation scripts are loaded by the simulator in an independent
@@ -32,7 +32,8 @@ of VUnit's runner interface.
 
 The list of simulators supported by cocotb is longer than the ones supported by VUnit. The most notable difference is that
 cocotb supports iverilog and verilator, while the only open source simulator supported by VUnit is GHDL. Therefore, usage
-of this bundle with open source simulators is limited to VHDL designs at the moment.
+of this bundle with open source simulators is limited to VHDL designs at the moment. Nevertheless, there is interest in
+evaluating again whether iverilog's improved System Verilog support can suffice for VUnit.
 
 Compared to other frameworks, the cocotb ecosystem is more distributed. Others have most of the resources gathered in single
 GitHub repository. Conversely, there is much activity around cocotb in repositories outside of the main repository.
@@ -79,6 +80,10 @@ Some years ago, maintainers of OSVVM and VUnit did try isolating some common HDL
 logging features. It didn't work back then, but there is interest in maybe trying it again in the future. Nevertheless, having
 duplicated features is not an issue in the context of this bundle, since it allows each user to pick their preferred approach.
 
+The main stopper for using VUnit's Python features for running OSVVM's tests is that the primary unit in OSVVM's methodology
+are VHDL configurations, and VUnit only supports entities as primary units. Anyway, there is common interest in hopefully
+extending VUnit and supporting configurations as entrypoints.
+
 * `OSVVM/OSVVM <https://github.com/OSVVM/OSVVM>`__
 * `OSVVM/OsvvmLibraries <https://github.com/OSVVM/OsvvmLibraries>`__
 * `OSVVM/OSVVM-Scripts <https://github.com/OSVVM/OSVVM-Scripts>`__
@@ -96,13 +101,24 @@ SVUnit
 UVM
 ===
 
-*TBC*
+Universal Verification Methodology (UVM) is a standardized methodology for verifying ASIC designs. The main implementation
+of UVM is available in SystemVerilog only. Unfortunately, no open source simulator supports enough of SystemVerilog for
+using UVM. At the same time, vendors don't typically support UVM in their low-end license tiers. Therefore, although it
+is probably the most used methodology by ASIC designers and large companies, usage by small and middle companies, academics,
+hackers and hobbyist is less significant.
 
-* `uvm.io <http://uvm.io/>`__
+Lately, several alternatives were proposed for implementing UVM in languages other than SystemVerilog. For instance, even
+though iverilog cannot execute UVM in SystemVerilog, there are two projects for using UVM with iverilog through cocotb:
+
 * `tpoikela/uvm-python <https://github.com/tpoikela/uvm-python>`__
 * `pyuvm/pyuvm <https://github.com/pyuvm/pyuvm>`__
 
   * `cocotb/cocotb#2418 <https://github.com/cocotb/cocotb/issues/2418>`__
+
+Similarly, there is a C/C++ implementation, which uses DPI, VPI, VHPI or FLI for interacting with the RTL code: `uvm.io <http://uvm.io/>`__.
+
+Furthermore, there is work in progress for adding System Verilog support to verilator through `Surelog <https://hdl.github.io/awesome/items/surelog/>`__
+and `UHDM <https://hdl.github.io/awesome/items/uhdm/>`__.
 
 UVVM
 ====
@@ -121,8 +137,8 @@ Martinez-Corral contributed co-simulation features to be used with GHDL's implem
 The main focus of VUnit is providing the functionality needed to realize continuous and automated testing of HDL code. It
 provides a Python API for declaring sources and library names, for parameterizing tests and for defining simulator execution
 parameters. The simulator interface is coupled with a test runner implemented both in Python and in HDL. That allows hardware
-designers to define tests in HDL, thus, complementing traditional HDL only testing methodologies, such as OSVVM. It brings
-multiple concepts for Test Driven Design (TDD) from software into the hardware design.
+designers to define tests in HDL, thus, complementing traditional HDL only testing methodologies. It brings multiple
+concepts for Test Driven Design (TDD) from software into the hardware design.
 
 Optional HDL libraries include utilities for checks, logging, handling arrays, randomization, etc. as well as a communication
 package for modelling abstract messaging channels. Verification components for several standard interfaces are provided based
