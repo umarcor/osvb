@@ -47,19 +47,48 @@ Waveforms
 xUnit
 =====
 
-VUnit has built-in support for generating `xUnit <https://en.wikipedia.org/wiki/XUnit>`__ (XML) reports. In fact, VUnit's name
-comes from VHDL unit testing framework (see `List of unit testing frameworks <https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks>`__).
+VUnit has built-in support for generating `xUnit <https://en.wikipedia.org/wiki/XUnit>`__ (XML) reports. In fact,
+VUnit's name comes from *VHDL unit testing framework* (see `Wikipedia: List of unit testing frameworks <https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks>`__).
 CLI option ``-x`` allows specifying the target file name. Two different formats are supported: `Jenkins <https://www.jenkins.io/>`__
-(`JUnit <https://plugins.jenkins.io/junit/>`__) and `Bamboo <https://www.atlassian.com/software/bamboo>`__. JUnit is also
-supported on GitLab CI: `docs.gitlab.com: Unit test reports <https://docs.gitlab.com/ee/ci/unit_test_reports.html>`__. Python's
-unittest (and, therefore, pytest) was originally inspired by JUnit, so it has a similar flavor as unit testing framework in other
-languages.
+(`JUnit <https://plugins.jenkins.io/junit/>`__) and `Bamboo <https://www.atlassian.com/software/bamboo>`__. JUnit is
+also supported on GitLab CI: `docs.gitlab.com: Unit test reports <https://docs.gitlab.com/ee/ci/unit_test_reports.html>`__.
+Python's unittest (and, therefore, pytest) was originally inspired by JUnit, so it has a similar flavor as unit testing
+frameworks in other languages.
 
 Therefore, by using VUnit's simulator interface and test runner infrastructure, it is already possible to generate fine
-grained reports in a standard format. This is specially useful for users of OSVVM and/or UVVM, which don't have an
+grained reports in a standard format. This might be useful for users of OSVVM and/or UVVM, which don't have an
 equivalent feature.
 
 Cocotb can also generate xUnit reports, independently from VUnit. See `docs.cocotb.org: COCOTB_RESULTS_FILE <https://docs.cocotb.org/en/stable/building.html?highlight=xunit#envvar-COCOTB_RESULTS_FILE>`__.
 Precisely, this is related to the duplicated test/regression management features in both frameworks. At the moment, users are
 expected to handle them independently when mixed (HDL + cocotb) testsuites are run. However, there is work in progress for
 hopefully unifying them automatically (through some post-simulation helper hook).
+
+Unified Coverage Database (UCDB)
+--------------------------------
+
+Unified Coverage Database (UCDB) is one of the components of the Unified Coverage Interoperability Standard (UCIS)
+developed by Accellera, Mentor Graphics and Cadence. The UCDB is used by Siemens' tools for tracking results, and they
+have a GUI module for browsing them. Unfortunately, UCDB/UCIS are complex and not easy to work with (see
+`OSVVM Forums: Cover group and Mentor UCDB <https://osvvm.org/forums/topic/cover-group-and-mentor-ucdb>`__).
+Hence, although it might be possible to dump results from open source frameworks/methodologies/tools to UCDB for reusing
+Siemens' GUI, it feels more sensible to do it otherwise: dump content from UCDB to an XML/JSON/YAML format which can be
+merged with the results of other frameworks/methodologies/tools. We are not aware of an open source solution for
+achieving it yet. Should you know about any, please `let us know <https://github.com/umarcor/osvb/issues/new>`__!
+
+Web frontend
+------------
+
+It would be interesting to have a vendor agnostic tool for visualizing xUnit reports. Since it's an XML format, using
+web technologies (HTML + CSS + JavaScript) feels like a sensible choice. Generating an static page which can be hosted
+on GitHub Pages or GitLab Pages allows granular analysis of CI results, while also being usable locally. There are
+several simple and not-so-simple solutions:
+
+* `w3schools.com/howto/howto_js_treeview <https://www.w3schools.com/howto/howto_js_treeview.asp>`__
+* `lukejpreston.github.io/xunit-viewer <https://lukejpreston.github.io/xunit-viewer/>`__
+* `Standalone JUnit XML report viewer <https://softwarerecs.stackexchange.com/questions/3666/standalone-junit-xml-report-viewer>`__
+
+However, the main constraint for displaying results of HDL tests is that xUnit is expected to have a single level of
+hierarchy (suites and tests). Typically, different types of results can be produced (unit tests, assertions, coverage,
+etc.), therefore, some mechanism needs to be added for allowing at least one additional hierarchy level. That might be
+an additional field in the XML, or prepending suite names with specific keywords.
