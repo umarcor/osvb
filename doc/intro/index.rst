@@ -35,7 +35,9 @@ it increases the maintenance burden of VUnit and it's not an scalable approach. 
 custom syntax for defining sources and the compilation order. Those files are used by OSVVM's own TCL scripts and also by
 `GHDL's vendor scripts <https://github.com/ghdl/ghdl/tree/master/scripts/vendors>`__ (written in PowerShell and Bash). Yet,
 writing a custom Python module for reading those files doesn't feel worth. Instead, the proposal in this bundle is to use
-``*.core`` (YAML) files. See :ref:`OSVB:API:Core`.
+``*.core`` (YAML) files. See :ref:`OSVB:API:Core`. Furthermore, the entrypoint to tests based on the OSVVM methodology
+are VHDL configurations, unlike other methodologies based on entities. Currently, VUnit's runner does not support
+executing configurations as primary units. However, there is common interest in making it possible.
 
 Similarly, UVVM is not supported as a built-in feature in VUnit, but ``compile_order.txt`` files are provided. Those are used
 by UVVM's own TCL scripts and also by GHDL's vendor scripts (written in PowerShell and Bash). As with OSVVM, the proposal in
