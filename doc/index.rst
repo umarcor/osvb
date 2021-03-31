@@ -1,5 +1,8 @@
 .. _OSVB:
 
+.. |shieldosvb| image:: https://img.shields.io/badge/OSVB-d3a64f.svg?longCache=true&style=flat-square&logo=github
+.. _shieldosvb: https://github.com/umarcor/osvb
+
 .. |shieldcocotb| image:: https://img.shields.io/badge/cocotb-77a037.svg?longCache=true&style=flat-square&logo=github
 .. _shieldcocotb: https://hdl.github.io/awesome/items/cocotb/
 
@@ -24,9 +27,12 @@
 .. |shieldVerilator| image:: https://img.shields.io/badge/Verilator-128fd2.svg?longCache=true&style=flat-square&logo=github
 .. _shieldVerilator: https://hdl.github.io/awesome/items/verilator/
 
+.. |shieldYosys| image:: https://img.shields.io/badge/Yosys-da3390.svg?longCache=true&style=flat-square&logo=github
+.. _shieldYosys: https://hdl.github.io/awesome/items/yosys/
+
 .. only:: html
 
-    .. centered:: |shieldcocotb|_ |shieldOSVVM|_ |shieldSVUnit|_ |shieldUVVM|_ |shieldVUnit|_ · |shieldGHDL|_ |shieldIVerilog|_ |shieldVerilator|_
+    .. centered:: |shieldosvb|_ · |shieldcocotb|_ |shieldOSVVM|_ |shieldSVUnit|_ |shieldUVVM|_ |shieldVUnit|_ · |shieldGHDL|_ |shieldIVerilog|_ |shieldVerilator|_ |shieldYosys|_
 
     ----
 
