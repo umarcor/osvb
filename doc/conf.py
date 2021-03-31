@@ -115,7 +115,7 @@ intersphinx_mapping = {
 # -- Sphinx.Ext.ExtLinks --------------------------------------------------
 extlinks = {
    'wikipedia': ('https://en.wikipedia.org/wiki/%s', None),
-   'ghsharp':   ('https://github.com/umarcor/osvb/issues/%s', 'ghdl#'),
+   'ghsharp':   ('https://github.com/umarcor/osvb/issues/%s', '#'),
    'ghissue':   ('https://github.com/umarcor/osvb/issues/%s', 'issue #'),
    'ghpull':    ('https://github.com/umarcor/osvb/pull/%s', 'pull request #'),
    'ghsrc':     ('https://github.com/umarcor/osvb/blob/master/%s', None),
