@@ -44,8 +44,8 @@ Waveforms
   * :ref:`OSVB:Notebook:fpconv`
   * :ref:`OSVB:Notebook:sigrok`
 
-xUnit
-=====
+xUnit/UCDB
+==========
 
 VUnit has built-in support for generating `xUnit <https://en.wikipedia.org/wiki/XUnit>`__ (XML) reports. In fact,
 VUnit's name comes from *VHDL unit testing framework* (see `Wikipedia: List of unit testing frameworks <https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks>`__).
@@ -67,28 +67,35 @@ hopefully unifying them automatically (through some post-simulation helper hook)
 Unified Coverage Database (UCDB)
 --------------------------------
 
-Unified Coverage Database (UCDB) is one of the components of the Unified Coverage Interoperability Standard (UCIS)
-developed by Accellera, Mentor Graphics and Cadence. The UCDB is used by Siemens' tools for tracking results, and they
-have a GUI module for browsing them. Unfortunately, UCDB/UCIS are complex and not easy to work with (see
-`OSVVM Forums: Cover group and Mentor UCDB <https://osvvm.org/forums/topic/cover-group-and-mentor-ucdb>`__).
-Hence, although it might be possible to dump results from open source frameworks/methodologies/tools to UCDB for reusing
-Siemens' GUI, it feels more sensible to do it otherwise: dump content from UCDB to an XML/JSON/YAML format which can be
-merged with the results of other frameworks/methodologies/tools. We are not aware of an open source solution for
-achieving it yet. Should you know about any, please `let us know <https://github.com/umarcor/osvb/issues/new>`__!
+The main constraint for displaying combined results of multiple HDL tests is that xUnit is expected to have a single
+level of hierarchy (suites and tests). Yet, typically, different types of results can be produced when testing HDL
+designs (unit tests, assertions, coverage, etc.). Therefore, some mechanism needs to be added for allowing at least one
+additional hierarchy level. That might be an additional field in the XML, or prepending suite names with specific
+keywords.
+
+Alternatively, Unified Coverage Database (UCDB) is one of the components of the Unified Coverage Interoperability
+Standard (UCIS) developed by Accellera, Mentor Graphics and Cadence. The UCDB is used by Siemens' tools for tracking
+results, and they have a GUI module for browsing them. At first sight, UCDB/UCIS are complex and not easy to work with,
+however, most of the potential result types are already covered by the specification (see `Unified Coverage Interoperability Standard Version <https://www.accellera.org/downloads/standards/ucis>`__
+and `OSVVM Forums: Cover group and Mentor UCDB <https://osvvm.org/forums/topic/cover-group-and-mentor-ucdb>`__).
+Fortunately, there is an open source Python package that provides an API to UCIS data (`fvutils/pyucis <https://github.com/fvutils/pyucis>`__)
+as well as an open source Qt based GUI (`fvutils/pyucis-viewer <https://github.com/fvutils/pyucis-viewer>`__).
+
+Hence, it might be possible to dump results from open source frameworks/methodologies/tools to UCDB for reusing
+Siemens' GUI or vice versa. From an open source community perspective, it feels more sensible to dump content from UCDB
+to an open source XML/JSON/YAML format specification. However, as far as we are aware, such FLOSS specification adapted
+to hardware designs does not exist yet. Moreover, the most used HDL languages are neither open source. Hence, although
+not ideal, using UCDB wouldn't be disruptive in this regard. Should you know about any open source alternative, or if
+you represent Accelera, Siemens' and/or Cadence and want to open source UCDB/UCIS, please `let us know <https://github.com/umarcor/osvb/issues/new>`__!
 
 Web frontend
 ------------
 
-It would be interesting to have a vendor agnostic tool for visualizing xUnit reports. Since it's an XML format, using
-web technologies (HTML + CSS + JavaScript) feels like a sensible choice. Generating an static page which can be hosted
-on GitHub Pages or GitLab Pages allows granular analysis of CI results, while also being usable locally. There are
-several simple and not-so-simple solutions:
+It would be interesting to have a vendor agnostic tool for visualizing either xUnit or UCDB/UCIS reports. Since XML,
+JSON or YAML are used, web technologies (HTML + CSS + JavaScript) feel like a sensible choice. Generating an static page
+which can be hosted on GitHub Pages or GitLab Pages allows granular analysis of CI results, while also being usable
+locally. There are several simple and not-so-simple solutions available for xUnit files:
 
 * `w3schools.com/howto/howto_js_treeview <https://www.w3schools.com/howto/howto_js_treeview.asp>`__
 * `lukejpreston.github.io/xunit-viewer <https://lukejpreston.github.io/xunit-viewer/>`__
 * `Standalone JUnit XML report viewer <https://softwarerecs.stackexchange.com/questions/3666/standalone-junit-xml-report-viewer>`__
-
-However, the main constraint for displaying results of HDL tests is that xUnit is expected to have a single level of
-hierarchy (suites and tests). Typically, different types of results can be produced (unit tests, assertions, coverage,
-etc.), therefore, some mechanism needs to be added for allowing at least one additional hierarchy level. That might be
-an additional field in the XML, or prepending suite names with specific keywords.
