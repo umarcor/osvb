@@ -16,7 +16,7 @@ By default, logging is saved to files and not shown in the terminal. However, CL
 Moreover, VUnit's VHDL library ``logging`` allows using custom loggers with fine grained control of the scope and the consumers
 (CSV files and/or display/screen).
 
-.. figure:: http://vunit.github.io/_images/vunit_demo.gif
+.. figure:: https://vunit.github.io/_images/vunit_demo.gif
   :alt: Interactive VUnit session
   :width: 600px
   :align: center
