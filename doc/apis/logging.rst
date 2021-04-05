@@ -117,9 +117,10 @@ have a GUI module for browsing them. At first sight, UCDB/UCIS are complex and n
 the potential result types are already covered by the specification (see `Unified Coverage Interoperability Standard Version <https://www.accellera.org/downloads/standards/ucis>`__
 and `OSVVM Forums: Cover group and Mentor UCDB <https://osvvm.org/forums/topic/cover-group-and-mentor-ucdb>`__).
 Fortunately, there is an open source Python package that provides an API to UCIS data (`fvutils/pyucis <https://github.com/fvutils/pyucis>`__)
-as well as an open source Qt based GUI (`fvutils/pyucis-viewer <https://github.com/fvutils/pyucis-viewer>`__). Hence, it
-might be possible to dump results from open source frameworks/methodologies/tools to UCDB for reusing Siemens' or fvutils'
-GUIs, or vice versa.
+as well as an open source Qt based GUI (`fvutils/pyucis-viewer <https://github.com/fvutils/pyucis-viewer>`__). pyucis
+can write coverage data in UCIS XML-interchange format and to mentor UCDB via the UCIS library provided by Questa.
+Hence, it might be possible to dump results from open source frameworks/methodologies/tools to UCDB for reusing Siemens'
+or fvutils' GUIs, or vice versa.
 
 .. NOTE:: From an open source community perspective, it feels more sensible to dump content from UCDB to an open source
   XML/JSON/YAML format specification. However, as far as we are aware, such FLOSS specification adapted to hardware
@@ -236,7 +237,7 @@ usable locally. There are several simple and not-so-simple solutions available f
 * `Standalone JUnit XML report viewer <https://softwarerecs.stackexchange.com/questions/3666/standalone-junit-xml-report-viewer>`__
 
 As a complement, extending `pyucis-viewer <https://github.com/fvutils/pyucis-viewer>`__ might be evaluated, for providing
-a Qt based solution.
+a Qt based solution. pyucis-viewer currently provides a simple bar-chart viewer for coverage data read via pyucis.
 
 GitHub
 ------
