@@ -209,43 +209,6 @@ vendor log processing features for classifying and optionally filtering the logs
 support preserving the semantic information (at least the severity or specific vendor error/report code), in the extended
 xUnit report format used in OSVR.
 
-* Class Testsuite
-
-  * Name: *string*
-  * Number of tests: *natural integer*
-  * Errors: *natural integer*
-  * Failures: *natural integer*
-  * Skipped: *natural integer*
-  * Metadata
-  * Tests: *array of Testcase*
-
-* Class Testcase
-
-  * Name: *string*
-  * Duration: *float* (in seconds)
-  * Categories: *array of string*
-  * Metadata: *array of (ImplementationMetadata or RequirementsMetadata)*
-  * Log: *array of Logentry*
-
-* Class Logentry
-
-  * Time: *string* (might contain *delta* cycle)
-  * Severity: *string*
-  * Code: *string*
-  * Message: *string*
-  * Location:
-
-    * Filename: *string*
-    * Line number: *natural interger*
-
-* Class ImplementationMetadata
-
-  * *TBD*
-
-* Class RequirementsMetadata
-
-  * *TBD*
-
 Tracking requirements
 =====================
 
@@ -263,6 +226,35 @@ is defined in a CSV file.
 
 Precisely, field ``Metadata`` proposed in the OSVR ``Testcase`` class is expected to contain data such as the attributes.
 That is, to integrate VUnit's attribute tracking, with other frameworks which might provide similar features.
+
+pyOSVR reference
+================
+
+.. autoclass:: pyOSVR.OpenSourceVerificationReport()
+  :exclude-members: _abc_impl
+
+.. autoclass:: pyOSVR.Testsuite()
+  :exclude-members: _abc_impl
+
+.. autoclass:: pyOSVR.TestsuiteStats()
+  :exclude-members: _abc_impl
+
+.. autoclass:: pyOSVR.Testcase()
+  :exclude-members: _abc_impl
+
+.. autoclass:: pyOSVR.Logentry()
+  :exclude-members: _abc_impl
+
+.. autoclass:: pyOSVR.LogentryLocation()
+  :exclude-members: _abc_impl
+
+.. autoclass:: pyOSVR.RequirementsMetadata()
+  :exclude-members: _abc_impl
+
+.. autoclass:: pyOSVR.ImplementationMetadata()
+  :exclude-members: _abc_impl
+
+.. autofunction:: pyOSVR.LoadOSVRFile
 
 Frontends
 =========

@@ -1,0 +1,24 @@
+<testsuite
+  name="testsuite"
+  errors="0"
+  failures="0"
+  skipped="0"
+  tests="1"
+  hostname="DESKTOP-E1ER43H"
+>
+<testcase
+  classname="lib.tb_axis_loop"
+  name="test"
+  time="1.3"
+>
+<system-out>       300000000 fs - default                      -    INFO - Init test
+       350000000 fs - default                      -    INFO - Sending m_I of size 10x20 to UUT...
+      1330000000 fs - default                      -    INFO - Receiving m_O of size 10x20 from UUT...
+      4350000000 fs - default                      -    INFO - m_I sent!
+      9750000000 fs - default                      -    INFO - m_O read!
+      9770000000 fs - default                      -    INFO - m_O saved!
+      9810000000 fs - default                      -    INFO - Test done
+simulation stopped @9810ns with status 0
+</system-out>
+</testcase>
+</testsuite>

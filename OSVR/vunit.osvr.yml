@@ -1,0 +1,57 @@
+OSVRVersion: 0
+Tool: 'VUnit'
+Suites:
+
+  ATestSuiteName:
+
+    Stats:
+      NumberOfTests: 1
+      Errors: 0
+      Failures: 0
+      Skipped: 0
+
+    Tests:
+
+    - Name: 'test-raw'
+      Duration: 1.3
+      Categories:
+      - 'lib.tb_axis_loop'
+      Log:
+      - '300000000 fs - default                      -    INFO - Init test'
+      - '350000000 fs - default                      -    INFO - Sending m_I of size 10x20 to UUT...'
+      - '1330000000 fs - default                      -    INFO - Receiving m_O of size 10x20 from UUT...'
+      - '4350000000 fs - default                      -    INFO - m_I sent!'
+      - '9750000000 fs - default                      -    INFO - m_O read!'
+      - '9770000000 fs - default                      -    INFO - m_O saved!'
+      - '9810000000 fs - default                      -    INFO - Test done'
+      - 'simulation stopped @9810ns with status 0'
+
+    - Name: 'test-rich'
+      Duration: 1.3
+      Categories:
+      - 'lib.tb_axis_loop'
+      Log:
+      - Time: '300000000 fs'
+        Severity: 'INFO'
+        Message: '300000000 fs - default                      -    INFO - Init test'
+      - Time: '350000000 fs'
+        Severity: 'INFO'
+        Message: '350000000 fs - default                      -    INFO - Sending m_I of size 10x20 to UUT...'
+      - Time: '1330000000 fs'
+        Severity: 'INFO'
+        Message: '1330000000 fs - default                      -    INFO - Receiving m_O of size 10x20 from UUT...'
+      - Time: '4350000000 fs'
+        Severity: 'INFO'
+        Message: '4350000000 fs - default                      -    INFO - m_I sent!'
+      - Time: '9750000000 fs'
+        Severity: 'INFO'
+        Message: '9750000000 fs - default                      -    INFO - m_O read!'
+      - Time: '9770000000 fs'
+        Severity: 'INFO'
+        Message: '9770000000 fs - default                      -    INFO - m_O saved!'
+      - Time: '9810000000 fs'
+        Severity: 'INFO'
+        Message: '9810000000 fs - default                      -    INFO - Test done'
+      - Time: '9810ns'
+        Severity: 'NOTE'
+        Message: 'simulation stopped @9810ns with status 0'
