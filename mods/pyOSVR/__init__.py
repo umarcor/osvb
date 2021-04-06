@@ -1,8 +1,12 @@
 # Python Data Model for OSVR extended xUnit files
 
-from typing import Dict, List, Union, Optional
+
 from pathlib import Path
+
+from junitparser import JUnitXml
+
 from dataclasses import dataclass
+from typing import Dict, List, Union, Optional
 from yamldataclassconfig.config import YamlDataClassConfig
 
 
@@ -104,3 +108,20 @@ def LoadOSVRFile(
             print()
 
     return _osvr
+
+
+def LoadXUnitFile(
+    XUnitFilePath
+):
+    """
+    Load an xUnit file and unmarshal it.
+
+    :param XUnitFilePath: location of the ``*.xml`` file to be loaded.
+    """
+    xml = JUnitXml.fromfile(XUnitFilePath)
+    print(xml)
+    for suite in xml:
+        print(suite)
+        for case in suite:
+            print(case)
+    #xml.write() # Writes back to file

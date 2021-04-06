@@ -256,6 +256,8 @@ pyOSVR reference
 
 .. autofunction:: pyOSVR.LoadOSVRFile
 
+.. autofunction:: pyOSVR.LoadXUnitFile
+
 Frontends
 =========
 
