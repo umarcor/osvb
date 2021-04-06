@@ -1,3 +1,4 @@
 -r ../mods/pyCAPI/requirements.txt
+-r ../mods/pyOSVR/requirements.txt
 
 sphinx>=3.4.2
