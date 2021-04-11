@@ -124,7 +124,8 @@ CLI option ``-x`` allows specifying the target file name. Two different formats 
 (`JUnit <https://plugins.jenkins.io/junit/>`__) and `Bamboo <https://www.atlassian.com/software/bamboo>`__. JUnit is
 also supported on GitLab CI: `docs.gitlab.com: Unit test reports <https://docs.gitlab.com/ee/ci/unit_test_reports.html>`__.
 Python's unittest (and, therefore, pytest) was originally inspired by JUnit, so it has a similar flavor as unit testing
-frameworks in other languages.
+frameworks in other languages. Moreover, there is `junitparser <https://pypi.org/project/junitparser/>`__, a Python tool
+for manipulating xUnit XML files.
 
 Therefore, by using VUnit's simulator interface and test runner infrastructure, it is already possible to generate fine
 grained reports in a standard format. This might be useful for users of OSVVM and/or UVVM, which don't have an
@@ -135,6 +136,9 @@ Precisely, this is related to the duplicated test/regression management features
 users are expected to handle them independently when mixed (HDL + cocotb) testsuites are run. However, there is work in
 progress for hopefully unifying them automatically (through some post-simulation helper hook). Anyway, while generated
 independently, the OSVR core can be used for aggregating them.
+
+.. NOTE:: In the JUnit XML format, the result of each test is only explicitly provided in case of failure, error or skip.
+  Therefore, the absence of result indicates a passed test case.
 
 PSL report
 ----------
@@ -204,10 +208,11 @@ Semantic/rich logging
 xUnit report files (XML) typically provide the relevant raw log output together with the errored/failed/skipped/successful
 result. However, most verification frameworks, tools and methodologies do have more granular information about each entry.
 At least, the severity level is a built-in feature in VHDL, and several projects do provide additional logging utilities
-with further severity levels or failure reasons. Moreover, `pyIPCMI <https://github.com/paebbels/pyIPCMI>`__ includes
-vendor log processing features for classifying and optionally filtering the logs. Therefore, it would be interesting to
-support preserving the semantic information (at least the severity or specific vendor error/report code), in the extended
-xUnit report format used in OSVR.
+with further severity levels or failure reasons. For instance, VUnit supports custom logging levels, and can export rich
+logs to CSV files. Moreover, `pyIPCMI <https://github.com/paebbels/pyIPCMI>`__ includes vendor log processing features
+for classifying and optionally filtering the logs. Therefore, it would be interesting to support preserving the semantic
+information (at least the severity or specific vendor error/report code), in the extended xUnit report format used in
+OSVR.
 
 Tracking requirements
 =====================
