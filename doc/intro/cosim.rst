@@ -5,8 +5,11 @@ Co-simulation
 
 Advanced verification strategies do typically raise the abstraction level of the workflow, bringing hardware design close
 to software development. In this context, engineers have a natural trend towards using more flexible languages with vast
-libraries implementing advanced domain-specific functionalities. Some of the most common non-HDL languages used verification
-are C/C++ and Python.
+libraries implementing advanced domain-specific functionalities. Some of the most common non-HDL languages used for
+verification are C/C++ and Python.
+
+Standard interfaces
+===================
 
 Traditional HDL languages and most simulators support one or multiple standard or non-standard co-simulation interfaces for
 runtime interaction between HDLs and software languages (typically C/C++, as a reference). Here, standard interfaces are
@@ -17,7 +20,7 @@ summarized.
   section contains references to interfaces supported by open source tools only, which don't have such knowledge limitations.
 
 VPI
-===
+---
 
 Verilog Procedural Interface (VPI) is the standard co-simulation interface in Verilog 2005. It was originally known
 as PLI 2.0, because it replaced the deprecated Program Language Interface (PLI) defined in earlier versions of the language.
@@ -31,7 +34,7 @@ co-simulation callbacks is independent from the sources that compose the design 
   available for VHDL, so the author of GHDL implemented VPI for allowing co-simulation.
 
 DPI
-===
+---
 
 Direct Programming Interface (DPI) is an standard co-simulation interface defined in System Verilog. It is mainly meant for
 co-simulation with C, C++ or SystemC. However, unlike VPI, setting up a DPI co-simulation consists of two layers. On the one
@@ -41,7 +44,7 @@ layer. In other words, DPI allows users/developers to define custom APIs between
 understand C/C++ semantics.
 
 VHPI
-====
+----
 
 VHDL Procedural Interface (VHPI) is the standard co-simulation interface in VHDL 2008 and VHDL 2019. It is heavily inspired
 on VPI, so the workflow/usage is equivalent: a C/C++ API allows registering callbacks and models, without modifying HDL sources.
@@ -52,7 +55,7 @@ curve. As a result, adoption by vendors has been slow and uneven. At the same ti
 cases, and the apparent lack of interest from users didn't push vendors further.
 
 VFFI/VDPI
-=========
+---------
 
 Back in 2005-2006, the author of GHDL implemented a co-simulation feature named VHPIDIRECT. It is, essentially, a Foreign
 Function Interface (FFI) for executing foreign subprograms from VHDL. Function/procedure prototypes are declared in VHDL with
@@ -71,3 +74,33 @@ and updating a proposal for standardizing an interface named VHDL Foreign Functi
 Interface (VDPI), which formalizes the direct implementation available in GHDL and makes it generic enough for any vendor.
 
 * `gitlab.com/IEEE-P1076/VHDL-Issues: Direct Programming Interface (DPI) | Foreign Function Interface (FFI) <https://gitlab.com/IEEE-P1076/VHDL-Issues/-/issues/10>`__
+
+Remote procedure calls
+======================
+
+Typically, simulators expect to be the root and managers of the execution. Therefore, although setting callbacks and/or
+foreign function calls is possible through any of the standard interfaces, actually co-executing simulations with
+arbitray software threads is not trivial. As a result, several proposals exist for binding standard interfaces to some
+Remote Procedure Call (RPC) library, for decoupling the execution kernels of multiple tools.
+
+gRPC
+----
+
+* `grpc.io <https://grpc.io/>`__ (`github.com/grpc <https://github.com/grpc>`__)
+* `dbhi/gRPC <https://github.com/dbhi/gRPC>`__
+
+capnproto
+---------
+
+* `capnproto.org <https://capnproto.org/>`__ (`github.com/capnproto <https://github.com/capnproto>`__)
+* `NyanCAD <https://github.com/NyanCAD>`__
+
+  * `CxxrtlSimServer <https://github.com/NyanCAD/CxxrtlSimServer>`__
+  * `XyceSimServer <https://github.com/NyanCAD/XyceSimServer>`__
+  * `NgspiceSimServer <https://github.com/NyanCAD/NgspiceSimServer>`__
+
+ZeroMQ
+------
+
+* `zeromq.org <https://zeromq.org/>`__ (`github.com/zeromq <https://github.com/zeromq>`__)
+* `VZMQ - ZeroMQ communication with VHDL simulation in GHDL <https://groups.google.com/g/alt.sources/c/R5cKBbRrUJM>`__
