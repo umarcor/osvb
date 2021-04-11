@@ -21,6 +21,7 @@ using one of three backends: GCC, LLVM or (x86_64/i386 only) mcode (built-in and
 * `ghdl/ghdl-yosys-plugin <https://github.com/ghdl/ghdl-yosys-plugin>`__
 * `ghdl/ghdl-language-server <https://github.com/ghdl/ghdl-language-server>`__
 * `ghdl/setup-ghdl-ci <https://github.com/ghdl/setup-ghdl-ci>`__
+* `ghdl/extended-tests <https://github.com/ghdl/extended-tests>`__
 
 Icarus Verilog
 ==============
