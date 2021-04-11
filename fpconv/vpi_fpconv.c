@@ -28,11 +28,16 @@ void printContent(vpiHandle parent) {
   vpiHandle Iterator;
   vpiHandle hnd;
 
+  // TODO Is it possible to get the type of the signal/port?
+
+  Iterator = vpi_iterate(vpiPort, parent);
+  assert(Iterator != NULL);
+  while (hnd = vpi_scan (Iterator))
+    vpi_printf("  + %s [dir %d]\n", (char*) vpi_get_str(vpiName, hnd), vpi_get(vpiDirection, hnd));
+
   Iterator = vpi_iterate(vpiNet, parent);
   assert(Iterator != NULL);
   while (hnd = vpi_scan (Iterator))
-    // TODO Signals and ports are listed equally. Identify ports and directions.
-    // TODO Is it possible to get the type of the signal/port too?
     vpi_printf("  + %s\n", (char*) vpi_get_str(vpiName, hnd));
 
   Iterator = vpi_iterate(vpiModule, parent);
