@@ -29,6 +29,8 @@ The usage of VPI is based on registering callbacks at specific events using the 
 standard verilog system tasks. A relevant feature of this co-simulation approach is that HDL sources are unmodified. Registering
 co-simulation callbacks is independent from the sources that compose the design and/or the HDL testbench.
 
+* `I Spy with My VPI: Monitoring signals by name, for the UVM register package and more <https://www.verilab.com/files/snug_2012_paper71_final.pdf>`__
+
 .. NOTE::
   Non-intuitively, GHDL implements VPI for interacting with VHDL sources. Back in 2000-2008, there was no standard interface
   available for VHDL, so the author of GHDL implemented VPI for allowing co-simulation.
