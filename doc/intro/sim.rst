@@ -35,14 +35,21 @@ for simulation of behavioural constructs in complex testbenches. Icarus Verilog 
 Verilator
 =========
 
-Verilator is an open source analyzer and simulator for the synthesizable subsets of Verilog and SystemVerilog. It compiles HDL
-sources into multithreaded C++ or SystemC, providing high-performance for large synthesizable designs. The *verilated* model is
-then compiled by a C++ compiler (GCC, clang, MSVC++...), allowing generation of standalone binaries or shared libraries, together
-with a user defined wrapper. Verilator can write waveforms to VCD or FST files. Language support is limited compared to iverilog,
-but it provides much faster simulation as well as implicit obfuscation.
+Verilator is an open source analyzer and simulator for the synthesizable subsets of Verilog and SystemVerilog.
+It compiles HDL sources into multithreaded C++ or SystemC, providing high-performance for large synthesizable designs.
+The *verilated* model is then compiled by a C++ compiler (GCC, clang, MSVC++...), allowing generation of standalone
+binaries or shared libraries, together with a user defined wrapper.
+Verilator can write waveforms to VCD or FST files.
+Language support is limited compared to iverilog, but it provides much faster simulation as well as implicit
+obfuscation.
+
+Although verilator does not support enough of System Verilog for using UVM yet, there is work in progress for achieving
+it.
+See `verilator/uvm <https://github.com/verilator/uvm>`__ and `SymbiFlow/sv-tests <https://github.com/SymbiFlow/sv-tests>`__.
 
 * `verilator/verilator <https://github.com/verilator/verilator>`__
 * `verilator/verilator_ext_tests <https://github.com/verilator/verilator_ext_tests>`__
+* `verilator/example-systemverilog <https://github.com/verilator/example-systemverilog>`__
 
 Yosys/CXXRTL
 ============
