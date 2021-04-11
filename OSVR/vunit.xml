@@ -21,4 +21,11 @@
 simulation stopped @9810ns with status 0
 </system-out>
 </testcase>
+<testcase
+  classname="lib.tb_example"
+  name="Test foo"
+  time="0.1">
+<system-out> blabla </system-out>
+<failure message="Failed" />
+</testcase>
 </testsuite>
