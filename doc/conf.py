@@ -109,6 +109,7 @@ intersphinx_mapping = {
    'ghdl': ('https://ghdl.github.io/ghdl', None),
    'ghdl-cosim': ('https://ghdl.github.io/ghdl-cosim', None),
    'vunit': ('https://vunit.github.io', None),
+   'cocotb': ('https://docs.cocotb.org/en/stable/', None),
    'matplotlib': ('https://matplotlib.org/', None)
 }
 
