@@ -235,6 +235,12 @@ That is, to integrate VUnit's attribute tracking, with other frameworks which mi
 pyOSVR reference
 ================
 
+.. WARNING::
+  These classes are just a prototype for discussion. Please, do not use them.
+  They are subject to change soon.
+  The concepts will be preserved, but might be renamed and/or relocated/reorganised.
+  See `Paebbels/eda-tool-logging-format <https://github.com/Paebbels/eda-tool-logging-format>`__.
+
 .. autoclass:: pyOSVR.OpenSourceVerificationReport()
   :exclude-members: _abc_impl
 
