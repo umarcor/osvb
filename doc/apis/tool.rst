@@ -67,6 +67,8 @@ tooling. However, the same concepts can be applied, using already available Pyth
   together with source nodes.
 
 In fact, `Apache Airflow <https://airflow.apache.org/>`__ implements these concepts, and it's written in Python.
+Furthermore, `Google's Cloud Composer <https://cloud.google.com/composer>`__ is managed workflow orchestration service
+built on Apache Airflow.
 Airflow might be too specific, as it is meant for orchestrating and schduling web/remote workers in a pool, which is out
 of the scope of this bundle/project.
 Nonetheless, there are several shared `Concepts <https://airflow.apache.org/docs/apache-airflow/stable/concepts.html>`__
@@ -89,11 +91,12 @@ By combining both solutions, users can use Edalize with containers.
 Anyhow, extending OpenFlow for supporting multiple and dynamically defined workflows imposes similar challenges as the
 ones described for Edalize.
 
-Even though using Python based libraries is proposed here, the architecture is not limited to Python tasks. It is
-desirable to wrap existing CLI or shell scripts, indeed. It is compulsory when dealing with vendor tools. Furthermore,
-some SymbiFlow scripts for using QuickLogic devices are currently written in bash. Therefore, having them available
-in the same workflow would make integration with other tasks easier. In fact, both Edalize and PyFPGA are generators and
-wrappers around TCL scripts and/or Makefiles.
+Even though using Python based libraries is proposed here, the architecture is not limited to Python tasks.
+It is desirable to wrap existing CLI or shell scripts, indeed.
+It is compulsory when dealing with vendor tools.
+Furthermore, some SymbiFlow scripts for using QuickLogic devices are currently written in bash.
+Therefore, having them available in the same workflow would make integration with other tasks easier.
+In fact, both Edalize and PyFPGA are generators and wrappers around TCL scripts and/or Makefiles.
 
 Summarising, I believe we need to agree on some common format for defining what a task is, which are the inputs and the
 outputs.
@@ -104,7 +107,7 @@ Therefore, we need to analyse whether those can be wrapped in EDAM.
 Then, we should document how to compose and execute those tasks with Invoke/NetworkX/Airflow;
 or some custom solution if those don't fit.
 From this point of view, Edalize and PyFPGA might be rethought as frontends (project managers) and backends (task
-providers) the task execution core.
+providers) of the task execution core.
 
 References
 ==========
