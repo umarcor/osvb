@@ -196,3 +196,8 @@ with VUnit nowadays.
 * `VUnit/vunit_action <https://github.com/VUnit/vunit_action>`__
 * `VUnit/tdd-intro <https://github.com/VUnit/tdd-intro>`__
 * `VUnit/cosim <https://github.com/VUnit/cosim>`__
+
+Learning/teaching
+=================
+
+* `Course content for the Design Verification module at the University of Bristol <https://uobdv.github.io/Design-Verification/>`__
