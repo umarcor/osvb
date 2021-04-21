@@ -211,29 +211,37 @@ Moreover, results are gathered in a Collab Dashboard: `Symbiflow Dashboard GCS <
 Semantic/rich logging
 =====================
 
-xUnit report files (XML) typically provide the relevant raw log output together with the errored/failed/skipped/successful
-result. However, most verification frameworks, tools and methodologies do have more granular information about each entry.
+xUnit report files (XML) typically provide the relevant raw log output together with the errored, failed or skipped
+result.
+However, most verification frameworks, tools and methodologies do have more granular information about each entry.
 At least, the severity level is a built-in feature in VHDL, and several projects do provide additional logging utilities
-with further severity levels or failure reasons. For instance, VUnit supports custom logging levels, and can export rich
-logs to CSV files. Moreover, `pyIPCMI <https://github.com/paebbels/pyIPCMI>`__ includes vendor log processing features
-for classifying and optionally filtering the logs. Therefore, it would be interesting to support preserving the semantic
-information (at least the severity or specific vendor error/report code), in the extended xUnit report format used in
-OSVR.
+with further severity levels or failure reasons.
+For instance, VUnit supports custom logging levels, and can export rich logs to CSV files.
+Moreover, `pyIPCMI <https://github.com/paebbels/pyIPCMI>`__ includes vendor log processing features for classifying and
+optionally filtering the logs.
+Therefore, it would be interesting to support preserving the semantic information (at least the severity or specific
+vendor error/report code), in the extended xUnit report format used in OSVR.
+On top of that, `librecores/eda-log-parser <https://github.com/librecores/eda-log-parser>`__ supports parsing logs from
+Verilator and Vivado, along with generating custom log entries to be used in CI systems/services, such as Azure or
+GitHub Actions.
 
 Tracking requirements
 =====================
 
 Industries developing systems for critical applications do typically require tracking specification requirements through
-the developement of the products. See, for instance, `Using GitLab for ISO 26262-6:2018 - Product development at the software level <https://about.gitlab.com/solutions/iso-26262/>`__.
+the developement of the products.
+See, for instance, `Using GitLab for ISO 26262-6:2018 - Product development at the software level <https://about.gitlab.com/solutions/iso-26262/>`__.
 Hence, it is very valuable to annotate tests with requirements, and then cross-reference tests and CI runs with those.
 In the open source ecosystem, some projects create test cases for each reported MWE through a GitHub/GitLab issue.
 Therefore, in such contexts the issue numbers, tags or milestones might be considered requirements to be tracked.
 
 There is an example by Lars Asplund (from VUnit), for illustrating the usage of VUnit attributes for tracking requirements:
-`LarsAsplund/vunit_attributes <https://github.com/LarsAsplund/vunit_attributes>`__. It provides requirement to attribute
-mapping through the ``--export-json`` option, which is a richer format than the xUnit produced with ``-x``. In the example,
-additional analysis features are provided through a requirement coverage analysis script: `analyze_requirement_coverage.py <https://github.com/LarsAsplund/vunit_attributes/blob/main/analyze_requirement_coverage.py>`__. The list of requirements
-is defined in a CSV file.
+`LarsAsplund/vunit_attributes <https://github.com/LarsAsplund/vunit_attributes>`__.
+It provides requirement to attribute mapping through the ``--export-json`` option, which is a richer format than the
+xUnit produced with ``-x``.
+In the example, additional analysis features are provided through a requirement coverage analysis script:
+`analyze_requirement_coverage.py <https://github.com/LarsAsplund/vunit_attributes/blob/main/analyze_requirement_coverage.py>`__.
+The list of requirements is defined in a CSV file.
 
 Precisely, field ``Metadata`` proposed in the OSVR ``Testcase`` class is expected to contain data such as the attributes.
 That is, to integrate VUnit's attribute tracking, with other frameworks which might provide similar features.
