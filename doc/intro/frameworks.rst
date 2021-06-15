@@ -51,6 +51,10 @@ Conversely, there is much activity around cocotb in repositories outside of the 
 
 * `cocotb/cocotb <https://github.com/cocotb/cocotb>`__
 
+.. NOTE::
+  `benbr8/rstb <https://github.com/benbr8/rstb>`__ is an alternative implementation of the same approach, using Rust
+  instead of Python.
+
 OSVVM
 =====
 
