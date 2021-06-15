@@ -45,11 +45,12 @@ Therefore, usage of this bundle with open source simulators is limited to VHDL d
 Nevertheless, there is interest in evaluating again whether iverilog's improved System Verilog support can suffice for
 VUnit.
 
-Compared to other frameworks, the cocotb ecosystem is more distributed.
-Others have most of the resources gathered in single GitHub repository.
-Conversely, there is much activity around cocotb in repositories outside of the main repository.
-
 * `cocotb/cocotb <https://github.com/cocotb/cocotb>`__
+
+.. TIP::
+  Compared to other frameworks, the cocotb ecosystem is more distributed.
+  Others have most of the resources gathered in single GitHub repository.
+  Conversely, there is much activity around cocotb in repositories outside of the main repository.
 
 .. NOTE::
   `benbr8/rstb <https://github.com/benbr8/rstb>`__ is an alternative implementation of the same approach, using Rust
