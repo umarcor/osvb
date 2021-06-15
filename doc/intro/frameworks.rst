@@ -134,6 +134,8 @@ It supports a verilated bus master and AXI4.
 
 * `Renode <https://renode.io/>`__
 
+  * `Using Renode for education, research and demonstration <https://antmicro.com/blog/2021/02/renode-for-education-research-and-demonstration/>`__
+
 .. NOTE::
   `dbhi/vboard <https://github.com/dbhi/vboard>`__ includes multiple references about "*Virtual development board for
   HDL design*".

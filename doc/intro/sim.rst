@@ -58,6 +58,8 @@ and `UHDM <https://hdl.github.io/awesome/items/uhdm/>`__, `CHIPS Alliance <https
 are working on *verilating* non-synthesizable code, to allow running System Verilog UVM with Verilator.
 See:
 
+* `Enabling open source Ibex synthesis and simulation in Verilator/Yosys via UHDM/Surelog <https://antmicro.com/blog/2020/12/ibex-support-in-verilator-yosys-via-uhdm-surelog/>`__
+
 * `verilator/uvm <https://github.com/verilator/uvm>`__
 
   * `SymbiFlow/sv-tests <https://github.com/SymbiFlow/sv-tests>`__
