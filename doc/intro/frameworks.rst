@@ -202,6 +202,13 @@ with VUnit nowadays.
 * `VUnit/tdd-intro <https://github.com/VUnit/tdd-intro>`__
 * `VUnit/cosim <https://github.com/VUnit/cosim>`__
 
+.. NOTE::
+  `Malcolmnixon/VhdlTest <https://github.com/Malcolmnixon/VhdlTest>`__ is a proof of concept of a minimal implementation
+  of the Python runner in VUnit.
+  It's for VHDL testbenches only, and supports GHDL or Active-HDL.
+  It requires a YAML configuration file for specifying the project, instead of using a Python script.
+  This feature is related to :ref:`OSVB:API:Core`.
+
 Learning/teaching
 =================
 
