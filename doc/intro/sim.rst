@@ -33,6 +33,8 @@ for simulation of behavioural constructs in complex testbenches. Icarus Verilog 
 * `steveicarus/iverilog <https://github.com/steveicarus/iverilog>`__
 * `steveicarus/ivtest <https://github.com/steveicarus/ivtest>`__
 
+.. _OSVB:Simulators:Verilator:
+
 Verilator
 =========
 
@@ -44,13 +46,25 @@ Verilator can write waveforms to VCD or FST files.
 Language support is limited compared to iverilog, but it provides much faster simulation as well as implicit
 obfuscation.
 
-Although verilator does not support enough of System Verilog for using UVM yet, there is work in progress for achieving
-it.
-See `verilator/uvm <https://github.com/verilator/uvm>`__ and `SymbiFlow/sv-tests <https://github.com/SymbiFlow/sv-tests>`__.
-
 * `verilator/verilator <https://github.com/verilator/verilator>`__
 * `verilator/verilator_ext_tests <https://github.com/verilator/verilator_ext_tests>`__
 * `verilator/example-systemverilog <https://github.com/verilator/example-systemverilog>`__
+
+Although verilator does not support enough of System Verilog for using UVM yet, there is work in progress for achieving
+it.
+Apart from supporting System Verilog for synthesis through `Surelog <https://hdl.github.io/awesome/items/surelog/>`__
+and `UHDM <https://hdl.github.io/awesome/items/uhdm/>`__, `CHIPS Alliance <https://chipsalliance.org/>`__ members
+`Antmicro <https://antmicro.com>`__, `Western Digital <https://www.westerndigital.com/>`__ and `Google <https://www.google.com/>`__
+are working on *verilating* non-synthesizable code, to allow running System Verilog UVM with Verilator.
+See:
+
+* `verilator/uvm <https://github.com/verilator/uvm>`__
+
+  * `SymbiFlow/sv-tests <https://github.com/SymbiFlow/sv-tests>`__
+
+* `Dynamic scheduling in Verilator - milestone towards open source UVM <https://antmicro.com/blog/2021/05/dynamic-scheduling-in-verilator/>`__
+
+  * `CHIPS Alliance Deep Dive Cafe Talks Jun 15, 2021 <https://linuxfoundation.org/webinars/dynamic-scheduling-in-verilator-presented-by-antmicro/>`__
 
 Yosys/CXXRTL
 ============

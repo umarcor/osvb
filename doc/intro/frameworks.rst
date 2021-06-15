@@ -104,7 +104,7 @@ pick their preferred approach.
 
 The main stopper for using VUnit's Python features for running OSVVM's tests is that the primary unit in OSVVM's
 methodology are VHDL configurations, and VUnit only supports entities as primary units.
-Anyway, there is common interest in hopefully extending VUnit and supporting configurations as entrypoints.
+There is common interest in hopefully extending VUnit and supporting configurations as entrypoints.
 
 * `OSVVM/OSVVM <https://github.com/OSVVM/OSVVM>`__
 * `OSVVM/OsvvmLibraries <https://github.com/OSVVM/OsvvmLibraries>`__
@@ -142,8 +142,8 @@ iverilog through cocotb:
 Similarly, there is a C/C++ implementation, which uses DPI, VPI, VHPI or FLI for interacting with the RTL code:
 `uvm.io <http://uvm.io/>`__.
 
-Furthermore, there is work in progress for adding System Verilog support to verilator through
-`Surelog <https://hdl.github.io/awesome/items/surelog/>`__ and `UHDM <https://hdl.github.io/awesome/items/uhdm/>`__.
+Furthermore, there work in progress for adding System Verilog support to verilator, including both synthesizable and
+non-synthesizable constructs. See :ref:`OSVB:Simulators:Verilator`.
 
 UVVM
 ====
