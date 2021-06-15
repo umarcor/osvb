@@ -113,6 +113,33 @@ There is common interest in hopefully extending VUnit and supporting configurati
 
   * `ghdl/extended-tests <https://github.com/ghdl/extended-tests>`__
 
+Renode
+======
+
+Renode (developed by `Antmicro <https://www.antmicro.com/>`__) is not an HDL testing/verification framework per se.
+It is presented as a development framework for accelerating IoT and embedded systems development by simulating physical
+hardware systems (including the CPU, peripherals, sensors, environment and wire or wireless medium between nodes).
+Precisely, in the context of IoT and embedded system, software and wire(less) communication play a crucial role in
+Renode.
+It allows running, debugging and testing unmodified embedded software on a workstation or laptop.
+
+However, simulation models for custom hardware and in-development CPUs are not always available.
+Moreover, it is sometimes desirable to have bit-accurate and cycle-accurate simulation models for testing custom
+accelerators along with well-known CPUs and other peripherals.
+As a result, there is work in progress for supporting HDL models to be added as nodes into the Renode infrastructure.
+All cosimulation strategies explained in :ref:`OSVB:Co-simulation` are subject to be integrated, either using existing
+Verification Components (VCs) or with ad-hoc middleware.
+Find a sample about how to integrate *verilated* models in `antmicro/renode-verilator-integration <https://github.com/antmicro/renode-verilator-integration>`__.
+It supports a verilated bus master and AXI4.
+
+* `Renode <https://renode.io/>`__
+
+.. NOTE::
+  `dbhi/vboard <https://github.com/dbhi/vboard>`__ includes multiple references about "*Virtual development board for
+  HDL design*".
+  Most of those are ad-hoc solutions, which are lacking the *project management* layer for making them plug and play.
+  However, some of them implement interfaces or HDL languages which are not supported in Renode yet.
+
 SVUnit
 ======
 
