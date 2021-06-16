@@ -66,6 +66,7 @@ See:
 
 * `Dynamic scheduling in Verilator - milestone towards open source UVM <https://antmicro.com/blog/2021/05/dynamic-scheduling-in-verilator/>`__
 
+  * `antmicro/verilator-dynamic-scheduler-examples <https://github.com/antmicro/verilator-dynamic-scheduler-examples>`__
   * `CHIPS Alliance Deep Dive Cafe Talks Jun 15, 2021 <https://linuxfoundation.org/webinars/dynamic-scheduling-in-verilator-presented-by-antmicro/>`__
 
 Yosys/CXXRTL
