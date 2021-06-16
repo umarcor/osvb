@@ -26,12 +26,13 @@ RUN apt-get update -qq \
     swig \
  && git clone https://github.com/sigrokproject/libsigrok \
  && cd libsigrok \
+ && git checkout -b pin 5bf642db \
  && ./autogen.sh \
  && ./configure \
  && make \
  && make install \
  && make DESTDIR=/tmp/sigrok install \
- && cd ..  \
+ && cd .. \
  && git clone https://github.com/sigrokproject/sigrok-cli \
  && cd sigrok-cli \
  && ./autogen.sh \
