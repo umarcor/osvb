@@ -68,6 +68,10 @@ See:
 
   * `antmicro/verilator-dynamic-scheduler-examples <https://github.com/antmicro/verilator-dynamic-scheduler-examples>`__
   * `CHIPS Alliance Deep Dive Cafe Talks Jun 15, 2021 <https://linuxfoundation.org/webinars/dynamic-scheduling-in-verilator-presented-by-antmicro/>`__
+    (
+    `Video <https://www.youtube.com/watch?v=s7ivKvXGS74>`__,
+    `Slides <https://chipsalliance.org/wp-content/uploads/sites/83/2021/06/Dynamic-Scheduling-in-Verilator-CHIPS-1.pdf>`__
+    )
 
 Yosys/CXXRTL
 ============
