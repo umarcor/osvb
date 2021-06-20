@@ -302,8 +302,15 @@ usable locally. There are several simple and not-so-simple solutions available f
 * `lukejpreston.github.io/xunit-viewer <https://lukejpreston.github.io/xunit-viewer/>`__
 * `Standalone JUnit XML report viewer <https://softwarerecs.stackexchange.com/questions/3666/standalone-junit-xml-report-viewer>`__
 
+Similar solutions exist based on pytest:
+
+* `pytest-reporter <https://pypi.org/project/pytest-reporter/>`__
+
+  * `pytest-reporter-html1 <https://pypi.org/project/pytest-reporter-html1/>`__
+
 As a complement, extending `pyucis-viewer <https://github.com/fvutils/pyucis-viewer>`__ might be evaluated, for providing
 a Qt based solution. pyucis-viewer currently provides a simple bar-chart viewer for coverage data read via pyucis.
+
 
 GitHub
 ------
