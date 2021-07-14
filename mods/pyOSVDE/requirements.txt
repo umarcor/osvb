@@ -1,0 +1,3 @@
+#pyGHDL
+gitignore-parser
+tkinter
