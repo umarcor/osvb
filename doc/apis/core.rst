@@ -80,13 +80,10 @@ CAPI reference
 --------------
 
 .. autoclass:: pyCAPI.IpCoreConfig()
-  :exclude-members: _abc_impl
 
 .. autoclass:: pyCAPI.FilesetConfig()
-  :exclude-members: _abc_impl
 
 .. autoclass:: pyCAPI.Config()
-  :exclude-members: _abc_impl
 
 .. autofunction:: pyCAPI.LoadCoreFile
 
