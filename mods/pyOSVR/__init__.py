@@ -1,5 +1,24 @@
 # Python Data Model for OSVR extended xUnit files
 
+# Authors:
+#   Unai Martinez-Corral
+#
+# Copyright 2021 Unai Martinez-Corral <unai.martinezcorral@ehu.eus>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+
 
 from pathlib import Path
 
@@ -12,20 +31,18 @@ from yamldataclassconfig.config import YamlDataClassConfig
 
 @dataclass
 class ImplementationMetadata(YamlDataClassConfig):
-    """
-    """
+    """ """
 
 
 @dataclass
 class RequirementsMetadata(YamlDataClassConfig):
-    """
-    """
+    """ """
 
 
 @dataclass
 class LogentryLocation(YamlDataClassConfig):
-    """
-    """
+    """ """
+
     Filename: str = None
     LineNumber: Optional[int] = None
     Offset: Optional[int] = None
@@ -33,8 +50,8 @@ class LogentryLocation(YamlDataClassConfig):
 
 @dataclass
 class Logentry(YamlDataClassConfig):
-    """
-    """
+    """ """
+
     Time: str = None
     Severity: str = None
     Code: Optional[str] = None
@@ -44,21 +61,21 @@ class Logentry(YamlDataClassConfig):
 
 @dataclass
 class Testcase(YamlDataClassConfig):
-    """
-    """
+    """ """
+
     Name: str = None
     Duration: Optional[float] = None
     Result: Optional[List[str]] = None
     Categories: Optional[List[str]] = None
     Metadata: Optional[Union[ImplementationMetadata, RequirementsMetadata]] = None
     Log: Optional[List[Union[str, Logentry]]] = None
-    #Log: Optional[List[Logentry]] = None
+    # Log: Optional[List[Logentry]] = None
 
 
 @dataclass
 class TestsuiteStats(YamlDataClassConfig):
-    """
-    """
+    """ """
+
     NumberOfTests: int = None
     Errors: int = None
     Failures: int = None
@@ -67,25 +84,23 @@ class TestsuiteStats(YamlDataClassConfig):
 
 @dataclass
 class Testsuite(YamlDataClassConfig):
-    """
-    """
+    """ """
+
     Tests: List[Testcase] = None
     Stats: TestsuiteStats = None
-    #Metadata
+    # Metadata
 
 
 @dataclass
 class OpenSourceVerificationReport(YamlDataClassConfig):
-    """
-    """
+    """ """
+
     OSVRVersion: int = None
     Tool: str = None
     Suites: Dict[str, Testsuite] = None
 
 
-def LoadOSVRFile(
-    OSVRFilePath
-):
+def LoadOSVRFile(OSVRFilePath):
     """
     Load an OSVR "extended xUnit" file in YAML format and unmarshal it.
 
@@ -96,13 +111,13 @@ def LoadOSVRFile(
     _osvr.load(_cpath)
     _osvr.FILE_PATH = _cpath
     print(_osvr.FILE_PATH)
-    print('OSVRVersion:', _osvr.OSVRVersion)
-    print('Tool:', _osvr.Tool)
+    print("OSVRVersion:", _osvr.OSVRVersion)
+    print("Tool:", _osvr.Tool)
     for name, suite in _osvr.Suites.items():
-        print('·', name)
+        print("·", name)
         for test in suite.Tests:
             print()
-            print(' -', test.Name)
+            print(" -", test.Name)
             for item in test.Log:
                 print(item)
             print()
@@ -110,9 +125,7 @@ def LoadOSVRFile(
     return _osvr
 
 
-def LoadXUnitFile(
-    XUnitFilePath
-):
+def LoadXUnitFile(XUnitFilePath):
     """
     Load an xUnit file and unmarshal it.
 
@@ -124,4 +137,4 @@ def LoadXUnitFile(
         print(suite)
         for case in suite:
             print(case)
-    #xml.write() # Writes back to file
+    # xml.write() # Writes back to file
