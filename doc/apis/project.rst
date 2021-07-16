@@ -92,7 +92,7 @@ Then, retrieve this repository (OSVB) and install the dependencies of pyOSVDE:
 
 .. code-block::
 
-   pip3 install mods/pyOSVDE/requirements.txt
+   pip3 install -r mods/pyOSVDE/requirements.txt
 
 Usage
 -----
