@@ -83,3 +83,4 @@ instantiates the design, toggles the clock and interacts with the ports. CXXRTL 
 providing black boxes as behavioural C++ models, similarly to some standard co-simulation interfaces.
 
 * `YosysHQ/yosys <https://github.com/YosysHQ/yosys>`__
+* `tomverbeure/cxxrtl_eval <https://github.com/tomverbeure/cxxrtl_eval>`__
