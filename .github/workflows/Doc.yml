@@ -22,8 +22,16 @@ jobs:
     - name: '🛳️ Build osvb/doc'
       run: |
         docker build -t osvb/doc - <<-EOF
-        FROM btdi/sphinx:featured
+        FROM ghcr.io/hdl/debian/buster/sim/osvb
         ENV PYTHONPATH=/src/mods
+        RUN apt update -qq && apt install -y \
+          git \
+          make \
+          python3-pip \
+          python3-setuptools \
+          python3-tk \
+         && pip3 install git+https://github.com/ghdl/ghdl.git@$(ghdl version hash) \
+         && ln -s /usr/bin/pip3 /usr/bin/pip
         EOF
 
     - name: '📓 BuildTheDocs (BTD)'
