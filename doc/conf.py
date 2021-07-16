@@ -55,6 +55,8 @@ except Exception as ex:
     print(ex)
     rst_prolog = ""
 
+numfig = True
+
 # -- Options for HTML output ----------------------------------------------
 
 html_theme_options = {
