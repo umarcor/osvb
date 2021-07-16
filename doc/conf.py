@@ -1,23 +1,43 @@
 # -*- coding: utf-8 -*-
 
+# Authors:
+#   Unai Martinez-Corral
+#
+# Copyright 2021 Unai Martinez-Corral <unai.martinezcorral@ehu.eus>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+
 import sys, re
 from os.path import abspath
 from pathlib import Path
 from json import dump, loads
 
-sys.path.insert(0, abspath('.'))
+sys.path.insert(0, abspath("."))
 
 # -- General configuration ------------------------------------------------
 
-needs_sphinx = '1.5'
+needs_sphinx = "1.5"
 
 extensions = [
     # Standard Sphinx extensions
-    'sphinx.ext.autodoc',
-    'sphinx.ext.extlinks',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.graphviz',
-    'sphinx.ext.viewcode',
+    "sphinx.ext.autodoc",
+    "sphinx.ext.extlinks",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.graphviz",
+    "sphinx.ext.viewcode",
 ]
 
 autodoc_default_options = {
@@ -26,17 +46,17 @@ autodoc_default_options = {
     "undoc-members": True,
 }
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 source_suffix = {
-    '.rst': 'restructuredtext',
+    ".rst": "restructuredtext",
 }
 
-master_doc = 'index'
+master_doc = "index"
 
-project = u'Open Source Verification Bundle'
-copyright = u'2021, Unai Martinez-Corral and contributors'
-author = u'Unai Martinez-Corral and contributors'
+project = u"Open Source Verification Bundle"
+copyright = u"2021, Unai Martinez-Corral and contributors"
+author = u"Unai Martinez-Corral and contributors"
 
 version = "latest"
 release = version  # The full version, including alpha/beta/rc tags.
@@ -60,67 +80,73 @@ numfig = True
 # -- Options for HTML output ----------------------------------------------
 
 html_theme_options = {
-    'logo_only': True,
-    'home_breadcrumbs': False,
-    'vcs_pageview_mode': 'blob',
+    "logo_only": True,
+    "home_breadcrumbs": False,
+    "vcs_pageview_mode": "blob",
 }
 
 html_context = {}
-ctx = Path(__file__).resolve().parent / 'context.json'
+ctx = Path(__file__).resolve().parent / "context.json"
 if ctx.is_file():
-    html_context.update(loads(ctx.open('r').read()))
+    html_context.update(loads(ctx.open("r").read()))
 
 html_theme_path = ["."]
 html_theme = "_theme"
 
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
 html_logo = str(Path(html_static_path[0]) / "logow.svg")
 html_favicon = str(Path(html_static_path[0]) / "osvb.ico")
 
-htmlhelp_basename = 'OSVBDoc'
+htmlhelp_basename = "OSVBDoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
-    'papersize': 'a4paper',
+    "papersize": "a4paper",
 }
 
 latex_documents = [
-    (master_doc, 'OSVBDoc.tex', u'Open Source Verification Bundle Documentation', author, 'manual'),
+    (master_doc, "OSVBDoc.tex", u"Open Source Verification Bundle Documentation", author, "manual"),
 ]
 
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'OSVB', u'Open Source Verification Bundle Documentation', [author], 1)
-]
+man_pages = [(master_doc, "OSVB", u"Open Source Verification Bundle Documentation", [author], 1)]
 
 # -- Options for Texinfo output -------------------------------------------
 
 texinfo_documents = [
-  (master_doc, 'OSVB', u'Open Source Verification Bundle Documentation', author, 'OSVB', 'HDL verification.', 'Miscellaneous'),
+    (
+        master_doc,
+        "OSVB",
+        u"Open Source Verification Bundle Documentation",
+        author,
+        "OSVB",
+        "HDL verification.",
+        "Miscellaneous",
+    ),
 ]
 
 # -- Sphinx.Ext.InterSphinx -----------------------------------------------
 
 intersphinx_mapping = {
-   'python': ('https://docs.python.org/3/', None),
-   'ghdl': ('https://ghdl.github.io/ghdl', None),
-   'ghdl-cosim': ('https://ghdl.github.io/ghdl-cosim', None),
-   'vhdlmodel': ('https://vhdl.github.io/pyVHDLModel', None),
-   'vunit': ('https://vunit.github.io', None),
-   'cocotb': ('https://docs.cocotb.org/en/stable/', None),
-   'matplotlib': ('https://matplotlib.org/', None)
+    "python": ("https://docs.python.org/3/", None),
+    "ghdl": ("https://ghdl.github.io/ghdl", None),
+    "ghdl-cosim": ("https://ghdl.github.io/ghdl-cosim", None),
+    "vhdlmodel": ("https://vhdl.github.io/pyVHDLModel", None),
+    "vunit": ("https://vunit.github.io", None),
+    "cocotb": ("https://docs.cocotb.org/en/stable/", None),
+    "matplotlib": ("https://matplotlib.org/", None),
 }
 
 # -- Sphinx.Ext.ExtLinks --------------------------------------------------
 extlinks = {
-   'wikipedia': ('https://en.wikipedia.org/wiki/%s', None),
-   'ghsharp':   ('https://github.com/umarcor/osvb/issues/%s', '#'),
-   'ghissue':   ('https://github.com/umarcor/osvb/issues/%s', 'issue #'),
-   'ghpull':    ('https://github.com/umarcor/osvb/pull/%s', 'pull request #'),
-   'ghsrc':     ('https://github.com/umarcor/osvb/blob/main/%s', None),
+    "wikipedia": ("https://en.wikipedia.org/wiki/%s", None),
+    "ghsharp": ("https://github.com/umarcor/osvb/issues/%s", "#"),
+    "ghissue": ("https://github.com/umarcor/osvb/issues/%s", "issue #"),
+    "ghpull": ("https://github.com/umarcor/osvb/pull/%s", "pull request #"),
+    "ghsrc": ("https://github.com/umarcor/osvb/blob/main/%s", None),
 }
