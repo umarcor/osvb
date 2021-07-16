@@ -242,3 +242,4 @@ Learning/teaching
 =================
 
 * `Course content for the Design Verification module at the University of Bristol <https://uobdv.github.io/Design-Verification/>`__
+* `umarcor: references/VHDL.bib <https://github.com/umarcor/umarcor/blob/main/references/VHDL.bib>`__
