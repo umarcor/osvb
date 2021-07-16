@@ -121,14 +121,19 @@ References
   * `Next Conda Work <https://docs.google.com/document/d/11XFnJ0ExBgE1pMQksw0rQerAZo3F83AVIu2YK1pbg1k>`__
   * `SymbiFlow/make-env <https://github.com/SymbiFlow/make-env>`__
   * `edalize.autosetup <https://docs.google.com/document/d/1IMVrSmMO5wqTV3W22Bv2PeKtMHO3WSyCwHm3N-Wkwbk>`__
+
 * Other task execution/automation tools:
 
   * `facebookresearch/hydra <https://github.com/facebookresearch/hydra>`__
   * `chriscardillo/gusty <https://github.com/chriscardillo/gusty>`__
   * `pydoit/doit <https://github.com/pydoit/doit>`__ (`pydoit.org <https://pydoit.org/>`__)
+
+    * `stnolting/neorv32#110 <https://github.com/stnolting/neorv32/pull/110>`__
+
   * Not based on Python:
 
     * `cmake.org <https://cmake.org/>`__
     * `gradle.org <https://gradle.org/>`__
     * `ninja-build.org <https://ninja-build.org/>`__
+
 * `DMTN-025: A survey of workflow management systems <https://dmtn-025.lsst.io/>`__
