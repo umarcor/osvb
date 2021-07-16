@@ -34,7 +34,7 @@ Introduction
 
 `pyVHDLModel <https://github.com/vhdl/pyVHDLModel>`__ is an abstract language model for VHDL written in Python.
 That is, a set of classes that represent the objects found in VHDL sources, and utils for manipulating and interacting
-with those classes
+with those classes.
 The generation of an specific object tree for an specific VHDL codebase is done by a frontend.
 Currently supported frontends are `pyGHDL <https://github.com/ghdl/ghdl/tree/master/pyGHDL>`__ and
 `pyVHDLParser <https://github.com/Paebbels/pyVHDLParser/>`__.
