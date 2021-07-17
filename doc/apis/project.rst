@@ -183,11 +183,13 @@ References
 ==========
 
 * `EDA integration: managing projects for simulation and implementation <https://docs.google.com/document/d/1qThGGqSVQabts-4imn5zY5BMptp1-Q2rGiNKHDH1Pbk/>`__
+
 * Registers:
 
   * `tsfpga: Register code generation <https://tsfpga.com/registers.html>`__
-
   * `cheby <https://gitlab.cern.ch/cohtdrivers/cheby>`__
-
   * `SystemRDL register description language <https://github.com/SystemRDL>`__
+
 * `dbhi/vsc-hdl <https://github.com/dbhi/vsc-hdl>`__
+
+* `orestesmas/pycirkuit <https://github.com/orestesmas/pycirkuit>`__
