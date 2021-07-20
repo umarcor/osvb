@@ -50,6 +50,7 @@ VCD/EVCD can be read by multiple open source tools:
 * `wavedrom.com <https://wavedrom.com/>`__, `wavedrom/vcd <https://github.com/wavedrom/vcd>`__ and `zoom <https://github.com/wavedrom/zoom>`__.
 * `Nic30/d3-wave <https://github.com/Nic30/d3-wave>`__
 * `raczben/fliplot <https://github.com/raczben/fliplot>`__
+* `lachlansneff/ligeia <https://github.com/lachlansneff/ligeia>`__
 
 However, being a 20+ year old format defined for Verilog, VCD has certain limitations:
 
@@ -78,6 +79,9 @@ He also contributed a reader to GTKWave, which allows visualizing them.
   manipulating *any* waveform programmatically.
   If GTKWave helpers are buildable/usable independently of GTKWave, it might be desirable to provide bindings in Python,
   Rust,... along with an API to the database.
+
+Recently, Lachlan Sneff implemented Streamed Value Change Blocks (SVCB) in `ligeia <https://github.com/lachlansneff/ligeia>`__,
+a work-in-progress "*replacement for gtkwave, written in Rust with high-performance and larger-than-memory traces in mind*".
 
 Apart from dealing with large waveforms, there are some other formats which are used for documentation purposes:
 
