@@ -136,4 +136,6 @@ References
     * `gradle.org <https://gradle.org/>`__
     * `ninja-build.org <https://ninja-build.org/>`__
 
+* `ktbarrett.github.io: _drafts/tool-automation.md <https://github.com/ktbarrett/ktbarrett.github.io/blob/master/_drafts/tool-automation.md>`__
+
 * `DMTN-025: A survey of workflow management systems <https://dmtn-025.lsst.io/>`__
