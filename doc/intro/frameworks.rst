@@ -169,6 +169,7 @@ iverilog through cocotb:
 * `pyuvm/pyuvm <https://github.com/pyuvm/pyuvm>`__
 
   * `cocotb/cocotb#2418 <https://github.com/cocotb/cocotb/issues/2418>`__
+  * `siemens.com/verificationhorizons: Cocotb Bus Functional Models <https://blogs.sw.siemens.com/verificationhorizons/2021/03/22/cocotb-bus-functional-models/>`__
 
 Similarly, there is a C/C++ implementation, which uses DPI, VPI, VHPI or FLI for interacting with the RTL code:
 `uvm.io <http://uvm.io/>`__.
