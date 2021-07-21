@@ -121,8 +121,9 @@ References
   * `Next Conda Work <https://docs.google.com/document/d/11XFnJ0ExBgE1pMQksw0rQerAZo3F83AVIu2YK1pbg1k>`__
   * `SymbiFlow/make-env <https://github.com/SymbiFlow/make-env>`__
   * `edalize.autosetup <https://docs.google.com/document/d/1IMVrSmMO5wqTV3W22Bv2PeKtMHO3WSyCwHm3N-Wkwbk>`__
-  * `VHDL version of "OpenTitan (and other SV designs) using open tools (for FPGAs and ASICS)" <https://docs.google.com/drawings/d/16kKGSo84Xitmr5BiCJG3faNWt3maoKs-EHftUPDaM64/edit>`__
-  * `SystemVerilog flows (for OpenTitan and other SV designs) using open tools (for FPGAs and ASICS) <https://docs.google.com/drawings/d/1GEjCoLwY57bsuZoj5ymyXoToIEOC0H4j2SEYsqQupM8/edit>`__
+  * `Tim's suggestions for a edalize v2 <https://docs.google.com/document/d/1VakRJV0Pv4eM_hJnCCfh2l3bCMD3y07p6hFpc7z2Kg4>`__
+  * `VHDL version of "OpenTitan (and other SV designs) using open tools (for FPGAs and ASICS)" <https://docs.google.com/drawings/d/16kKGSo84Xitmr5BiCJG3faNWt3maoKs-EHftUPDaM64>`__
+  * `SystemVerilog flows (for OpenTitan and other SV designs) using open tools (for FPGAs and ASICS) <https://docs.google.com/drawings/d/1GEjCoLwY57bsuZoj5ymyXoToIEOC0H4j2SEYsqQupM8>`__
 
 * Other task execution/automation tools:
 
