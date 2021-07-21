@@ -320,6 +320,7 @@ usable locally. There are several simple and not-so-simple solutions available f
 * `w3schools.com/howto/howto_js_treeview <https://www.w3schools.com/howto/howto_js_treeview.asp>`__
 * `lukejpreston.github.io/xunit-viewer <https://lukejpreston.github.io/xunit-viewer/>`__
 * `Standalone JUnit XML report viewer <https://softwarerecs.stackexchange.com/questions/3666/standalone-junit-xml-report-viewer>`__
+* `docs.qameta.io/allure <https://docs.qameta.io/allure/>`__
 
 Similar solutions exist based on pytest:
 
