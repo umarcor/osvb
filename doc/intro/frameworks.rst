@@ -46,6 +46,8 @@ Nevertheless, there is interest in evaluating again whether iverilog's improved 
 VUnit.
 
 * `cocotb/cocotb <https://github.com/cocotb/cocotb>`__
+* `themperek/cocotb-test <https://github.com/themperek/cocotb-test>`__
+* `ktbarrett/pyvertb <https://github.com/ktbarrett/pyvertb>`__
 
 .. TIP::
   Compared to other frameworks, the cocotb ecosystem is more distributed.
