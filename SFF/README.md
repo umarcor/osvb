@@ -37,7 +37,3 @@ There is a CI workflow for executing all the tests (2 in `tb_dff.vhd` and 1 in `
 - Although instantiating the UUT in an HDL testbench is natural for VUnit users, it might be cumbersome for cocotb only users. Unfortunately,cocotb cannot declare additional signals in the testbench (which are not declared in HDL). It can neither instantiate itself as a component or instantiate some other component that exists in a previously analised library, or connect the signals to the component. cocotb runs after elaboration, and GHDL's VPI works after elaboration only. Therefore, any solution for adding content to an existing HDL testbench needs to be done by code-generation, which is not the nicest solution given the VHDL parsers currently available in Python. That is, have a script read the ports of the UUT, their modes and types. Then, generate a testbench with the signals, the instantiated UUT and the port map between them.
   - [ghdl/ghdl#1449](https://github.com/ghdl/ghdl/pull/1449) is a recent exercise for reading the ports, modes and types using GHDL's Python interface to `libghdl`. See [ghdl/ghdl: pyGHDL](https://github.com/ghdl/ghdl/blob/master/pyGHDL).
 - cocotb generates reports indepently from VUnit. It would be interesting to investigate how to make VUnit pass the location of the output, or to support cocotb using VUnit's logging library through VHPI/VPI.
-
-## References
-
-- [jwprice100/vcst](https://github.com/jwprice100/vcst)
