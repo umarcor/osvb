@@ -54,6 +54,8 @@ VUnit.
   Others have most of the resources gathered in single GitHub repository.
   Conversely, there is much activity around cocotb in repositories outside of the main repository.
 
+  * `aignacio/ravenoc: tb <https://github.com/aignacio/ravenoc/tree/master/tb>`__
+
 .. NOTE::
   `benbr8/rstb <https://github.com/benbr8/rstb>`__ is an alternative implementation of the same approach, using Rust
   instead of Python.
