@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Co-simulation &mdash; Open Source Verification Bundle latest documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/osvb.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Core" href="../apis/core.html" />
+    <link rel="prev" title="Simulators | Compilers" href="sim.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logow.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frameworks.html">Frameworks and Methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sim.html">Simulators | Compilers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Co-simulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#standard-interfaces">Standard interfaces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vpi">VPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dpi">DPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vhpi">VHPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vffi-vdpi">VFFI/VDPI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#remote-procedure-calls">Remote procedure calls</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#grpc">gRPC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#capnproto">capnproto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zeromq">ZeroMQ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apis/core.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/project.html">Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/tool.html">Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runner.html">Runner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/logging.html">Logging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../egs/sff.html">Simple Flip-Flop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../egs/axi4stream.html">SISO AXI4 Stream</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Notebook</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/fpconv.html">Fixed-point conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/sigrok.html">sigrok-cli | Pulseview</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Open Source Verification Bundle</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Co-simulation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/umarcor/osvb/blob/main/doc/intro/cosim.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="co-simulation">
+<span id="osvb-co-simulation"></span><h1>Co-simulation<a class="headerlink" href="#co-simulation" title="Permalink to this headline">¶</a></h1>
+<p>Advanced verification strategies do typically raise the abstraction level of the workflow, bringing hardware design close
+to software development. In this context, engineers have a natural trend towards using more flexible languages with vast
+libraries implementing advanced domain-specific functionalities. Some of the most common non-HDL languages used for
+verification are C/C++ and Python.</p>
+<div class="section" id="standard-interfaces">
+<h2>Standard interfaces<a class="headerlink" href="#standard-interfaces" title="Permalink to this headline">¶</a></h2>
+<p>Traditional HDL languages and most simulators support one or multiple standard or non-standard co-simulation interfaces for
+runtime interaction between HDLs and software languages (typically C/C++, as a reference). Here, standard interfaces are
+summarized.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Licensing constraints of many vendor tools do not allow discussing features and/or perfomance publicly. Therefore, this
+section contains references to interfaces supported by open source tools only, which don’t have such knowledge limitations.</p>
+</div>
+<div class="section" id="vpi">
+<h3>VPI<a class="headerlink" href="#vpi" title="Permalink to this headline">¶</a></h3>
+<p>Verilog Procedural Interface (VPI) is the standard co-simulation interface in Verilog 2005. It was originally known
+as PLI 2.0, because it replaced the deprecated Program Language Interface (PLI) defined in earlier versions of the language.</p>
+<p>The usage of VPI is based on registering callbacks at specific events using the provided C API. C functions can also invoke
+standard verilog system tasks. A relevant feature of this co-simulation approach is that HDL sources are unmodified. Registering
+co-simulation callbacks is independent from the sources that compose the design and/or the HDL testbench.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.verilab.com/files/snug_2012_paper71_final.pdf">I Spy with My VPI: Monitoring signals by name, for the UVM register package and more</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Non-intuitively, GHDL implements VPI for interacting with VHDL sources. Back in 2000-2008, there was no standard interface
+available for VHDL, so the author of GHDL implemented VPI for allowing co-simulation.</p>
+</div>
+</div>
+<div class="section" id="dpi">
+<h3>DPI<a class="headerlink" href="#dpi" title="Permalink to this headline">¶</a></h3>
+<p>Direct Programming Interface (DPI) is an standard co-simulation interface defined in System Verilog. It is mainly meant for
+co-simulation with C, C++ or SystemC. However, unlike VPI, setting up a DPI co-simulation consists of two layers. On the one
+hand, the resources to be used with foreign languages are explicitly declared in the System Verilog sources. On the other hand,
+sources in a foreign language provide the complementary bodies that match the prototypes of the resources declared in the first
+layer. In other words, DPI allows users/developers to define custom APIs between System Verilog and foreign languages that
+understand C/C++ semantics.</p>
+</div>
+<div class="section" id="vhpi">
+<h3>VHPI<a class="headerlink" href="#vhpi" title="Permalink to this headline">¶</a></h3>
+<p>VHDL Procedural Interface (VHPI) is the standard co-simulation interface in VHDL 2008 and VHDL 2019. It is heavily inspired
+on VPI, so the workflow/usage is equivalent: a C/C++ API allows registering callbacks and models, without modifying HDL sources.</p>
+<p>The definition and descriptions of VHPI are software-centric, i.e. mostly meant for complex software tool developers having
+access to the full HDL hierarchy from an advanced software API. It is, therefore, a very powerful API with a very steep learning
+curve. As a result, adoption by vendors has been slow and uneven. At the same time, there was not a critical mass of VHDL use
+cases, and the apparent lack of interest from users didn’t push vendors further.</p>
+</div>
+<div class="section" id="vffi-vdpi">
+<h3>VFFI/VDPI<a class="headerlink" href="#vffi-vdpi" title="Permalink to this headline">¶</a></h3>
+<p>Back in 2005-2006, the author of GHDL implemented a co-simulation feature named VHPIDIRECT. It is, essentially, a Foreign
+Function Interface (FFI) for executing foreign subprograms from VHDL. Function/procedure prototypes are declared in VHDL with
+an specific <code class="docutils literal notranslate"><span class="pre">FOREIGN</span></code> attribute. Matching foreign (C/C++) bodies can be provided through pre-built shared libraries and/or
+as C sources/objects to be used during elaboration/linking.</p>
+<p>The implementation of VHPIDIRECT in GHDL was inspired on some draft of VHPI, which was apparently modified before making it
+into the VHDL 2008 standard. As a result, although the VHPIDIRECT is used/defined in the LRM, GHDL’s implementation is not
+compliant. Precisely, the standard requires some specific intermediate structs (fat pointers) to be used between VHDL and
+the foreign langauge; however, GHDL’s implementation passes arguments directly (by value or by reference).</p>
+<p>It is rather obvious that System Verilog’s DPI resembles GHDL’s VHPIDIRECT just as much as VHPI was inpired by VPI. In 2011,
+a Language Change Specification (LCS) proposal was submitted for VHDL 201X to support a DPI. It didn’t make it due to the
+workload in the VHDL Analysis and Standardization Group (VASG). However, since Q2 2020, the VASG is working on gathering
+and updating a proposal for standardizing an interface named VHDL Foreign Function Interface (VFFI) or VHDL Direct Programming
+Interface (VDPI), which formalizes the direct implementation available in GHDL and makes it generic enough for any vendor.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gitlab.com/IEEE-P1076/VHDL-Issues/-/issues/10">gitlab.com/IEEE-P1076/VHDL-Issues: Direct Programming Interface (DPI) | Foreign Function Interface (FFI)</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="remote-procedure-calls">
+<h2>Remote procedure calls<a class="headerlink" href="#remote-procedure-calls" title="Permalink to this headline">¶</a></h2>
+<p>Typically, simulators expect to be the root and managers of the execution. Therefore, although setting callbacks and/or
+foreign function calls is possible through any of the standard interfaces, actually co-executing simulations with
+arbitray software threads is not trivial. As a result, several proposals exist for binding standard interfaces to some
+Remote Procedure Call (RPC) library, for decoupling the execution kernels of multiple tools.</p>
+<div class="section" id="grpc">
+<h3>gRPC<a class="headerlink" href="#grpc" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://grpc.io/">grpc.io</a> (<a class="reference external" href="https://github.com/grpc">github.com/grpc</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/dbhi/gRPC">dbhi/gRPC</a></p></li>
+</ul>
+</div>
+<div class="section" id="capnproto">
+<h3>capnproto<a class="headerlink" href="#capnproto" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://capnproto.org/">capnproto.org</a> (<a class="reference external" href="https://github.com/capnproto">github.com/capnproto</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/NyanCAD">NyanCAD</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/NyanCAD/CxxrtlSimServer">CxxrtlSimServer</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NyanCAD/XyceSimServer">XyceSimServer</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NyanCAD/NgspiceSimServer">NgspiceSimServer</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="zeromq">
+<h3>ZeroMQ<a class="headerlink" href="#zeromq" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://zeromq.org/">zeromq.org</a> (<a class="reference external" href="https://github.com/zeromq">github.com/zeromq</a>)</p></li>
+<li><p><a class="reference external" href="https://groups.google.com/g/alt.sources/c/R5cKBbRrUJM">VZMQ - ZeroMQ communication with VHDL simulation in GHDL</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../apis/core.html" class="btn btn-neutral float-right" title="Core" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sim.html" class="btn btn-neutral float-left" title="Simulators | Compilers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Unai Martinez-Corral and contributors
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/buildthedocs/sphinx.theme">theme</a>
+    
+    provided by <a href="https://buildthedocs.github.io">Build the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

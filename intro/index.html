@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; Open Source Verification Bundle latest documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/osvb.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Frameworks and Methodologies" href="frameworks.html" />
+    <link rel="prev" title="Open Source Verification Bundle" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logow.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frameworks.html">Frameworks and Methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sim.html">Simulators | Compilers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cosim.html">Co-simulation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apis/core.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/project.html">Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/tool.html">Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runner.html">Runner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/logging.html">Logging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../egs/sff.html">Simple Flip-Flop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../egs/axi4stream.html">SISO AXI4 Stream</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Notebook</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/fpconv.html">Fixed-point conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/sigrok.html">sigrok-cli | Pulseview</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Open Source Verification Bundle</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/umarcor/osvb/blob/main/doc/intro/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<span id="osvb-overview"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>The block diagram below illustrates how the components fit together in this bundle:</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/osvb.png"><img alt="Block diagram of the OSVB" src="../_images/osvb.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Block diagram of the Open Source Verification Bundle.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The language of choice for integration is Python.
+Some verification projects do use Python already; others provide scripts written in TCL, Perl or Bash.
+However, the wider open source ecosystem for hardware design is dominated by Python.
+It’s the fastest growing language in many fields, and specially in the embedded world.</p>
+<p>Among the frameworks providing a Python based simulator interface and test management plumbing, VUnit’s solution is the
+most mature and feature complete.
+It does also provide a neat integration between Python and top-level testbenches, allowing hardware designers to define
+multiple test cases in HDL, but have them handled from Python.
+Therefore, the core of OSVB are VUnit’s Python modules.</p>
+<p>cocotb’s main feature is providing shared libraries for allowing co-simulation from Python.
+Moreover, the Python modules for co-simulation are loaded by the simulator, not by the caller.
+Therefore, any simulator interface and task management plumbing for regular HDL designs is suitable for executing
+testbenches with cocotb’s co-simulation features.
+That is the case with VUnit.
+However, there is a conflict with the test management features in both frameworks.
+Both of them expect to be the root of the management, thus they both finalise individual test/simulations independently.
+There is a race between them, and one will always fail.
+There is work in progress for letting one of them wait for the other.
+See <a class="reference internal" href="../egs/sff.html#osvb-examples-sff-vunit-cocotb"><span class="std std-ref">VUnit and cocotb</span></a>.</p>
+<p>OSVVM is composed by a core repository and a larger distribution named <em>OSVVM Libraries</em>, which includes verification
+components and build/run scripts.
+VUnit does include the core as a built-in feature, since randomisation features are based on that.
+However, other libraries are not included by default.
+The missing repositories might be added as built-in VUnit modules too, but it increases the maintenance burden of VUnit
+and it’s not an scalable approach.
+OSVVM does provide <code class="docutils literal notranslate"><span class="pre">*.pro</span></code> files, which uses a custom syntax for defining sources and the compilation order.
+Those files are used by OSVVM’s own TCL scripts and also by <a class="reference external" href="https://github.com/ghdl/ghdl/tree/master/scripts/vendors">GHDL’s vendor scripts</a> (written in PowerShell and Bash).
+Yet, writing a custom Python module for reading those files doesn’t feel worth.
+Instead, the proposal in this bundle is to use <code class="docutils literal notranslate"><span class="pre">*.core</span></code> (YAML) files.
+See <a class="reference internal" href="../apis/core.html#osvb-api-core"><span class="std std-ref">Core</span></a>.
+Furthermore, the entrypoint to tests based on the OSVVM methodology are VHDL configurations, unlike other methodologies
+based on entities.
+Currently, VUnit’s runner does not support executing configurations as primary units.
+However, there is common interest in making it possible.</p>
+<p>Similarly, UVVM is not supported as a built-in feature in VUnit, but <code class="docutils literal notranslate"><span class="pre">compile_order.txt</span></code> files are provided.
+Those are used by UVVM’s own TCL scripts and also by GHDL’s vendor scripts (written in PowerShell and Bash).
+As with OSVVM, the proposal in this bundle is to use <code class="docutils literal notranslate"><span class="pre">*.core</span></code> (YAML) files. See <a class="reference internal" href="../apis/core.html#osvb-api-core"><span class="std std-ref">Core</span></a>.</p>
+<p>While VUnit provides multiple optional helper VHDL libraries, the SystemVerilog infrastructure is limited to the HDL
+runner and some <cite>check</cite> features.
+Conversely, SVUnit is for SystemVerilog mostly.
+The test management features in SVUnit are implemented using Perl, and installation scripts are written in bash/csh.
+As a result, it would be interesting to handle SVUnit’s HDL resources through VUnit’s simulator interface and runner.
+There is no work in progress in this regard yet.</p>
+<p>Since this bundle is focused on simulation of HDL-centric testbenches, synthesis and formal verification are out of the
+scope.
+However, most projects are to be implemented in practice, and the sources of Units Under Test (UUTs) are to be used for
+both simulation and implementation.
+Therefore, the usage of <a class="reference internal" href="../apis/core.html#osvb-api-core"><span class="std std-ref">Core</span></a> in this bundle is not limited to adding verification frameworks
+and/or methodologies; it is also the proposed solution for users to declare the sources of their designs.
+By the same token, <a class="reference internal" href="../apis/project.html#osvb-api-project"><span class="std std-ref">Project</span></a>, <a class="reference internal" href="../apis/tool.html#osvb-api-tool"><span class="std std-ref">Tool</span></a>, <a class="reference internal" href="../apis/runner.html#osvb-api-runner"><span class="std std-ref">Runner</span></a> and <a class="reference internal" href="../apis/logging.html#osvb-api-logging"><span class="std std-ref">Logging</span></a> are
+also extensible for being used in synthesis and implementation.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="frameworks.html" class="btn btn-neutral float-right" title="Frameworks and Methodologies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Open Source Verification Bundle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Unai Martinez-Corral and contributors
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/buildthedocs/sphinx.theme">theme</a>
+    
+    provided by <a href="https://buildthedocs.github.io">Build the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

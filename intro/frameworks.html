@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Frameworks and Methodologies &mdash; Open Source Verification Bundle latest documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/osvb.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Simulators | Compilers" href="sim.html" />
+    <link rel="prev" title="Overview" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logow.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Frameworks and Methodologies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cocotb">cocotb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#osvvm">OSVVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#renode">Renode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#svunit">SVUnit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uvm">UVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uvvm">UVVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vunit">VUnit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#learning-teaching">Learning/teaching</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sim.html">Simulators | Compilers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cosim.html">Co-simulation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apis/core.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/project.html">Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/tool.html">Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runner.html">Runner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/logging.html">Logging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../egs/sff.html">Simple Flip-Flop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../egs/axi4stream.html">SISO AXI4 Stream</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Notebook</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/fpconv.html">Fixed-point conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/sigrok.html">sigrok-cli | Pulseview</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Open Source Verification Bundle</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Frameworks and Methodologies</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/umarcor/osvb/blob/main/doc/intro/frameworks.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="frameworks-and-methodologies">
+<span id="osvb-projects"></span><h1>Frameworks and Methodologies<a class="headerlink" href="#frameworks-and-methodologies" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cocotb">
+<h2>cocotb<a class="headerlink" href="#cocotb" title="Permalink to this headline">¶</a></h2>
+<p>Cocotb is a coroutine based co-simulation library for writing VHDL and Verilog testbenches in Python.
+It was initially written and open sourced by <a class="reference external" href="http://potential.ventures/cocotb">Potential Ventures</a> in 2013.
+The project went dead for some months between 2017 and 2018.
+Since 2019, it is maintained by members of the <a class="reference external" href="https://www.fossi-foundation.org/">FOSSI Foundation</a> and other
+contributors.</p>
+<p>Cocotb provides shared libraries written in C++, which allows simulators to load Python scripts and interact with them
+at runtime through indirect co-simulation interfaces: VPI, VHPI or FLI (see <a class="reference internal" href="cosim.html#osvb-co-simulation"><span class="std std-ref">Co-simulation</span></a>).
+Therefore, users can write testbenches for existing HDL designs using Python only.
+Direct interfaces such as DPI or CXXRTL are not supported.</p>
+<p>The provided compile and execution plumbing is based on Makefiles and environment variables.
+That is loved by some users and hated by others.
+There is work in progress for providing alternative build/execution workflows, without explicitly forcing users to use
+an specific approach.
+Using VUnit’s simulator interface is one of such alternatives, which would provide a Python based solution to the most
+pythonic cocotb users.</p>
+<p>Cocotb provides logging features based on Python’s <code class="docutils literal notranslate"><span class="pre">logging</span></code> library.
+Integration of this logging approach into VUnit’s Python runner is not straightforward.
+Since cocotb’s co-simulation scripts are loaded by the simulator in an independent instance of Python, neither VUnit nor
+cocotb are explicitly aware of the other Python instance.
+Moreover, different versions of Python might be used.
+Anyway, simulations can be successfully executed and logs from both frameworks are usable.</p>
+<p>There are some test management features included in cocotb.
+Those allow running multiple tests with a single call/execution, instead of requiring a call for each test.
+However, this feature is not as well implemented/tested as the codebase related to co-simulation.
+There are different sensibilities about preserving this feature in the bundle, or removing it in favour of VUnit’s
+runner interface.</p>
+<p>The list of simulators supported by cocotb is longer than the ones supported by VUnit (see <a class="reference external" href="https://docs.cocotb.org/en/stable/simulator_support.html#simulator-support" title="(in cocotb v1.6)"><span>Simulator Support</span></a>
+and <a class="reference external" href="https://vunit.github.io/installing.html#installing" title="(in VUnit)"><span>Installing</span></a>).
+The most notable difference is that cocotb supports iverilog and verilator, while the only open source simulator
+supported by VUnit is GHDL.
+Therefore, usage of this bundle with open source simulators is limited to VHDL designs at the moment.
+Nevertheless, there is interest in evaluating again whether iverilog’s improved System Verilog support can suffice for
+VUnit.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cocotb/cocotb">cocotb/cocotb</a></p></li>
+<li><p><a class="reference external" href="https://github.com/themperek/cocotb-test">themperek/cocotb-test</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ktbarrett/pyvertb">ktbarrett/pyvertb</a></p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Compared to other frameworks, the cocotb ecosystem is more distributed.
+Others have most of the resources gathered in single GitHub repository.
+Conversely, there is much activity around cocotb in repositories outside of the main repository.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/aignacio/ravenoc/tree/master/tb">aignacio/ravenoc: tb</a></p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://github.com/benbr8/rstb">benbr8/rstb</a> is an alternative implementation of the same approach, using Rust
+instead of Python.</p>
+</div>
+</div>
+<div class="section" id="osvvm">
+<h2>OSVVM<a class="headerlink" href="#osvvm" title="Permalink to this headline">¶</a></h2>
+<p>OSVVM provides an ASIC level verification methodology for VHDL that can be used on small FPGA projects.
+The HDL libraries and utilities were initially provided by Jim Lewis as a learning resource in
+<a class="reference external" href="https://synthworks.com">SynthWorks</a>’ training courses, for attendants to see the concepts applied.
+In 2019 the libraries were uploaded to GitHub, and in 2020 the license was changed to Apache, since it was accepted as a
+pilot program for IEEE Open Source.</p>
+<p>The OSVVM utility library offers capabilities similar to those provided by other verification languages (such as
+SystemVerilog and UVM):</p>
+<ul class="simple">
+<li><p>Transaction-Level Modeling</p></li>
+<li><p>Constrained Random test generation</p></li>
+<li><p>Functional Coverage with hooks for UCIS coverage database integration</p></li>
+<li><p>Intelligent Coverage Random test generation</p></li>
+<li><p>Utilities for testbench process synchronization generation</p></li>
+<li><p>Utilities for clock and reset generation</p></li>
+<li><p>Transcript files</p></li>
+<li><p>Error logging and reporting - Alerts and Affirmations</p></li>
+<li><p>Message filtering - Logs</p></li>
+<li><p>Scoreboards and FIFOs (data structures for verification)</p></li>
+<li><p>Memory models</p></li>
+</ul>
+<p>The OSVVM model library provides the verification components for AXI4, AXI4 Lite, AXI4 Stream and UART.</p>
+<p>The provided compile and execution plumbing is written in TCL, since it is mostly meant to be used interactively inside
+the built-in shell in most vendor simulators.
+Alternative installation scripts are provided by maintainers of GHDL through their
+<a class="reference external" href="https://github.com/ghdl/ghdl/tree/master/scripts/vendors">vendor scripts</a>.
+However, those are for GHDL only, not for any simulator.</p>
+<p>Many HDL utilities are duplicated between OSVVM and VUnit.
+Nevertheless, the philosophy of both projects is different, and not necessarily conflictive.
+OSVVM uses the most modern features of the language for achieving nicest looking descriptions for making advanced
+features approachable.
+As a result, it is on the bleeding-edge of the features that simulators do support.
+Conversely, VUnit has a more conservative philosophy and tries to support the widest range of simulators, avoiding the
+most recent and not broadly supported features.</p>
+<p>Some years ago, maintainers of OSVVM and VUnit did try isolating some common HDL libraries that both projects could use
+for e.g. logging features.
+It didn’t work back then, but there is interest in maybe trying it again in the future.
+Nevertheless, having duplicated features is not an issue in the context of this bundle, since it allows each user to
+pick their preferred approach.</p>
+<p>The main stopper for using VUnit’s Python features for running OSVVM’s tests is that the primary unit in OSVVM’s
+methodology are VHDL configurations, and VUnit only supports entities as primary units.
+There is common interest in hopefully extending VUnit and supporting configurations as entrypoints.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/OSVVM/OSVVM">OSVVM/OSVVM</a></p></li>
+<li><p><a class="reference external" href="https://github.com/OSVVM/OsvvmLibraries">OSVVM/OsvvmLibraries</a></p></li>
+<li><p><a class="reference external" href="https://github.com/OSVVM/OSVVM-Scripts">OSVVM/OSVVM-Scripts</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ghdl/ghdl/tree/master/scripts/vendors">ghdl/ghdl: scripts/vendors</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/ghdl/extended-tests">ghdl/extended-tests</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="renode">
+<h2>Renode<a class="headerlink" href="#renode" title="Permalink to this headline">¶</a></h2>
+<p>Renode (developed by <a class="reference external" href="https://www.antmicro.com/">Antmicro</a>) is not an HDL testing/verification framework per se.
+It is presented as a development framework for accelerating IoT and embedded systems development by simulating physical
+hardware systems (including the CPU, peripherals, sensors, environment and wire or wireless medium between nodes).
+Precisely, in the context of IoT and embedded system, software and wire(less) communication play a crucial role in
+Renode.
+It allows running, debugging and testing unmodified embedded software on a workstation or laptop.</p>
+<p>However, simulation models for custom hardware and in-development CPUs are not always available.
+Moreover, it is sometimes desirable to have bit-accurate and cycle-accurate simulation models for testing custom
+accelerators along with well-known CPUs and other peripherals.
+As a result, there is work in progress for supporting HDL models to be added as nodes into the Renode infrastructure.
+All cosimulation strategies explained in <a class="reference internal" href="cosim.html#osvb-co-simulation"><span class="std std-ref">Co-simulation</span></a> are subject to be integrated, either using existing
+Verification Components (VCs) or with ad-hoc middleware.
+Find a sample about how to integrate <em>verilated</em> models in <a class="reference external" href="https://github.com/antmicro/renode-verilator-integration">antmicro/renode-verilator-integration</a>.
+It supports a verilated bus master and AXI4.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://renode.io/">Renode</a></p>
+<ul>
+<li><p><a class="reference external" href="https://antmicro.com/blog/2021/02/renode-for-education-research-and-demonstration/">Using Renode for education, research and demonstration</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://github.com/dbhi/vboard">dbhi/vboard</a> includes multiple references about “<em>Virtual development board for
+HDL design</em>”.
+Most of those are ad-hoc solutions, which are lacking the <em>project management</em> layer for making them plug and play.
+However, some of them implement interfaces or HDL languages which are not supported in Renode yet.</p>
+</div>
+</div>
+<div class="section" id="svunit">
+<h2>SVUnit<a class="headerlink" href="#svunit" title="Permalink to this headline">¶</a></h2>
+<p><em>TBC</em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/tudortimi/svunit">tudortimi/svunit</a></p></li>
+</ul>
+</div>
+<div class="section" id="uvm">
+<h2>UVM<a class="headerlink" href="#uvm" title="Permalink to this headline">¶</a></h2>
+<p>Universal Verification Methodology (UVM) is a standardized methodology for verifying ASIC designs.
+The main implementation of UVM is available in SystemVerilog only.
+Unfortunately, no open source simulator supports enough of SystemVerilog for using UVM.
+At the same time, vendors don’t typically support UVM in their low-end license tiers.
+Therefore, although it is probably the most used methodology by ASIC designers and large companies, usage by small and
+middle companies, academics, hackers and hobbyist is less significant.</p>
+<p>Lately, several alternatives were proposed for implementing UVM in languages other than SystemVerilog.
+For instance, even though iverilog cannot execute UVM in SystemVerilog, there are two projects for using UVM with
+iverilog through cocotb:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/tpoikela/uvm-python">tpoikela/uvm-python</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyuvm/pyuvm">pyuvm/pyuvm</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/cocotb/cocotb/issues/2418">cocotb/cocotb#2418</a></p></li>
+<li><p><a class="reference external" href="https://blogs.sw.siemens.com/verificationhorizons/2021/03/22/cocotb-bus-functional-models/">siemens.com/verificationhorizons: Cocotb Bus Functional Models</a></p></li>
+</ul>
+</li>
+</ul>
+<p>Similarly, there is a C/C++ implementation, which uses DPI, VPI, VHPI or FLI for interacting with the RTL code:
+<a class="reference external" href="http://uvm.io/">uvm.io</a>.</p>
+<p>Furthermore, there work in progress for adding System Verilog support to verilator, including both synthesizable and
+non-synthesizable constructs. See <a class="reference internal" href="sim.html#osvb-simulators-verilator"><span class="std std-ref">Verilator</span></a>.</p>
+</div>
+<div class="section" id="uvvm">
+<h2>UVVM<a class="headerlink" href="#uvvm" title="Permalink to this headline">¶</a></h2>
+<p><em>TBC</em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/UVVM/UVVM">UVVM</a></p></li>
+</ul>
+</div>
+<div class="section" id="vunit">
+<h2>VUnit<a class="headerlink" href="#vunit" title="Permalink to this headline">¶</a></h2>
+<p>VUnit is an open source unit testing framework for VHDL/SystemVerilog.
+It was developed and maintained by Lars Asplund and Olof Kraigher and it was initially released in 2015.
+Several users contributed and maintain verification components.
+Unai Martinez-Corral contributed co-simulation features to be used with GHDL’s implementation of VHPIDIRECT (see
+<a class="reference internal" href="cosim.html#osvb-co-simulation"><span class="std std-ref">Co-simulation</span></a>).</p>
+<p>The main focus of VUnit is providing the functionality needed to realize continuous and automated testing of HDL code.
+It provides a Python API for declaring sources and library names, for parameterizing tests and for defining simulator
+execution parameters.
+The simulator interface is coupled with a test runner implemented both in Python and in HDL.
+That allows hardware designers to define tests in HDL, thus, complementing traditional HDL only testing methodologies.
+It brings multiple concepts for Test Driven Design (TDD) from software into the hardware design.</p>
+<p>Optional HDL libraries include utilities for checks, logging, handling arrays, randomization, etc. as well as a
+communication package for modelling abstract messaging channels.
+Verification components for several standard interfaces are provided based on the communication package.
+Custom types are also provided for allowing dynamic allocation of pointers (accesses).</p>
+<p>VUnit includes the core of OSVVM as a submodule.
+It also includes <a class="reference external" href="https://github.com/Paebbels/JSON-for-VHDL">JSON-for-VHDL</a>, which allows passing arbitrarily complex
+generics to the testbenches, by providing them as encoded JSON strings.</p>
+<p>Using the OSVVM Libraries and UVVM with VUnit is possible but not straightforward.
+In VUnit, libraries and sources are declared in a Python script, using VUnit’s API.
+Users have three options:</p>
+<ul class="simple">
+<li><p>Manually declaring which sources belong to each library, in the Python run script.</p></li>
+<li><p>Using the TCL scripts provided by OSVVM/UVVM for pre-compiling the frameworks, and then provide the locations to the
+pre-built sources in the Python script.</p></li>
+<li><p>Using GHDL’s vendor scripts for pre-compiling the frameworks, and then provide the locations by passing
+<a class="reference external" href="https://ghdl.github.io/ghdl/using/InvokingGHDL.html#cmdoption-ghdl-P" title="(in GHDL v2.0.0-dev)"><code class="xref std std-option docutils literal notranslate"><span class="pre">-P</span></code></a> to GHDL in the Python script.</p></li>
+</ul>
+<p>None of them is ideal.
+The first one requires all users to repeat some code which might be easily reused.
+Others require dealing with paths/locations specific to each host/system.
+Instead, the approach in this bundle uses <code class="docutils literal notranslate"><span class="pre">*.core</span></code> files and <a class="reference internal" href="../apis/core.html#osvb-api-core"><span class="std std-ref">Core</span></a>.</p>
+<p>With regard to simulator support, VUnit does currently not support any open source Verilog or System Verilog simulator.
+However, it was last evaluated 3-4 years ago (see <a class="reference external" href="https://github.com/VUnit/vunit/issues/188">VUnit/vunit#188</a>).
+Since both iverilog and iverilog were improved, and specially System Verilog support, it might be possible to use them
+with VUnit nowadays.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/VUnit/vunit">VUnit/vunit</a></p></li>
+<li><p><a class="reference external" href="https://github.com/VUnit/vunit_action">VUnit/vunit_action</a></p></li>
+<li><p><a class="reference external" href="https://github.com/VUnit/tdd-intro">VUnit/tdd-intro</a></p></li>
+<li><p><a class="reference external" href="https://github.com/VUnit/cosim">VUnit/cosim</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://github.com/Malcolmnixon/VhdlTest">Malcolmnixon/VhdlTest</a> is a proof of concept of a minimal implementation
+of the Python runner in VUnit.
+It’s for VHDL testbenches only, and supports GHDL or Active-HDL.
+It requires a YAML configuration file for specifying the project, instead of using a Python script.
+This feature is related to <a class="reference internal" href="../apis/core.html#osvb-api-core"><span class="std std-ref">Core</span></a>.</p>
+</div>
+</div>
+<div class="section" id="learning-teaching">
+<h2>Learning/teaching<a class="headerlink" href="#learning-teaching" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://uobdv.github.io/Design-Verification/">Course content for the Design Verification module at the University of Bristol</a></p></li>
+<li><p><a class="reference external" href="https://github.com/umarcor/umarcor/blob/main/references/VHDL.bib">umarcor: references/VHDL.bib</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sim.html" class="btn btn-neutral float-right" title="Simulators | Compilers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Unai Martinez-Corral and contributors
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/buildthedocs/sphinx.theme">theme</a>
+    
+    provided by <a href="https://buildthedocs.github.io">Build the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Open Source Verification Bundle &mdash; Open Source Verification Bundle latest documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/osvb.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Overview" href="intro/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#">
+          
+
+          
+            
+            <img src="_static/logow.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/frameworks.html">Frameworks and Methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/sim.html">Simulators | Compilers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/cosim.html">Co-simulation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="apis/core.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apis/project.html">Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apis/tool.html">Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apis/runner.html">Runner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apis/logging.html">Logging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="egs/sff.html">Simple Flip-Flop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="egs/axi4stream.html">SISO AXI4 Stream</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Notebook</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebook/fpconv.html">Fixed-point conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook/sigrok.html">sigrok-cli | Pulseview</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Open Source Verification Bundle</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="osvb"></span><p class="centered">
+<strong><a class="reference external" href="https://github.com/umarcor/osvb"><img alt="shieldosvb" src="https://img.shields.io/badge/OSVB-d3a64f.svg?longCache=true&amp;style=flat-square&amp;logo=github" /></a> · <a class="reference external" href="https://hdl.github.io/awesome/items/cocotb/"><img alt="shieldcocotb" src="https://img.shields.io/badge/cocotb-77a037.svg?longCache=true&amp;style=flat-square&amp;logo=github" /></a> <a class="reference external" href="https://hdl.github.io/awesome/items/osvvm/"><img alt="shieldOSVVM" src="https://img.shields.io/badge/OSVVM-f9ca47.svg?longCache=true&amp;style=flat-square&amp;logo=github&amp;logoColor=000" /></a> <a class="reference external" href="https://hdl.github.io/awesome/items/svunit/"><img alt="shieldSVUnit" src="https://img.shields.io/badge/SVUnit-488d26.svg?longCache=true&amp;style=flat-square&amp;logo=github" /></a> <a class="reference external" href="https://hdl.github.io/awesome/items/uvvm/"><img alt="shieldUVVM" src="https://img.shields.io/badge/UVVM-fe9932.svg?longCache=true&amp;style=flat-square&amp;logo=github" /></a> <a class="reference external" href="https://hdl.github.io/awesome/items/vunit/"><img alt="shieldVUnit" src="https://img.shields.io/badge/VUnit-0c479d.svg?longCache=true&amp;style=flat-square&amp;logo=github" /></a> · <a class="reference external" href="https://hdl.github.io/awesome/items/ghdl/"><img alt="shieldGHDL" src="https://img.shields.io/badge/GHDL-222222.svg?longCache=true&amp;style=flat-square&amp;logo=github" /></a> <a class="reference external" href="https://hdl.github.io/awesome/items/iverilog/"><img alt="shieldIVerilog" src="https://img.shields.io/badge/Icarus%20Verilog-f33b48.svg?longCache=true&amp;style=flat-square&amp;logo=github" /></a> <a class="reference external" href="https://hdl.github.io/awesome/items/verilator/"><img alt="shieldVerilator" src="https://img.shields.io/badge/Verilator-128fd2.svg?longCache=true&amp;style=flat-square&amp;logo=github" /></a> <a class="reference external" href="https://hdl.github.io/awesome/items/yosys/"><img alt="shieldYosys" src="https://img.shields.io/badge/Yosys-da3390.svg?longCache=true&amp;style=flat-square&amp;logo=github" /></a></strong></p><hr class="docutils" />
+<div class="section" id="open-source-verification-bundle">
+<h1>Open Source Verification Bundle<a class="headerlink" href="#open-source-verification-bundle" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the Documentation of the Open Source Verification Bundle (OSVB)!</p>
+<p>OSVB gathers the <a class="reference external" href="https://larsasplund.github.io/github-facts/">most popular</a> open source verification <a class="reference internal" href="intro/frameworks.html#osvb-projects"><span class="std std-ref">Frameworks and Methodologies</span></a>
+for VHDL and System Verilog:
+<a class="reference external" href="https://hdl.github.io/awesome/items/cocotb/">cocotb</a>,
+<a class="reference external" href="https://hdl.github.io/awesome/items/osvvm/">OSVVM</a>,
+<a class="reference external" href="https://hdl.github.io/awesome/items/svunit/">SVUnit</a>,
+<a class="reference external" href="https://hdl.github.io/awesome/items/uvvm/">UVVM</a>,
+<a class="reference external" href="https://hdl.github.io/awesome/items/vunit/">VUnit</a>.
+Each of them was created and is maintained by different groups of people, in different contexts and with different backgrounds.
+All evolved into standalonish solutions involving build and test execution helpers, along with verification components for
+standard interfaces. However, each project prioritised certain features, while others didn’t receive so much care. The purpose
+of this bundle is twofold:</p>
+<ul class="simple">
+<li><p>Allow users of any of the frameworks/methodologies to share some plumbing with others, so that communities can share
+testbenches written in any framework without having to learn a new workflow from scratch.</p></li>
+<li><p>Reduce the maintenance burden of the projects by focusing on the features which are unique to a particular
+framework/methodology, instead of reinventing the wheel.</p></li>
+</ul>
+<p>All the frameworks support multiple vendor tools as well as open source simulators. However, due to licensing restrictions,
+it is not possible to test non FLOSS simulators on public Continuous Integration (CI) services. Therefore, the examples
+in this bundle are tested on CI with open source simulators/compilers only (see <a class="reference internal" href="intro/sim.html#osvb-simulators"><span class="std std-ref">Simulators | Compilers</span></a>).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This project is a proof of concept for gathering several integration efforts involving the target projects by
+pairs. For instance, VUnit and cocotb, or VUnit and OSVVM. Not all the features described in this home page are implemented
+yet. See the available examples for an specific reference about what is ready to be used.</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="intro/index.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Unai Martinez-Corral and contributors
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/buildthedocs/sphinx.theme">theme</a>
+    
+    provided by <a href="https://buildthedocs.github.io">Build the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

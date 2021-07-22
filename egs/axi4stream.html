@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SISO AXI4 Stream &mdash; Open Source Verification Bundle latest documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/osvb.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fixed-point conversion" href="../notebook/fpconv.html" />
+    <link rel="prev" title="Simple Flip-Flop" href="sff.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logow.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/frameworks.html">Frameworks and Methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/sim.html">Simulators | Compilers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cosim.html">Co-simulation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apis/core.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/project.html">Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/tool.html">Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runner.html">Runner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/logging.html">Logging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sff.html">Simple Flip-Flop</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SISO AXI4 Stream</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vunit-s-array-axis-vcs-example">VUnit’s array_axis_vcs example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#regular-vunit-run-script">Regular VUnit run script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vunit-run-script-with-pycapi">VUnit run script with pyCAPI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#osvvm-tbstream">OSVVM TBStream</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#osvvm-build-and-test-scripts">OSVVM build and test scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ghdl-s-vendor-build-scripts-and-osvvm-s-test-scripts">GHDL’s vendor build scripts and OSVVM’s test scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ghdl-s-vendor-build-scripts-and-vunit">GHDL’s vendor build scripts and VUnit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#osvvm-s-build-scripts-and-vunit">OSVVM’s build scripts and VUnit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vunit-with-pycapi">VUnit with pyCAPI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Notebook</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/fpconv.html">Fixed-point conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/sigrok.html">sigrok-cli | Pulseview</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Open Source Verification Bundle</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>SISO AXI4 Stream</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/umarcor/osvb/blob/main/doc/egs/axi4stream.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="siso-axi4-stream">
+<span id="osvb-examples-axi4stream"></span><h1>SISO AXI4 Stream<a class="headerlink" href="#siso-axi4-stream" title="Permalink to this headline">¶</a></h1>
+<p>The purpose of this example is showcasing a testing setup for a core with Single Input Single Output (SISO) AXI4 Stream
+interfaces. This is typically found in streaming Digital Signal Processing (DSP) applications. For illustration purposes,
+the same UUT is tested using verification components and run scripts from several frameworks.</p>
+<p><a class="reference external" href="https://github.com/umarcor/osvb/blob/main/AXI4Stream/src">AXI4Stream/src</a> contains the VHDL sources of a SISO AXI4 Stream loopback buffer. Those sources are
+the same as the ones in the <a class="reference external" href="https://github.com/VUnit/vunit/tree/master/examples/vhdl/array_axis_vcs">array_axis_vcs</a>
+example of VUnit’s repo.</p>
+<div class="section" id="vunit-s-array-axis-vcs-example">
+<h2>VUnit’s array_axis_vcs example<a class="headerlink" href="#vunit-s-array-axis-vcs-example" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/umarcor/osvb/blob/main/AXI4Stream/test/vunit/*.vhd">AXI4Stream/test/vunit/*.vhd</a> are regular VUnit testbenches, similar to the ones found in
+<a class="reference external" href="https://github.com/VUnit/vunit/tree/master/examples/vhdl/array_axis_vcs">VUnit/vunit: examples/vhdl/array_axis_vcs</a>.
+However, several variants were added here, for testing performance with different setups.</p>
+<div class="section" id="regular-vunit-run-script">
+<h3>Regular VUnit run script<a class="headerlink" href="#regular-vunit-run-script" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/umarcor/osvb/blob/main/AXI4Stream/test/vunit/run.py">AXI4Stream/test/vunit/run.py</a> is a regular VUnit script, similar to the one found in
+<a class="reference external" href="https://github.com/VUnit/vunit/tree/master/examples/vhdl/array_axis_vcs/run.py">VUnit/vunit: examples/vhdl/array_axis_vcs/run.py</a>.
+It searches the testbenches in the same directory, and executes the tests as usual in a VUnit run.</p>
+</div>
+<div class="section" id="vunit-run-script-with-pycapi">
+<h3>VUnit run script with pyCAPI<a class="headerlink" href="#vunit-run-script-with-pycapi" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/umarcor/osvb/blob/main/AXI4Stream/test/vunit/run_capi.py">AXI4Stream/test/vunit/run_capi.py</a> is a variant of the default script, which uses
+<a class="reference internal" href="../apis/core.html#osvb-api-core"><span class="std std-ref">Core</span></a> for retrieving the filesets. Testbenches are found and executed as usual.</p>
+</div>
+</div>
+<div class="section" id="osvvm-tbstream">
+<h2>OSVVM TBStream<a class="headerlink" href="#osvvm-tbstream" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/umarcor/osvb/blob/main/AXI4Stream/test/osvvm">AXI4Stream/test/osvvm</a> contains VHDL sources based on OSVVM’s AXI4 Stream testbench example:
+<a class="reference external" href="https://github.com/OSVVM/AXI4/tree/master/AxiStream/testbench">OSVVM/AXI4: AxiStream/testbench</a>.</p>
+<div class="section" id="osvvm-build-and-test-scripts">
+<h3>OSVVM build and test scripts<a class="headerlink" href="#osvvm-build-and-test-scripts" title="Permalink to this headline">¶</a></h3>
+<p><em>TBC</em></p>
+</div>
+<div class="section" id="ghdl-s-vendor-build-scripts-and-osvvm-s-test-scripts">
+<h3>GHDL’s vendor build scripts and OSVVM’s test scripts<a class="headerlink" href="#ghdl-s-vendor-build-scripts-and-osvvm-s-test-scripts" title="Permalink to this headline">¶</a></h3>
+<p><em>TBC</em></p>
+</div>
+<div class="section" id="ghdl-s-vendor-build-scripts-and-vunit">
+<h3>GHDL’s vendor build scripts and VUnit<a class="headerlink" href="#ghdl-s-vendor-build-scripts-and-vunit" title="Permalink to this headline">¶</a></h3>
+<p><em>TBC</em></p>
+</div>
+<div class="section" id="osvvm-s-build-scripts-and-vunit">
+<h3>OSVVM’s build scripts and VUnit<a class="headerlink" href="#osvvm-s-build-scripts-and-vunit" title="Permalink to this headline">¶</a></h3>
+<p><em>TBC</em></p>
+</div>
+<div class="section" id="vunit-with-pycapi">
+<h3>VUnit with pyCAPI<a class="headerlink" href="#vunit-with-pycapi" title="Permalink to this headline">¶</a></h3>
+<p><em>TBC</em></p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Probably, use GHDL’s <a class="reference external" href="https://github.com/ghdl/ghdl/blob/master/scripts/vendors/compile-osvvm.ps1">compile-osvvm.ps1</a> for
+generating <code class="docutils literal notranslate"><span class="pre">*.core</span></code> files automatically.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../notebook/fpconv.html" class="btn btn-neutral float-right" title="Fixed-point conversion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sff.html" class="btn btn-neutral float-left" title="Simple Flip-Flop" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Unai Martinez-Corral and contributors
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/buildthedocs/sphinx.theme">theme</a>
+    
+    provided by <a href="https://buildthedocs.github.io">Build the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

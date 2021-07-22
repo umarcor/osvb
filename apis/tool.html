@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tool &mdash; Open Source Verification Bundle latest documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/osvb.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Runner" href="runner.html" />
+    <link rel="prev" title="Project" href="project.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logow.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/frameworks.html">Frameworks and Methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/sim.html">Simulators | Compilers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cosim.html">Co-simulation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="runner.html">Runner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../egs/sff.html">Simple Flip-Flop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../egs/axi4stream.html">SISO AXI4 Stream</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Notebook</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/fpconv.html">Fixed-point conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/sigrok.html">sigrok-cli | Pulseview</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Open Source Verification Bundle</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Tool</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/umarcor/osvb/blob/main/doc/apis/tool.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tool">
+<span id="osvb-api-tool"></span><h1>Tool<a class="headerlink" href="#tool" title="Permalink to this headline">¶</a></h1>
+<p>This section covers the interface for interacting with EDA tools. Since each tool has different mechanisms for achieving
+the same results, the purpose of this interface is to provide homogeneous wrapper interfaces that the
+<a class="reference internal" href="project.html#osvb-api-project"><span class="std std-ref">Project</span></a> can use.</p>
+<p>Apart from abstracting the specific EDA tool interfaces of similarly purposed tools, hardware design workflows are known
+for combining multiple (probably over a dozen) smaller tools for getting the desired artifact(s) from some HDL sources.
+Many hardware projects use traditional Makefiles or similar Python based solutions for aiding the designers.
+However, most of them are meant for given set of tasks and a limited set of predefined workflows.
+Adding or customising stages requires modifying the tool, unless specific hooks are available.
+That is the case with, e.g., VUnit, Edalize or PyFPGA.</p>
+<p>Supporting multiple workflows is challenging because they are quickly changing, as new tools in the open source EDA
+ecosystem get mature enough.
+At the same time, users will always find creative ways for fulfilling in-house requirements and extending the workflows
+with their ad-hoc software and verification infrastructure.
+Therefore, we need a task management tool where workflows can be provided dynamically.
+Instead of prefixed workflows, we need to define composable tasks that users can aggregate for building their paths.</p>
+<p>For example, the following are just some of the possible workflows starting with some VHDL sources.
+Each of them is subject to have some sources common/shared to others task, along with some specific sources.</p>
+<ul class="simple">
+<li><p>GHDL (sim)</p></li>
+<li><p>GHDL (sim) + cocotb</p></li>
+<li><p>VUnit &gt; GHDL (sim)</p></li>
+<li><p>VUnit &gt; GHDL (sim) + cocotb</p></li>
+<li><p>OSVVM &gt; GHDL (sim)</p></li>
+<li><p>GHDL (synth) &gt; VHDL &gt; Vendor [&amp;V]</p></li>
+<li><p>GHDL (synth) &gt; Verific (plugin) &gt; Yosys [&amp;Y]</p>
+<ul>
+<li><p>Y&gt; JSON &gt; nextpnr</p></li>
+<li><p>Y&gt; BLIF &gt; VTR</p></li>
+<li><p>Y&gt; Verilog &gt; Vendor</p></li>
+<li><p>Y&gt; Verilog &gt; Vendor</p>
+<ul>
+<li><p>V&gt; Xilinx Vivado</p></li>
+<li><p>V&gt; Xilinx ISE</p></li>
+<li><p>V&gt; Intel/Altera Quartus</p></li>
+<li><p>…</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In fact, all the EDA ecosystem might be modelled using a similar approach. For execution, graphs need to be acyclic.
+However, a larger cyclic graph can be created by combining multiple DAGs. Therefore, diagrams such as the ones
+shown in <a class="reference external" href="https://github.com/hdl/awesome/issues/98">hdl/awesome#98</a> might be created by visualizing the actual
+tasks/tools that people are using <em>in the wild</em>.</p>
+</div>
+<p>A task runner which allows users to compose workflows was prototyped in <a class="reference external" href="https://github.com/dbhi/run">dbhi/run</a>.
+There, a graphviz dot digraph is used for defining the workflows as a Directed Acyclic Graph (DAG).
+Nodes can be either sources, jobs or artifacts.
+The actual content of each node is defined in a sibling JSON file.
+See <a class="reference external" href="https://github.com/dbhi/run/blob/main/example/graph.dot">dbhi/run: example/graph.dot</a> and <a class="reference external" href="https://github.com/dbhi/run/blob/main/example/config.json">dbhi/run: example/config.json</a>.
+<a class="reference external" href="https://www.gonum.org/">gonum</a> is used for computing the topological sort of the workflows.
+Then, a CLI is provided for listing, inducing or executing.
+In retrospect, picking golang for implementing the tool might have not been the best decision for a tool targeted at EDA
+tooling. However, the same concepts can be applied, using already available Python libraries:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.pyinvoke.org/">Invoke</a> is a Python task execution tool and library, which allows defining/organizing task
+functions from a <code class="docutils literal notranslate"><span class="pre">task.py</span></code> file.</p></li>
+<li><p><a class="reference external" href="https://networkx.org/">NetworkX</a> is a network analysis library in Python, which provides graph algorithms for
+topological sorting and probably other of the features implemented in dbhi/run.
+In NetworkX “<em>Nodes can be ‘anything’</em>”, meaning we may have Invoke tasks be NetworkX nodes.
+At the same time, “<em>edges can hold arbitrary data</em>”, so we can have artifacts encoded in the edges, and use them
+together with source nodes.</p></li>
+</ul>
+<p>In fact, <a class="reference external" href="https://airflow.apache.org/">Apache Airflow</a> implements these concepts, and it’s written in Python.
+Furthermore, <a class="reference external" href="https://cloud.google.com/composer">Google’s Cloud Composer</a> is managed workflow orchestration service
+built on Apache Airflow.
+Airflow might be too specific, as it is meant for orchestrating and schduling web/remote workers in a pool, which is out
+of the scope of this bundle/project.
+Nonetheless, there are several shared <a class="reference external" href="https://airflow.apache.org/docs/apache-airflow/stable/concepts.html">Concepts</a>
+and some of their implementation decisions might be a good reference.</p>
+<p>Moreover the design document for the reimplementation of Edalize (see <a class="reference external" href="https://github.com/olofk/edalize/wiki/Edalize-(Slight-return)">Edalize (Slight return)</a>)
+does also propose a similar architecture, even though terms such as directed acyclic graph or topological sorting are
+not explicitly used.
+Precisely, the section about <a class="reference external" href="https://github.com/olofk/edalize/wiki/Edalize-(Slight-return)#implementation">Implementation</a>
+proposes using EDAM as the unified format for passing parameters between nodes.</p>
+<p>On the other hand, as shown in the diagram of section <a class="reference internal" href="core.html#osvb-api-core"><span class="std std-ref">Core</span></a>, developers of Edalize and PyFPGA have been
+lately working towards making integration easier.
+On the one hand, experimental support for <em>launchers</em> was added to Edalize (<a class="reference external" href="https://github.com/olofk/edalize/commit/f8b3f666a282e09b8ce06388101d179f8c70e8d4">olofk/edalize&#64;f8b3f66</a>).
+That allows wrapping the lower level commands.
+On the other hand, <a class="reference external" href="https://github.com/PyFPGA/openflow">OpenFlow</a> was split from PyFPGA.
+OpenFlow wraps (Docker/Podman) containers, allowing usage of EDA tools without installing them natively.
+By default, containers from <a class="reference external" href="https://github.com/hdl/containers">hdl/containers</a> are used.
+By combining both solutions, users can use Edalize with containers.
+Anyhow, extending OpenFlow for supporting multiple and dynamically defined workflows imposes similar challenges as the
+ones described for Edalize.</p>
+<p>Even though using Python based libraries is proposed here, the architecture is not limited to Python tasks.
+It is desirable to wrap existing CLI or shell scripts, indeed.
+It is compulsory when dealing with vendor tools.
+Furthermore, some SymbiFlow scripts for using QuickLogic devices are currently written in bash.
+Therefore, having them available in the same workflow would make integration with other tasks easier.
+In fact, both Edalize and PyFPGA are generators and wrappers around TCL scripts and/or Makefiles.</p>
+<p>Summarising, I believe we need to agree on some common format for defining what a task is, which are the inputs and the
+outputs.
+That might be EDAM.
+However, that is also related to pyCAPI and pyOSVR, since Source and Report nodes (aka edge payloads) should satisfy
+those formats.
+Therefore, we need to analyse whether those can be wrapped in EDAM.
+Then, we should document how to compose and execute those tasks with Invoke/NetworkX/Airflow;
+or some custom solution if those don’t fit.
+From this point of view, Edalize and PyFPGA might be rethought as frontends (project managers) and backends (task
+providers) of the task execution core.</p>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.google.com/document/d/1qThGGqSVQabts-4imn5zY5BMptp1-Q2rGiNKHDH1Pbk">EDA integration: managing projects for simulation and implementation</a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/document/d/10_MqFjTIYVVuOJlusJydsp4KOcmrrHk03__7ME5thOI">Open Source EDA: building, packaging, installing</a></p></li>
+<li><p>SymbiFlow</p>
+<ul>
+<li><p><a class="reference external" href="https://drive.google.com/drive/folders/1euSrrszzt3Bfz792S6Ud8Ox2w7TYUZNa">SymbiFlow Publically Accessible Docs</a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/document/d/1BZcSzU-ur0J02uO5FSGHdJHYGnRfr4n4Cb7PMubXOD4">bit.ly/edda-conda-eda-spec: Conda based system for FPGA and ASIC Dev</a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/document/d/11XFnJ0ExBgE1pMQksw0rQerAZo3F83AVIu2YK1pbg1k">Next Conda Work</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SymbiFlow/make-env">SymbiFlow/make-env</a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/document/d/1IMVrSmMO5wqTV3W22Bv2PeKtMHO3WSyCwHm3N-Wkwbk">edalize.autosetup</a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/document/d/1VakRJV0Pv4eM_hJnCCfh2l3bCMD3y07p6hFpc7z2Kg4">Tim’s suggestions for a edalize v2</a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/drawings/d/16kKGSo84Xitmr5BiCJG3faNWt3maoKs-EHftUPDaM64">VHDL version of “OpenTitan (and other SV designs) using open tools (for FPGAs and ASICS)”</a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/drawings/d/1GEjCoLwY57bsuZoj5ymyXoToIEOC0H4j2SEYsqQupM8">SystemVerilog flows (for OpenTitan and other SV designs) using open tools (for FPGAs and ASICS)</a></p></li>
+</ul>
+</li>
+<li><p>Other task execution/automation tools:</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/facebookresearch/hydra">facebookresearch/hydra</a></p></li>
+<li><p><a class="reference external" href="https://github.com/chriscardillo/gusty">chriscardillo/gusty</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pydoit/doit">pydoit/doit</a> (<a class="reference external" href="https://pydoit.org/">pydoit.org</a>)</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/stnolting/neorv32/pull/110">stnolting/neorv32#110</a></p></li>
+</ul>
+</li>
+<li><p>Not based on Python:</p>
+<ul>
+<li><p><a class="reference external" href="https://cmake.org/">cmake.org</a></p></li>
+<li><p><a class="reference external" href="https://gradle.org/">gradle.org</a></p></li>
+<li><p><a class="reference external" href="https://ninja-build.org/">ninja-build.org</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/ktbarrett/ktbarrett.github.io/blob/master/_drafts/tool-automation.md">ktbarrett.github.io: _drafts/tool-automation.md</a></p></li>
+<li><p><a class="reference external" href="https://dmtn-025.lsst.io/">DMTN-025: A survey of workflow management systems</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="runner.html" class="btn btn-neutral float-right" title="Runner" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="project.html" class="btn btn-neutral float-left" title="Project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Unai Martinez-Corral and contributors
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/buildthedocs/sphinx.theme">theme</a>
+    
+    provided by <a href="https://buildthedocs.github.io">Build the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
