@@ -100,6 +100,7 @@ With regard to post-processing of waveforms, see the following references:
 * :ref:`OSVB:Notebook:fpconv`
 * `avidan-efody/coverage <https://github.com/avidan-efody/coverage>`__: implementation of post-process coverage, and
   batch waveform search.
+* `gitlab.com/xiretza/ghw-rs <https://gitlab.com/xiretza/ghw-rs>`__
 
 Open Source Verification Report
 *******************************
