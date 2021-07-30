@@ -30,7 +30,15 @@ from pathlib import Path
 from textwrap import dedent
 
 from pyGHDL.dom.NonStandard import Design, Document
-from pyVHDLModel.VHDLModel import Mode
+from pyGHDL.dom.Concurrent import (
+    ConcurrentBlockStatement,
+    ProcessStatement
+)
+from pyVHDLModel.SyntaxModel import (
+    GenerateStatement,
+    Instantiation,
+    Mode,
+)
 
 from gitignore_parser import parse_gitignore as ignoreParser
 
@@ -220,7 +228,7 @@ class OSVDE(tk.Frame):
 
             units = {}
             for entity in document.Entities:
-                units[entity.Identifier] = []
+                units["<{}>".format(entity.Identifier)] = []
 
             for architecture in document.Architectures:
                 entityName = architecture.Entity.SymbolName
@@ -262,17 +270,79 @@ class OSVDE(tk.Frame):
 
                     PortItem = addTreeItem(
                         EntityItem,
-                        "{} [{}]".format(port.Identifier, port.Subtype),
+                        "{} [{}]".format(",".join(port.Identifiers), port.Subtype),
                         False,
                         image,
                         (),
                     )
 
+                for document in self.Design.Documents:
+                    for architecture in document.Architectures:
+
+                        entityName = architecture.Entity.SymbolName
+
+                        if str(entityName) == entity.Identifier:
+                            ArchitectureItem = addTreeItem(
+                                EntityItem,
+                                "{}".format(architecture.Identifier),
+                                False,
+                                self.Image["dir"],
+                                ()
+                            )
+
+                            for statement in architecture.BodyItems:
+
+                                # Note: the following share the same base class 'Instantiation'
+                                # ComponentInstantiation, EntityInstantiation, ConfigurationInstantiation
+                                if isinstance(statement, Instantiation):
+                                    addTreeItem(
+                                        ArchitectureItem,
+                                        "{}".format(statement.Label),
+                                        False,
+                                        self.Image["ent"],
+                                        ()
+                                    )
+                                elif isinstance(
+                                    statement,
+                                    # Note: the following share the same base class 'GenerateStatement'
+                                    # ForGenerateStatement, CaseGenerateStatement, IfGenerateStatement
+                                    # 'For' and 'Case' are not supported in the model yet
+                                    (
+                                        ConcurrentBlockStatement,
+                                        GenerateStatement
+                                    )
+                                ):
+                                    addTreeItem(
+                                        ArchitectureItem,
+                                        "{}".format(statement.Label),
+                                        False,
+                                        self.Image["file"],
+                                        ()
+                                    )
+                                    # recursive call
+                                elif isinstance(
+                                    statement,
+                                    ProcessStatement
+                                ):
+                                    addTreeItem(
+                                        ArchitectureItem,
+                                        "{}".format(statement.Label or 'DefaultLabel'),
+                                        False,
+                                        self.Image["dir"],
+                                        ()
+                                    )
+
                 # TODO:
-                # - Create items 'generics', 'ports' and 'architectures'.
+                # - Find and add icons/images for the new nodes.
+                # - Make finding the instances recursive (i.e. the snippet below `for document in self.Design.Documents`).
+                # - Segmentation faults with many files: https://github.com/ghdl/ghdl/pull/1827.
+                # - Crash with multiple identifiers (reorder): https://github.com/ghdl/ghdl/issues/1826.
+                # - Ask Patrick about the crash with multiple identifiers before 'begin'.
+                # - Ask Patrick about entity.Architectures.
+                #
                 # - Move port items into 'ports'.
-                # - Add generic items into 'generics'.
-                # - Add architecture items into 'architectures'.
+                # - Move generic items into 'generics'.
+                # - Move architecture items into 'architectures'.
                 #   Strictly, this would require elaboration.
                 #   However, there are three solutions:
                 #   - Do a naive elaboration, as in function traversePath of loadFileTree.
