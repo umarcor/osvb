@@ -51,6 +51,7 @@ VCD/EVCD can be read by multiple open source tools:
 * `Nic30/d3-wave <https://github.com/Nic30/d3-wave>`__
 * `raczben/fliplot <https://github.com/raczben/fliplot>`__
 * `lachlansneff/ligeia <https://github.com/lachlansneff/ligeia>`__
+* `yne/vcd <https://github.com/yne/vcd>`__
 * `toem/impulse.vscode <https://github.com/toem/impulse.vscode>`__
 
 However, being a 20+ year old format defined for Verilog, VCD has certain limitations:
