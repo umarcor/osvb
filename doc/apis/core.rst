@@ -98,3 +98,4 @@ References
 * `VLSI-EDA/PoC: .pyIPCMI <https://github.com/VLSI-EDA/PoC/tree/master/.pyIPCMI>`__
 * `j.mp/openfpga-diagram: Open Source (FOSS) FPGA (EDA) Tooling Interchange Formats + Toolchain parts <https://docs.google.com/document/d/1DWZ0G8vehkuZTPs5N3AQqIvZZtLMGzC8i0MWPRP54O4>`__
 * `ghdl/ghdl-language-server#12 <https://github.com/ghdl/ghdl-language-server/issues/12>`__ `ghdl/ghdl-language-server#80 <https://github.com/ghdl/ghdl-language-server/issues/80>`__
+* `cocotb[wiki]: Python Test Runner Proposal | Models <https://github.com/cocotb/cocotb/wiki/Python-Test-Runner-Proposal#models>`__.
