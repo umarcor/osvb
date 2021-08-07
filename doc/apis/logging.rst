@@ -326,6 +326,7 @@ usable locally. There are several simple and not-so-simple solutions available f
 * `lukejpreston.github.io/xunit-viewer <https://lukejpreston.github.io/xunit-viewer/>`__
 * `Standalone JUnit XML report viewer <https://softwarerecs.stackexchange.com/questions/3666/standalone-junit-xml-report-viewer>`__
 * `docs.qameta.io/allure <https://docs.qameta.io/allure/>`__
+* `inorton/junit2html <https://github.com/inorton/junit2html>`__
 
 Similar solutions exist based on pytest:
 
