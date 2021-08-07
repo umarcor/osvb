@@ -223,6 +223,9 @@ Edalize supports parsing/reading reports from some EDA tools:
 Vivado, Yosys, Verilog to Routing and Nextpnr.
 Moreover, results are gathered in a Collab Dashboard: `Symbiflow Dashboard GCS <https://colab.research.google.com/drive/1Ny5OZ06R1KVjDykrAQbR0vTsTyiTT1Q7>`__.
 
+`mattvenn/logLUTs <https://github.com/mattvenn/logLUTs>`__ allows parsing yosys and nextpnr logfiles to then plot LUT,
+flip-flop and maximum frequency stats.
+
 .. NOTE::
   The fields in resource usage reports can be provided as absolute values or relative to the capacity of the device.
   Therefore, fields in resource reports of OSVR can and should match the ones in `hdl/constraints: template/device.info.yml <https://github.com/hdl/constraints/blob/main/template/device.info.yml#L14-L19>`__.
