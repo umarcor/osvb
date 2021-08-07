@@ -74,6 +74,7 @@ in this bundle are tested on CI with open source simulators/compilers only (see 
   intro/frameworks
   intro/sim
   intro/cosim
+  intro/model
 
 .. toctree::
   :caption: API

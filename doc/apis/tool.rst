@@ -3,14 +3,16 @@
 Tool
 ####
 
-This section covers the interface for interacting with EDA tools. Since each tool has different mechanisms for achieving
-the same results, the purpose of this interface is to provide homogeneous wrapper interfaces that the
-:ref:`OSVB:API:Project` can use.
+This section covers the interface for executing sequences of tasks (workflows) involving interaction with EDA tools.
+Since each tool has different mechanisms for achieving the same results, the purpose of this interface is to provide
+homogeneous wrappers that :ref:`OSVB:API:Project` can use for executing workflows.
+In terms of the :ref:`OSVB:Model`, this piece belongs to layer 2, which consumes the specific EDA interfaces in layer 1
+and provides homogeneous wrappers for layer 3 to use.
 
-Apart from abstracting the specific EDA tool interfaces of similarly purposed tools, hardware design workflows are known
-for combining multiple (probably over a dozen) smaller tools for getting the desired artifact(s) from some HDL sources.
+Hardware design workflows are known for combining multiple (probably over a dozen) smaller tools for getting the desired
+artifact(s) from some HDL sources.
 Many hardware projects use traditional Makefiles or similar Python based solutions for aiding the designers.
-However, most of them are meant for given set of tasks and a limited set of predefined workflows.
+However, most of them are meant for a given set of tasks and a limited set of predefined workflows.
 Adding or customising stages requires modifying the tool, unless specific hooks are available.
 That is the case with, e.g., VUnit, Edalize or PyFPGA.
 
@@ -58,11 +60,14 @@ Then, a CLI is provided for listing, inducing or executing.
 In retrospect, picking golang for implementing the tool might have not been the best decision for a tool targeted at EDA
 tooling. However, the same concepts can be applied, using already available Python libraries:
 
-* `Invoke <http://www.pyinvoke.org/>`__ is a Python task execution tool and library, which allows defining/organizing task
-  functions from a ``task.py`` file.
+* `pydoit/doit <https://github.com/pydoit/doit>`__ (`pydoit.org <https://pydoit.org/>`__) and `Invoke <http://www.pyinvoke.org/>`__
+  are Python task execution tools and libraries, which allow defining/organizing task functions from a ``.py`` file.
+
+  * See a proof of concept for using pydoit in NEORV32: `stnolting/neorv32#110 <https://github.com/stnolting/neorv32/pull/110>`__.
+
 * `NetworkX <https://networkx.org/>`__ is a network analysis library in Python, which provides graph algorithms for
   topological sorting and probably other of the features implemented in dbhi/run.
-  In NetworkX "*Nodes can be 'anything'*", meaning we may have Invoke tasks be NetworkX nodes.
+  In NetworkX "*Nodes can be 'anything'*", meaning we may have pydoit/Invoke tasks be NetworkX nodes.
   At the same time, "*edges can hold arbitrary data*", so we can have artifacts encoded in the edges, and use them
   together with source nodes.
 
@@ -81,30 +86,33 @@ Precisely, the section about `Implementation <https://github.com/olofk/edalize/w
 proposes using EDAM as the unified format for passing parameters between nodes.
 
 On the other hand, as shown in the diagram of section :ref:`OSVB:API:Core`, developers of Edalize and PyFPGA have been
-lately working towards making integration easier.
-On the one hand, experimental support for *launchers* was added to Edalize (`olofk/edalize@f8b3f66 <https://github.com/olofk/edalize/commit/f8b3f666a282e09b8ce06388101d179f8c70e8d4>`__).
-That allows wrapping the lower level commands.
-On the other hand, `OpenFlow <https://github.com/PyFPGA/openflow>`__ was split from PyFPGA.
-OpenFlow wraps (Docker/Podman) containers, allowing usage of EDA tools without installing them natively.
-By default, containers from `hdl/containers <https://github.com/hdl/containers>`__ are used.
+lately working towards making integration easier:
+
+* Experimental support for *launchers* was added to Edalize (`olofk/edalize@f8b3f66 <https://github.com/olofk/edalize/commit/f8b3f666a282e09b8ce06388101d179f8c70e8d4>`__).
+  That allows wrapping the lower level commands.
+
+* `OpenFlow <https://github.com/PyFPGA/openflow>`__ was split from PyFPGA.
+  OpenFlow wraps (Docker/Podman) containers, allowing usage of EDA tools without installing them natively.
+  By default, containers from `hdl/containers <https://github.com/hdl/containers>`__ are used.
+
 By combining both solutions, users can use Edalize with containers.
 Anyhow, extending OpenFlow for supporting multiple and dynamically defined workflows imposes similar challenges as the
 ones described for Edalize.
 
 Even though using Python based libraries is proposed here, the architecture is not limited to Python tasks.
-It is desirable to wrap existing CLI or shell scripts, indeed.
-It is compulsory when dealing with vendor tools.
+It is indeed desirable to reuse existing CLI or shell scripts, instead of being forced to rewrite them.
+That is compulsory when dealing with vendor tools.
 Furthermore, some SymbiFlow scripts for using QuickLogic devices are currently written in bash.
-Therefore, having them available in the same workflow would make integration with other tasks easier.
+Therefore, having them available in the same workflow as the Python tasks makes integration easier.
 In fact, both Edalize and PyFPGA are generators and wrappers around TCL scripts and/or Makefiles.
 
-Summarising, I believe we need to agree on some common format for defining what a task is, which are the inputs and the
+Summarising, we should agree on some common format for defining what a task is, which are the inputs and the
 outputs.
 That might be EDAM.
 However, that is also related to pyCAPI and pyOSVR, since Source and Report nodes (aka edge payloads) should satisfy
 those formats.
 Therefore, we need to analyse whether those can be wrapped in EDAM.
-Then, we should document how to compose and execute those tasks with Invoke/NetworkX/Airflow;
+Then, we should document how to compose and execute those tasks with pydoit/Invoke/NetworkX/Airflow;
 or some custom solution if those don't fit.
 From this point of view, Edalize and PyFPGA might be rethought as frontends (project managers) and backends (task
 providers) of the task execution core.
@@ -133,9 +141,6 @@ References
 
   * `facebookresearch/hydra <https://github.com/facebookresearch/hydra>`__
   * `chriscardillo/gusty <https://github.com/chriscardillo/gusty>`__
-  * `pydoit/doit <https://github.com/pydoit/doit>`__ (`pydoit.org <https://pydoit.org/>`__)
-
-    * `stnolting/neorv32#110 <https://github.com/stnolting/neorv32/pull/110>`__
 
   * Not based on Python:
 
@@ -144,6 +149,8 @@ References
     * `ninja-build.org <https://ninja-build.org/>`__
 
 * `ktbarrett.github.io: _drafts/tool-automation.md <https://github.com/ktbarrett/ktbarrett.github.io/blob/master/_drafts/tool-automation.md>`__
+
+  * Find a discussion about the capabilities and limitations of pydoit in `gitter.im/hdl/community?at=60f6b567926ce249e5759d03 <https://gitter.im/hdl/community?at=60f6b567926ce249e5759d03>`__.
 
 * `DMTN-025: A survey of workflow management systems <https://dmtn-025.lsst.io/>`__
 
