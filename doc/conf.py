@@ -95,8 +95,8 @@ html_theme = "_theme"
 
 html_static_path = ["_static"]
 
-html_logo = str(Path(html_static_path[0]) / "logow.svg")
-html_favicon = str(Path(html_static_path[0]) / "osvb.ico")
+html_logo = str(Path(html_static_path[0]) / "logo" / "osvb_banner_white.svg")
+html_favicon = str(Path(html_static_path[0]) / "logo" / "osvb.ico")
 
 htmlhelp_basename = "OSVBDoc"
 
