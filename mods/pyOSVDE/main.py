@@ -336,8 +336,6 @@ class OSVDE(tk.Frame):
                 # - Find and add icons/images for the new nodes.
                 # - Make finding the instances recursive (i.e. the snippet below `for document in self.Design.Documents`).
                 # - Segmentation faults with many files: https://github.com/ghdl/ghdl/pull/1827.
-                # - Crash with multiple identifiers (reorder): https://github.com/ghdl/ghdl/issues/1826.
-                # - Ask Patrick about the crash with multiple identifiers before 'begin'.
                 # - Ask Patrick about entity.Architectures.
                 #
                 # - Move port items into 'ports'.
