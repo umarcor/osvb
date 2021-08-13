@@ -290,7 +290,7 @@ class OSVDE(tk.Frame):
                                 ()
                             )
 
-                            for statement in architecture.BodyItems:
+                            for statement in architecture.Statements:
 
                                 # Note: the following share the same base class 'Instantiation'
                                 # ComponentInstantiation, EntityInstantiation, ConfigurationInstantiation
