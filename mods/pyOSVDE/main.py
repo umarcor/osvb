@@ -177,6 +177,7 @@ class OSVDE(tk.Frame):
             if not ignoreItem:
                 self.parseFile(item)
 
+        self.resolveSymbols()
         self.loadFileTree()
         self.loadDesignTree()
 
@@ -187,6 +188,19 @@ class OSVDE(tk.Frame):
         print("parseFile: {}".format(sourceFile))
         lib = self.Design.GetLibrary(library)
         self.Design.AddDocument(Document(sourceFile), lib)
+
+    def resolveSymbols(self):
+        """ """
+        self.resolveArchitecturesToEntities()
+
+    def resolveArchitecturesToEntities(self):
+        """ """
+        for library in self.Design.Libraries.values():
+            for entityName, architectures in library.Architectures.items():
+                for entity in library.Entities:
+                    if entity.Identifier == str(entityName):
+                        for architecture in architectures:
+                            entity.Architectures.append(architecture)
 
     def loadFileTree(self, parent=""):
         """
@@ -225,14 +239,7 @@ class OSVDE(tk.Frame):
 
             units = {}
             for entity in document.Entities:
-                units["<{}>".format(entity.Identifier)] = []
-
-            for architecture in document.Architectures:
-                entityName = architecture.Entity.SymbolName
-                if entityName in units:
-                    units[entityName].append(architecture.Identifier)
-                else:
-                    units["<{}>".format(entityName)] = [architecture.Identifier]
+                units["<{}>".format(entity.Identifier)] = [arch.Identifier for arch in entity.Architectures]
 
             addTreeItem(
                 parent,
@@ -253,9 +260,9 @@ class OSVDE(tk.Frame):
         def addTreeItem(parent, text, isOpen, image, data=()):
             return dtw.insert(parent, tk.END, text=text, values=data, open=isOpen, image=image)
 
-        for lib in self.Design.Libraries:
-            LibItem = addTreeItem(parent, lib, True, self.Image["lib"], ())
-            for entity in self.Design.GetLibrary(lib).Entities:
+        for libName, lib in self.Design.Libraries.items():
+            LibItem = addTreeItem(parent, libName, True, self.Image["lib"], ())
+            for entity in lib.Entities:
                 EntityItem = addTreeItem(LibItem, entity.Identifier, False, self.Image["ent"], ())
 
                 GenericsItem = addTreeItem(EntityItem, "Generics", False, self.Image["file"], ())
@@ -279,57 +286,51 @@ class OSVDE(tk.Frame):
                     )
 
                 ArchitecturesItem = addTreeItem(EntityItem, "Architectures", False, self.Image["file"], ())
-                for document in self.Design.Documents:
-                    for architecture in document.Architectures:
+                for architecture in entity.Architectures:
+                    ArchitectureItem = addTreeItem(
+                        ArchitecturesItem, "{}".format(architecture.Identifier), False, self.Image["dir"], ()
+                    )
 
-                        entityName = architecture.Entity.SymbolName
+                    # recursive function starts here
+                    for statement in architecture.Statements:
 
-                        if str(entityName) == entity.Identifier:
-                            ArchitectureItem = addTreeItem(
-                                ArchitecturesItem, "{}".format(architecture.Identifier), False, self.Image["dir"], ()
+                        # Note: the following share the same base class 'Instantiation'
+                        # ComponentInstantiation, EntityInstantiation, ConfigurationInstantiation
+                        if isinstance(statement, Instantiation):
+                            addTreeItem(ArchitectureItem, "{}".format(statement.Label), False, self.Image["ent"], ())
+                        elif isinstance(
+                            statement,
+                            # Note: the following share the same base class 'GenerateStatement'
+                            # ForGenerateStatement, CaseGenerateStatement, IfGenerateStatement
+                            # 'Case' does still have some issues in the model
+                            (ConcurrentBlockStatement, GenerateStatement),
+                        ):
+                            addTreeItem(ArchitectureItem, "{}".format(statement.Label), False, self.Image["file"], ())
+                            # recursive call
+                        elif isinstance(statement, ProcessStatement):
+                            addTreeItem(
+                                ArchitectureItem,
+                                "{}".format(statement.Label or "DefaultLabel"),
+                                False,
+                                self.Image["dir"],
+                                (),
                             )
-
-                            for statement in architecture.Statements:
-
-                                # Note: the following share the same base class 'Instantiation'
-                                # ComponentInstantiation, EntityInstantiation, ConfigurationInstantiation
-                                if isinstance(statement, Instantiation):
-                                    addTreeItem(
-                                        ArchitectureItem, "{}".format(statement.Label), False, self.Image["ent"], ()
-                                    )
-                                elif isinstance(
-                                    statement,
-                                    # Note: the following share the same base class 'GenerateStatement'
-                                    # ForGenerateStatement, CaseGenerateStatement, IfGenerateStatement
-                                    # 'For' and 'Case' are not supported in the model yet
-                                    (ConcurrentBlockStatement, GenerateStatement),
-                                ):
-                                    addTreeItem(
-                                        ArchitectureItem, "{}".format(statement.Label), False, self.Image["file"], ()
-                                    )
-                                    # recursive call
-                                elif isinstance(statement, ProcessStatement):
-                                    addTreeItem(
-                                        ArchitectureItem,
-                                        "{}".format(statement.Label or "DefaultLabel"),
-                                        False,
-                                        self.Image["dir"],
-                                        (),
-                                    )
 
                 # TODO:
                 # - Find and add icons/images for the new nodes.
-                # - Make finding the instances recursive (i.e. the snippet below `for document in self.Design.Documents`).
+                # - Make finding the instances recursive (i.e. the snippet below `for statement in architecture.Statements`).
                 # - Segmentation faults with many files: https://github.com/ghdl/ghdl/pull/1827.
-                # - Ask Patrick about entity.Architectures.
 
                 # TODO:
                 #   Strictly, elaboration is required for relating Entities and Architectures.
                 #   However, there are three solutions:
-                #   - Do a naive elaboration, as in function traversePath of loadFileTree.
+                #   - Do a naive elaboration, by simple name matching.
                 #   - Implement the elaboration in pyVHDLModel.
                 #   - Use pyGHDL.libghdl for elaboration.
                 #   The most sensible solution is to use the first one, skip the second one, and work on the last one.
+                #   Currently, we are using `resolveSymbols` and `resolveArchitecturesToEntities`, contributed by Patrick.
+                #   In the near future, he might add those and other helper functions into an specific package, sibling
+                #   to pyVHDLModel and pyGHDL.
 
 
 if __name__ == "__main__":
