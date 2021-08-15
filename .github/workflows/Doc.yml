@@ -30,7 +30,9 @@ jobs:
           python3-pip \
           python3-setuptools \
           python3-tk \
-         && pip3 install git+https://github.com/ghdl/ghdl.git@$(ghdl version hash) \
+         && pip3 install \
+           git+https://github.com/Paebbels/ghdl.git@paebbels/dom \
+           git+https://github.com/vhdl/pyVHDLModel.git@dev \
          && ln -s /usr/bin/pip3 /usr/bin/pip
         EOF
 
