@@ -36,6 +36,7 @@ from pyVHDLModel.SyntaxModel import (
     Instantiation,
     Mode,
 )
+from pyVHDLModelUtils.resolve import Symbols as resolve_Symbols
 
 from gitignore_parser import parse_gitignore as ignoreParser
 
@@ -177,7 +178,7 @@ class OSVDE(tk.Frame):
             if not ignoreItem:
                 self.parseFile(item)
 
-        self.resolveSymbols()
+        resolve_Symbols(self.Design)
         self.loadFileTree()
         self.loadDesignTree()
 
@@ -188,19 +189,6 @@ class OSVDE(tk.Frame):
         print("parseFile: {}".format(sourceFile))
         lib = self.Design.GetLibrary(library)
         self.Design.AddDocument(Document(sourceFile), lib)
-
-    def resolveSymbols(self):
-        """ """
-        self.resolveArchitecturesToEntities()
-
-    def resolveArchitecturesToEntities(self):
-        """ """
-        for library in self.Design.Libraries.values():
-            for entityName, architectures in library.Architectures.items():
-                for entity in library.Entities:
-                    if entity.Identifier == str(entityName):
-                        for architecture in architectures:
-                            entity.Architectures.append(architecture)
 
     def loadFileTree(self, parent=""):
         """
@@ -328,7 +316,7 @@ class OSVDE(tk.Frame):
                 #   - Implement the elaboration in pyVHDLModel.
                 #   - Use pyGHDL.libghdl for elaboration.
                 #   The most sensible solution is to use the first one, skip the second one, and work on the last one.
-                #   Currently, we are using `resolveSymbols` and `resolveArchitecturesToEntities`, contributed by Patrick.
+                #   Currently, we are using `pyVHDLModelUtils.resolve.Symbols`, contributed by Patrick.
                 #   In the near future, he might add those and other helper functions into an specific package, sibling
                 #   to pyVHDLModel and pyGHDL.
 

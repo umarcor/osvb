@@ -18,19 +18,14 @@ company, open source project...), so there is a vast space of different workflow
 Therefore, the elaboration of the API in this section is delayed until others are defined, since that will allow working
 on a finite scope.
 
-Open Source VHDL Design Explorer (OSVDE)
-========================================
 
-OSVDE is GUI for hardware designers to understand and use projects/repositories.
-It allows exploring the HDL sources, entities/hierarchies, testbenches, tasks, etc.
-It is mostly meant for VHDL designers (but not only) and particularly for users of VHDL >= 2008.
+.. _OSVB:API:Project:pyVHDLModelUtils:
 
-.. IMPORTANT::
-  OSVDE is a proof of concept for prototyping the integration of multiple pieces in the OSVB.
-  It is not actively developed *per se*, but used as an umbrella for pyVHDLModel, pyGHDL, pyCAPI, etc.
+pyVHDLModelUtils
+****************
 
-Introduction
-------------
+pyVHDLModel
+===========
 
 `pyVHDLModel <https://github.com/vhdl/pyVHDLModel>`__ is an abstract language model for VHDL written in Python.
 That is, a set of classes that represent the objects found in VHDL sources, and utils for manipulating and interacting
@@ -58,8 +53,8 @@ We believe that projects such as the ones mentioned above could greatly benefit 
 are good with depending on GHDL.
 However, we are aware that reworking an stable codebase is not the most appealing task, so developers will not be
 willing to use pyVHDLModel straightaway.
-In this context, the main purpose of OSVDE is to showcase pyVHDLModel and to build a critical mass for creating higher
-abstraction features on top.
+In this context, the main purpose of :ref:`OSVB:API:Project:OSVDE` is to showcase pyVHDLModel and to build a critical
+mass for creating higher abstraction features on top.
 Potential consumers of pyVHDLModel are all the tools which benefit from programmatically using knowledge about a VHDL
 codebase.
 
@@ -69,6 +64,40 @@ codebase.
   `pyVHDLModel <https://github.com/vhdl/pyVHDLModel>`__ was conceived).
   However, pyVHDLParser is not as mature as (py)GHDL yet.
 
+Utils
+=====
+
+*TBW*
+
+pyVHDLModelUtils reference
+==========================
+
+resolve
+-------
+
+.. automodule:: pyVHDLModelUtils.resolve
+
+fmt
+---
+
+.. automodule:: pyVHDLModelUtils.fmt
+
+
+.. _OSVB:API:Project:OSVDE:
+
+Open Source VHDL Design Explorer (OSVDE)
+****************************************
+
+OSVDE is GUI for hardware designers to understand and use projects/repositories.
+It allows exploring the HDL sources, entities/hierarchies, testbenches, tasks, etc.
+It is mostly meant for VHDL designers (but not only) and particularly for users of VHDL >= 2008.
+
+.. IMPORTANT::
+  OSVDE is a proof of concept for prototyping the integration of multiple pieces in the OSVB.
+  It is not actively developed *per se*, but used as an umbrella for pyVHDLModel, pyGHDL, pyCAPI, etc.
+  A practical usage of the features prototyped in OSVDE is found in `Hardware Studio <https://github.com/umarcor/hwstudio>`__
+  (see `umarcor.github.io/hwstudio/doc: Structure <https://umarcor.github.io/hwstudio/doc/#_structure>`__).
+
 OSVDE is a GUI tool written in Python only, using `tkinter <https://docs.python.org/3/library/tkinter.html>`__,
 *the standard Python interface to the Tk GUI toolkit* (see :py:doc:`faq/gui`).
 The motivation for using both Python and tkinter is reducing the dependencies to the bare minimum available on several
@@ -77,7 +106,7 @@ As said, the purpose of OSVDE is not to provide the best performance for (very) 
 the integration of other pieces such as pyCAPI, pydoit and OSVR.
 
 Installation
-------------
+============
 
 Install a recent version of GHDL and a matching pyGHDL.
 As explained in :ref:`ghdl:USING:QuickStart:Python`, the following pip command can be used:
@@ -95,9 +124,9 @@ Then, retrieve this repository (OSVB) and install the dependencies of pyOSVDE:
    pip3 install -r mods/pyOSVDE/requirements.txt
 
 Usage
------
+=====
 
-Start OSVDE by executing ``./mods/pyOSVDE/main.py``.
+Start OSVDE by executing ``PYTHONPATH=$(pwd)/mods ./mods/pyOSVDE/main.py``.
 By default, the '*Open Directory...*' is triggered, asking the user to select a directory containing VHDL sources.
 Upon selection, the whole directory is scanned recursively, searching for either ``*.vhd`` or ``.osvdeignore`` files,
 and all the VHDL sources are added to pyVHDLModel :ref:`vhdlmodel:vhdlmodel-design` as :ref:`vhdlmodel:vhdlmodel-document`
@@ -133,11 +162,11 @@ For each entity, the ports are shown, including the *mode*, the *name* and the *
   As discussed above, pyCAPI and the project API are to be reused in OSVDE for that purpose.
 
 Future work
------------
+===========
 
 Some enhancements and features we would like to integrate into OSVDE are the following:
 
-* Dependency tree and logic hierarchy elaboration though GHDL.
+* Dependency tree and logic hierarchy elaboration through GHDL.
 
 * Task running/triggering:
 
@@ -174,13 +203,13 @@ Some enhancements and features we would like to integrate into OSVDE are the fol
   * Preserve identifier casing.
 
 OSVDE reference
----------------
+===============
 
 .. autoclass:: pyOSVDE.main.OSVDE()
   :private-members: False
 
 References
-==========
+**********
 
 * `EDA integration: managing projects for simulation and implementation <https://docs.google.com/document/d/1qThGGqSVQabts-4imn5zY5BMptp1-Q2rGiNKHDH1Pbk/>`__
 
