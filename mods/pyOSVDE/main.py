@@ -30,10 +30,7 @@ from pathlib import Path
 from textwrap import dedent
 
 from pyGHDL.dom.NonStandard import Design, Document
-from pyGHDL.dom.Concurrent import (
-    ConcurrentBlockStatement,
-    ProcessStatement
-)
+from pyGHDL.dom.Concurrent import ConcurrentBlockStatement, ProcessStatement
 from pyVHDLModel.SyntaxModel import (
     GenerateStatement,
     Instantiation,
@@ -261,7 +258,7 @@ class OSVDE(tk.Frame):
             for entity in self.Design.GetLibrary(lib).Entities:
                 EntityItem = addTreeItem(LibItem, entity.Identifier, False, self.Image["ent"], ())
 
-                GenericsItem = addTreeItem(EntityItem, 'Generics', False, self.Image["file"], ())
+                GenericsItem = addTreeItem(EntityItem, "Generics", False, self.Image["file"], ())
                 for generic in entity.GenericItems:
                     addTreeItem(
                         GenericsItem,
@@ -271,7 +268,7 @@ class OSVDE(tk.Frame):
                         (),
                     )
 
-                PortsItem = addTreeItem(EntityItem, 'Ports', False, self.Image["file"], ())
+                PortsItem = addTreeItem(EntityItem, "Ports", False, self.Image["file"], ())
                 for port in entity.PortItems:
                     addTreeItem(
                         PortsItem,
@@ -281,7 +278,7 @@ class OSVDE(tk.Frame):
                         (),
                     )
 
-                ArchitecturesItem = addTreeItem(EntityItem, 'Architectures', False, self.Image["file"], ())
+                ArchitecturesItem = addTreeItem(EntityItem, "Architectures", False, self.Image["file"], ())
                 for document in self.Design.Documents:
                     for architecture in document.Architectures:
 
@@ -289,11 +286,7 @@ class OSVDE(tk.Frame):
 
                         if str(entityName) == entity.Identifier:
                             ArchitectureItem = addTreeItem(
-                                ArchitecturesItem,
-                                "{}".format(architecture.Identifier),
-                                False,
-                                self.Image["dir"],
-                                ()
+                                ArchitecturesItem, "{}".format(architecture.Identifier), False, self.Image["dir"], ()
                             )
 
                             for statement in architecture.Statements:
@@ -302,40 +295,26 @@ class OSVDE(tk.Frame):
                                 # ComponentInstantiation, EntityInstantiation, ConfigurationInstantiation
                                 if isinstance(statement, Instantiation):
                                     addTreeItem(
-                                        ArchitectureItem,
-                                        "{}".format(statement.Label),
-                                        False,
-                                        self.Image["ent"],
-                                        ()
+                                        ArchitectureItem, "{}".format(statement.Label), False, self.Image["ent"], ()
                                     )
                                 elif isinstance(
                                     statement,
                                     # Note: the following share the same base class 'GenerateStatement'
                                     # ForGenerateStatement, CaseGenerateStatement, IfGenerateStatement
                                     # 'For' and 'Case' are not supported in the model yet
-                                    (
-                                        ConcurrentBlockStatement,
-                                        GenerateStatement
-                                    )
+                                    (ConcurrentBlockStatement, GenerateStatement),
                                 ):
                                     addTreeItem(
-                                        ArchitectureItem,
-                                        "{}".format(statement.Label),
-                                        False,
-                                        self.Image["file"],
-                                        ()
+                                        ArchitectureItem, "{}".format(statement.Label), False, self.Image["file"], ()
                                     )
                                     # recursive call
-                                elif isinstance(
-                                    statement,
-                                    ProcessStatement
-                                ):
+                                elif isinstance(statement, ProcessStatement):
                                     addTreeItem(
                                         ArchitectureItem,
-                                        "{}".format(statement.Label or 'DefaultLabel'),
+                                        "{}".format(statement.Label or "DefaultLabel"),
                                         False,
                                         self.Image["dir"],
-                                        ()
+                                        (),
                                     )
 
                 # TODO:
