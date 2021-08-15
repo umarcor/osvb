@@ -260,22 +260,28 @@ class OSVDE(tk.Frame):
             LibItem = addTreeItem(parent, lib, True, self.Image["lib"], ())
             for entity in self.Design.GetLibrary(lib).Entities:
                 EntityItem = addTreeItem(LibItem, entity.Identifier, False, self.Image["ent"], ())
-                for port in entity.PortItems:
 
-                    image = self.Image["in"]
-                    if port.Mode is Mode.Out:
-                        image = self.Image["out"]
-                    elif port.Mode is Mode.InOut:
-                        image = self.Image["inout"]
-
-                    PortItem = addTreeItem(
-                        EntityItem,
-                        "{} [{}]".format(",".join(port.Identifiers), port.Subtype),
+                GenericsItem = addTreeItem(EntityItem, 'Generics', False, self.Image["file"], ())
+                for generic in entity.GenericItems:
+                    addTreeItem(
+                        GenericsItem,
+                        "{} [{}]".format(",".join(generic.Identifiers), generic.Subtype),
                         False,
-                        image,
+                        self.Image["file"],
                         (),
                     )
 
+                PortsItem = addTreeItem(EntityItem, 'Ports', False, self.Image["file"], ())
+                for port in entity.PortItems:
+                    addTreeItem(
+                        PortsItem,
+                        "{} [{}]".format(",".join(port.Identifiers), port.Subtype),
+                        False,
+                        self.Image["out" if port.Mode is Mode.Out else "inout" if port.Mode is Mode.InOut else "in"],
+                        (),
+                    )
+
+                ArchitecturesItem = addTreeItem(EntityItem, 'Architectures', False, self.Image["file"], ())
                 for document in self.Design.Documents:
                     for architecture in document.Architectures:
 
@@ -283,7 +289,7 @@ class OSVDE(tk.Frame):
 
                         if str(entityName) == entity.Identifier:
                             ArchitectureItem = addTreeItem(
-                                EntityItem,
+                                ArchitecturesItem,
                                 "{}".format(architecture.Identifier),
                                 False,
                                 self.Image["dir"],
@@ -337,11 +343,9 @@ class OSVDE(tk.Frame):
                 # - Make finding the instances recursive (i.e. the snippet below `for document in self.Design.Documents`).
                 # - Segmentation faults with many files: https://github.com/ghdl/ghdl/pull/1827.
                 # - Ask Patrick about entity.Architectures.
-                #
-                # - Move port items into 'ports'.
-                # - Move generic items into 'generics'.
-                # - Move architecture items into 'architectures'.
-                #   Strictly, this would require elaboration.
+
+                # TODO:
+                #   Strictly, elaboration is required for relating Entities and Architectures.
                 #   However, there are three solutions:
                 #   - Do a naive elaboration, as in function traversePath of loadFileTree.
                 #   - Implement the elaboration in pyVHDLModel.
