@@ -60,3 +60,8 @@ fmt
 ---
 
 .. automodule:: pyVHDLModelUtils.fmt
+
+sphinx
+------
+
+.. automodule:: pyVHDLModelUtils.sphinx

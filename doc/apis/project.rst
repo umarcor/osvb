@@ -23,6 +23,7 @@ on a finite scope.
 
   project/pyVHDLModelUtils
   project/OSVDE
+  project/DocGen
 
 References
 ==========

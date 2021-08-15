@@ -38,6 +38,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.graphviz",
     "sphinx.ext.viewcode",
+    'exec',
 ]
 
 autodoc_default_options = {

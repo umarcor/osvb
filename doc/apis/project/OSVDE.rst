@@ -95,15 +95,7 @@ Some enhancements and features we would like to integrate into OSVDE are the fol
 
   * '*Edit source in editor*' or '*Open project in editor*', where IDE is VSCode, (neo)vim, emacs, notepad++...
 
-* Documentation generation:
-
-  * Entity symbol (see `Symbolator <https://kevinpt.github.io/symbolator/>`__, `xhdl <https://hackfin.gitlab.io/xhdl/>`__).
-  * Single page HTML/reStructuredText/markdown body (see `TerosHDL CLI examples <https://github.com/TerosTechnology/teroshdl-documenter-demo>`__).
-  * `Sphinx <https://www.sphinx-doc.org>`__ project/domain with cross-references (placeholder: `VHDL/sphinx-vhdl <https://github.com/VHDL/sphinx-vhdl>`__).
-  * `Graphviz <https://graphviz.org/>`__/`netlistsvg <https://github.com/nturley/netlistsvg>`__ diagram.
-
-    * For Sphinx (see `sphinxcontrib-hdl-diagrams <https://github.com/SymbiFlow/sphinxcontrib-hdl-diagrams>`__).
-    * For asciidoctor (see `Asciidoctor Diagram <https://asciidoctor.org/docs/asciidoctor-diagram/>`__).
+* :ref:`OSVB:API:Project:DocGen`.
 
 * Pretty printing, formatting...
 
