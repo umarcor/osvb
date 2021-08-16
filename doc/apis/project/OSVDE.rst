@@ -44,7 +44,7 @@ Usage
 Start OSVDE by executing ``PYTHONPATH=$(pwd)/mods ./mods/pyOSVDE/main.py``.
 By default, the '*Open Directory...*' is triggered, asking the user to select a directory containing VHDL sources.
 Upon selection, the whole directory is scanned recursively, searching for either ``*.vhd`` or ``.osvdeignore`` files,
-and all the VHDL sources are added to pyVHDLModel :ref:`vhdlmodel:vhdlmodel-design` as :ref:`vhdlmodel:vhdlmodel-document`
+and all the VHDL sources are added to pyVHDLModel :ref:`vhdlmodel:vhdlmodel-design` as a :ref:`vhdlmodel:vhdlmodel-document`
 of a :ref:`vhdlmodel:vhdlmodel-library`.
 Then, the Design model is used for generating the content of the GUI.
 
@@ -69,7 +69,8 @@ Then, the Design model is used for generating the content of the GUI.
 As shown in :numref:`fig:osvde`, at the top part of OSVDE the hierarchy of the source files is shown.
 For each VHDL source, a column shows the units (entities and/or architectures) defined in it.
 As a complement, at the bottom part the logical hierarchy of the units is shown, grouped by library.
-For each entity, the ports are shown, including the *mode*, the *name* and the *type*.
+For each entity, the generics and ports are shown, including the *name*, *type* and (for ports only) *mode*.
+Architectures are shown too, and within them concurrent statements such as instantiations and generates.
 
 .. IMPORTANT::
   For now, ``*.vhd`` files are scanned only, and all of them are analysed into library ``lib``.

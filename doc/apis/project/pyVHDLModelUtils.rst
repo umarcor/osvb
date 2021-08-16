@@ -7,35 +7,35 @@ pyVHDLModel
 ===========
 
 `pyVHDLModel <https://github.com/vhdl/pyVHDLModel>`__ is an abstract language model for VHDL written in Python.
-That is, a set of classes that represent the objects found in VHDL sources, and utils for manipulating and interacting
+That is, a set of classes that represent the items found in VHDL sources, and utils for manipulating and interacting
 with those classes.
 The generation of an specific object tree for an specific VHDL codebase is done by a frontend.
 Currently supported frontends are `pyGHDL <https://github.com/ghdl/ghdl/tree/master/pyGHDL>`__ and
 `pyVHDLParser <https://github.com/Paebbels/pyVHDLParser/>`__.
 
-As a matter of fact, GHDL is the most complete open source VHDL parser and analyser, and more complete than several
-vendor tools.
+GHDL is the most complete open source VHDL parser and analyser, and more complete than several vendor tools.
 However, GHDL is written in Ada, and it was not initially designed for the analysis features to be used standalone.
 Therefore, most developers of tooling around the VHDL language do typically not use GHDL but try reimplementing the
 parsing themselves.
-That is the case of VUnit, TerosHDL, Symbolator, vhdl-style-guide, VHDLTool, etc.
+That is the case of
+`VUnit <http://vunit.github.io/>`__,
+`TerosHDL <https://terostech.com/>`__,
+`Symbolator <https://kevinpt.github.io/symbolator/>`__,
+`vhdl-style-guide <https://vhdl-style-guide.readthedocs.io/>`__,
+`VHDLTool <https://github.com/VHDLTool>`__,
+`hdlConvertor <https://github.com/Nic30/hdlConvertor>`__,
+etc.
 All of those projects need some understanding of the models they are dealing with, and they use regular expressions,
 `tree-sitter <https://github.com/tree-sitter/tree-sitter>`__, `ANTLR <https://www.antlr.org/>`__ or similar general
 purpose parser engines.
 That is unfortunate because many of them do use Python, so the effort duplication in the community might be
 significantly reduced if they could interact with GHDL's parser/analysis through Python.
 
-Since July 2021, pyVHDLModel and pyGHDL provide a ready-to-use solution.
+Since 2021, pyVHDLModel and pyGHDL provide a ready-to-use solution.
 By using those, developers can get a *pythonic* representation of VHDL sources, using less than 10 lines of Python code
 which depend on GHDL and Python only.
 We believe that projects such as the ones mentioned above could greatly benefit from using pyVHDLModel, as long as they
 are good with depending on GHDL.
-However, we are aware that reworking an stable codebase is not the most appealing task, so developers will not be
-willing to use pyVHDLModel straightaway.
-In this context, the main purpose of :ref:`OSVB:API:Project:OSVDE` is to showcase pyVHDLModel and to build a critical
-mass for creating higher abstraction features on top.
-Potential consumers of pyVHDLModel are all the tools which benefit from programmatically using knowledge about a VHDL
-codebase.
 
 .. NOTE::
   Projects which don't want to depend on a binary/compiled tool (GHDL), can use a Python only frontend for pyVHDLModel.
@@ -46,7 +46,18 @@ codebase.
 Utils
 =====
 
-*TBW*
+pyVHDLModel and pyGHDL are still being shaped and enhanced in order to provide higher abstraction features on top of parsing.
+Moreover, there are some helper functions written on top of pyVHDLModel, which don't fit in the same repository but can
+be reused by multiple projects.
+:ghsrc:`pyVHDLModelUtils <mods/pyVHDLModelUtils>` collects some of those helpers, until we decide a better location for them.
+
+.. NOTE::
+  We are aware that reworking an stable codebase is not the most appealing task, so developers of existing tools might
+  not be willing to use pyVHDLModel straightaway.
+  In this context, the main purpose of pyVHDLModelUtils, :ref:`OSVB:API:Project:OSVDE` and :ref:`OSVB:API:Project:DocGen`
+  is to showcase pyVHDLModel and to build a critical mass for creating higher abstraction features on top.
+  Potential users of pyVHDLModel are all the developers of tools which benefit from programmatically using knowledge
+  about a VHDL codebase.
 
 pyVHDLModelUtils reference
 ==========================
@@ -54,14 +65,26 @@ pyVHDLModelUtils reference
 resolve
 -------
 
+Currently, pyVHDLModel and pyGHDL.dom provide a SyntaxModel only.
+That is, the model is built from parsing the sources, without further analysis or elaboration.
+As a result, symbols and cross-references between units are not resolved.
+This package provides some *naive* Symbol resolution features.
+In the future, we expect to use pyGHDL.libghdl for elaboration.
+
 .. automodule:: pyVHDLModelUtils.resolve
 
 fmt
 ---
 
+Getting an string representation of some elements such as (sub)types might be cumbersome.
+This package handles formatting those.
+
 .. automodule:: pyVHDLModelUtils.fmt
 
 sphinx
 ------
+
+Since Sphinx is written in Python, packages can be imported and used for generating content.
+This package provides functions for including the documentation of hardware designs in Sphinx projects.
 
 .. automodule:: pyVHDLModelUtils.sphinx
