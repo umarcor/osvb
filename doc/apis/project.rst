@@ -36,6 +36,7 @@ References
   * `cheby <https://gitlab.cern.ch/cohtdrivers/cheby>`__
   * `SystemRDL register description language <https://github.com/SystemRDL>`__
   * `RgGen <https://github.com/rggen/rggen>`__
+  * `wzab/agwb <https://github.com/wzab/agwb>`__
   * `airhdl <https://airhdl.com>`__
 
 * `dbhi/vsc-hdl <https://github.com/dbhi/vsc-hdl>`__
