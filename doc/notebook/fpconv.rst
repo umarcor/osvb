@@ -194,7 +194,7 @@ work-in-progress VCD parse module of `libsigrok <https://github.com/sigrokprojec
 features for achieving the desired purpose. However, `libsigrok`'s internal structure cannot handle multi-bit signals.
 
 .. NOTE:: The interface based on watchers and trackers of `vcd_parsealyze` is very similar to PulseView's concept of
-protocol analyzers.
+  protocol analyzers.
 
 dwfv
 ----
