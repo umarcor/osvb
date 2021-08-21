@@ -153,6 +153,9 @@ class OSVDE(tk.Frame):
         dirName = fd.askdirectory(mustexist=True)
         if dirName != "":
             self.parseDir(Path(dirName))
+            resolve_Symbols(self.Design)
+            self.loadFileTree()
+            self.loadDesignTree()
 
     def cbFile(self):
         """
@@ -160,6 +163,9 @@ class OSVDE(tk.Frame):
         """
         fileName = fd.askopenfilename()
         self.parseFile(Path(fileName))
+        resolve_Symbols(self.Design)
+        self.loadFileTree()
+        self.loadDesignTree()
 
     def parseDir(self, dirName: Path):
         """
@@ -177,10 +183,6 @@ class OSVDE(tk.Frame):
                     break
             if not ignoreItem:
                 self.parseFile(item)
-
-        resolve_Symbols(self.Design)
-        self.loadFileTree()
-        self.loadDesignTree()
 
     def parseFile(self, sourceFile: Path, library: str = "lib"):
         """
