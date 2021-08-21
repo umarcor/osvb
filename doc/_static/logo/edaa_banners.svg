@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Layer_1"
+   enable-background="new 0 0 510 510"
+   height="512"
+   viewBox="0 0 510 510"
+   width="512"
+   version="1.1"
+   sodipodi:docname="edaa.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata16">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs14" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview12"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="0.23046875"
+     inkscape:cx="338.44068"
+     inkscape:cy="1373.2881"
+     inkscape:window-x="-8"
+     inkscape:window-y="1072"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1">
+    <sodipodi:guide
+       position="-407.11164,1587.1864"
+       orientation="1,0"
+       id="guide1644"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-391.53964,2284.641"
+       orientation="0,1"
+       id="guide1673"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-578.40564,2156.373"
+       orientation="1,0"
+       id="guide1681"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="920.59322,1841.1864"
+       orientation="1,0"
+       id="guide1683"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <g
+     id="XMLID_2299_">
+    <path
+       id="XMLID_361_"
+       d="m 0,256.534 v 128.268 h 171.294 l 15.572,-80.167 -15.572,-48.101 z"
+       inkscape:connector-curvature="0"
+       style="fill:#66d41c" />
+    <path
+       id="XMLID_2327_"
+       d="M 342.588,384.802 V 256.534 l -93.433,-16.033 -62.289,16.033 h -15.572 v 128.268 h 15.572 l 77.861,16.033 z"
+       inkscape:connector-curvature="0"
+       style="fill:#00c364" />
+    <path
+       id="XMLID_2318_"
+       d="m 173.176,128.267 v 128.267 h 169.412 l 15.401,-48.1 -15.401,-80.167 h -15.401 l -77.005,-16.033 z"
+       inkscape:connector-curvature="0"
+       style="fill:#20cfed" />
+    <path
+       id="XMLID_327_"
+       d="M 342.588,128.267 H 512 V 256.534 H 342.588 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#3aaaff" />
+    <path
+       id="XMLID_4_"
+       d="M 0,0 V 128.267 H 173.176 L 188.92,48.1 173.176,0 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ffd82c" />
+    <path
+       id="XMLID_41_"
+       d="M 173.176,0 H 346.352 V 128.267 H 173.176 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ffbe00" />
+    <path
+       id="XMLID_2304_"
+       d="m 171.294,512 h 170.353 l 15.487,-79.098 -15.487,-48.1 H 171.294 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ff7c45" />
+    <path
+       id="XMLID_284_"
+       d="M 341.647,384.802 H 512 V 512 H 341.647 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ff415c" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
+     x="-569.25916"
+     y="-388.51035"
+     id="text1492"
+     inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
+     inkscape:export-xdpi="64.031998"
+     inkscape:export-ydpi="64.031998"><tspan
+       sodipodi:role="line"
+       x="-569.25916"
+       y="-388.51035"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:122.1875px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
+       id="tspan1498">Electronic Design Automation Abstraction</tspan></text>
+  <g
+     id="XMLID_2299_-3"
+     transform="translate(-580.28764,-1077.1864)"
+     inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
+     inkscape:export-xdpi="64.031998"
+     inkscape:export-ydpi="64.031998">
+    <path
+       id="XMLID_361_-5"
+       d="m 0,256.534 v 128.268 h 171.294 l 15.572,-80.167 -15.572,-48.101 z"
+       inkscape:connector-curvature="0"
+       style="fill:#66d41c" />
+    <path
+       id="XMLID_2327_-4"
+       d="M 342.588,384.802 V 256.534 l -93.433,-16.033 -62.289,16.033 h -15.572 v 128.268 h 15.572 l 77.861,16.033 z"
+       inkscape:connector-curvature="0"
+       style="fill:#00c364" />
+    <path
+       id="XMLID_2318_-5"
+       d="m 173.176,128.267 v 128.267 h 169.412 l 15.401,-48.1 -15.401,-80.167 h -15.401 l -77.005,-16.033 z"
+       inkscape:connector-curvature="0"
+       style="fill:#20cfed" />
+    <path
+       id="XMLID_327_-7"
+       d="M 342.588,128.267 H 512 V 256.534 H 342.588 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#3aaaff" />
+    <path
+       id="XMLID_4_-3"
+       d="M 0,0 V 128.267 H 173.176 L 188.92,48.1 173.176,0 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ffd82c" />
+    <path
+       id="XMLID_41_-5"
+       d="M 173.176,0 H 346.352 V 128.267 H 173.176 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ffbe00" />
+    <path
+       id="XMLID_2304_-5"
+       d="m 171.294,512 h 170.353 l 15.487,-79.098 -15.487,-48.1 H 171.294 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ff7c45" />
+    <path
+       id="XMLID_284_-9"
+       d="M 341.647,384.802 H 512 V 512 H 341.647 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ff415c" />
+  </g>
+  <g
+     id="g1588"
+     style="fill:#000000;fill-opacity:1"
+     inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
+     inkscape:export-xdpi="64.031998"
+     inkscape:export-ydpi="64.031998">
+    <text
+       id="text1502"
+       y="-605.92889"
+       x="50.412445"
+       style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:664.0625px;font-family:Teko;-inkscape-font-specification:Teko;fill:#000000;fill-opacity:1;stroke-width:0.99609375"
+         y="-605.92889"
+         x="50.412445"
+         id="tspan1500"
+         sodipodi:role="line">EDA</tspan></text>
+    <text
+       id="text1502-4"
+       y="-871.13745"
+       x="805.29004"
+       style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:398.4375px;font-family:Teko;-inkscape-font-specification:Teko;fill:#000000;fill-opacity:1;stroke-width:0.99609375"
+         y="-871.13745"
+         x="805.29004"
+         id="tspan1500-3"
+         sodipodi:role="line">2</tspan></text>
+  </g>
+  <g
+     id="XMLID_2299_-6"
+     transform="translate(-578.40564,-2031.175)"
+     inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
+     inkscape:export-xdpi="64.031998"
+     inkscape:export-ydpi="64.031998">
+    <path
+       id="XMLID_361_-2"
+       d="m 0,256.534 v 128.268 h 171.294 l 15.572,-80.167 -15.572,-48.101 z"
+       inkscape:connector-curvature="0"
+       style="fill:#66d41c" />
+    <path
+       id="XMLID_2327_-1"
+       d="M 342.588,384.802 V 256.534 l -93.433,-16.033 -62.289,16.033 h -15.572 v 128.268 h 15.572 l 77.861,16.033 z"
+       inkscape:connector-curvature="0"
+       style="fill:#00c364" />
+    <path
+       id="XMLID_2318_-52"
+       d="m 173.176,128.267 v 128.267 h 169.412 l 15.401,-48.1 -15.401,-80.167 h -15.401 l -77.005,-16.033 z"
+       inkscape:connector-curvature="0"
+       style="fill:#20cfed" />
+    <path
+       id="XMLID_327_-76"
+       d="M 342.588,128.267 H 512 V 256.534 H 342.588 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#3aaaff" />
+    <path
+       id="XMLID_4_-2"
+       d="M 0,0 V 128.267 H 173.176 L 188.92,48.1 173.176,0 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ffd82c" />
+    <path
+       id="XMLID_41_-8"
+       d="M 173.176,0 H 346.352 V 128.267 H 173.176 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ffbe00" />
+    <path
+       id="XMLID_2304_-0"
+       d="m 171.294,512 h 170.353 l 15.487,-79.098 -15.487,-48.1 H 171.294 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ff7c45" />
+    <path
+       id="XMLID_284_-7"
+       d="M 341.647,384.802 H 512 V 512 H 341.647 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#ff415c" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
+     x="71.857819"
+     y="-1926.2972"
+     id="text1492-5"
+     inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
+     inkscape:export-xdpi="64.031998"
+     inkscape:export-ydpi="64.031998"><tspan
+       sodipodi:role="line"
+       id="tspan1490-6"
+       x="71.857819"
+       y="-1926.2972"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:132.81251526px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375">Electronic</tspan><tspan
+       sodipodi:role="line"
+       x="71.857819"
+       y="-1798.7972"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:132.81251526px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
+       id="tspan1494-2">Design</tspan><tspan
+       sodipodi:role="line"
+       x="71.857819"
+       y="-1671.2972"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:132.81251526px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
+       id="tspan1496-5">Automation</tspan><tspan
+       sodipodi:role="line"
+       x="71.857819"
+       y="-1543.7972"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:132.81251526px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
+       id="tspan1498-3">Abstraction</tspan></text>
+  <g
+     transform="translate(562.59909,-954.33997)"
+     id="g1588-5"
+     style="fill:#000000;fill-opacity:1"
+     inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
+     inkscape:export-xdpi="64.031998"
+     inkscape:export-ydpi="64.031998">
+    <text
+       id="text1502-2"
+       y="-605.92889"
+       x="50.412445"
+       style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:664.0625px;font-family:Teko;-inkscape-font-specification:Teko;fill:#000000;fill-opacity:1;stroke-width:0.99609375"
+         y="-605.92889"
+         x="50.412445"
+         id="tspan1500-7"
+         sodipodi:role="line">EDA</tspan></text>
+    <text
+       id="text1502-4-9"
+       y="-871.13745"
+       x="805.29004"
+       style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:398.4375px;font-family:Teko;-inkscape-font-specification:Teko;fill:#000000;fill-opacity:1;stroke-width:0.99609375"
+         y="-871.13745"
+         x="805.29004"
+         id="tspan1500-3-6"
+         sodipodi:role="line">2</tspan></text>
+  </g>
+</svg>
