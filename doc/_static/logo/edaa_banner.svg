@@ -15,7 +15,7 @@
    version="1.1"
    id="svg892"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="edaaw.svg">
+   sodipodi:docname="edaa_banner.svg">
   <defs
      id="defs886" />
   <sodipodi:namedview
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="268.7628"
-     inkscape:cy="375.92387"
+     inkscape:cx="530.19137"
+     inkscape:cy="390.20958"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -37,7 +37,7 @@
      fit-margin-bottom="0"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     inkscape:window-x="-8"
+     inkscape:window-x="1912"
      inkscape:window-y="1072"
      inkscape:window-maximized="1" />
   <metadata
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -57,6 +57,94 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(94.166706,-49.370141)">
+    <g
+       transform="matrix(0.45252728,0,0,0.45252728,-94.166706,196.64908)"
+       id="g851">
+      <rect
+         id="rect4"
+         height="50"
+         width="100"
+         y="-50"
+         x="100"
+         style="fill:#37474f" />
+      <rect
+         id="rect6"
+         height="50"
+         width="100"
+         y="-50"
+         x="200"
+         style="fill:#78909c" />
+      <rect
+         id="rect8"
+         height="50"
+         width="100"
+         y="-100"
+         x="100"
+         style="fill:#ff8f00" />
+      <rect
+         id="rect10"
+         height="50"
+         width="100"
+         y="-100"
+         x="0"
+         style="fill:#ffca28" />
+      <rect
+         id="rect12"
+         height="50"
+         width="100"
+         y="-150"
+         x="100"
+         style="fill:#558b2f" />
+      <rect
+         id="rect14"
+         height="50"
+         width="100"
+         y="-150"
+         x="200"
+         style="fill:#9ccc65" />
+      <rect
+         id="rect16"
+         height="50"
+         width="100"
+         y="-200"
+         x="100"
+         style="fill:#0277bd" />
+      <rect
+         id="rect18"
+         height="50"
+         width="100"
+         y="-200"
+         x="0"
+         style="fill:#29b6f6" />
+      <rect
+         id="rect20"
+         height="50"
+         width="100"
+         y="-250"
+         x="100"
+         style="fill:#6a1b9a" />
+      <rect
+         id="rect22"
+         height="50"
+         width="100"
+         y="-250"
+         x="200"
+         style="fill:#ab47bc" />
+      <rect
+         id="rect24"
+         height="50"
+         width="100"
+         y="-300"
+         x="100"
+         style="fill:#c62828" />
+      <rect
+         id="rect26"
+         height="50"
+         width="100"
+         y="-300"
+         x="0"
+         style="fill:#ef5350" />
+    </g>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -71,53 +159,6 @@
          y="243.81766"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.45555878px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.26458332"
          id="tspan1498">Electronic Design Automation Abstraction</tspan></text>
-    <g
-       id="XMLID_2299_-3"
-       transform="matrix(0.26562092,0,0,0.26562092,-94.166706,60.890892)"
-       inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
-       inkscape:export-xdpi="64.031998"
-       inkscape:export-ydpi="64.031998">
-      <path
-         id="XMLID_361_-5"
-         d="m 0,256.534 v 128.268 h 171.294 l 15.572,-80.167 -15.572,-48.101 z"
-         inkscape:connector-curvature="0"
-         style="fill:#66d41c" />
-      <path
-         id="XMLID_2327_-4"
-         d="M 342.588,384.802 V 256.534 l -93.433,-16.033 -62.289,16.033 h -15.572 v 128.268 h 15.572 l 77.861,16.033 z"
-         inkscape:connector-curvature="0"
-         style="fill:#00c364" />
-      <path
-         id="XMLID_2318_-5"
-         d="m 173.176,128.267 v 128.267 h 169.412 l 15.401,-48.1 -15.401,-80.167 h -15.401 l -77.005,-16.033 z"
-         inkscape:connector-curvature="0"
-         style="fill:#20cfed" />
-      <path
-         id="XMLID_327_-7"
-         d="M 342.588,128.267 H 512 V 256.534 H 342.588 Z"
-         inkscape:connector-curvature="0"
-         style="fill:#3aaaff" />
-      <path
-         id="XMLID_4_-3"
-         d="M 0,0 V 128.267 H 173.176 L 188.92,48.1 173.176,0 Z"
-         inkscape:connector-curvature="0"
-         style="fill:#ffd82c" />
-      <path
-         id="XMLID_41_-5"
-         d="M 173.176,0 H 346.352 V 128.267 H 173.176 Z"
-         inkscape:connector-curvature="0"
-         style="fill:#ffbe00" />
-      <path
-         id="XMLID_2304_-5"
-         d="m 171.294,512 h 170.353 l 15.487,-79.098 -15.487,-48.1 H 171.294 Z"
-         inkscape:connector-curvature="0"
-         style="fill:#ff7c45" />
-      <path
-         id="XMLID_284_-9"
-         d="M 341.647,384.802 H 512 V 512 H 341.647 Z"
-         inkscape:connector-curvature="0"
-         style="fill:#ff415c" />
-    </g>
     <g
        transform="matrix(0.26562092,0,0,0.26562092,59.969824,347.01414)"
        id="g1588"

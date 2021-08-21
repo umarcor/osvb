@@ -1,1 +1,18 @@
-<svg id="Layer_1" enable-background="new 0 0 510 510" height="512" viewBox="0 0 510 510" width="512" xmlns="http://www.w3.org/2000/svg"><g id="XMLID_2299_"><path id="XMLID_361_" d="m0 256.534v128.268h171.294l15.572-80.167-15.572-48.101z" fill="#66d41c"/><path id="XMLID_2327_" d="m342.588 384.802v-128.268l-93.433-16.033-62.289 16.033h-15.572v128.268h15.572l77.861 16.033z" fill="#00c364"/><path id="XMLID_2318_" d="m173.176 128.267v128.267h169.412l15.401-48.1-15.401-80.167h-15.401l-77.005-16.033z" fill="#20cfed"/><path id="XMLID_327_" d="m342.588 128.267h169.412v128.267h-169.412z" fill="#3aaaff"/><path id="XMLID_4_" d="m0 0v128.267h173.176l15.744-80.167-15.744-48.1z" fill="#ffd82c"/><path id="XMLID_41_" d="m173.176 0h173.176v128.267h-173.176z" fill="#ffbe00"/><path id="XMLID_2304_" d="m171.294 512h170.353l15.487-79.098-15.487-48.1h-170.353z" fill="#ff7c45"/><path id="XMLID_284_" d="m341.647 384.802h170.353v127.198h-170.353z" fill="#ff415c"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="300" height="300" viewBox="0 -300 300 300">
+<defs>
+</defs>
+<rect x="100" y="-50" width="100" height="50" fill="#37474f" />
+<rect x="200" y="-50" width="100" height="50" fill="#78909c" />
+<rect x="100" y="-100" width="100" height="50" fill="#ff8f00" />
+<rect x="0" y="-100" width="100" height="50" fill="#ffca28" />
+<rect x="100" y="-150" width="100" height="50" fill="#558b2f" />
+<rect x="200" y="-150" width="100" height="50" fill="#9ccc65" />
+<rect x="100" y="-200" width="100" height="50" fill="#0277bd" />
+<rect x="0" y="-200" width="100" height="50" fill="#29b6f6" />
+<rect x="100" y="-250" width="100" height="50" fill="#6a1b9a" />
+<rect x="200" y="-250" width="100" height="50" fill="#ab47bc" />
+<rect x="100" y="-300" width="100" height="50" fill="#c62828" />
+<rect x="0" y="-300" width="100" height="50" fill="#ef5350" />
+</svg>
