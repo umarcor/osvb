@@ -10,7 +10,7 @@ In terms of the :ref:`OSVB:Model`, this piece belongs to layer 2, which consumes
 and provides homogeneous wrappers for layer 3 to use.
 
 Hardware design workflows are known for combining multiple (probably over a dozen) smaller tools for getting the desired
-artifact(s) from some HDL sources.
+artifact(s) from some HDL sources (see `Hammer VLSI Flow, slide 'A Real VLSI Flow' <https://fires.im/micro19-slides-pdf/04_hammer_vlsi.pdf>`__).
 Many hardware projects use traditional Makefiles or similar Python based solutions for aiding the designers.
 However, most of them are meant for a given set of tasks and a limited set of predefined workflows.
 Adding or customising stages requires modifying the tool, unless specific hooks are available.
@@ -136,6 +136,12 @@ References
   * `SystemVerilog flows (for OpenTitan and other SV designs) using open tools (for FPGAs and ASICS) <https://docs.google.com/drawings/d/1GEjCoLwY57bsuZoj5ymyXoToIEOC0H4j2SEYsqQupM8>`__
 
 * `cocotb[wiki]: Python Test Runner Proposal <https://github.com/cocotb/cocotb/wiki/Python-Test-Runner-Proposal>`__.
+
+* `Highly Agile Masks Made Effortlessly from RTL (HAMMER) <https://github.com/ucb-bar/hammer>`__.
+
+  * HAMMER imports tools as Python classes.
+    See `ucb-bar/hammer: src/hammer-vlsi/README.md <https://github.com/ucb-bar/hammer/blob/master/src/hammer-vlsi/README.md#tool-library>`__.
+  * `HAMMER: A Platform For Agile Physical Design [EECS-2020-28] <https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-28.pdf>`__
 
 * Other task execution/automation tools:
 
