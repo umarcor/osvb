@@ -335,6 +335,7 @@ class OSVDE(tk.Frame):
                 # TODO:
                 # - Make finding the instances recursive (i.e. the snippet below `for statement in architecture.Statements`).
                 # - Segmentation faults with many files: https://github.com/ghdl/ghdl/pull/1827.
+                # - Add check for 'null' in GHDL's Sanity?
 
                 # TODO:
                 #   Strictly, elaboration is required for relating Entities and Architectures.
