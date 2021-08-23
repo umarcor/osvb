@@ -29,10 +29,18 @@ from tkinter import ttk as ttk, filedialog as fd
 from pathlib import Path
 from textwrap import dedent
 
+from pyGHDL.dom.InterfaceItem import GenericConstantInterfaceItem, GenericTypeInterfaceItem
 from pyGHDL.dom.NonStandard import Design, Document
-from pyGHDL.dom.Concurrent import ConcurrentBlockStatement, ProcessStatement
+from pyGHDL.dom.Concurrent import (
+    ConcurrentBlockStatement,
+    ProcessStatement,
+    IfGenerateStatement,
+    CaseGenerateStatement,
+    ForGenerateStatement,
+    GenerateCase,
+    OthersGenerateCase,
+)
 from pyVHDLModel.SyntaxModel import (
-    GenerateStatement,
     Instantiation,
     Mode,
 )
@@ -261,92 +269,156 @@ class OSVDE(tk.Frame):
         """
         dtw = self.DesignTreeView
 
-        def addTreeItem(parent, text, isOpen, image, data=()):
-            return dtw.insert(parent, tk.END, text=text, values=data, open=isOpen, image=image)
+        def addTreeItem(parent, text, isOpen, image):
+            return dtw.insert(parent, tk.END, text=text, open=isOpen, image=self.Image[image])
+
+        def loadStatementsTree(item, statements):
+            for statement in statements:
+
+                # Note: the following share the same base class 'Instantiation'
+                # ComponentInstantiation, EntityInstantiation, ConfigurationInstantiation
+
+                if isinstance(statement, Instantiation):
+                    addTreeItem(item, "{}: inst".format(statement.Label), False, "inst")
+
+                elif isinstance(statement, ConcurrentBlockStatement):
+                    instItem = addTreeItem(item, "{}: block".format(statement.Label), False, "file")
+                    innerstatements = statement.Statements
+                    if len(innerstatements) != 0:
+                        loadStatementsTree(instItem, innerstatements)
+
+                # Note: the following share the same base class 'GenerateStatement'
+                # ForGenerateStatement, CaseGenerateStatement, IfGenerateStatement
+
+                elif isinstance(statement, IfGenerateStatement):
+                    instItem = addTreeItem(item, "{}: if .. generate".format(statement.Label), False, "file")
+                    loadStatementsTree(
+                        addTreeItem(
+                            instItem,
+                            "if: {}".format(statement.IfBranch.Condition),
+                            False,
+                            "file",
+                        ),
+                        statement.IfBranch.Statements,
+                    )
+                    for elsifbranch in statement.ElsifBranches:
+                        loadStatementsTree(
+                            addTreeItem(
+                                instItem,
+                                "elsif: {}".format(elsifbranch.Condition),
+                                False,
+                                "file",
+                            ),
+                            elsifbranch.Statements,
+                        )
+                    if statement.ElseBranch is not None:
+                        loadStatementsTree(
+                            addTreeItem(instItem, "else:", False, "file"),
+                            statement.ElseBranch.Statements,
+                        )
+
+                elif isinstance(statement, CaseGenerateStatement):
+                    instItem = addTreeItem(item, "{}: case .. generate".format(statement.Label), False, "file")
+                    for case in statement.Cases:
+                        if isinstance(case, GenerateCase):
+                            loadStatementsTree(
+                                addTreeItem(
+                                    instItem,
+                                    "case: {}".format(" | ".join([str(c) for c in case.Choises])),
+                                    False,
+                                    "file",
+                                ),
+                                case.Statements,
+                            )
+                        elif isinstance(case, OthersGenerateCase):
+                            loadStatementsTree(
+                                addTreeItem(instItem, "others:", False, "file"),
+                                case.Statements,
+                            )
+
+                elif isinstance(statement, ForGenerateStatement):
+                    instItem = addTreeItem(
+                        item,
+                        "{0}: for {1!s} generate".format(statement.Label, statement.Range),
+                        False,
+                        "file",
+                    )
+                    innerstatements = statement.Statements
+                    if len(innerstatements) != 0:
+                        loadStatementsTree(instItem, innerstatements)
+
+                elif isinstance(statement, ProcessStatement):
+                    addTreeItem(
+                        item,
+                        "{}: process".format(statement.Label or "DefaultLabel"),
+                        False,
+                        "file",
+                    )
 
         for libName, lib in self.Design.Libraries.items():
-            LibItem = addTreeItem(parent, libName, True, self.Image["lib"], ())
+            LibItem = addTreeItem(parent, libName, True, "lib")
             for entity in lib.Entities:
-                EntityItem = addTreeItem(LibItem, entity.Identifier, False, self.Image["ent"], ())
+                EntityItem = addTreeItem(LibItem, entity.Identifier, False, "ent")
 
                 generics = entity.GenericItems
                 if len(generics) != 0:
-                    GenericsItem = addTreeItem(EntityItem, "Generics", False, self.Image["generics"], ())
+                    GenericsItem = addTreeItem(EntityItem, "Generics", False, "generics")
                     for generic in generics:
-                        addTreeItem(
-                            GenericsItem,
-                            "{} [{}]".format(",".join(generic.Identifiers), generic.Subtype),
-                            False,
-                            self.Image["generic"],
-                            (),
-                        )
+                        if isinstance(generic, GenericConstantInterfaceItem):
+                            addTreeItem(
+                                GenericsItem,
+                                "{} [{}]".format(",".join(generic.Identifiers), generic.Subtype),
+                                False,
+                                "generic",
+                            )
+                        elif isinstance(generic, GenericTypeInterfaceItem):
+                            addTreeItem(
+                                GenericsItem,
+                                "type: {}".format(generic.Identifier),
+                                False,
+                                "generic",
+                            )
+                        else:
+                            print(
+                                "[NOT IMPLEMENTED] Generic item class not supported yet: {0}",
+                                generic.__class__.__name__,
+                            )
 
                 ports = entity.PortItems
                 if len(ports) != 0:
-                    PortsItem = addTreeItem(EntityItem, "Ports", False, self.Image["ports"], ())
+                    PortsItem = addTreeItem(EntityItem, "Ports", False, "ports")
                     for port in ports:
                         addTreeItem(
                             PortsItem,
                             "{} [{}]".format(",".join(port.Identifiers), port.Subtype),
                             False,
-                            self.Image[
-                                "out" if port.Mode is Mode.Out else "inout" if port.Mode is Mode.InOut else "in"
-                            ],
-                            (),
+                            "out" if port.Mode is Mode.Out else "inout" if port.Mode is Mode.InOut else "in",
                         )
 
                 architectures = entity.Architectures
                 if len(architectures) != 0:
-                    ArchitecturesItem = addTreeItem(EntityItem, "Architectures", False, self.Image["archs"], ())
+                    ArchitecturesItem = addTreeItem(EntityItem, "Architectures", False, "archs")
                     for architecture in entity.Architectures:
-                        ArchitectureItem = addTreeItem(
-                            ArchitecturesItem, "{}".format(architecture.Identifier), False, self.Image["arch"], ()
+                        loadStatementsTree(
+                            addTreeItem(ArchitecturesItem, "{}".format(architecture.Identifier), False, "arch"),
+                            architecture.Statements,
                         )
 
-                        # recursive function starts here
-                        for statement in architecture.Statements:
+        # TODO:
+        # - Add icons for process, block and generate(s)
+        #   - https://icon-icons.com/icon/production-process/149888
+        # - Add check for 'null' in GHDL's Sanity?
 
-                            # Note: the following share the same base class 'Instantiation'
-                            # ComponentInstantiation, EntityInstantiation, ConfigurationInstantiation
-                            if isinstance(statement, Instantiation):
-                                addTreeItem(
-                                    ArchitectureItem, "{}".format(statement.Label), False, self.Image["inst"], ()
-                                )
-                            elif isinstance(
-                                statement,
-                                # Note: the following share the same base class 'GenerateStatement'
-                                # ForGenerateStatement, CaseGenerateStatement, IfGenerateStatement
-                                # 'Case' does still have some issues in the model
-                                (ConcurrentBlockStatement, GenerateStatement),
-                            ):
-                                addTreeItem(
-                                    ArchitectureItem, "{}".format(statement.Label), False, self.Image["file"], ()
-                                )
-                                # recursive call
-                            elif isinstance(statement, ProcessStatement):
-                                addTreeItem(
-                                    ArchitectureItem,
-                                    "{}".format(statement.Label or "DefaultLabel"),
-                                    False,
-                                    self.Image["file"],
-                                    (),
-                                )
-
-                # TODO:
-                # - Make finding the instances recursive (i.e. the snippet below `for statement in architecture.Statements`).
-                # - Segmentation faults with many files: https://github.com/ghdl/ghdl/pull/1827.
-                # - Add check for 'null' in GHDL's Sanity?
-
-                # TODO:
-                #   Strictly, elaboration is required for relating Entities and Architectures.
-                #   However, there are three solutions:
-                #   - Do a naive elaboration, by simple name matching.
-                #   - Implement the elaboration in pyVHDLModel.
-                #   - Use pyGHDL.libghdl for elaboration.
-                #   The most sensible solution is to use the first one, skip the second one, and work on the last one.
-                #   Currently, we are using `pyVHDLModelUtils.resolve.Symbols`, contributed by Patrick.
-                #   In the near future, he might add those and other helper functions into an specific package, sibling
-                #   to pyVHDLModel and pyGHDL.
+        # TODO:
+        #   Strictly, elaboration is required for relating Entities and Architectures.
+        #   However, there are three solutions:
+        #   - Do a naive elaboration, by simple name matching.
+        #   - Implement the elaboration in pyVHDLModel.
+        #   - Use pyGHDL.libghdl for elaboration.
+        #   The most sensible solution is to use the first one, skip the second one, and work on the last one.
+        #   Currently, we are using `pyVHDLModelUtils.resolve.Symbols`, contributed by Patrick.
+        #   In the near future, he might add those and other helper functions into an specific package, sibling
+        #   to pyVHDLModel and pyGHDL.
 
 
 if __name__ == "__main__":
