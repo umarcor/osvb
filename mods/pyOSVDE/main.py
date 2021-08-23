@@ -81,10 +81,24 @@ class OSVDE(tk.Frame):
         """
         # https://www.flaticon.com/packs/file-folder-13
         imgDir = Path(__file__).parent / "img"
-        self.ImageLogo = tk.PhotoImage(file=imgDir / "512" / "icon512.png")
+        self.ImageLogo = tk.PhotoImage(file=imgDir / "icon.png")
         imgDir16 = imgDir / "16"
         self.Image = {}
-        for item in "dir", "file", "lib", "ent", "in", "out", "inout":
+        for item in (
+            "dir",
+            "file",
+            "lib",
+            "ent",
+            "generics",
+            "generic",
+            "ports",
+            "in",
+            "out",
+            "inout",
+            "archs",
+            "arch",
+            "inst",
+        ):
             self.Image[item] = tk.PhotoImage(file=imgDir16 / "{}16.png".format(item))
 
     def _initMenu(self, parent):
@@ -255,59 +269,70 @@ class OSVDE(tk.Frame):
             for entity in lib.Entities:
                 EntityItem = addTreeItem(LibItem, entity.Identifier, False, self.Image["ent"], ())
 
-                GenericsItem = addTreeItem(EntityItem, "Generics", False, self.Image["file"], ())
-                for generic in entity.GenericItems:
-                    addTreeItem(
-                        GenericsItem,
-                        "{} [{}]".format(",".join(generic.Identifiers), generic.Subtype),
-                        False,
-                        self.Image["file"],
-                        (),
-                    )
+                generics = entity.GenericItems
+                if len(generics) != 0:
+                    GenericsItem = addTreeItem(EntityItem, "Generics", False, self.Image["generics"], ())
+                    for generic in generics:
+                        addTreeItem(
+                            GenericsItem,
+                            "{} [{}]".format(",".join(generic.Identifiers), generic.Subtype),
+                            False,
+                            self.Image["generic"],
+                            (),
+                        )
 
-                PortsItem = addTreeItem(EntityItem, "Ports", False, self.Image["file"], ())
-                for port in entity.PortItems:
-                    addTreeItem(
-                        PortsItem,
-                        "{} [{}]".format(",".join(port.Identifiers), port.Subtype),
-                        False,
-                        self.Image["out" if port.Mode is Mode.Out else "inout" if port.Mode is Mode.InOut else "in"],
-                        (),
-                    )
+                ports = entity.PortItems
+                if len(ports) != 0:
+                    PortsItem = addTreeItem(EntityItem, "Ports", False, self.Image["ports"], ())
+                    for port in ports:
+                        addTreeItem(
+                            PortsItem,
+                            "{} [{}]".format(",".join(port.Identifiers), port.Subtype),
+                            False,
+                            self.Image[
+                                "out" if port.Mode is Mode.Out else "inout" if port.Mode is Mode.InOut else "in"
+                            ],
+                            (),
+                        )
 
-                ArchitecturesItem = addTreeItem(EntityItem, "Architectures", False, self.Image["file"], ())
-                for architecture in entity.Architectures:
-                    ArchitectureItem = addTreeItem(
-                        ArchitecturesItem, "{}".format(architecture.Identifier), False, self.Image["dir"], ()
-                    )
+                architectures = entity.Architectures
+                if len(architectures) != 0:
+                    ArchitecturesItem = addTreeItem(EntityItem, "Architectures", False, self.Image["archs"], ())
+                    for architecture in entity.Architectures:
+                        ArchitectureItem = addTreeItem(
+                            ArchitecturesItem, "{}".format(architecture.Identifier), False, self.Image["arch"], ()
+                        )
 
-                    # recursive function starts here
-                    for statement in architecture.Statements:
+                        # recursive function starts here
+                        for statement in architecture.Statements:
 
-                        # Note: the following share the same base class 'Instantiation'
-                        # ComponentInstantiation, EntityInstantiation, ConfigurationInstantiation
-                        if isinstance(statement, Instantiation):
-                            addTreeItem(ArchitectureItem, "{}".format(statement.Label), False, self.Image["ent"], ())
-                        elif isinstance(
-                            statement,
-                            # Note: the following share the same base class 'GenerateStatement'
-                            # ForGenerateStatement, CaseGenerateStatement, IfGenerateStatement
-                            # 'Case' does still have some issues in the model
-                            (ConcurrentBlockStatement, GenerateStatement),
-                        ):
-                            addTreeItem(ArchitectureItem, "{}".format(statement.Label), False, self.Image["file"], ())
-                            # recursive call
-                        elif isinstance(statement, ProcessStatement):
-                            addTreeItem(
-                                ArchitectureItem,
-                                "{}".format(statement.Label or "DefaultLabel"),
-                                False,
-                                self.Image["dir"],
-                                (),
-                            )
+                            # Note: the following share the same base class 'Instantiation'
+                            # ComponentInstantiation, EntityInstantiation, ConfigurationInstantiation
+                            if isinstance(statement, Instantiation):
+                                addTreeItem(
+                                    ArchitectureItem, "{}".format(statement.Label), False, self.Image["inst"], ()
+                                )
+                            elif isinstance(
+                                statement,
+                                # Note: the following share the same base class 'GenerateStatement'
+                                # ForGenerateStatement, CaseGenerateStatement, IfGenerateStatement
+                                # 'Case' does still have some issues in the model
+                                (ConcurrentBlockStatement, GenerateStatement),
+                            ):
+                                addTreeItem(
+                                    ArchitectureItem, "{}".format(statement.Label), False, self.Image["file"], ()
+                                )
+                                # recursive call
+                            elif isinstance(statement, ProcessStatement):
+                                addTreeItem(
+                                    ArchitectureItem,
+                                    "{}".format(statement.Label or "DefaultLabel"),
+                                    False,
+                                    self.Image["file"],
+                                    (),
+                                )
 
                 # TODO:
-                # - Find and add icons/images for the new nodes.
                 # - Make finding the instances recursive (i.e. the snippet below `for statement in architecture.Statements`).
                 # - Segmentation faults with many files: https://github.com/ghdl/ghdl/pull/1827.
 
