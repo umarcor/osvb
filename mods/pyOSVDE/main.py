@@ -197,7 +197,7 @@ class OSVDE(tk.Frame):
         for item in dirName.glob("**/.osvdeignore"):
             ignores.append((item.parent, ignoreParser(item)))
 
-        for item in dirName.glob("**/*.vhd"):
+        for item in dirName.glob("**/*.vhd*"):
             ignoreItem = False
             for match in ignores:
                 if str(match[0]) in str(item) and match[1](item):

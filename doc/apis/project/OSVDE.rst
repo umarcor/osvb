@@ -43,7 +43,7 @@ Usage
 
 Start OSVDE by executing ``PYTHONPATH=$(pwd)/mods ./mods/pyOSVDE/main.py``.
 By default, the '*Open Directory...*' is triggered, asking the user to select a directory containing VHDL sources.
-Upon selection, the whole directory is scanned recursively, searching for either ``*.vhd`` or ``.osvdeignore`` files,
+Upon selection, the whole directory is scanned recursively, searching for either ``*.vhd*`` or ``.osvdeignore`` files,
 and all the VHDL sources are added to pyVHDLModel :ref:`vhdlmodel:vhdlmodel-design` as a :ref:`vhdlmodel:vhdlmodel-document`
 of a :ref:`vhdlmodel:vhdlmodel-library`.
 Then, the Design model is used for generating the content of the GUI.
@@ -73,7 +73,7 @@ For each entity, the generics and ports are shown, including the *name*, *type* 
 Architectures are shown too, and within them concurrent statements such as instantiations and generates.
 
 .. IMPORTANT::
-  For now, ``*.vhd`` files are scanned only, and all of them are analysed into library ``lib``.
+  For now, ``*.vhd*`` files are scanned only, and all of them are analysed into library ``lib``.
   That is because the definition of the Filesets and the Project is out of the scope of OSVDE.
   As discussed above, pyCAPI and the project API are to be reused in OSVDE for that purpose.
 
