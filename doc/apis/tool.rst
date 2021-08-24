@@ -147,6 +147,9 @@ References
 
   * `facebookresearch/hydra <https://github.com/facebookresearch/hydra>`__
   * `chriscardillo/gusty <https://github.com/chriscardillo/gusty>`__
+  * `ray-project/ray <https://github.com/ray-project/ray>`__
+
+    * `docs.ray.io: Ray design patterns <https://docs.ray.io/en/master/ray-design-patterns/index.html>`__
 
   * Not based on Python:
 
