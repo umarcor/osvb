@@ -45,17 +45,12 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:zoom="0.23046875"
-     inkscape:cx="-401.35593"
-     inkscape:cy="1373.2881"
+     inkscape:cx="74.617883"
+     inkscape:cy="2278.3789"
      inkscape:window-x="1912"
      inkscape:window-y="1072"
      inkscape:window-maximized="1"
      inkscape:current-layer="Layer_1">
-    <sodipodi:guide
-       position="-407.11164,1587.1864"
-       orientation="1,0"
-       id="guide1644"
-       inkscape:locked="false" />
     <sodipodi:guide
        position="-391.53964,2284.641"
        orientation="0,1"
@@ -67,93 +62,197 @@
        id="guide1681"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="920.59322,1841.1864"
+       position="895.44887,1528.0697"
        orientation="1,0"
        id="guide1683"
        inkscape:locked="false" />
+    <sodipodi:guide
+       position="-77.53011,2451.5995"
+       orientation="0,1"
+       id="guide953"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-77.53011,2034.2032"
+       orientation="0,1"
+       id="guide955"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-244.48862,2535.0787"
+       orientation="0,1"
+       id="guide1150"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="49.70339,3373.3475"
+       orientation="0,1"
+       id="guide1152"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-54.025424,2958.4322"
+       orientation="0,1"
+       id="guide1154"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-77.53011,1546.0607"
+       orientation="0,1"
+       id="guide1158"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-77.53011,1128.6644"
+       orientation="0,1"
+       id="guide1160"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-411.44713,1379.1021"
+       orientation="0,1"
+       id="guide1162"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-411.44713,1629.5399"
+       orientation="0,1"
+       id="guide1164"
+       inkscape:locked="false" />
   </sodipodi:namedview>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
+     x="16.076569"
+     y="-1928.2894"
+     id="text1492-5"
+     inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
+     inkscape:export-xdpi="64.031998"
+     inkscape:export-ydpi="64.031998"><tspan
+       sodipodi:role="line"
+       id="tspan1490-6"
+       x="16.076569"
+       y="-1928.2894"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:139.453125px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375">Electronic</tspan><tspan
+       sodipodi:role="line"
+       x="16.076569"
+       y="-1794.4144"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:139.453125px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
+       id="tspan1494-2">Design</tspan><tspan
+       sodipodi:role="line"
+       x="16.076569"
+       y="-1660.5394"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:139.453125px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
+       id="tspan1496-5">Automation</tspan><tspan
+       sodipodi:role="line"
+       x="16.076569"
+       y="-1526.6644"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:139.453125px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
+       id="tspan1498-3">Abstraction</tspan></text>
   <g
-     transform="matrix(1.7036583,0,0,1.7036583,-579.35947,-565.10366)"
-     id="g851-3">
+     transform="translate(-84.081034,-1840.5353)"
+     id="g1588-5"
+     style="fill:#000000;fill-opacity:1"
+     inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
+     inkscape:export-xdpi="64.031998"
+     inkscape:export-ydpi="64.031998">
+    <text
+       id="text1502-2"
+       y="-605.92889"
+       x="50.412445"
+       style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:664.0625px;font-family:Teko;-inkscape-font-specification:Teko;fill:#000000;fill-opacity:1;stroke-width:0.99609375"
+         y="-605.92889"
+         x="50.412445"
+         id="tspan1500-7"
+         sodipodi:role="line">EDA</tspan></text>
+    <text
+       id="text1502-4-9"
+       y="-871.13745"
+       x="805.29004"
+       style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:398.4375px;font-family:Teko;-inkscape-font-specification:Teko;fill:#000000;fill-opacity:1;stroke-width:0.99609375"
+         y="-871.13745"
+         x="805.29004"
+         id="tspan1500-3-6"
+         sodipodi:role="line">2</tspan></text>
+  </g>
+  <g
+     transform="matrix(1.6695851,0,0,1.6695851,-578.40564,-1524.2032)"
+     id="g851-1-3">
     <rect
-       id="rect4-6"
+       id="rect4-0-8"
        height="50"
        width="100"
        y="-50"
        x="100"
        style="fill:#37474f" />
     <rect
-       id="rect6-6"
+       id="rect6-5-2"
        height="50"
        width="100"
        y="-50"
        x="200"
        style="fill:#78909c" />
     <rect
-       id="rect8-4"
+       id="rect8-7-6"
        height="50"
        width="100"
        y="-100"
        x="100"
        style="fill:#ff8f00" />
     <rect
-       id="rect10-0"
+       id="rect10-3-4"
        height="50"
        width="100"
        y="-100"
        x="0"
        style="fill:#ffca28" />
     <rect
-       id="rect12-0"
+       id="rect12-8-2"
        height="50"
        width="100"
        y="-150"
        x="100"
        style="fill:#558b2f" />
     <rect
-       id="rect14-3"
+       id="rect14-5-1"
        height="50"
        width="100"
        y="-150"
        x="200"
        style="fill:#9ccc65" />
     <rect
-       id="rect16-6"
+       id="rect16-0-4"
        height="50"
        width="100"
        y="-200"
        x="100"
        style="fill:#0277bd" />
     <rect
-       id="rect18-7"
+       id="rect18-6-0"
        height="50"
        width="100"
        y="-200"
        x="0"
        style="fill:#29b6f6" />
     <rect
-       id="rect20-4"
+       id="rect20-3-5"
        height="50"
        width="100"
        y="-250"
        x="100"
        style="fill:#6a1b9a" />
     <rect
-       id="rect22-1"
+       id="rect22-8-3"
        height="50"
        width="100"
        y="-250"
        x="200"
        style="fill:#ab47bc" />
     <rect
-       id="rect24-5"
+       id="rect24-8-9"
        height="50"
        width="100"
        y="-300"
        x="100"
        style="fill:#c62828" />
     <rect
-       id="rect26-6"
+       id="rect26-4-1"
        height="50"
        width="100"
        y="-300"
@@ -161,7 +260,7 @@
        style="fill:#ef5350" />
   </g>
   <g
-     transform="matrix(1.7036583,0,0,1.7036583,-577.47747,-1519.0923)"
+     transform="matrix(1.6695851,0,0,1.6695851,-578.40564,-618.66438)"
      id="g851">
     <rect
        id="rect4"
@@ -250,19 +349,20 @@
   </g>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
-     x="-569.25916"
-     y="-388.51035"
+     style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609369"
+     x="-582.4491"
+     y="-437.96707"
      id="text1492"
      inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
      inkscape:export-xdpi="64.031998"
      inkscape:export-ydpi="64.031998"><tspan
        sodipodi:role="line"
-       x="-569.25916"
-       y="-388.51035"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:122.1875px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
+       x="-582.4491"
+       y="-437.96707"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:122.18751526px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609369"
        id="tspan1498">Electronic Design Automation Abstraction</tspan></text>
   <g
+     transform="translate(-31.11964,-11.604913)"
      id="g1588"
      style="fill:#000000;fill-opacity:1"
      inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
@@ -294,60 +394,38 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
-     x="71.857819"
-     y="-1926.2972"
-     id="text1492-5"
+     x="-579.57617"
+     y="-2784.9326"
+     id="text1492-5-3"
      inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
      inkscape:export-xdpi="64.031998"
      inkscape:export-ydpi="64.031998"><tspan
        sodipodi:role="line"
-       id="tspan1490-6"
-       x="71.857819"
-       y="-1926.2972"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:132.81251526px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375">Electronic</tspan><tspan
+       id="tspan1490-6-5"
+       x="-579.57617"
+       y="-2784.9326"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:116.875px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375">Electronic</tspan><tspan
        sodipodi:role="line"
-       x="71.857819"
-       y="-1798.7972"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:132.81251526px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
-       id="tspan1494-2">Design</tspan><tspan
+       x="-579.57617"
+       y="-2672.7327"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:116.875px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
+       id="tspan1494-2-5">Design</tspan><tspan
        sodipodi:role="line"
-       x="71.857819"
-       y="-1671.2972"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:132.81251526px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
-       id="tspan1496-5">Automation</tspan><tspan
+       x="-579.57617"
+       y="-2560.5327"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:116.875px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
+       id="tspan1496-5-2">Automation</tspan><tspan
        sodipodi:role="line"
-       x="71.857819"
-       y="-1543.7972"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:132.81251526px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
-       id="tspan1498-3">Abstraction</tspan></text>
-  <g
-     transform="translate(562.59909,-954.33997)"
-     id="g1588-5"
-     style="fill:#000000;fill-opacity:1"
-     inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
-     inkscape:export-xdpi="64.031998"
-     inkscape:export-ydpi="64.031998">
-    <text
-       id="text1502-2"
-       y="-605.92889"
-       x="50.412445"
-       style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:664.0625px;font-family:Teko;-inkscape-font-specification:Teko;fill:#000000;fill-opacity:1;stroke-width:0.99609375"
-         y="-605.92889"
-         x="50.412445"
-         id="tspan1500-7"
-         sodipodi:role="line">EDA</tspan></text>
-    <text
-       id="text1502-4-9"
-       y="-871.13745"
-       x="805.29004"
-       style="font-style:normal;font-weight:normal;font-size:39.84375px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99609375"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:398.4375px;font-family:Teko;-inkscape-font-specification:Teko;fill:#000000;fill-opacity:1;stroke-width:0.99609375"
-         y="-871.13745"
-         x="805.29004"
-         id="tspan1500-3-6"
-         sodipodi:role="line">2</tspan></text>
-  </g>
+       x="-579.57617"
+       y="-2448.3325"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:116.875px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.99609375"
+       id="tspan1498-3-2">Abstraction</tspan></text>
+  <rect
+     style="opacity:1;fill:#200000;fill-opacity:1;stroke:#000000;stroke-width:4.73293877;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect1156"
+     width="20.169405"
+     height="416.55716"
+     x="-112.2147"
+     y="-2864.1685"
+     ry="0" />
 </svg>

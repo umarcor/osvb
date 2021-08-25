@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="400.00009mm"
-   height="198.92638mm"
-   viewBox="0 0 400.00009 198.92638"
+   width="395.42679mm"
+   height="193.40132mm"
+   viewBox="0 0 395.42679 193.40132"
    version="1.1"
    id="svg892"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
@@ -26,20 +26,43 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="530.19137"
-     inkscape:cy="390.20958"
+     inkscape:cx="407.24453"
+     inkscape:cy="540.34886"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
+     fit-margin-top="2"
+     fit-margin-left="2"
+     fit-margin-right="2"
+     fit-margin-bottom="2"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     inkscape:window-x="1912"
+     inkscape:window-x="-8"
      inkscape:window-y="1072"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="132.39719,165.34504"
+       orientation="0,1"
+       id="guide832"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="132.39719,54.475857"
+       orientation="0,1"
+       id="guide834"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="1.7763449,7.2916764"
+       orientation="1,0"
+       id="guide864"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="393.09525,9.4494071"
+       orientation="1,0"
+       id="guide866"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
   <metadata
      id="metadata889">
     <rdf:RDF>
@@ -48,7 +71,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,9 +79,9 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(94.166706,-49.370141)">
+     transform="translate(92.163289,-56.895201)">
     <g
-       transform="matrix(0.45252728,0,0,0.45252728,-94.166706,196.64908)"
+       transform="matrix(0.44347673,0,0,0.44347673,-90.163289,195.82067)"
        id="g851">
       <rect
          id="rect4"
@@ -160,7 +183,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.45555878px;line-height:0.95999998;font-family:Teko;-inkscape-font-specification:Teko;stroke-width:0.26458332"
          id="tspan1498">Electronic Design Automation Abstraction</tspan></text>
     <g
-       transform="matrix(0.26562092,0,0,0.26562092,59.969824,347.01414)"
+       transform="matrix(0.26562092,0,0,0.26562092,55.207321,357.06837)"
        id="g1588"
        style="fill:#000000;fill-opacity:1"
        inkscape:export-filename="C:\Users\eine\Desktop\edaa_logo_draft.png"
