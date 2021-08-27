@@ -243,6 +243,26 @@ with VUnit nowadays.
   It requires a YAML configuration file for specifying the project, instead of using a Python script.
   This feature is related to :ref:`OSVB:API:Core`.
 
+fsva
+====
+
+FuseSoc Verification Automation (fsva) is a tool that aims to automate the verification process of libraries and HDL design projects managed with `FuseSoc <https://github.com/olofk/fusesoc>`__.
+Fsva in no way duplicates or replaces functionalities provided by the FuseSoc.
+Colloquially speaking, fsva is a wrapper for FuseSoc, automating the verification process.
+It simply detects and runs verification targets, and parses verification results (counts warnings and errors).
+The major goal is to easily integrate project/libraries described in FuseSoc into Continuous Integration workflow.
+
+Fsva scans recursively for ``*.core`` files and fetches all targets with name ``tb`` or name starting with ``tb_`` or ending with ``_tb``.
+Then it runs these targets calling FuseSoc run command and captures stdout and stderr. 
+By default verification targets are run in parallel.
+
+Fsva does not, and never will, perform any advanced results parsing such as scoreboard analysis or UVM coverage analysis.
+It does one thing, and tries to do it well.
+If one needs advanced results parsing, then the proper parser needs to be run after fsva has finished.
+
+* `fsva <https://github.com/m-kru/fsva>`__
+
+
 Learning/teaching
 =================
 
