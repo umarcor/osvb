@@ -170,6 +170,21 @@ Table style:
   This is a demo for showcasing the capabilities of pyGHDL.dom and pyVHDLModel.
   Should you want to help improve the implementation for it to be more usable in practice, `let us know <https://github.com/umarcor/osvb/issues/new>`__!
 
+VHDL Domain
+-----------
+
+`sphinxcontrib-vhdldomain <https://github.com/Paebbels/sphinxcontrib-vhdldomain>`__ is work in progress for adding a VHDL
+language domain to Sphinx.
+That is, a set of nestable directives resembling the architecture of pyVHDLModel.
+The purpose is twofold:
+
+* Allow a better integration of the content into Sphinx, rather than generating reStructuredText output from arbitrary
+  Python functions.
+* Allow users to specify a pyVHDLModel project by handwriting directives in reStructuredText sources, by either pointing
+  to individual files or explicitly describing all the items.
+
+See `Paebbels/sphinxcontrib-vhdldomain#4 <https://github.com/Paebbels/sphinxcontrib-vhdldomain/issues/4>`__.
+
 .. _OSVB:API:Project:DocGen:Sphinx:Diagrams:
 
 Diagrams
