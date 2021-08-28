@@ -22,3 +22,7 @@ References
 * `Test Anything Protocol <https://testanything.org/>`__
 
   * `python-tap/tappy <https://github.com/python-tap/tappy>`__: a set of tools for working with the TAP in Python.
+
+* `FuseSoc Verification Automation (fsva) <https://github.com/m-kru/fsva>`__ is an HDL testbench runner based on `FuseSoc <https://hdl.github.io/awesome/items/fusesoc/>`__.
+  It fetches targets named with certain patterns in ``.core`` files; which can be executed in parallel; stdout/stderr
+  are captured and parsed.
