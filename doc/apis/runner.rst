@@ -26,3 +26,5 @@ References
 * `FuseSoc Verification Automation (fsva) <https://github.com/m-kru/fsva>`__ is an HDL testbench runner based on `FuseSoc <https://hdl.github.io/awesome/items/fusesoc/>`__.
   It fetches targets named with certain patterns in ``.core`` files; which can be executed in parallel; stdout/stderr
   are captured and parsed.
+
+* `ttask <https://www.p-code.org/ttask/index.html>`__
