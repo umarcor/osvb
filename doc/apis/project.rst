@@ -5,7 +5,8 @@ Project
 
 This section covers the definition of an API for binding the sources and options from the :ref:`OSVB:API:Core` to the
 interfaces in :ref:`OSVB:API:Tool`, :ref:`OSVB:API:Runner` and :ref:`OSVB:API:Logging`.
-The Project and Design management API handles which tasks to execute, the order, and the file dependencies and artifacts.
+The Project and Design management API handles tools independent information (files/filesets, primary design units,
+testbenches, constraints, etc.) and some tool specific parameters.
 
 * Project: a set of sources (HDL, software, data, assets, configuration files, etc.) for handling multiple designs.
 * Design: a design unit, the dependencies, the parent units (testbenches and BoardTop) and the parameters for execution.

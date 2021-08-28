@@ -5,9 +5,10 @@ Tool
 
 This section covers the interface for executing sequences of tasks (workflows) involving interaction with EDA tools.
 Since each tool has different mechanisms for achieving the same results, the purpose of this interface is to provide
-homogeneous wrappers that :ref:`OSVB:API:Project` can use for executing workflows.
+homogeneous wrappers that use data from :ref:`OSVB:API:Project` for deciding which tasks to execute, the order, file
+dependencies and artifacts.
 In terms of the :ref:`OSVB:Model`, this piece belongs to layer 2, which consumes the specific EDA interfaces in layer 1
-and provides homogeneous wrappers for layer 3 to use.
+(EDA) and layer 4 (Project).
 
 Hardware design workflows are known for combining multiple (probably over a dozen) smaller tools for getting the desired
 artifact(s) from some HDL sources (see `Hammer VLSI Flow, slide 'A Real VLSI Flow' <https://fires.im/micro19-slides-pdf/04_hammer_vlsi.pdf>`__).
