@@ -34,7 +34,7 @@ Its goal is the interoperability of diverse tools and languages with documented 
 
 2 | Workflows
     Middle layer to translate projects into execution steps (EDA and/or CLI).
-    See :ref:`OSVB:API:Tool`.
+    See :ref:`OSVB:API:Tool` and :ref:`OSVB:API:Runner`.
 
 3 | Model
     Syntax/design Document Object Model (DOM) of the language(s).
@@ -77,7 +77,7 @@ Fortunately, the main developer of pyIPCMI is willing to rework the codebase, up
 layers explicitly to match the OSVB Model.
 In fact, the OSVB Model is largely based on the expected outcome of reworking pyIPCMI.
 
-Those modules are being reworked under the umbrella of Electronic Design Automation Abstraction (EDAA or EDA²):
+Those modules are being reworked under the umbrella of `Electronic Design Automation Abstraction (EDAA or EDA²) <https://github.com/edaa-org>`__:
 
 .. figure:: ../_static/logo/edaa_banner.svg
   :alt: Electronic Design Automation Abstraction (EDAA).
@@ -86,7 +86,7 @@ Those modules are being reworked under the umbrella of Electronic Design Automat
 
 * EDA² - CLI (`pyCLIAbstraction <https://github.com/Paebbels/pyCLIAbstraction>`__) [layer 0]
 * EDA² - Tool [layer 1]
-* EDA² - Project [layer 3]
+* EDA² - ProjectModel [layer 3]
 * EDA² - VHDLModel (`pyVHDLModel <https://github.com/vhdl/pyVHDLModel>`__) [layer 5]
 
 
