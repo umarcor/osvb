@@ -22,7 +22,7 @@ jobs:
     - name: '🛳️ Build osvb/doc'
       run: |
         docker build -t osvb/doc - <<-EOF
-        FROM ghcr.io/hdl/debian/buster/sim/osvb
+        FROM ghcr.io/hdl/debian/bullseye/sim/osvb
         ENV PYTHONPATH=/src/mods
         RUN apt update -qq && apt install -y \
           git \
@@ -30,8 +30,7 @@ jobs:
           python3-pip \
           python3-setuptools \
           python3-tk \
-         && pip3 install git+https://github.com/ghdl/ghdl.git@$(ghdl version hash) \
-         && ln -s /usr/bin/pip3 /usr/bin/pip
+         && pip3 install git+https://github.com/ghdl/ghdl.git@\$(ghdl version hash)
         EOF
 
     - name: '📓 BuildTheDocs (BTD)'
