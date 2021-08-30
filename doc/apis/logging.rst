@@ -77,6 +77,7 @@ He also contributed a reader to GTKWave, which allows visualizing them.
   That is not trivial because some conversions are lossy or suboptimal.
   See appendix A of the `GTKWave User's Guide <http://gtkwave.sourceforge.net/gtkwave.pdf>`__
   and subdir `gtkwave/gtkwave: gtkwave3-gtk3/src/helpers <https://github.com/gtkwave/gtkwave/tree/master/gtkwave3-gtk3/src/helpers>`__.
+  See also `gtkwave/gtkwave#70 <https://github.com/gtkwave/gtkwave/issues/70>`__.
   However, as far as we are aware, no other independent repository exists which is focused on providing a toolkit for
   manipulating *any* waveform programmatically.
   If GTKWave helpers are buildable/usable independently of GTKWave, it might be desirable to provide bindings in Python,
