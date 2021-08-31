@@ -185,6 +185,50 @@ The purpose is twofold:
 
 See `Paebbels/sphinxcontrib-vhdldomain#4 <https://github.com/Paebbels/sphinxcontrib-vhdldomain/issues/4>`__.
 
+.. vhdl:design::
+   :name: my Example
+
+   glob/**/rules/*.vhdl
+   glob/**/rules/*.vhdl
+   glob/**/rules/*.vhdl
+
+
+.. vhdl:design::
+   :name: my Example
+
+   .. vhdl:library::
+      :name: stopwatch
+
+      glob/**/rules/*.vhdl
+      glob/**/rules/*.vhdl
+
+   .. vhdl:library::
+      :name: tests
+
+      glob/**/rules/*.vhdl
+
+
+.. vhdl:refentity:: stopwatch.display
+   :style: table
+
+
+.. vhdl:document:: file1.vhdl
+
+   .. vhdl:entity:: myEntity
+      :members: all
+
+      .. generic:: BITS
+         :type: integer
+         :default: 8
+
+          Here is the doc text
+
+      .. generic:: FREQUENCY
+         :type: integer
+         :default: 100
+
+          Here is the doc text
+
 .. _OSVB:API:Project:DocGen:Sphinx:Diagrams:
 
 Diagrams
