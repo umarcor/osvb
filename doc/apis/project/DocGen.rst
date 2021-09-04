@@ -185,6 +185,9 @@ The purpose is twofold:
 
 See `Paebbels/sphinxcontrib-vhdldomain#4 <https://github.com/Paebbels/sphinxcontrib-vhdldomain/issues/4>`__.
 
+There is also `CESNET/sphinx-vhdl <https://github.com/CESNET/sphinx-vhdl>`__, which uses a custom basic parser (`CESNET/sphinx-vhdl: src/sphinxvhdl/autodoc.py <https://github.com/CESNET/sphinx-vhdl/blob/main/src/sphinxvhdl/autodoc.py>`__)
+and multiple custom Sphinx directives (`CESNET/sphinx-vhdl: src/sphinxvhdl/vhdl.py <https://github.com/CESNET/sphinx-vhdl/blob/main/src/sphinxvhdl/vhdl.py>`__).
+
 .. _OSVB:API:Project:DocGen:Sphinx:Diagrams:
 
 Diagrams
