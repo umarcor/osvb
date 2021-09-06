@@ -20,12 +20,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 
-import sys, re
+from sys import path as sys_path
 from os.path import abspath
 from pathlib import Path
-from json import dump, loads
+from json import loads
 
-sys.path.insert(0, abspath("."))
+sys_path.insert(0, abspath("."))
 
 # -- General configuration ------------------------------------------------
 
