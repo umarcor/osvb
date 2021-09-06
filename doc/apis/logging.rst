@@ -339,7 +339,6 @@ Similar solutions exist based on pytest:
 As a complement, extending `pyucis-viewer <https://github.com/fvutils/pyucis-viewer>`__ might be evaluated, for providing
 a Qt based solution. pyucis-viewer currently provides a simple bar-chart viewer for coverage data read via pyucis.
 
-
 GitHub
 ------
 
@@ -360,3 +359,8 @@ On top of visualizing individual reports or sets of reports at one point in time
 metrics throughout the development of a project can provide valuable insight. GitLab does have a built-in `Prometheus <https://prometheus.io/>`_ monitoring system and `Grafana <https://grafana.com/>`_ can be optionally used as a dashboard:
 `docs.gitlab.com: Grafana Dashboard Service <https://docs.gitlab.com/omnibus/settings/grafana.html>`__. Therefore, it
 would be useful to send OSVR reports to either Prometheus or some other temporal database (say Graphite, InfluxDB, etc.).
+
+References
+----------
+
+* `EDAAC/EDAAC <https://github.com/EDAAC/EDAAC>`__: EDA Analytics Central
