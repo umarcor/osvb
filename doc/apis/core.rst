@@ -108,3 +108,4 @@ References
     solution and I've been periodically trying to build a reference design that uses Kactus2+FuseSoC"*.
 
 * `olofkindgren.blogspot.com: IP-XACT: The good, the bad and the outright madness <http://olofkindgren.blogspot.com/2016/11/ip-xact-good-bad-and-outright-madness.html>`__
+* `youtube.com: ORPSoCv3 - OpenRISC Project Meeting 2012 <https://www.youtube.com/watch?v=vYJjIoV0G3U>`__
