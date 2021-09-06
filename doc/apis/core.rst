@@ -100,3 +100,11 @@ References
 * `ghdl/ghdl-language-server#12 <https://github.com/ghdl/ghdl-language-server/issues/12>`__ `ghdl/ghdl-language-server#80 <https://github.com/ghdl/ghdl-language-server/issues/80>`__
 * `cocotb[wiki]: Python Test Runner Proposal | Models <https://github.com/cocotb/cocotb/wiki/Python-Test-Runner-Proposal#models>`__.
 * `Core HAMMER settings <https://github.com/ucb-bar/hammer/blob/master/src/hammer-vlsi/defaults.yml>`__
+* `kactus2/kactus2dev <https://github.com/kactus2/kactus2dev>`__
+
+  * `research.tuni.fi/system-on-chip/tools <https://research.tuni.fi/system-on-chip/tools/>`__
+  * `gitter.im/hdl/community?at=6132117a5b92082de1807f54 <https://gitter.im/hdl/community?at=6132117a5b92082de1807f54>`__:
+    *"I also worked together with the Kactus2 devs and had monthly meeting for a few years to push that as the preferred
+    solution and I've been periodically trying to build a reference design that uses Kactus2+FuseSoC"*.
+
+* `olofkindgren.blogspot.com: IP-XACT: The good, the bad and the outright madness <http://olofkindgren.blogspot.com/2016/11/ip-xact-good-bad-and-outright-madness.html>`__
