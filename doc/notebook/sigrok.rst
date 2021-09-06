@@ -167,7 +167,7 @@ Generating waveforms with GHDL
 ==============================
 
 In this section waveform dump features of GHDL are introduced. This is a complement to the information available in the
-docs: :ghdl:ref:`export_waves`. The purpose of these examples is to provide a test suite that allows users to evaluate
+docs: :ref:`GHDL:export_waves`. The purpose of these examples is to provide a test suite that allows users to evaluate
 the features and performance of upstream and in-progress branches.
 
 :ghsrc:`Resolution <sigrok/resolution>`
