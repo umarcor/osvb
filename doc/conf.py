@@ -135,6 +135,7 @@ texinfo_documents = [
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
+    "edaa": ("https://edaa-org.github.io/", None),
     "ghdl": ("https://ghdl.github.io/ghdl", None),
     "ghdl-cosim": ("https://ghdl.github.io/ghdl-cosim", None),
     "vhdlmodel": ("https://vhdl.github.io/pyVHDLModel", None),
