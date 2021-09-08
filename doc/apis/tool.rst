@@ -7,7 +7,7 @@ This section covers the interface for executing sequences of tasks (workflows) i
 Since each tool has different mechanisms for achieving the same results, the purpose of this interface is to provide
 homogeneous wrappers that use data from :ref:`OSVB:API:Project` for deciding which tasks to execute, the order, file
 dependencies and artifacts.
-In terms of the :ref:`OSVB:Model`, this piece belongs to layer 2, which consumes the specific EDA interfaces in layer 1
+In terms of the :ref:`EDAA:Concept`, this piece belongs to layer 2, which consumes the specific EDA interfaces in layer 1
 (EDA) and layer 4 (Project).
 
 Hardware design workflows are known for combining multiple (probably over a dozen) smaller tools for getting the desired

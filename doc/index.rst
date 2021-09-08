@@ -74,7 +74,7 @@ in this bundle are tested on CI with open source simulators/compilers only (see 
   intro/frameworks
   intro/sim
   intro/cosim
-  intro/model
+  EDA² Conceptual Model <https://edaa-org.github.io/ConceptualModel.html>
 
 .. toctree::
   :caption: API
