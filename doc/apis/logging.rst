@@ -49,6 +49,7 @@ VCD/EVCD can be read by multiple open source tools:
 * `psurply/dwfv <https://github.com/psurply/dwfv>`__
 * `wavedrom.com <https://wavedrom.com/>`__, `wavedrom/vcdrom <https://github.com/wavedrom/vcdrom>`__ and `zoom <https://github.com/wavedrom/zoom>`__.
 * `Nic30/d3-wave <https://github.com/Nic30/d3-wave>`__
+* `Nic30/pyDigitalWaveTools <https://github.com/Nic30/pyDigitalWaveTools>`__
 * `raczben/fliplot <https://github.com/raczben/fliplot>`__
 * `lachlansneff/ligeia <https://github.com/lachlansneff/ligeia>`__
 * `yne/vcd <https://github.com/yne/vcd>`__
