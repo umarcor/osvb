@@ -47,7 +47,7 @@ VCD/EVCD can be read by multiple open source tools:
 * `GTKWave <https://hdl.github.io/awesome/items/gtkwave/>`__
 * :ref:`OSVB:Notebook:sigrok`
 * `psurply/dwfv <https://github.com/psurply/dwfv>`__
-* `wavedrom.com <https://wavedrom.com/>`__, `wavedrom/vcd <https://github.com/wavedrom/vcd>`__ and `zoom <https://github.com/wavedrom/zoom>`__.
+* `wavedrom.com <https://wavedrom.com/>`__, `wavedrom/vcdrom <https://github.com/wavedrom/vcdrom>`__ and `zoom <https://github.com/wavedrom/zoom>`__.
 * `Nic30/d3-wave <https://github.com/Nic30/d3-wave>`__
 * `raczben/fliplot <https://github.com/raczben/fliplot>`__
 * `lachlansneff/ligeia <https://github.com/lachlansneff/ligeia>`__
