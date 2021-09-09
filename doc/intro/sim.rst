@@ -7,6 +7,13 @@ Simulators | Compilers
   Licensing constraints of many vendor tools do not allow discussing features and/or perfomance publicly. Therefore, this
   section contains references to open source tools only, which don't have such knowledge limitations.
 
+Essent
+======
+
+*TBC*
+
+* `ucsc-vama/essent <https://github.com/ucsc-vama/essent>`__
+
 GHDL
 ====
 
