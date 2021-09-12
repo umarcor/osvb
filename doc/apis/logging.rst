@@ -45,15 +45,16 @@ Since VCD files are text files, some tools use VCDGZ for referring to VCD compre
 VCD/EVCD can be read by multiple open source tools:
 
 * `GTKWave <https://hdl.github.io/awesome/items/gtkwave/>`__
+* `veripool/dinotrace <https://github.com/veripool/dinotrace>`__
 * :ref:`OSVB:Notebook:sigrok`
 * `psurply/dwfv <https://github.com/psurply/dwfv>`__
 * `wavedrom.com <https://wavedrom.com/>`__, `wavedrom/vcdrom <https://github.com/wavedrom/vcdrom>`__ and `zoom <https://github.com/wavedrom/zoom>`__.
 * `Nic30/d3-wave <https://github.com/Nic30/d3-wave>`__
-* `Nic30/pyDigitalWaveTools <https://github.com/Nic30/pyDigitalWaveTools>`__
 * `raczben/fliplot <https://github.com/raczben/fliplot>`__
 * `lachlansneff/ligeia <https://github.com/lachlansneff/ligeia>`__
 * `yne/vcd <https://github.com/yne/vcd>`__
 * `toem/impulse.vscode <https://github.com/toem/impulse.vscode>`__
+* `bmpenuelas/hdlcomposer <https://github.com/bmpenuelas/hdlcomposer>`__
 
 However, being a 20+ year old format defined for Verilog, VCD has certain limitations:
 
@@ -104,6 +105,7 @@ With regard to post-processing of waveforms, see the following references:
 * `avidan-efody/coverage <https://github.com/avidan-efody/coverage>`__: implementation of post-process coverage, and
   batch waveform search.
 * `gitlab.com/xiretza/ghw-rs <https://gitlab.com/xiretza/ghw-rs>`__
+* `Nic30/pyDigitalWaveTools <https://github.com/Nic30/pyDigitalWaveTools>`__
 
 Open Source Verification Report
 *******************************
