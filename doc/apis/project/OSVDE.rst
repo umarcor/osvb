@@ -104,6 +104,7 @@ Some enhancements and features we would like to integrate into OSVDE are the fol
   * Customisable style (see
     `vhdl-style-guide <https://github.com/jeremiah-c-leary/vhdl-style-guide>`__,
     `VHDLTool <https://github.com/VHDLTool>`__).
+  * `AdiuvoEngineering/VHDL_Coding_Rules <https://github.com/AdiuvoEngineering/VHDL_Coding_Rules>`__.
 
 * pyVHDLModel/pyGHDL enhancements:
 
