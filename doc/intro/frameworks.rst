@@ -152,6 +152,7 @@ SVUnit
 *TBC*
 
 * `tudortimi/svunit <https://github.com/tudortimi/svunit>`__
+* `dpretet/svut <https://github.com/dpretet/svut>`__
 
 UVM
 ===
