@@ -1,4 +1,4 @@
-.. _OSVB:Notebook:sigrok:
+.. _Notebook:sigrok:
 
 sigrok-cli | Pulseview
 ######################

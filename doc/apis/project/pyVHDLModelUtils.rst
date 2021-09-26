@@ -1,4 +1,4 @@
-.. _OSVB:API:Project:pyVHDLModelUtils:
+.. _API:Project:pyVHDLModelUtils:
 
 pyVHDLModelUtils
 ################
@@ -54,7 +54,7 @@ be reused by multiple projects.
 .. NOTE::
   We are aware that reworking an stable codebase is not the most appealing task, so developers of existing tools might
   not be willing to use pyVHDLModel straightaway.
-  In this context, the main purpose of pyVHDLModelUtils, :ref:`OSVB:API:Project:OSVDE` and :ref:`OSVB:API:Project:DocGen`
+  In this context, the main purpose of pyVHDLModelUtils, :ref:`API:Project:OSVDE` and :ref:`API:Project:DocGen`
   is to showcase pyVHDLModel and to build a critical mass for creating higher abstraction features on top.
   Potential users of pyVHDLModel are all the developers of tools which benefit from programmatically using knowledge
   about a VHDL codebase.

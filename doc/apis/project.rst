@@ -1,10 +1,10 @@
-.. _OSVB:API:Project:
+.. _API:Project:
 
 Project
 #######
 
-This section covers the definition of an API for binding the sources and options from the :ref:`OSVB:API:Core` to the
-interfaces in :ref:`OSVB:API:Tool`, :ref:`OSVB:API:Runner` and :ref:`OSVB:API:Logging`.
+This section covers the definition of an API for binding the sources and options from the :ref:`API:Core` to the
+interfaces in :ref:`API:Tool`, :ref:`API:Runner` and :ref:`API:Logging`.
 The Project and Design management API handles tools independent information (files/filesets, primary design units,
 testbenches, constraints, etc.) and some tool specific parameters.
 
@@ -14,8 +14,8 @@ testbenches, constraints, etc.) and some tool specific parameters.
 This is probably the most complex piece, because it is the less constrained.
 Interaction with tools and manipulation of file formats are technically limited by the interfaces and capabilities in
 those.
-Therefore, although there is flexibility in the implementation of :ref:`OSVB:API:Core`, :ref:`OSVB:API:Tool`,
-:ref:`OSVB:API:Runner` and :ref:`OSVB:API:Logging`, all of them need to match some external resource.
+Therefore, although there is flexibility in the implementation of :ref:`API:Core`, :ref:`API:Tool`,
+:ref:`API:Runner` and :ref:`API:Logging`, all of them need to match some external resource.
 Conversely, defining what a project is and how to handle it tends to be specific for each use case (say organisation,
 company, open source project...), so there is a vast space of different workflows, all similar but particular enough.
 Therefore, the elaboration of the API in this section is delayed until others are defined, since that will allow working

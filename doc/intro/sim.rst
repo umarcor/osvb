@@ -1,4 +1,4 @@
-.. _OSVB:Simulators:
+.. _Simulators:
 
 Simulators | Compilers
 ######################
@@ -40,7 +40,7 @@ for simulation of behavioural constructs in complex testbenches. Icarus Verilog 
 * `steveicarus/iverilog <https://github.com/steveicarus/iverilog>`__
 * `steveicarus/ivtest <https://github.com/steveicarus/ivtest>`__
 
-.. _OSVB:Simulators:Verilator:
+.. _Simulators:Verilator:
 
 Verilator
 =========

@@ -1,11 +1,11 @@
-.. _OSVB:API:Tool:
+.. _API:Tool:
 
 Tool
 ####
 
 This section covers the interface for executing sequences of tasks (workflows) involving interaction with EDA tools.
 Since each tool has different mechanisms for achieving the same results, the purpose of this interface is to provide
-homogeneous wrappers that use data from :ref:`OSVB:API:Project` for deciding which tasks to execute, the order, file
+homogeneous wrappers that use data from :ref:`API:Project` for deciding which tasks to execute, the order, file
 dependencies and artifacts.
 In terms of the :ref:`EDAA:Concept`, this piece belongs to layer 2, which consumes the specific EDA interfaces in layer 1
 (EDA) and layer 4 (Project).
@@ -86,7 +86,7 @@ not explicitly used.
 Precisely, the section about `Implementation <https://github.com/olofk/edalize/wiki/Edalize-(Slight-return)#implementation>`__
 proposes using EDAM as the unified format for passing parameters between nodes.
 
-On the other hand, as shown in the diagram of section :ref:`OSVB:API:Core`, developers of Edalize and PyFPGA have been
+On the other hand, as shown in the diagram of section :ref:`API:Core`, developers of Edalize and PyFPGA have been
 lately working towards making integration easier:
 
 * Experimental support for *launchers* was added to Edalize (`olofk/edalize@f8b3f66 <https://github.com/olofk/edalize/commit/f8b3f666a282e09b8ce06388101d179f8c70e8d4>`__).

@@ -1,4 +1,4 @@
-.. _OSVB:API:Core:
+.. _API:Core:
 
 Core
 ####

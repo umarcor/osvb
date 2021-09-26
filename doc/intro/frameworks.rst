@@ -1,4 +1,4 @@
-.. _OSVB:Projects:
+.. _Projects:
 
 Frameworks and Methodologies
 ############################
@@ -13,7 +13,7 @@ Since 2019, it is maintained by members of the `FOSSI Foundation <https://www.fo
 contributors.
 
 Cocotb provides shared libraries written in C++, which allows simulators to load Python scripts and interact with them
-at runtime through indirect co-simulation interfaces: VPI, VHPI or FLI (see :ref:`OSVB:Co-simulation`).
+at runtime through indirect co-simulation interfaces: VPI, VHPI or FLI (see :ref:`Co-simulation`).
 Therefore, users can write testbenches for existing HDL designs using Python only.
 Direct interfaces such as DPI or CXXRTL are not supported.
 
@@ -131,7 +131,7 @@ However, simulation models for custom hardware and in-development CPUs are not a
 Moreover, it is sometimes desirable to have bit-accurate and cycle-accurate simulation models for testing custom
 accelerators along with well-known CPUs and other peripherals.
 As a result, there is work in progress for supporting HDL models to be added as nodes into the Renode infrastructure.
-All cosimulation strategies explained in :ref:`OSVB:Co-simulation` are subject to be integrated, either using existing
+All cosimulation strategies explained in :ref:`Co-simulation` are subject to be integrated, either using existing
 Verification Components (VCs) or with ad-hoc middleware.
 Find a sample about how to integrate *verilated* models in `antmicro/renode-verilator-integration <https://github.com/antmicro/renode-verilator-integration>`__.
 It supports a verilated bus master and AXI4.
@@ -178,7 +178,7 @@ Similarly, there is a C/C++ implementation, which uses DPI, VPI, VHPI or FLI for
 `uvm.io <http://uvm.io/>`__.
 
 Furthermore, there work in progress for adding System Verilog support to verilator, including both synthesizable and
-non-synthesizable constructs. See :ref:`OSVB:Simulators:Verilator`.
+non-synthesizable constructs. See :ref:`Simulators:Verilator`.
 
 UVVM
 ====
@@ -194,7 +194,7 @@ VUnit is an open source unit testing framework for VHDL/SystemVerilog.
 It was developed and maintained by Lars Asplund and Olof Kraigher and it was initially released in 2015.
 Several users contributed and maintain verification components.
 Unai Martinez-Corral contributed co-simulation features to be used with GHDL's implementation of VHPIDIRECT (see
-:ref:`OSVB:Co-simulation`).
+:ref:`Co-simulation`).
 
 The main focus of VUnit is providing the functionality needed to realize continuous and automated testing of HDL code.
 It provides a Python API for declaring sources and library names, for parameterizing tests and for defining simulator
@@ -225,7 +225,7 @@ Users have three options:
 None of them is ideal.
 The first one requires all users to repeat some code which might be easily reused.
 Others require dealing with paths/locations specific to each host/system.
-Instead, the approach in this bundle uses ``*.core`` files and :ref:`OSVB:API:Core`.
+Instead, the approach in this bundle uses ``*.core`` files and :ref:`API:Core`.
 
 With regard to simulator support, VUnit does currently not support any open source Verilog or System Verilog simulator.
 However, it was last evaluated 3-4 years ago (see `VUnit/vunit#188 <https://github.com/VUnit/vunit/issues/188>`__).
@@ -242,7 +242,7 @@ with VUnit nowadays.
   of the Python runner in VUnit.
   It's for VHDL testbenches only, and supports GHDL or Active-HDL.
   It requires a YAML configuration file for specifying the project, instead of using a Python script.
-  This feature is related to :ref:`OSVB:API:Core`.
+  This feature is related to :ref:`API:Core`.
 
 Learning/teaching
 =================

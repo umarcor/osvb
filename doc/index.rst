@@ -41,7 +41,7 @@ Open Source Verification Bundle
 
 Welcome to the Documentation of the Open Source Verification Bundle (OSVB)!
 
-OSVB gathers the `most popular <https://larsasplund.github.io/github-facts/>`__ open source verification :ref:`OSVB:Projects`
+OSVB gathers the `most popular <https://larsasplund.github.io/github-facts/>`__ open source verification :ref:`Projects`
 for VHDL and System Verilog:
 `cocotb <https://hdl.github.io/awesome/items/cocotb/>`__,
 `OSVVM <https://hdl.github.io/awesome/items/osvvm/>`__,
@@ -60,7 +60,7 @@ of this bundle is twofold:
 
 All the frameworks support multiple vendor tools as well as open source simulators. However, due to licensing restrictions,
 it is not possible to test non FLOSS simulators on public Continuous Integration (CI) services. Therefore, the examples
-in this bundle are tested on CI with open source simulators/compilers only (see :ref:`OSVB:Simulators`).
+in this bundle are tested on CI with open source simulators/compilers only (see :ref:`Simulators`).
 
 .. IMPORTANT:: This project is a proof of concept for gathering several integration efforts involving the target projects by
   pairs. For instance, VUnit and cocotb, or VUnit and OSVVM. Not all the features described in this home page are implemented

@@ -1,4 +1,4 @@
-.. _OSVB:Examples:SFF:
+.. _Examples:SFF:
 
 Simple Flip-Flop
 ################
@@ -6,7 +6,7 @@ Simple Flip-Flop
 This is an as-simple-as-possible UUT for investigating how to enhance the integration of frameworks with conflicting test
 management features.
 
-.. _OSVB:Examples:SFF:VUnit-cocotb:
+.. _Examples:SFF:VUnit-cocotb:
 
 VUnit and cocotb
 ================

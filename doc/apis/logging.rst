@@ -1,4 +1,4 @@
-.. _OSVB:API:Logging:
+.. _API:Logging:
 
 Logging
 #######
@@ -7,7 +7,7 @@ Unarguably, the most relevant feature of a testing/verification ecosystem is a r
 and for providing feedback to the users.
 Since most executions are to be run unattended, spotting regressions needs to be reliable and must provide a quick
 procedure for reproducing issues locally.
-Therefore, logging features are tightly related to :ref:`OSVB:API:Tool` and :ref:`OSVB:API:Runner`.
+Therefore, logging features are tightly related to :ref:`API:Tool` and :ref:`API:Runner`.
 
 Terminal
 ********
@@ -46,7 +46,7 @@ VCD/EVCD can be read by multiple open source tools:
 
 * `GTKWave <https://hdl.github.io/awesome/items/gtkwave/>`__
 * `veripool/dinotrace <https://github.com/veripool/dinotrace>`__
-* :ref:`OSVB:Notebook:sigrok`
+* :ref:`Notebook:sigrok`
 * `psurply/dwfv <https://github.com/psurply/dwfv>`__
 * `wavedrom.com <https://wavedrom.com/>`__, `wavedrom/vcdrom <https://github.com/wavedrom/vcdrom>`__ and `zoom <https://github.com/wavedrom/zoom>`__.
 * `Nic30/d3-wave <https://github.com/Nic30/d3-wave>`__
@@ -102,7 +102,7 @@ and GTKWave automatically and/or interactively:
 
 With regard to post-processing of waveforms, see the following references:
 
-* :ref:`OSVB:Notebook:fpconv`
+* :ref:`Notebook:fpconv`
 * `avidan-efody/coverage <https://github.com/avidan-efody/coverage>`__: implementation of post-process coverage, and
   batch waveform search.
 * `gitlab.com/xiretza/ghw-rs <https://gitlab.com/xiretza/ghw-rs>`__

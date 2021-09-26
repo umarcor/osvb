@@ -1,4 +1,4 @@
-.. _OSVB:Overview:
+.. _Overview:
 
 Overview
 ========
@@ -32,7 +32,7 @@ However, there is a conflict with the test management features in both framework
 Both of them expect to be the root of the management, thus they both finalise individual test/simulations independently.
 There is a race between them, and one will always fail.
 There is work in progress for letting one of them wait for the other.
-See :ref:`OSVB:Examples:SFF:VUnit-cocotb`.
+See :ref:`Examples:SFF:VUnit-cocotb`.
 
 OSVVM is composed by a core repository and a larger distribution named *OSVVM Libraries*, which includes verification
 components and build/run scripts.
@@ -44,7 +44,7 @@ OSVVM does provide ``*.pro`` files, which uses a custom syntax for defining sour
 Those files are used by OSVVM's own TCL scripts and also by `GHDL's vendor scripts <https://github.com/ghdl/ghdl/tree/master/scripts/vendors>`__ (written in PowerShell and Bash).
 Yet, writing a custom Python module for reading those files doesn't feel worth.
 Instead, the proposal in this bundle is to use ``*.core`` (YAML) files.
-See :ref:`OSVB:API:Core`.
+See :ref:`API:Core`.
 Furthermore, the entrypoint to tests based on the OSVVM methodology are VHDL configurations, unlike other methodologies
 based on entities.
 Currently, VUnit's runner does not support executing configurations as primary units.
@@ -52,7 +52,7 @@ However, there is common interest in making it possible.
 
 Similarly, UVVM is not supported as a built-in feature in VUnit, but ``compile_order.txt`` files are provided.
 Those are used by UVVM's own TCL scripts and also by GHDL's vendor scripts (written in PowerShell and Bash).
-As with OSVVM, the proposal in this bundle is to use ``*.core`` (YAML) files. See :ref:`OSVB:API:Core`.
+As with OSVVM, the proposal in this bundle is to use ``*.core`` (YAML) files. See :ref:`API:Core`.
 
 While VUnit provides multiple optional helper VHDL libraries, the SystemVerilog infrastructure is limited to the HDL
 runner and some `check` features.
@@ -65,7 +65,7 @@ Since this bundle is focused on simulation of HDL-centric testbenches, synthesis
 scope.
 However, most projects are to be implemented in practice, and the sources of Units Under Test (UUTs) are to be used for
 both simulation and implementation.
-Therefore, the usage of :ref:`OSVB:API:Core` in this bundle is not limited to adding verification frameworks
+Therefore, the usage of :ref:`API:Core` in this bundle is not limited to adding verification frameworks
 and/or methodologies; it is also the proposed solution for users to declare the sources of their designs.
-By the same token, :ref:`OSVB:API:Project`, :ref:`OSVB:API:Tool`, :ref:`OSVB:API:Runner` and :ref:`OSVB:API:Logging` are
+By the same token, :ref:`API:Project`, :ref:`API:Tool`, :ref:`API:Runner` and :ref:`API:Logging` are
 also extensible for being used in synthesis and implementation.

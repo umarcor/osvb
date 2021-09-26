@@ -1,4 +1,4 @@
-.. _OSVB:API:Project:OSVDE:
+.. _API:Project:OSVDE:
 
 Open Source VHDL Design Explorer (OSVDE)
 ########################################
@@ -90,13 +90,13 @@ Some enhancements and features we would like to integrate into OSVDE are the fol
     `VSCode TerosHDL <https://marketplace.visualstudio.com/items?itemName=teros-technology.teroshdl>`__,
     `VSCode VUnit Test Explorer <https://marketplace.visualstudio.com/items?itemName=hbohlin.vunit-test-explorer>`__,
     `Sigasi Studio XPRT <https://www.sigasi.com/products/>`__).
-  * Discovery of pydoit task definition files (see :ref:`OSVB:API:Tool`).
+  * Discovery of pydoit task definition files (see :ref:`API:Tool`).
 
     * Allow running tasks and showing the results in a window.
 
   * '*Edit source in editor*' or '*Open project in editor*', where IDE is VSCode, (neo)vim, emacs, notepad++...
 
-* :ref:`OSVB:API:Project:DocGen`.
+* :ref:`API:Project:DocGen`.
 
 * Pretty printing, formatting...
 

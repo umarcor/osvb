@@ -1,21 +1,21 @@
-.. _OSVB:API:Project:DocGen:
+.. _API:Project:DocGen:
 
 Documentation generation
 ########################
 
 Automatic documentation generation of hardware designs is one of the main purposes of having a machine-readable project
 description format along with a library providing a Document Object Model (DOM).
-Some of the features to be implemented on top of :ref:`OSVB:API:Project:pyVHDLModelUtils` are the following:
+Some of the features to be implemented on top of :ref:`API:Project:pyVHDLModelUtils` are the following:
 
 * Entity symbol (see `Symbolator <https://kevinpt.github.io/symbolator/>`__, `xhdl <https://hackfin.gitlab.io/xhdl/>`__).
 * Single page HTML/reStructuredText/markdown body (see `TerosHDL CLI examples <https://github.com/TerosTechnology/teroshdl-documenter-demo>`__).
 * `Sphinx <https://www.sphinx-doc.org>`__ project/domain with cross-references (placeholder: `Paebbels/sphinxcontrib-vhdldomain <https://github.com/Paebbels/sphinxcontrib-vhdldomain/>`__).
 * Diagrams:
 
-  * For Sphinx (see :ref:`Integration with Sphinx » Diagrams <OSVB:API:Project:DocGen:Sphinx:Diagrams>`).
+  * For Sphinx (see :ref:`Integration with Sphinx » Diagrams <API:Project:DocGen:Sphinx:Diagrams>`).
   * For asciidoctor (see `Asciidoctor Diagram <https://asciidoctor.org/docs/asciidoctor-diagram/>`__).
 
-.. _OSVB:API:Project:DocGen:Sphinx:
+.. _API:Project:DocGen:Sphinx:
 
 Integration with Sphinx
 =======================
@@ -58,7 +58,7 @@ Overall, there are four approaches for adding content with custom processing to 
     layer.
     This is the end-goal for tightly integrated and customised functionality.
 
-.. _OSVB:API:Project:DocGen:Sphinx:exec:
+.. _API:Project:DocGen:Sphinx:exec:
 
 *exec* directive
 ----------------
@@ -87,13 +87,13 @@ Lists and tables
 ----------------
 
 This section showcases a naive approach for documenting VHDL design units using pyGHDL.dom.
-It is based on :ref:`OSVB:API:Project:DocGen:Sphinx:exec` and the ``sphinx`` module of :ref:`OSVB:API:Project:pyVHDLModelUtils`.
+It is based on :ref:`API:Project:DocGen:Sphinx:exec` and the ``sphinx`` module of :ref:`API:Project:pyVHDLModelUtils`.
 
 First, `initDesign` needs to be executed, in order to provide the lists of sources and VHDL library names.
 
 .. NOTE::
   Currently, there is no specific JSON/YAML format supported for this task.
-  Find work in progress in section :ref:`OSVB:API:Core`.
+  Find work in progress in section :ref:`API:Core`.
 
 .. code-block:: python
   :caption: Loading design sources.
@@ -188,7 +188,7 @@ See `Paebbels/sphinxcontrib-vhdldomain#4 <https://github.com/Paebbels/sphinxcont
 There is also `CESNET/sphinx-vhdl <https://github.com/CESNET/sphinx-vhdl>`__, which uses a custom basic parser (`CESNET/sphinx-vhdl: src/sphinxvhdl/autodoc.py <https://github.com/CESNET/sphinx-vhdl/blob/main/src/sphinxvhdl/autodoc.py>`__)
 and multiple custom Sphinx directives (`CESNET/sphinx-vhdl: src/sphinxvhdl/vhdl.py <https://github.com/CESNET/sphinx-vhdl/blob/main/src/sphinxvhdl/vhdl.py>`__).
 
-.. _OSVB:API:Project:DocGen:Sphinx:Diagrams:
+.. _API:Project:DocGen:Sphinx:Diagrams:
 
 Diagrams
 --------

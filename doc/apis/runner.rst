@@ -1,4 +1,4 @@
-.. _OSVB:API:Runner:
+.. _API:Runner:
 
 Runner
 ######
@@ -6,7 +6,7 @@ Runner
 This section covers the interface for deciding which workflows to execute, whether to run the in parallel, which
 specific parameters to use and how to interpret exit/termination codes of tools, as well as gathering/buffering the
 stdout/stderr and partially processing it.
-Therefore, the runner API is closely related to :ref:`OSVB:API:Tool`, both of them belonging to layer 2 (Workflows) of
+Therefore, the runner API is closely related to :ref:`API:Tool`, both of them belonging to layer 2 (Workflows) of
 the :ref:`EDAA:Concept`.
 
 In the case of VUnit, the runner is composed by sibling interfaces written in Python and HDL, due to the limitations in

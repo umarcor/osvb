@@ -1,4 +1,4 @@
-.. _OSVB:Co-simulation:
+.. _Co-simulation:
 
 Co-simulation
 #############
