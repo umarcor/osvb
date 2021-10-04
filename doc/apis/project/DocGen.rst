@@ -7,7 +7,16 @@ Automatic documentation generation of hardware designs is one of the main purpos
 description format along with a library providing a Document Object Model (DOM).
 Some of the features to be implemented on top of :ref:`API:Project:pyVHDLModelUtils` are the following:
 
-* Entity symbol (see `Symbolator <https://kevinpt.github.io/symbolator/>`__, `xhdl <https://hackfin.gitlab.io/xhdl/>`__).
+* Entity symbol:
+
+  * `Symbolator <https://kevinpt.github.io/symbolator/>`__
+
+    * `hdl/symbolator <https://github.com/hdl/symbolator>`__
+    * `hdl/pyHDLParser <https://github.com/hdl/pyHDLParser>`__
+
+  * `xhdl <https://hackfin.gitlab.io/xhdl/>`__
+  * `LaurentCabaret/pyVhdl2Sch <https://github.com/LaurentCabaret/pyVhdl2Sch>`__
+
 * Single page HTML/reStructuredText/markdown body (see `TerosHDL CLI examples <https://github.com/TerosTechnology/teroshdl-documenter-demo>`__).
 * `Sphinx <https://www.sphinx-doc.org>`__ project/domain with cross-references (placeholder: `Paebbels/sphinxcontrib-vhdldomain <https://github.com/Paebbels/sphinxcontrib-vhdldomain/>`__).
 * Diagrams:
