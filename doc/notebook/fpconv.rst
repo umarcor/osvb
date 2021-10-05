@@ -1,5 +1,17 @@
 .. _Notebook:fpconv:
 
+TODO:
+
+* https://gitter.im/hdl/community?at=615c504e29ddcd0293060def
+
+* https://gitter.im/ghdl1/Lobby?at=606f561bb9e6de24d622794c
+
+  * https://gitter.im/ghdl1/Lobby?at=6073399197cf506746570122
+
+* https://gitter.im/cocotb/Lobby?at=603461907ba8124e54820f0a
+
+* https://twitter.com/unaimarcor/status/1438844976075522051
+
 Fixed-point conversion
 ######################
 
