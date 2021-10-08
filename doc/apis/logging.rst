@@ -58,6 +58,7 @@ VCD/EVCD can be read by multiple open source tools:
 * `phillbush/vcd2svg <https://github.com/phillbush/vcd2svg>`__
 * `Ben1152000/sootty <https://github.com/Ben1152000/sootty>`__
 * `Toroid-io/vcd2wavedrom <https://github.com/Toroid-io/vcd2wavedrom>`__
+* `cirosantilli/vcdvcd <https://github.com/cirosantilli/vcdvcd>`__
 
 However, being a 20+ year old format defined for Verilog, VCD has certain limitations:
 
