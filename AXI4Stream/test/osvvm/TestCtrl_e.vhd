@@ -8,9 +8,10 @@ library ieee ;
 
 library OSVVM ;
   context OSVVM.OsvvmContext ;
+  use osvvm.ScoreboardPkg_slv.all ;
 
 library osvvm_AXI4 ;
-    context osvvm_AXI4.AxiStreamContext ;
+  context osvvm_AXI4.AxiStreamContext ;
 
 entity TestCtrl is
   generic (
@@ -31,8 +32,8 @@ entity TestCtrl is
   constant DATA_WIDTH : integer := StreamTxRec.DataToModel'length ;
   constant DATA_BYTES : integer := DATA_WIDTH/8 ;
 
-  -- Access Burst FIFOs in Axi4Master using external names
-  alias TxBurstFifo is <<variable ^.Transmitter_1.BurstFifo : osvvm.ScoreboardPkg_slv.ScoreboardPType>> ;
-  alias RxBurstFifo is <<variable ^.Receiver_1.BurstFifo : osvvm.ScoreboardPkg_slv.ScoreboardPType>> ;
+  -- Simplifying access to Burst FIFOs using aliases
+  alias TxBurstFifo : ScoreboardIdType is StreamTxRec.BurstFifo ;
+  alias RxBurstFifo : ScoreboardIdType is StreamRxRec.BurstFifo ;
 
 end entity TestCtrl ;

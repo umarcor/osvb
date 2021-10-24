@@ -4,5 +4,3 @@
 library osvvm_TbAxiStream
 analyze TestCtrl_e.vhd
 analyze TbStream.vhd
-
-include ../TestCases
