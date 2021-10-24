@@ -61,22 +61,56 @@ class TestExtended(unittest.TestCase):
     # AXI4Stream
 
     def test_AXI4Stream_VUnit(self):
-        self._py([str(self.root / "AXI4Stream/test/vunit/run.py")])
+        self._py([str(self.root / "AXI4Stream/test/vunit/run.py"), "--clean", "-v"])
 
     def test_AXI4Stream_VUnitCAPI(self):
-        self._py([str(self.root / "AXI4Stream/test/vunit/run_capi.py")])
+        self._py([str(self.root / "AXI4Stream/test/vunit/run_capi.py"), "--clean", "-v"])
 
-    def test_AXI4Stream_OSVVM_TCL(self):
+    def test_AXI4Stream_OSVVM_ProFiles(self):
         self._tcl([str(self.root / "AXI4Stream/test/osvvm/run.pro")])
 
     def test_AXI4Stream_OSVVM_VendorScripts(self):
         self._sh([str(self.root / "AXI4Stream/test/osvvm/run.sh")])
 
     def test_AXI4Stream_OSVVM_VUnit(self):
-        self._py([str(self.root / "AXI4Stream/test/osvvm/run.py")])
+        self._py([str(self.root / "AXI4Stream/test/osvvm/run.py"), "--clean", "-v"])
+
+    def test_AXI4Stream_OSVVM_VUnit_WithVCsBefore(self):
+        self._py([str(self.root / "AXI4Stream/test/osvvm/run_wvcsb.py"), "--clean", "-v"])
+
+    @mark.xfail
+    def test_AXI4Stream_OSVVM_VUnit_WithVCsAfter(self):
+        self._py([str(self.root / "AXI4Stream/test/osvvm/run_wvcsa.py"), "--clean", "-v"])
+
+    def test_AXI4Stream_OSVVM_VUnit_WithVCsAfterNoSkip(self):
+        self._py([str(self.root / "AXI4Stream/test/osvvm/run_wvcsans.py"), "--clean", "-v"])
+
+    @mark.xfail
+    def test_AXI4Stream_OSVVM_VUnit_external_VendorScripts(self):
+        self._py([str(self.root / "AXI4Stream/test/osvvm/run_ext_ghdl.py"), "--clean", "-v"])
+
+    @mark.xfail
+    def test_AXI4Stream_OSVVM_VUnit_external_VendorScripts_WithVCsBefore(self):
+        self._py([str(self.root / "AXI4Stream/test/osvvm/run_ext_ghdl_wvcsb.py"), "--clean", "-v"])
+
+    @mark.xfail
+    def test_AXI4Stream_OSVVM_VUnit_external_VendorScripts_WithVCsAfter(self):
+        self._py([str(self.root / "AXI4Stream/test/osvvm/run_ext_ghdl_wvcsa.py"), "--clean", "-v"])
+
+    @mark.xfail
+    def test_AXI4Stream_OSVVM_VUnit_external_ProFiles(self):
+        self._py([str(self.root / "AXI4Stream/test/osvvm/run_ext_pro.py"), "--clean", "-v"])
+
+    @mark.xfail
+    def test_AXI4Stream_OSVVM_VUnit_external_ProFiles_WithVCsBefore(self):
+        self._py([str(self.root / "AXI4Stream/test/osvvm/run_ext_pro_wvcsb.py"), "--clean", "-v"])
+
+    @mark.xfail
+    def test_AXI4Stream_OSVVM_VUnit_external_ProFiles_WithVCsAfter(self):
+        self._py([str(self.root / "AXI4Stream/test/osvvm/run_ext_pro_wvcsa.py"), "--clean", "-v"])
 
     # SFF
 
     @mark.xfail
     def test_SFF_VUnit_cocotb(self):
-        self._py([str(self.root / "SFF/test/run.py"), "-v"])
+        self._py([str(self.root / "SFF/test/run.py"), "--clean", "-v"])
