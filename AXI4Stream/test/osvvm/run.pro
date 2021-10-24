@@ -15,4 +15,4 @@ build $OSVVMLibraries/AXI4/Axi4/Axi4.pro
 build $OSVVMLibraries/UART/testbench/testbench.pro
 build $OSVVMLibraries/AXI4/AxiStream/testbench_ghdl/testbench_ghdl.pro
 
-#build ./testbench.pro
+build ./testbench.pro
