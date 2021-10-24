@@ -337,8 +337,9 @@ usable locally. There are several simple and not-so-simple solutions available f
 * `docs.qameta.io/allure <https://docs.qameta.io/allure/>`__
 * `inorton/junit2html <https://github.com/inorton/junit2html>`__
 
-Similar solutions exist based on pytest:
+Similar solutions exist based on unittest or pytest:
 
+* `xmlrunner/unittest-xml-reporting <https://github.com/xmlrunner/unittest-xml-reporting>`__
 * `pytest-reporter <https://pypi.org/project/pytest-reporter/>`__
 
   * `pytest-reporter-html1 <https://pypi.org/project/pytest-reporter-html1/>`__
