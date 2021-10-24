@@ -1,5 +1,6 @@
 -- This source is based on:
 -- 'AxiStream/testbench/TbStream.vhd' from OSVVM/AXI4 (Apache License, Version 2.0)
+-- https://github.com/osvvm/OsvvmLibraries
 
 library ieee ;
   use ieee.std_logic_1164.all ;
