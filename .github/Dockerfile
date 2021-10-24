@@ -32,8 +32,6 @@ RUN apt-get update -qq \
 RUN --mount=type=cache,from=build,src=/tmp/,target=/tmp/py pip3 install -U /tmp/py/*.whl --progress-bar off \
  && rm -rf ~/.cache
 
-RUN --mount=type=bind,src=.,target=/tmp/src /tmp/src/.github/install-osvvm.sh
-
 RUN --mount=type=bind,src=./mods,target=/tmp/src mkdir -p /opt/py \
  && cp -vr /tmp/src/pyCAPI /opt/py/pyCAPI \
  && pip3 install -r /opt/py/pyCAPI/requirements.txt

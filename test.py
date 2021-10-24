@@ -69,6 +69,9 @@ class TestExtended(unittest.TestCase):
     def test_AXI4Stream_OSVVM_TCL(self):
         self._tcl([str(self.root / "AXI4Stream/test/osvvm/run.pro")])
 
+    def test_AXI4Stream_OSVVM_VendorScripts(self):
+        self._sh([str(self.root / "AXI4Stream/test/osvvm/run.sh")])
+
     def test_AXI4Stream_OSVVM_VUnit(self):
         self._py([str(self.root / "AXI4Stream/test/osvvm/run.py")])
 
