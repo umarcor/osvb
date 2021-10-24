@@ -3,3 +3,8 @@
 .idea
 __pycache__/
 vunit_out/
+AXI4Stream/test/osvvm/*.exe
+AXI4Stream/test/osvvm/e~*.o
+AXI4Stream/test/osvvm/logs/
+AXI4Stream/test/osvvm/results/
+AXI4Stream/test/osvvm/VHDL_LIBS/
