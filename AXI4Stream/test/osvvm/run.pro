@@ -1,15 +1,18 @@
-# Start OSVVM Tools
-source  ../../OsvvmLibraries/Scripts/StartUp.tcl
+cd [file dirname $argv0]
 
-# Compile all Libraries
-build ../../OsvvmLibraries/osvvm/osvvm.pro
-build ../../OsvvmLibraries/Common/Common.pro
-build ../../OsvvmLibraries/UART/UART.pro
-build ../../OsvvmLibraries/AXI4/common/common.pro
-build ../../OsvvmLibraries/AXI4/AxiStream/AxiStream.pro
-build ../../OsvvmLibraries/AXI4/Axi4Lite/Axi4Lite.pro
-# build ../../OsvvmLibraries/AXI4/Axi4/Axi4.pro
+set OSVVMLibraries ../../../mods/osvvm
 
-# Run Tests
-build ../../OsvvmLibraries/UART/testbench/testbench.pro
-build ../../OsvvmLibraries/AXI4/AxiStream/testbench/testbench_ghdl.pro
+source $OSVVMLibraries/Scripts/StartUp.tcl
+
+build $OSVVMLibraries/osvvm/osvvm.pro
+build $OSVVMLibraries/Common/Common.pro
+build $OSVVMLibraries/UART/UART.pro
+build $OSVVMLibraries/AXI4/common/common.pro
+build $OSVVMLibraries/AXI4/AxiStream/AxiStream.pro
+build $OSVVMLibraries/AXI4/Axi4Lite/Axi4Lite.pro
+build $OSVVMLibraries/AXI4/Axi4/Axi4.pro
+
+build $OSVVMLibraries/UART/testbench/testbench.pro
+build $OSVVMLibraries/AXI4/AxiStream/testbench_ghdl/testbench_ghdl.pro
+
+#build ./testbench.pro

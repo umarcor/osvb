@@ -66,7 +66,6 @@ class TestExtended(unittest.TestCase):
     def test_AXI4Stream_VUnitCAPI(self):
         self._py([str(self.root / "AXI4Stream/test/vunit/run_capi.py")])
 
-    @mark.xfail
     def test_AXI4Stream_OSVVM_TCL(self):
         self._tcl([str(self.root / "AXI4Stream/test/osvvm/run.pro")])
 
