@@ -20,6 +20,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         submodules: recursive
+        fetch-depth: 0
 
     - name: '🛳️ Build osvb'
       run: docker build -t osvb -f .github/Dockerfile .

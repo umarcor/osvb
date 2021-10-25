@@ -23,6 +23,7 @@ FROM ghdl/cosim:py
 
 RUN apt-get update -qq \
  && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
+    git \
     libpython3.7-dev \
     tclsh \
  && apt-get autoclean && apt-get clean && apt-get -y autoremove \
