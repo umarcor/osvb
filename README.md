@@ -11,6 +11,11 @@
   -->
 </p>
 
+<p align="center">
+  <a title="pyCAPI" href="https://umarcor.github.io/osvb/intro/index.html"><img src="doc/_static/osvb.png"/></a>
+</p>
+
+
 ## Frameworks and methodologies
 
 - [Coroutine Co-simulation Test Bench (cocotb)](https://hdl.github.io/awesome/items/cocotb)
