@@ -14,6 +14,15 @@ some older revisions of VHDL to get the termination status.
 
 *TBC*
 
+.. figure:: ../_static/runner_cfg.png
+  :alt: Passing runner configuration from Python to HDL
+  :width: 500 px
+  :align: center
+
+  Strategies to pass the runner configuration from Python to HDL.
+
+* `VUnit/vunit#772 <https://github.com/VUnit/vunit/issues/772>`__
+
 References
 ==========
 
