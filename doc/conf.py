@@ -25,6 +25,8 @@ from os.path import abspath
 from pathlib import Path
 from json import loads
 
+ROOT = Path(__file__).resolve().parent
+
 sys_path.insert(0, abspath("."))
 
 # -- General configuration ------------------------------------------------
@@ -80,19 +82,21 @@ numfig = True
 
 # -- Options for HTML output ----------------------------------------------
 
-html_theme_options = {
-    "logo_only": True,
-    "home_breadcrumbs": False,
-    "vcs_pageview_mode": "blob",
-}
-
 html_context = {}
-ctx = Path(__file__).resolve().parent / "context.json"
+ctx = ROOT / "context.json"
 if ctx.is_file():
     html_context.update(loads(ctx.open("r").read()))
 
-html_theme_path = ["."]
-html_theme = "_theme"
+if (ROOT / "_theme").is_dir():
+	html_theme_path = ["."]
+	html_theme = "_theme"
+	html_theme_options = {
+		'logo_only': True,
+		'home_breadcrumbs': False,
+		'vcs_pageview_mode': 'blob',
+	}
+else:
+	html_theme = "alabaster"
 
 html_static_path = ["_static"]
 
