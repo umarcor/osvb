@@ -34,10 +34,10 @@ jobs:
         EOF
 
     - name: '📓 BuildTheDocs (BTD)'
-      if: github.event_name != 'pull_request'
       uses: buildthedocs/btd@v0
       with:
         token: ${{ github.token }}
+        skip-deploy: ${{ github.event_name == 'pull_request' }}
 
     - name: '📤 Upload artifact: HTML'
       if: github.event_name != 'pull_request'
