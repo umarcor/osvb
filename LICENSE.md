@@ -14,13 +14,9 @@ Subdir [`mods`](mods) contains submoduled third-party projects:
 
 ---
 
-The font used in the OSVB and EDAA logos is [Teko](https://fonts.google.com/specimen/Teko), designed by [Indian Type Foundry](http://www.indiantypefoundry.com/).
+The font used in the OSVB logo is [Teko](https://fonts.google.com/specimen/Teko), designed by [Indian Type Foundry](http://www.indiantypefoundry.com/).
 That is distributed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
 
 The OSVB logo was designed using an icon from Flaticon.com: [flaticon.com/free-icon/box_679821](https://www.flaticon.com/free-icon/box_679821).
 That is distributed under the Flaticon License, free for personal and commercial purposes, with attribution.
 See [Flaticon Terms of use](https://www.freepikcompany.com/legal#nav-flaticon).
-
-The EDAA logo was inspired by [flaticon.com/free-icon/blocks_5375762](https://www.flaticon.com/free-icon/blocks_5375762)
-and the colours from [materialpalette.com](https://www.materialpalette.com/colors).
-However, the logo is generated from scratch using a Python script (see [doc/_static/logo/edaa.py](doc/_static/logo/edaa.py)).
