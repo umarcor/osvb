@@ -111,6 +111,8 @@ With regard to post-processing of waveforms, see the following references:
 * `gitlab.com/xiretza/ghw-rs <https://gitlab.com/xiretza/ghw-rs>`__
 * `Nic30/pyDigitalWaveTools <https://github.com/Nic30/pyDigitalWaveTools>`__
 
+.. _API:Logging:OSVR:
+
 Open Source Verification Report
 *******************************
 
@@ -322,6 +324,8 @@ Frontends
 Both GitHub and GitLab do provide features for displaying CI results through their web GUIs. Although they are not rich
 enough for displaying all the details, OSVR generators can provide stripped down file formats matching some of the
 supported readers; similarly to the JSON and xUnit outputs provided by VUnit.
+
+.. _API:Logging:OSVRE:
 
 Open Source Verification Report Explorer
 ----------------------------------------
