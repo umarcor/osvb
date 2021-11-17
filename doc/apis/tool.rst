@@ -162,6 +162,8 @@ References
 
   * Find a discussion about the capabilities and limitations of pydoit in `gitter.im/hdl/community?at=60f6b567926ce249e5759d03 <https://gitter.im/hdl/community?at=60f6b567926ce249e5759d03>`__.
 
+* `qarlosalberto/fpga-knife <https://github.com/qarlosalberto/fpga-knife>`__
+
 * `DMTN-025: A survey of workflow management systems <https://dmtn-025.lsst.io/>`__
 
 * `fvutils/vlsim <https://github.com/fvutils/vlsim>`__
