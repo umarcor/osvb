@@ -60,6 +60,14 @@ VUnit.
   `benbr8/rstb <https://github.com/benbr8/rstb>`__ is an alternative implementation of the same approach, using Rust
   instead of Python.
 
+hgdb
+====
+
+*TBC*
+
+* `Kuree/hgdb <https://github.com/Kuree/hgdb>`__
+* `Kuree/pysv <https://github.com/Kuree/pysv>`__
+
 OSVVM
 =====
 
