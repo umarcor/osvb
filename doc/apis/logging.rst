@@ -110,6 +110,7 @@ With regard to post-processing of waveforms, see the following references:
   batch waveform search.
 * `gitlab.com/xiretza/ghw-rs <https://gitlab.com/xiretza/ghw-rs>`__
 * `Nic30/pyDigitalWaveTools <https://github.com/Nic30/pyDigitalWaveTools>`__
+* `ics-jku/wal <https://github.com/ics-jku/wal>`__
 
 .. _API:Logging:OSVR:
 
