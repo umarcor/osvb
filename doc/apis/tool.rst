@@ -32,17 +32,21 @@ Each of them is subject to have some sources common/shared to others task, along
 * VUnit > GHDL (sim)
 * VUnit > GHDL (sim) + cocotb
 * OSVVM > GHDL (sim)
+* GHDL (synth) > VHDL > GHDL (sim)
+* GHDL (synth) > Verilog > Verilator (sim)
 * GHDL (synth) > VHDL > Vendor [&V]
-* GHDL (synth) > Verific (plugin) > Yosys [&Y]
+* GHDL (synth) > VHDL > Verific (plugin) > Yosys [&Y]
+* GHDL (synth) > Verilog > Yosys [&Y]
 
   * Y> JSON > nextpnr
   * Y> BLIF > VTR
-  * Y> Verilog > Vendor
   * Y> Verilog > Vendor
 
     * V> Xilinx Vivado
     * V> Xilinx ISE
     * V> Intel/Altera Quartus
+    * V> Siemens ModelSim/QuestaSim
+    * V> Aldec RivieraPRO/ActiveHDL
     * ...
 
 .. NOTE::
