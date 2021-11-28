@@ -161,6 +161,9 @@ References
     * `cmake.org <https://cmake.org/>`__
     * `gradle.org <https://gradle.org/>`__
     * `ninja-build.org <https://ninja-build.org/>`__
+    * `n8n.io <https://n8n.io/>`__
+
+      * `n8n-io/n8n <https://github.com/n8n-io/n8n>`__
 
 * `ktbarrett.github.io: _drafts/tool-automation.md <https://github.com/ktbarrett/ktbarrett.github.io/blob/master/_drafts/tool-automation.md>`__
 
