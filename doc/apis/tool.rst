@@ -129,6 +129,8 @@ References
 
 * `Open Source EDA: building, packaging, installing <https://docs.google.com/document/d/10_MqFjTIYVVuOJlusJydsp4KOcmrrHk03__7ME5thOI>`__
 
+* `create schema for EDAM format (olofk/edalize#288) <https://github.com/olofk/edalize/issues/288>`__
+
 * SymbiFlow
 
   * `SymbiFlow Publically Accessible Docs <https://drive.google.com/drive/folders/1euSrrszzt3Bfz792S6Ud8Ox2w7TYUZNa>`__
