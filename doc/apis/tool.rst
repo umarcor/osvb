@@ -160,6 +160,12 @@ References
 
   * Not based on Python:
 
+    * `Argo Workflows - The workflow engine for Kubernetes <https://argoproj.github.io/argo-workflows/>`__
+    * `bazel.build <https://bazel.build/>`__
+
+      * `bazelbuild/remote-apis <https://github.com/bazelbuild/remote-apis>`__
+      * `hdl/bazel_rules_hdl <https://github.com/hdl/bazel_rules_hdl>`__
+
     * `cmake.org <https://cmake.org/>`__
     * `gradle.org <https://gradle.org/>`__
     * `ninja-build.org <https://ninja-build.org/>`__
