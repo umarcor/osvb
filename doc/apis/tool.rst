@@ -160,16 +160,21 @@ References
 
   * Not based on Python:
 
-    * `Argo Workflows - The workflow engine for Kubernetes <https://argoproj.github.io/argo-workflows/>`__
     * `bazel.build <https://bazel.build/>`__
+
       * `hdl/bazel_rules_hdl <https://github.com/hdl/bazel_rules_hdl>`__
-    * `Remote Execution API <https://github.com/bazelbuild/remote-apis>`__
+
     * `cmake.org <https://cmake.org/>`__
     * `gradle.org <https://gradle.org/>`__
     * `ninja-build.org <https://ninja-build.org/>`__
-    * `n8n.io <https://n8n.io/>`__
 
-      * `n8n-io/n8n <https://github.com/n8n-io/n8n>`__
+    * Remote execution:
+
+      * `Argo Workflows - The workflow engine for Kubernetes <https://argoproj.github.io/argo-workflows/>`__
+      * `Remote Execution API <https://github.com/bazelbuild/remote-apis>`__
+      * `n8n.io <https://n8n.io/>`__
+
+        * `n8n-io/n8n <https://github.com/n8n-io/n8n>`__
 
 * `ktbarrett.github.io: _drafts/tool-automation.md <https://github.com/ktbarrett/ktbarrett.github.io/blob/master/_drafts/tool-automation.md>`__
 
