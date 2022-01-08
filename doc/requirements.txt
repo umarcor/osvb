@@ -1,6 +1,5 @@
 -r ../mods/pyVHDLModelUtils/requirements.txt
 -r ../mods/pyCAPI/requirements.txt
--r ../mods/pyOSVR/requirements.txt
 -r ../mods/pyOSVDE/requirements.txt
 
 sphinx

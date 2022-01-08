@@ -138,14 +138,15 @@ texinfo_documents = [
 # -- Sphinx.Ext.InterSphinx -----------------------------------------------
 
 intersphinx_mapping = {
-    "python": ("https://docs.python.org/3/", None),
-    "edaa": ("https://edaa-org.github.io/", None),
-    "ghdl": ("https://ghdl.github.io/ghdl", None),
+    "python":     ("https://docs.python.org/3/", None),
+    "edaa":       ("https://edaa-org.github.io/", None),
+    "ghdl":       ("https://ghdl.github.io/ghdl", None),
     "ghdl-cosim": ("https://ghdl.github.io/ghdl-cosim", None),
-    "vhdlmodel": ("https://vhdl.github.io/pyVHDLModel", None),
-    "vunit": ("https://vunit.github.io", None),
-    "cocotb": ("https://docs.cocotb.org/en/stable/", None),
+    "vhdlmodel":  ("https://vhdl.github.io/pyVHDLModel", None),
+    "vunit":      ("https://vunit.github.io", None),
+    "cocotb":     ("https://docs.cocotb.org/en/stable/", None),
     "matplotlib": ("https://matplotlib.org/", None),
+    'reports':    ('https://edaa-org.github.io/pyEDAA.Reports', None),
 }
 
 # -- Sphinx.Ext.ExtLinks --------------------------------------------------

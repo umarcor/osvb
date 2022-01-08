@@ -44,9 +44,3 @@
 <p align="center">
   <a title="Open Source VHDL Design Explorer (OSVDE)" href="https://umarcor.github.io/osvb/apis/project/OSVDE.html"><img src="doc/_static/osvde.png"/></a>
 </p>
-
-### Open Source Verification Report (OSVR)
-
-<p align="center">
-  <a title="Open Source Verification Report (OSVR)" href="https://umarcor.github.io/osvb/apis/logging.html#open-source-verification-report"><img src="doc/_static/osvr.png"/></a>
-</p>
