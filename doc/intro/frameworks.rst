@@ -179,8 +179,10 @@ iverilog through cocotb:
 * `tpoikela/uvm-python <https://github.com/tpoikela/uvm-python>`__
 * `pyuvm/pyuvm <https://github.com/pyuvm/pyuvm>`__
 
-  * `cocotb/cocotb#2418 <https://github.com/cocotb/cocotb/issues/2418>`__
+  * `pyuvm: The Python version of the UVM (cocotb/cocotb#2418) <https://github.com/cocotb/cocotb/issues/2418>`__
   * `siemens.com/verificationhorizons: Cocotb Bus Functional Models <https://blogs.sw.siemens.com/verificationhorizons/2021/03/22/cocotb-bus-functional-models/>`__
+
+.. NOTE:: Lately, it seems that uvm-python is being merged into pyuvm.
 
 Similarly, there is a C/C++ implementation, which uses DPI, VPI, VHPI or FLI for interacting with the RTL code:
 `uvm.io <http://uvm.io/>`__.
