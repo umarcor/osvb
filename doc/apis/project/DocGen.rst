@@ -14,6 +14,8 @@ Some of the features to be implemented on top of :ref:`API:Project:pyVHDLModelUt
     * `hdl/symbolator <https://github.com/hdl/symbolator>`__
     * `hdl/pyHDLParser <https://github.com/hdl/pyHDLParser>`__
 
+  * :web:`schemdraw.rtfd.io: Circuit Elements » Integrated Circuits <schemdraw.readthedocs.io/en/stable/elements/intcircuits.html>`
+
   * `xhdl <https://hackfin.gitlab.io/xhdl/>`__
   * `LaurentCabaret/pyVhdl2Sch <https://github.com/LaurentCabaret/pyVhdl2Sch>`__
 
@@ -249,3 +251,8 @@ By combining those tools, diagrams of a given VHDL design can be generated as fo
   `SymbiFlow/sphinxcontrib-hdl-diagrams#65 <https://github.com/SymbiFlow/sphinxcontrib-hdl-diagrams/issues/65>`__,
   `SymbiFlow/sphinxcontrib-hdl-diagrams#72 <https://github.com/SymbiFlow/sphinxcontrib-hdl-diagrams/pull/72>`__
   and `SymbiFlow/sphinxcontrib-hdl-diagrams#73 <https://github.com/SymbiFlow/sphinxcontrib-hdl-diagrams/pull/73>`__.
+
+References
+==========
+
+* :bbrepo:`cdelker/schemdraw` (:web:`schemdraw.rtfd.io`).
