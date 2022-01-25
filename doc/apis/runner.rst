@@ -21,19 +21,20 @@ some older revisions of VHDL to get the termination status.
 
   Strategies to pass the runner configuration from Python to HDL.
 
-* `VUnit/vunit#772 <https://github.com/VUnit/vunit/issues/772>`__
+* :ghrepo:`VUnit/vunit#772 <VUnit/vunit/issues/772>`
 
 References
 ==========
 
-* `IEEE-P1076/VHDL-Issues#13: Python API <https://gitlab.com/IEEE-P1076/VHDL-Issues/-/issues/13>`__
+* :glrepo:`IEEE-P1076/VHDL-Issues#13: Python API <IEEE-P1076/VHDL-Issues/-/issues/13>`
 
-* `Test Anything Protocol <https://testanything.org/>`__
+* :web:`Test Anything Protocol <testanything.org/>`
 
-  * `python-tap/tappy <https://github.com/python-tap/tappy>`__: a set of tools for working with the TAP in Python.
+  * :ghrepo:`python-tap/tappy`: a set of tools for working with the TAP in Python.
 
-* `FuseSoc Verification Automation (fsva) <https://github.com/m-kru/fsva>`__ is an HDL testbench runner based on `FuseSoc <https://hdl.github.io/awesome/items/fusesoc/>`__.
+* :ghrepo:`FuseSoc Verification Automation (fsva) <m-kru/fsva>` is an HDL testbench runner based on
+  :awesome:`FuseSoc <fusesoc>`.
   It fetches targets named with certain patterns in ``.core`` files; which can be executed in parallel; stdout/stderr
   are captured and parsed.
 
-* `ttask <https://www.p-code.org/ttask/index.html>`__
+* :web:`ttask <www.p-code.org/ttask/index.html>`

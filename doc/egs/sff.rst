@@ -12,6 +12,6 @@ VUnit and cocotb
 ================
 
 See :ghsrc:`SFF/README.md <SFF/README.md>` for a discussion about how to integrate VUnit and cocotb.
-The content of :ghsrc:`SFF/test <SFF/test>` is based on `ktbarrett/vunit-cocotb <https://github.com/ktbarrett/vunit-cocotb>`__.
+The content of :ghsrc:`SFF/test <SFF/test>` is based on :ghrepo:`ktbarrett/vunit-cocotb`.
 
-See also `jwprice100/vcst: VUnit and Cocotb Smashed Together <https://github.com/jwprice100/vcst>`__.
+See also :ghrepo:`jwprice100/vcst: VUnit and Cocotb Smashed Together <jwprice100/vcst>`.

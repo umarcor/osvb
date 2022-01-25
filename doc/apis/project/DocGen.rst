@@ -9,42 +9,41 @@ Some of the features to be implemented on top of :ref:`API:Project:pyVHDLModelUt
 
 * Entity symbol:
 
-  * `Symbolator <https://kevinpt.github.io/symbolator/>`__
+  * :web:`Symbolator <kevinpt.github.io/symbolator/>`
 
-    * `hdl/symbolator <https://github.com/hdl/symbolator>`__
-    * `hdl/pyHDLParser <https://github.com/hdl/pyHDLParser>`__
+    * :ghrepo:`hdl/symbolator`
+    * :ghrepo:`hdl/pyHDLParser`
 
   * :web:`schemdraw.rtfd.io: Circuit Elements » Integrated Circuits <schemdraw.readthedocs.io/en/stable/elements/intcircuits.html>`
 
-  * `xhdl <https://hackfin.gitlab.io/xhdl/>`__
-  * `LaurentCabaret/pyVhdl2Sch <https://github.com/LaurentCabaret/pyVhdl2Sch>`__
+  * :web:`xhdl <hackfin.gitlab.io/xhdl/>`
+  * :ghrepo:`LaurentCabaret/pyVhdl2Sch`
 
-* Single page HTML/reStructuredText/markdown body (see `TerosHDL CLI examples <https://github.com/TerosTechnology/teroshdl-documenter-demo>`__).
-* `Sphinx <https://www.sphinx-doc.org>`__ project/domain with cross-references (placeholder: `Paebbels/sphinxcontrib-vhdldomain <https://github.com/Paebbels/sphinxcontrib-vhdldomain/>`__).
+* Single page HTML/reStructuredText/markdown body (see :ghrepo:`TerosHDL CLI examples <TerosTechnology/teroshdl-documenter-demo>`).
+* :web:`Sphinx <www.sphinx-doc.org>` project/domain with cross-references (placeholder: :ghrepo:`Paebbels/sphinxcontrib-vhdldomain`).
 * Diagrams:
 
   * For Sphinx (see :ref:`Integration with Sphinx » Diagrams <API:Project:DocGen:Sphinx:Diagrams>`).
-  * For asciidoctor (see `Asciidoctor Diagram <https://asciidoctor.org/docs/asciidoctor-diagram/>`__).
+  * For asciidoctor (see :web:`Asciidoctor Diagram <asciidoctor.org/docs/asciidoctor-diagram/>`).
 
 .. _API:Project:DocGen:Sphinx:
 
 Integration with Sphinx
 =======================
 
-`Sphinx <https://www.sphinx-doc.org>`__ is the *de facto* static site generator (SSG) used for building documentation of
+:web:`Sphinx <www.sphinx-doc.org>` is the *de facto* static site generator (SSG) used for building documentation of
 Python projects.
-It was originally created for `the Python documentation <https://docs.python.org/>`__, and it has support for
-documenting software projects in several languages.
-Since many open source EDA projects and CLIs are written in Python, Sphinx is probably the most used SSG.
+It was originally created for :doc:`Python <python:contents>`, and it has support for documenting software projects in several
+languages. Since many open source EDA projects and CLIs are written in Python, Sphinx is probably the most used SSG.
 It's used by SymbiFlow, GHDL, VUnit, pyVHDLModel/pyVHDLParser, cocotb, TerosHDL, Boolector, edalize/fusesoc,
 Wishbone (FOSSi), SpinalHDL, tsfpga...
 
-Additional features can be added to Sphinx through `extensions <https://www.sphinx-doc.org/en/master/usage/extensions/index.html>`__.
-For instance, `intersphinx <https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html>`__ allows
+Additional features can be added to Sphinx through :web:`extensions <www.sphinx-doc.org/en/master/usage/extensions/index.html>`.
+For instance, :web:`intersphinx <www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html>` allows
 cross-referencing content across sites, as if they were local references.
 That is really handy for building knowledge as a community.
 
-The default plaintext markup language used by Sphinx is `reStructuredText <https://docutils.sourceforge.io/rst.html>`__.
+The default plaintext markup language used by Sphinx is :web:`reStructuredText <docutils.sourceforge.io/rst.html>`.
 Other markup languages, such as Markdown, can be imported through extensions, however, not all cross-reference features
 are available when using those.
 
@@ -61,9 +60,9 @@ Overall, there are four approaches for adding content with custom processing to 
 
 * Built into Sphinx:
 
-  * `exec`: a generic directive (such as the ones proposed in `stackoverflow.com/a/18143318 <https://stackoverflow.com/a/18143318>`__)
+  * `exec`: a generic directive (such as the ones proposed in :web:`stackoverflow.com/a/18143318`)
     allows executing arbitrary Python code which generates reStructuredText output through `print` statements.
-  * Ad-hoc directive: as explained in `Developing extensions for Sphinx <https://www.sphinx-doc.org/en/master/extdev/index.html#dev-extensions>`__,
+  * Ad-hoc directive: as explained in :web:`Developing extensions for Sphinx <www.sphinx-doc.org/en/master/extdev/index.html#dev-extensions>`,
     there are several objects whose API can be used when writing extensions: Application, Environment, Builder and Config.
     Those allow fine-grained integration into Sphinx's internals, potentially bypassing the reStructuredText parsing
     layer.
@@ -74,7 +73,7 @@ Overall, there are four approaches for adding content with custom processing to 
 *exec* directive
 ----------------
 
-The generic `exec` extension (see :ghsrc:`docs/exec.py <docs/exec.py>`) is based on `stackoverflow.com/a/18143318 <https://stackoverflow.com/a/18143318>`__.
+The generic `exec` extension (see :ghsrc:`doc/exec.py <doc/exec.py>`) is based on :web:`stackoverflow.com/a/18143318`.
 It allows executing arbitrary Python code which prints reStructuredText output.
 
 Setup is done by adding `exec` to the `extensions` variable of the ``conf.py``.
@@ -92,7 +91,7 @@ Therefore, it is not possible to know where it belongs in the hierarchy of the d
 This is a limitation for generating headers and other context dependent statements.
 
 .. NOTE::
-  Should you want to help improve the implementation of this directive, `let us know <https://github.com/umarcor/osvb/issues/new>`__!
+  Should you want to help improve the implementation of this directive, :ghrepo:`let us know <umarcor/osvb/issues/new>`!
 
 Lists and tables
 ----------------
@@ -179,13 +178,12 @@ Table style:
 
 .. NOTE::
   This is a demo for showcasing the capabilities of pyGHDL.dom and pyVHDLModel.
-  Should you want to help improve the implementation for it to be more usable in practice, `let us know <https://github.com/umarcor/osvb/issues/new>`__!
+  Should you want to help improve the implementation for it to be more usable in practice, :ghrepo:`let us know <umarcor/osvb/issues/new>`!
 
 VHDL Domain
 -----------
 
-`sphinxcontrib-vhdldomain <https://github.com/Paebbels/sphinxcontrib-vhdldomain>`__ is work in progress for adding a VHDL
-language domain to Sphinx.
+:ghrepo:`Paebbels/sphinxcontrib-vhdldomain` is work in progress for adding a VHDL language domain to Sphinx.
 That is, a set of nestable directives resembling the architecture of pyVHDLModel.
 The purpose is twofold:
 
@@ -194,10 +192,10 @@ The purpose is twofold:
 * Allow users to specify a pyVHDLModel project by handwriting directives in reStructuredText sources, by either pointing
   to individual files or explicitly describing all the items.
 
-See `Paebbels/sphinxcontrib-vhdldomain#4 <https://github.com/Paebbels/sphinxcontrib-vhdldomain/issues/4>`__.
+See :ghrepo:`Paebbels/sphinxcontrib-vhdldomain#4 <Paebbels/sphinxcontrib-vhdldomain/issues/4>`.
 
-There is also `CESNET/sphinx-vhdl <https://github.com/CESNET/sphinx-vhdl>`__, which uses a custom basic parser (`CESNET/sphinx-vhdl: src/sphinxvhdl/autodoc.py <https://github.com/CESNET/sphinx-vhdl/blob/main/src/sphinxvhdl/autodoc.py>`__)
-and multiple custom Sphinx directives (`CESNET/sphinx-vhdl: src/sphinxvhdl/vhdl.py <https://github.com/CESNET/sphinx-vhdl/blob/main/src/sphinxvhdl/vhdl.py>`__).
+There is also :ghrepo:`CESNET/sphinx-vhdl`, which uses a custom basic parser (:ghrepo:`CESNET/sphinx-vhdl: src/sphinxvhdl/autodoc.py <CESNET/sphinx-vhdl/blob/main/src/sphinxvhdl/autodoc.py>`)
+and multiple custom Sphinx directives (:ghrepo:`CESNET/sphinx-vhdl: src/sphinxvhdl/vhdl.py <CESNET/sphinx-vhdl/blob/main/src/sphinxvhdl/vhdl.py>`).
 
 .. _API:Project:DocGen:Sphinx:Diagrams:
 
@@ -206,21 +204,20 @@ Diagrams
 
 Both GHDL and Yosys allow generating diagrams of synthesised designs.
 
-* ``ghdl synth --out=dot`` generates a `Graphviz <https://graphviz.org/>`__ DOT diagram of the netlist AST.
+* ``ghdl synth --out=dot`` generates a :web:`Graphviz <graphviz.org/>` DOT diagram of the netlist AST.
 
-* `ghdl-yosys-plugin <https://github.com/ghdl/ghdl-yosys-plugin>`__ allows using GHDL as a frontend for Yosys.
+* :ghrepo:`ghdl/ghdl-yosys-plugin` allows using GHDL as a frontend for Yosys.
 
   * As explained in :ref:`ghdl.github.io/ghdl/synthesis » Yosys plugin <ghdl:Synth:plugin>`, ghdl-yosys-plugin and Yosys
     allow converting VHDL to EDIT, SMT, BTOR2, FIRRTL, etc.
 
-* Yosys's `show <https://yosyshq.net/yosys/cmd_show.html>`__ command allows generating a Graphviz DOT diagram and
-  compiling it to a graphics file (say SVG).
+* Yosys's :web:`show <yosyshq.net/yosys/cmd_show.html>` command allows generating a Graphviz DOT diagram and compiling
+  it to a graphics file (say SVG).
 
-  * Optionally, command `aigmap <https://yosyshq.net/yosys/cmd_aigmap.html>`__ can map the logic to and/nand gates only,
+  * Optionally, command :web:`aigmap <yosyshq.net/yosys/cmd_aigmap.html>` can map the logic to and/nand gates only,
     before generating the diagram.
 
-  * Alternatively, `netlistsvg <https://github.com/nturley/netlistsvg>`__ allows generating SVG schematics from Yosys'
-    JSON netlist output.
+  * Alternatively, :ghrepo:`nturley/netlistsvg` allows generating SVG schematics from Yosys' JSON netlist output.
 
 By combining those tools, diagrams of a given VHDL design can be generated as follows:
 
@@ -231,7 +228,7 @@ By combining those tools, diagrams of a given VHDL design can be generated as fo
   ~# convert netlist.svg netlist.png
 
 .. IMPORTANT::
-  There is an Sphinx extension named `sphinxcontrib-hdl-diagrams <https://github.com/SymbiFlow/sphinxcontrib-hdl-diagrams>`__,
+  There is an Sphinx extension named :ghrepo:`sphinxcontrib-hdl-diagrams <SymbiFlow/sphinxcontrib-hdl-diagrams>`,
   which wraps Yosys and (optionally) netlistsvg in a directive.
   That allows including diagrams in the docs without manually calling yosys and netlistsvg.
   For instance:
@@ -248,9 +245,9 @@ By combining those tools, diagrams of a given VHDL design can be generated as fo
   There is work in progress for using the extension with "natively" installed tools, as well as supporting VHDL and
   mixed-language designs.
   See
-  `SymbiFlow/sphinxcontrib-hdl-diagrams#65 <https://github.com/SymbiFlow/sphinxcontrib-hdl-diagrams/issues/65>`__,
-  `SymbiFlow/sphinxcontrib-hdl-diagrams#72 <https://github.com/SymbiFlow/sphinxcontrib-hdl-diagrams/pull/72>`__
-  and `SymbiFlow/sphinxcontrib-hdl-diagrams#73 <https://github.com/SymbiFlow/sphinxcontrib-hdl-diagrams/pull/73>`__.
+  :ghrepo:`SymbiFlow/sphinxcontrib-hdl-diagrams#65 <SymbiFlow/sphinxcontrib-hdl-diagrams/issues/65>`,
+  :ghrepo:`SymbiFlow/sphinxcontrib-hdl-diagrams#72 <SymbiFlow/sphinxcontrib-hdl-diagrams/pull/72>`
+  and :ghrepo:`SymbiFlow/sphinxcontrib-hdl-diagrams#73 <SymbiFlow/sphinxcontrib-hdl-diagrams/pull/73>`.
 
 References
 ==========

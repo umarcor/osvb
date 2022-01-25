@@ -7,9 +7,9 @@ cocotb
 ======
 
 Cocotb is a coroutine based co-simulation library for writing VHDL and Verilog testbenches in Python.
-It was initially written and open sourced by `Potential Ventures <http://potential.ventures/cocotb>`__ in 2013.
+It was initially written and open sourced by :web:`Potential Ventures <potential.ventures/cocotb>` in 2013.
 The project went dead for some months between 2017 and 2018.
-Since 2019, it is maintained by members of the `FOSSI Foundation <https://www.fossi-foundation.org/>`__ and other
+Since 2019, it is maintained by members of the :web:`FOSSI Foundation <www.fossi-foundation.org/>` and other
 contributors.
 
 Cocotb provides shared libraries written in C++, which allows simulators to load Python scripts and interact with them
@@ -45,35 +45,34 @@ Therefore, usage of this bundle with open source simulators is limited to VHDL d
 Nevertheless, there is interest in evaluating again whether iverilog's improved System Verilog support can suffice for
 VUnit.
 
-* `cocotb/cocotb <https://github.com/cocotb/cocotb>`__
-* `themperek/cocotb-test <https://github.com/themperek/cocotb-test>`__
-* `ktbarrett/pyvertb <https://github.com/ktbarrett/pyvertb>`__
+* :ghrepo:`cocotb/cocotb`
+* :ghrepo:`themperek/cocotb-test`
+* :ghrepo:`ktbarrett/pyvertb`
 
 .. TIP::
   Compared to other frameworks, the cocotb ecosystem is more distributed.
   Others have most of the resources gathered in single GitHub repository.
   Conversely, there is much activity around cocotb in repositories outside of the main repository.
 
-  * `aignacio/ravenoc: tb <https://github.com/aignacio/ravenoc/tree/master/tb>`__
+  * :ghrepo:`aignacio/ravenoc: tb <aignacio/ravenoc/tree/master/tb>`
 
 .. NOTE::
-  `benbr8/rstb <https://github.com/benbr8/rstb>`__ is an alternative implementation of the same approach, using Rust
-  instead of Python.
+  :ghrepo:`benbr8/rstb` is an alternative implementation of the same approach, using Rust instead of Python.
 
 hgdb
 ====
 
 *TBC*
 
-* `Kuree/hgdb <https://github.com/Kuree/hgdb>`__
-* `Kuree/pysv <https://github.com/Kuree/pysv>`__
+* :ghrepo:`Kuree/hgdb`
+* :ghrepo:`Kuree/pysv`
 
 OSVVM
 =====
 
 OSVVM provides an ASIC level verification methodology for VHDL that can be used on small FPGA projects.
 The HDL libraries and utilities were initially provided by Jim Lewis as a learning resource in
-`SynthWorks <https://synthworks.com>`__' training courses, for attendants to see the concepts applied.
+:web:`SynthWorks <synthworks.com>`' training courses, for attendants to see the concepts applied.
 In 2019 the libraries were uploaded to GitHub, and in 2020 the license was changed to Apache, since it was accepted as a
 pilot program for IEEE Open Source.
 
@@ -96,8 +95,7 @@ The OSVVM model library provides the verification components for AXI4, AXI4 Lite
 
 The provided compile and execution plumbing is written in TCL, since it is mostly meant to be used interactively inside
 the built-in shell in most vendor simulators.
-Alternative installation scripts are provided by maintainers of GHDL through their
-`vendor scripts <https://github.com/ghdl/ghdl/tree/master/scripts/vendors>`__.
+Alternative installation scripts are provided by maintainers of GHDL through their :ghrepo:`vendor scripts <ghdl/ghdl/tree/master/scripts/vendors>`.
 However, those are for GHDL only, not for any simulator.
 
 Many HDL utilities are duplicated between OSVVM and VUnit.
@@ -118,17 +116,17 @@ The main stopper for using VUnit's Python features for running OSVVM's tests is 
 methodology are VHDL configurations, and VUnit only supports entities as primary units.
 There is common interest in hopefully extending VUnit and supporting configurations as entrypoints.
 
-* `OSVVM/OSVVM <https://github.com/OSVVM/OSVVM>`__
-* `OSVVM/OsvvmLibraries <https://github.com/OSVVM/OsvvmLibraries>`__
-* `OSVVM/OSVVM-Scripts <https://github.com/OSVVM/OSVVM-Scripts>`__
-* `ghdl/ghdl: scripts/vendors <https://github.com/ghdl/ghdl/tree/master/scripts/vendors>`__
+* :ghrepo:`OSVVM/OSVVM`
+* :ghrepo:`OSVVM/OsvvmLibraries`
+* :ghrepo:`OSVVM/OSVVM-Scripts`
+* :ghrepo:`ghdl/ghdl: scripts/vendors <ghdl/ghdl/tree/master/scripts/vendors>`
 
-  * `ghdl/extended-tests <https://github.com/ghdl/extended-tests>`__
+  * :ghrepo:`ghdl/extended-tests <ghdl/extended-tests>`
 
 Renode
 ======
 
-Renode (developed by `Antmicro <https://www.antmicro.com/>`__) is not an HDL testing/verification framework per se.
+Renode (developed by :web:`Antmicro <www.antmicro.com/>`) is not an HDL testing/verification framework per se.
 It is presented as a development framework for accelerating IoT and embedded systems development by simulating physical
 hardware systems (including the CPU, peripherals, sensors, environment and wire or wireless medium between nodes).
 Precisely, in the context of IoT and embedded system, software and wire(less) communication play a crucial role in
@@ -141,16 +139,15 @@ accelerators along with well-known CPUs and other peripherals.
 As a result, there is work in progress for supporting HDL models to be added as nodes into the Renode infrastructure.
 All cosimulation strategies explained in :ref:`Co-simulation` are subject to be integrated, either using existing
 Verification Components (VCs) or with ad-hoc middleware.
-Find a sample about how to integrate *verilated* models in `antmicro/renode-verilator-integration <https://github.com/antmicro/renode-verilator-integration>`__.
+Find a sample about how to integrate *verilated* models in :ghrepo:`antmicro/renode-verilator-integration <antmicro/renode-verilator-integration>`.
 It supports a verilated bus master and AXI4.
 
-* `Renode <https://renode.io/>`__
+* :web:`Renode <renode.io>`
 
-  * `Using Renode for education, research and demonstration <https://antmicro.com/blog/2021/02/renode-for-education-research-and-demonstration/>`__
+  * :web:`Using Renode for education, research and demonstration <antmicro.com/blog/2021/02/renode-for-education-research-and-demonstration/>`
 
 .. NOTE::
-  `dbhi/vboard <https://github.com/dbhi/vboard>`__ includes multiple references about "*Virtual development board for
-  HDL design*".
+  :ghrepo:`dbhi/vboard` includes multiple references about "*Virtual development board for HDL design*".
   Most of those are ad-hoc solutions, which are lacking the *project management* layer for making them plug and play.
   However, some of them implement interfaces or HDL languages which are not supported in Renode yet.
 
@@ -159,8 +156,8 @@ SVUnit
 
 *TBC*
 
-* `tudortimi/svunit <https://github.com/tudortimi/svunit>`__
-* `dpretet/svut <https://github.com/dpretet/svut>`__
+* :ghrepo:`tudortimi/svunit`
+* :ghrepo:`dpretet/svut`
 
 UVM
 ===
@@ -176,16 +173,15 @@ Lately, several alternatives were proposed for implementing UVM in languages oth
 For instance, even though iverilog cannot execute UVM in SystemVerilog, there are two projects for using UVM with
 iverilog through cocotb:
 
-* `tpoikela/uvm-python <https://github.com/tpoikela/uvm-python>`__
-* `pyuvm/pyuvm <https://github.com/pyuvm/pyuvm>`__
+* :ghrepo:`tpoikela/uvm-python`
+* :ghrepo:`pyuvm/pyuvm`
 
-  * `pyuvm: The Python version of the UVM (cocotb/cocotb#2418) <https://github.com/cocotb/cocotb/issues/2418>`__
-  * `siemens.com/verificationhorizons: Cocotb Bus Functional Models <https://blogs.sw.siemens.com/verificationhorizons/2021/03/22/cocotb-bus-functional-models/>`__
+  * :ghrepo:`pyuvm: The Python version of the UVM (cocotb/cocotb#2418) <cocotb/cocotb/issues/2418>`
+  * :web:`siemens.com/verificationhorizons: Cocotb Bus Functional Models <blogs.sw.siemens.com/verificationhorizons/2021/03/22/cocotb-bus-functional-models/>`
 
 .. NOTE:: Lately, it seems that uvm-python is being merged into pyuvm.
 
-Similarly, there is a C/C++ implementation, which uses DPI, VPI, VHPI or FLI for interacting with the RTL code:
-`uvm.io <http://uvm.io/>`__.
+Similarly, there is a C/C++ implementation, which uses DPI, VPI, VHPI or FLI for interacting with the RTL code: :web:`uvm.io`.
 
 Furthermore, there work in progress for adding System Verilog support to verilator, including both synthesizable and
 non-synthesizable constructs. See :ref:`Simulators:Verilator`.
@@ -195,7 +191,7 @@ UVVM
 
 *TBC*
 
-* `UVVM <https://github.com/UVVM/UVVM>`__
+* :ghrepo:`UVVM <UVVM/UVVM>`
 
 VUnit
 =====
@@ -219,8 +215,8 @@ Verification components for several standard interfaces are provided based on th
 Custom types are also provided for allowing dynamic allocation of pointers (accesses).
 
 VUnit includes the core of OSVVM as a submodule.
-It also includes `JSON-for-VHDL <https://github.com/Paebbels/JSON-for-VHDL>`_, which allows passing arbitrarily complex
-generics to the testbenches, by providing them as encoded JSON strings.
+It also includes :ghrepo:`JSON-for-VHDL <Paebbels/JSON-for-VHDL>`, which allows passing arbitrarily complex generics to
+the testbenches, by providing them as encoded JSON strings.
 
 Using the OSVVM Libraries and UVVM with VUnit is possible but not straightforward.
 In VUnit, libraries and sources are declared in a Python script, using VUnit's API.
@@ -238,18 +234,18 @@ Others require dealing with paths/locations specific to each host/system.
 Instead, the approach in this bundle uses ``*.core`` files and :ref:`API:Core`.
 
 With regard to simulator support, VUnit does currently not support any open source Verilog or System Verilog simulator.
-However, it was last evaluated 3-4 years ago (see `VUnit/vunit#188 <https://github.com/VUnit/vunit/issues/188>`__).
+However, it was last evaluated 3-4 years ago (see :ghrepo:`VUnit/vunit#188 <VUnit/vunit/issues/188>`).
 Since both iverilog and iverilog were improved, and specially System Verilog support, it might be possible to use them
 with VUnit nowadays.
 
-* `VUnit/vunit <https://github.com/VUnit/vunit>`__
-* `VUnit/vunit_action <https://github.com/VUnit/vunit_action>`__
-* `VUnit/tdd-intro <https://github.com/VUnit/tdd-intro>`__
-* `VUnit/cosim <https://github.com/VUnit/cosim>`__
+* :ghrepo:`VUnit/vunit`
+* :ghrepo:`VUnit/vunit_action`
+* :ghrepo:`VUnit/tdd-intro`
+* :ghrepo:`VUnit/cosim`
 
 .. NOTE::
-  `Malcolmnixon/VhdlTest <https://github.com/Malcolmnixon/VhdlTest>`__ is a proof of concept of a minimal implementation
-  of the Python runner in VUnit.
+  :ghrepo:`Malcolmnixon/VhdlTest <Malcolmnixon/VhdlTest>` is a proof of concept of a minimal implementation of the
+  Python runner in VUnit.
   It's for VHDL testbenches only, and supports GHDL or Active-HDL.
   It requires a YAML configuration file for specifying the project, instead of using a Python script.
   This feature is related to :ref:`API:Core`.
@@ -257,5 +253,5 @@ with VUnit nowadays.
 Learning/teaching
 =================
 
-* `Course content for the Design Verification module at the University of Bristol <https://uobdv.github.io/Design-Verification/>`__
-* `umarcor: references/VHDL.bib <https://github.com/umarcor/umarcor/blob/main/references/VHDL.bib>`__
+* :web:`Course content for the Design Verification module at the University of Bristol <uobdv.github.io/Design-Verification/>`
+* :ghrepo:`umarcor: references/VHDL.bib <umarcor/umarcor/blob/main/references/VHDL.bib>`

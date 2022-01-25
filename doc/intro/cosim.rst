@@ -29,7 +29,7 @@ The usage of VPI is based on registering callbacks at specific events using the 
 standard verilog system tasks. A relevant feature of this co-simulation approach is that HDL sources are unmodified. Registering
 co-simulation callbacks is independent from the sources that compose the design and/or the HDL testbench.
 
-* `I Spy with My VPI: Monitoring signals by name, for the UVM register package and more <https://www.verilab.com/files/snug_2012_paper71_final.pdf>`__
+* :web:`I Spy with My VPI: Monitoring signals by name, for the UVM register package and more <www.verilab.com/files/snug_2012_paper71_final.pdf>`
 
 .. NOTE::
   Non-intuitively, GHDL implements VPI for interacting with VHDL sources. Back in 2000-2008, there was no standard interface
@@ -75,7 +75,7 @@ workload in the VHDL Analysis and Standardization Group (VASG). However, since Q
 and updating a proposal for standardizing an interface named VHDL Foreign Function Interface (VFFI) or VHDL Direct Programming
 Interface (VDPI), which formalizes the direct implementation available in GHDL and makes it generic enough for any vendor.
 
-* `gitlab.com/IEEE-P1076/VHDL-Issues: Direct Programming Interface (DPI) | Foreign Function Interface (FFI) <https://gitlab.com/IEEE-P1076/VHDL-Issues/-/issues/10>`__
+* :glrepo:`gitlab.com/IEEE-P1076/VHDL-Issues: Direct Programming Interface (DPI) | Foreign Function Interface (FFI) <IEEE-P1076/VHDL-Issues/-/issues/10>`
 
 Remote procedure calls
 ======================
@@ -88,21 +88,21 @@ Remote Procedure Call (RPC) library, for decoupling the execution kernels of mul
 gRPC
 ----
 
-* `grpc.io <https://grpc.io/>`__ (`github.com/grpc <https://github.com/grpc>`__)
-* `dbhi/gRPC <https://github.com/dbhi/gRPC>`__
+* :web:`grpc.io` (:ghrepo:`grpc`)
+* :ghrepo:`dbhi/gRPC`
 
 capnproto
 ---------
 
-* `capnproto.org <https://capnproto.org/>`__ (`github.com/capnproto <https://github.com/capnproto>`__)
-* `NyanCAD <https://github.com/NyanCAD>`__
+* :web:`capnproto.org` (:ghrepo:`capnproto`)
+* :ghrepo:`NyanCAD`
 
-  * `CxxrtlSimServer <https://github.com/NyanCAD/CxxrtlSimServer>`__
-  * `XyceSimServer <https://github.com/NyanCAD/XyceSimServer>`__
-  * `NgspiceSimServer <https://github.com/NyanCAD/NgspiceSimServer>`__
+  * :ghrepo:`CxxrtlSimServer <NyanCAD/CxxrtlSimServer>`
+  * :ghrepo:`XyceSimServer <NyanCAD/XyceSimServer>`
+  * :ghrepo:`NgspiceSimServer <NyanCAD/NgspiceSimServer>`
 
 ZeroMQ
 ------
 
-* `zeromq.org <https://zeromq.org/>`__ (`github.com/zeromq <https://github.com/zeromq>`__)
-* `VZMQ - ZeroMQ communication with VHDL simulation in GHDL <https://groups.google.com/g/alt.sources/c/R5cKBbRrUJM>`__
+* :web:`zeromq.org` (:ghrepo:`zeromq`)
+* :web:`VZMQ - ZeroMQ communication with VHDL simulation in GHDL <groups.google.com/g/alt.sources/c/R5cKBbRrUJM>`

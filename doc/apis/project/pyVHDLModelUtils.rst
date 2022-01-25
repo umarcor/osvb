@@ -6,28 +6,26 @@ pyVHDLModelUtils
 pyVHDLModel
 ===========
 
-`pyVHDLModel <https://github.com/vhdl/pyVHDLModel>`__ is an abstract language model for VHDL written in Python.
+:ghrepo:`vhdl/pyVHDLModel` is an abstract language model for VHDL written in Python.
 That is, a set of classes that represent the items found in VHDL sources, and utils for manipulating and interacting
 with those classes.
 The generation of an specific object tree for an specific VHDL codebase is done by a frontend.
-Currently supported frontends are `pyGHDL <https://github.com/ghdl/ghdl/tree/master/pyGHDL>`__ and
-`pyVHDLParser <https://github.com/Paebbels/pyVHDLParser/>`__.
+Currently supported frontends are :ghrepo:`pyGHDL <ghdl/ghdl/tree/master/pyGHDL>` and :ghrepo:`Paebbels/pyVHDLParser`.
 
 GHDL is the most complete open source VHDL parser and analyser, and more complete than several vendor tools.
 However, GHDL is written in Ada, and it was not initially designed for the analysis features to be used standalone.
 Therefore, most developers of tooling around the VHDL language do typically not use GHDL but try reimplementing the
 parsing themselves.
 That is the case of
-`VUnit <http://vunit.github.io/>`__,
-`TerosHDL <https://terostech.com/>`__,
-`Symbolator <https://kevinpt.github.io/symbolator/>`__,
-`vhdl-style-guide <https://vhdl-style-guide.readthedocs.io/>`__,
-`VHDLTool <https://github.com/VHDLTool>`__,
-`hdlConvertor <https://github.com/Nic30/hdlConvertor>`__,
+:web:`VUnit <vunit.github.io>`,
+:web:`TerosHDL <terostech.com>`,
+:web:`Symbolator <kevinpt.github.io/symbolator>`,
+:web:`vhdl-style-guide <vhdl-style-guide.readthedocs.io/>`,
+:ghrepo:`VHDLTool`,
+:ghrepo:`Nic30/hdlConvertor`,
 etc.
 All of those projects need some understanding of the models they are dealing with, and they use regular expressions,
-`tree-sitter <https://github.com/tree-sitter/tree-sitter>`__, `ANTLR <https://www.antlr.org/>`__ or similar general
-purpose parser engines.
+:ghrepo:`tree-sitter/tree-sitter`, :web:`ANTLR <www.antlr.org/>` or similar general purpose parser engines.
 That is unfortunate because many of them do use Python, so the effort duplication in the community might be
 significantly reduced if they could interact with GHDL's parser/analysis through Python.
 
@@ -39,8 +37,8 @@ are good with depending on GHDL.
 
 .. NOTE::
   Projects which don't want to depend on a binary/compiled tool (GHDL), can use a Python only frontend for pyVHDLModel.
-  That is precisely the purpose of `pyVHDLParser <https://github.com/Paebbels/pyVHDLParser/>`__ (actually where
-  `pyVHDLModel <https://github.com/vhdl/pyVHDLModel>`__ was conceived).
+  That is precisely the purpose of :ghrepo:`pyVHDLParser <Paebbels/pyVHDLParser>` (actually where
+  :ghrepo:`pyVHDLModel <vhdl/pyVHDLModel>` was conceived).
   However, pyVHDLParser is not as mature as (py)GHDL yet.
 
 Utils

@@ -3,28 +3,29 @@
 sigrok-cli | Pulseview
 ######################
 
-This section contains notes about reading waveforms from HDL simulators with `sigrok-cli <https://sigrok.org/wiki/Sigrok-cli>`__
-and `PulseView <https://sigrok.org/wiki/PulseView>`__ (see `github.com/sigrokproject <https://github.com/sigrokproject>`__).
+This section contains notes about reading waveforms from HDL simulators with :web:`sigrok-cli <sigrok.org/wiki/Sigrok-cli>`
+and :web:`PulseView <sigrok.org/wiki/PulseView>` (see :ghrepo:`sigrokproject`).
 
-While `PulseView <https://github.com/sigrokproject/pulseview>`__ is primarily meant for data captured from real devices
-(logic analyzers, oscilloscopes, multimeters, and more), some of its features can be useful for simulation and
-verification of hardware description designs. Precisely, `protocol decoders <https://sigrok.org/wiki/Protocol_decoders>`__
-are a nice feature to complement Verification Components (e.g. Vunit's `VCL <http://vunit.github.io/verification_components/user_guide.html>`__),
-Bus Functional Models (BFMs) and/or monitors. Apart from vendor products, in-house custom protocol decoders can be used
-as a definition of the internal APIs. Moreover, analog signal visualization can be useful to show digital words that are
-meant to be used as inputs to DACs. Actually, mixed-signal cosimulations (as when combining GHDL and Xyce) produce both
-digital and analog traces.
+While :ghrepo:`PulseView <sigrokproject/pulseview>` is primarily meant for data captured from real devices (logic
+analyzers, oscilloscopes, multimeters, and more), some of its features can be useful for simulation and verification of
+hardware description designs.
+Precisely, :web:`protocol decoders <sigrok.org/wiki/Protocol_decoders>` are a nice feature to complement Verification
+Components (e.g. Vunit's :web:`VCL <vunit.github.io/verification_components/user_guide.html>`), Bus Functional Models
+(BFMs) and/or monitors.
+Apart from vendor products, in-house custom protocol decoders can be used as a definition of the internal APIs.
+Moreover, analog signal visualization can be useful to show digital words that are meant to be used as inputs to DACs.
+Actually, mixed-signal cosimulations (as when combining GHDL and Xyce) produce both digital and analog traces.
 
-The most widespread waveform format used by EDA tools is VCD: `wikipedia.org/wiki/Value_change_dump <https://en.wikipedia.org/wiki/Value_change_dump>`__.
-However, not all VHDL types can be represented in VCD files. `GHDL <https://github.com/ghdl/ghdl>`__ supports a format
-named GHW, which is meant to dump traces from VHDL simulations. Visualization of any of these types (and others) is
-supported by `GtkWave <http://gtkwave.sourceforge.net/>`__.
+The most widespread waveform format used by EDA tools is VCD: :wikipedia:`Value_change_dump`.
+However, not all VHDL types can be represented in VCD files.
+:awesome:`GHDL <ghdl>` supports a format named GHW, which is meant to dump traces from VHDL simulations.
+Visualization of any of these types (and others) is supported by :awesome:`GtkWave <gtkwave>`.
 
-The file format that PulseView uses internally is `sigrok.org/wiki/File_format:Sigrok <https://sigrok.org/wiki/File_format:Sigrok>`__.
+The file format that PulseView uses internally is :web:`sigrok.org/wiki/File_format:Sigrok <sigrok.org/wiki/File_format:Sigrok>`.
 Hence, any other waveform needs to be converted, and possibly filtered. Currently supported input/output formats are
-listed at `sigrok.org/wiki/Input_output_formats <https://sigrok.org/wiki/Input_output_formats>`__.
+listed at :web:`sigrok.org/wiki/Input_output_formats <sigrok.org/wiki/Input_output_formats>`.
 
-Sticking to VCD, several features are (unfortunately) currently missing in `libsigrok <https://github.com/sigrokproject/libsigrok>`__
+Sticking to VCD, several features are (unfortunately) currently missing in :ghrepo:`libsigrok <sigrokproject/libsigrok>`
 and PulseView:
 
 * Arrays of signals, i.e. multi-bit signals, are not supported.
@@ -36,7 +37,7 @@ and PulseView:
 * Waveform formats other than VCD are not supported.
 
 Fortunately, there is work in progress by user `gsi`, for improving and extending the VCD frontend in libsigrok. See
-`wip/vcd-*` branches in `repo.or.cz/libsigrok/gsi.git/refs <https://repo.or.cz/libsigrok/gsi.git/refs>`__.
+`wip/vcd-*` branches in :web:`repo.or.cz/libsigrok/gsi.git/refs`.
 
 Required enhancements and possible workarounds
 ==============================================
@@ -57,7 +58,7 @@ Should nested groups be supported, three different types can be generated:
   unsigned/signed decimal, as an hexadecimal value, etc. Moreover, any multi-bit signal can be optionally shown as an
   analog channel. This is specially useful for fixed-point types (in VHDL, `sfixed` and `ufixed`). For reference,
   GtkWave supports almost all of these features; however, displaying fixed-point values as analog channels has some
-  limitations (see `gtkwave/gtkwave#9 <https://github.com/gtkwave/gtkwave/issues/9>`__).
+  limitations (see :ghrepo:`gtkwave/gtkwave#9 <gtkwave/gtkwave/issues/9>`).
 * level-1 and above: hierarchy of the design, according to the structure of HDL sources. This is described in VCD
   through `scope module`.
 * within a hierarchy level: nested groups of multi-bit signals would allow to describe interfaces such as Wishbone, AXI,
@@ -151,24 +152,26 @@ Other waveform formats
 ----------------------
 
 In the wiki page about VCD, there are references to other waveform formats supported by GtkWave:
-`sigrok.org/wiki/File_format:Vcd <https://sigrok.org/wiki/File_format:Vcd>`__. However, EVCD, FST, IDX and GHW are not
-explicitly documented. Hence, formats other than VCD are unlikely to be supported in libsigrok/PulseView in the near
-future. In the mid-long term, it would be nice if PulseView provided a frontend compatible with GtkWave's
-utils/internals for handling large waveforms. It seems that GtkWave implements some clever memory map traversal to avoid
-handling the entire file in memory.
+:web:`sigrok.org/wiki/File_format:Vcd <sigrok.org/wiki/File_format:Vcd>`.
+However, EVCD, FST, IDX and GHW are not explicitly documented.
+Hence, formats other than VCD are unlikely to be supported in libsigrok/PulseView in the near future.
+In the mid-long term, it would be nice if PulseView provided a frontend compatible with GtkWave's utils/internals for
+handling large waveforms.
+It seems that GtkWave implements some clever memory map traversal to avoid handling the entire file in memory.
 
 Information is available in:
 
-* `GtkWave User's Guide <http://gtkwave.sourceforge.net/gtkwave.pdf>`__ and GtkWave's codebase.
+* :web:`GtkWave User's Guide <gtkwave.sourceforge.net/gtkwave.pdf>` and GtkWave's codebase.
 * GHDL's codebase.
-* `nturley/ghw-notes <https://github.com/nturley/ghw-notes>`__.
+* :ghrepo:`nturley/ghw-notes`.
 
 Generating waveforms with GHDL
 ==============================
 
 In this section waveform dump features of GHDL are introduced. This is a complement to the information available in the
-docs: :ref:`GHDL:export_waves`. The purpose of these examples is to provide a test suite that allows users to evaluate
-the features and performance of upstream and in-progress branches.
+docs: :ref:`GHDL:export_waves`.
+The purpose of these examples is to provide a test suite that allows users to evaluate the features and performance of
+upstream and in-progress branches.
 
 :ghsrc:`Resolution <sigrok/resolution>`
 ---------------------------------------

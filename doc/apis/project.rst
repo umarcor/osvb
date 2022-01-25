@@ -35,17 +35,17 @@ parsing capabilities.
 References
 ==========
 
-* `EDA integration: managing projects for simulation and implementation <https://docs.google.com/document/d/1qThGGqSVQabts-4imn5zY5BMptp1-Q2rGiNKHDH1Pbk/>`__
+* :gdocs:`EDA integration: managing projects for simulation and implementation <1qThGGqSVQabts-4imn5zY5BMptp1-Q2rGiNKHDH1Pbk>`
 
 * Registers:
 
-  * `tsfpga: Register code generation <https://tsfpga.com/registers.html>`__
-  * `cheby <https://gitlab.cern.ch/cohtdrivers/cheby>`__
-  * `SystemRDL register description language <https://github.com/SystemRDL>`__
-  * `RgGen <https://github.com/rggen/rggen>`__
-  * `wzab/agwb <https://github.com/wzab/agwb>`__
-  * `airhdl <https://airhdl.com>`__
+  * :web:`tsfpga: Register code generation <tsfpga.com/registers.html>`
+  * :web:`cheby <gitlab.cern.ch/cohtdrivers/cheby>`
+  * :ghrepo:`SystemRDL register description language <SystemRDL>`
+  * :ghrepo:`RgGen <rggen/rggen>`
+  * :ghrepo:`wzab/agwb`
+  * :web:`airhdl <airhdl.com>`
 
-* `dbhi/vsc-hdl <https://github.com/dbhi/vsc-hdl>`__
+* :ghrepo:`dbhi/vsc-hdl`
 
-* `orestesmas/pycirkuit <https://github.com/orestesmas/pycirkuit>`__
+* :ghrepo:`orestesmas/pycirkuit`

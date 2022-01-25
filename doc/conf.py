@@ -151,12 +151,19 @@ intersphinx_mapping = {
 
 # -- Sphinx.Ext.ExtLinks --------------------------------------------------
 extlinks = {
-    "wikipedia": ("https://en.wikipedia.org/wiki/%s", ""),
+    "wikipedia": ("https://en.wikipedia.org/wiki/%s", "wikipedia:"),
+    "awesome": ("https://hdl.github.io/awesome/items/%s", ""),
     "web": ("https://%s", ""),
     "bbrepo": ("https://bitbucket.org/%s", "bb:"),
+    "glrepo": ("https://gitlab.com/%s", "gl:"),
     "ghrepo": ("https://github.com/%s", "gh:"),
     "ghsharp": ("https://github.com/umarcor/osvb/issues/%s", "#"),
     "ghissue": ("https://github.com/umarcor/osvb/issues/%s", "issue #"),
     "ghpull": ("https://github.com/umarcor/osvb/pull/%s", "pull request #"),
     "ghsrc": ("https://github.com/umarcor/osvb/blob/main/%s", ""),
+    "gdocs": ("https://docs.google.com/document/d/%s", None),
+    "gdraws": ("https://docs.google.com/drawings/d/%s", None),
+    "pypi": ("https://pypi.org/project/%s", "pypi:"),
+    "gitter": ("https://gitter.im/%s", "gitter:"),
+    "youtube": ("https://www.youtube.com/watch?%s", "youtube:")
 }
