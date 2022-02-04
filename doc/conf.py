@@ -58,7 +58,7 @@ source_suffix = {
 master_doc = "index"
 
 project = u"Open Source Verification Bundle"
-copyright = u"2021, Unai Martinez-Corral and contributors"
+copyright = u"2021-2022, Unai Martinez-Corral and contributors"
 author = u"Unai Martinez-Corral and contributors"
 
 version = "latest"
