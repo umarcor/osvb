@@ -49,3 +49,5 @@ References
 * :ghrepo:`dbhi/vsc-hdl`
 
 * :ghrepo:`orestesmas/pycirkuit`
+
+* :ghrepo:`pieter3d/simview`
