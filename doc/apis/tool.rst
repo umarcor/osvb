@@ -185,3 +185,8 @@ References
 * :web:`DMTN-025: A survey of workflow management systems <dmtn-025.lsst.io>`
 
 * :ghrepo:`fvutils/vlsim`
+
+* `chipflow.io <https://chipflow.io/>`__
+
+  * `ChipFlow: Technical Overview <https://indico.cern.ch/event/1071292/contributions/4535513/attachments/2322456/3955165/ChipFlow%20-%20Technical%20Overview%20%281%29.pdf>`__,
+    `Microelectronics User Group Meeting, TWEPP 2021 Topical Workshop on Electronics for Particle Physics <https://indico.cern.ch/event/1071292/>`__.
