@@ -110,6 +110,7 @@ With regard to post-processing of waveforms, see the following references:
 * :glrepo:`xiretza/ghw-rs`
 * :ghrepo:`Nic30/pyDigitalWaveTools`
 * :ghrepo:`ics-jku/wal`
+* :ghrepo:`Wren6991/asciiwave`
 
 .. _API:Logging:OSVR:
 
