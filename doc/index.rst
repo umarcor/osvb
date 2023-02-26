@@ -104,3 +104,9 @@ Therefore, the examples in this bundle are tested on CI with open source simulat
 
   notebook/fpconv
   notebook/sigrok
+
+.. toctree::
+  :caption: Appendix
+  :hidden:
+
+  references
