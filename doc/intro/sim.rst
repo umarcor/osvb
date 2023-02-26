@@ -7,12 +7,16 @@ Simulators | Compilers
   Licensing constraints of many vendor tools do not allow discussing features and/or perfomance publicly. Therefore, this
   section contains references to open source tools only, which don't have such knowledge limitations.
 
+.. _Simulators:Essent:
+
 Essent
 ======
 
 *TBC*
 
 * :gh:`ucsc-vama/essent`
+
+.. _Simulators:GHDL:
 
 GHDL
 ====
@@ -30,6 +34,8 @@ using one of three backends: GCC, LLVM or (x86_64/i386 only) mcode (built-in and
 * :gh:`ghdl/setup-ghdl-ci`
 * :gh:`ghdl/extended-tests`
 
+.. _Simulators:IcarusVerilog:
+
 Icarus Verilog
 ==============
 
@@ -39,6 +45,16 @@ for simulation of behavioural constructs in complex testbenches. Icarus Verilog 
 
 * :gh:`steveicarus/iverilog`
 * :gh:`steveicarus/ivtest`
+
+.. _Simulators:NVC:
+
+NVC
+===
+
+*TBC*
+
+* :gh:`nickg/nvc`
+* :web:`nickg.me.uk/nvc`
 
 .. _Simulators:Verilator:
 
@@ -79,6 +95,8 @@ See:
     :youtube:`Video <v=s7ivKvXGS74>`,
     :web:`Slides <chipsalliance.org/wp-content/uploads/sites/83/2021/06/Dynamic-Scheduling-in-Verilator-CHIPS-1.pdf>`
     )
+
+.. _Simulators:CXXRTL:
 
 Yosys/CXXRTL
 ============
