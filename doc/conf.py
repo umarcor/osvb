@@ -155,7 +155,7 @@ extlinks = {
     "awesome": ("https://hdl.github.io/awesome/items/%s", ""),
     "web": ("https://%s", ""),
     "bbrepo": ("https://bitbucket.org/%s", "bb:"),
-    "glrepo": ("https://gitlab.com/%s", "gl:"),
+    "gl": ("https://gitlab.com/%s", "gl:"),
     "gh": ("https://github.com/%s", "gh:"),
     "ghsharp": ("https://github.com/umarcor/osvb/issues/%s", "#"),
     "ghissue": ("https://github.com/umarcor/osvb/issues/%s", "issue #"),

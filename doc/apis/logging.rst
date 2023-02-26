@@ -107,7 +107,7 @@ With regard to post-processing of waveforms, see the following references:
 
 * :ref:`Notebook:fpconv`
 * :gh:`avidan-efody/coverage`: implementation of post-process coverage, and batch waveform search.
-* :glrepo:`xiretza/ghw-rs`
+* :gl:`xiretza/ghw-rs`
 * :gh:`Nic30/pyDigitalWaveTools`
 * :gh:`ics-jku/wal`
 * :gh:`Wren6991/asciiwave`

@@ -26,7 +26,7 @@ some older revisions of VHDL to get the termination status.
 References
 ==========
 
-* :glrepo:`IEEE-P1076/VHDL-Issues#13: Python API <IEEE-P1076/VHDL-Issues/-/issues/13>`
+* :gl:`IEEE-P1076/VHDL-Issues#13: Python API <IEEE-P1076/VHDL-Issues/-/issues/13>`
 
 * :web:`Test Anything Protocol <testanything.org/>`
 

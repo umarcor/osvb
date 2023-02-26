@@ -75,7 +75,7 @@ workload in the VHDL Analysis and Standardization Group (VASG). However, since Q
 and updating a proposal for standardizing an interface named VHDL Foreign Function Interface (VFFI) or VHDL Direct Programming
 Interface (VDPI), which formalizes the direct implementation available in GHDL and makes it generic enough for any vendor.
 
-* :glrepo:`gitlab.com/IEEE-P1076/VHDL-Issues: Direct Programming Interface (DPI) | Foreign Function Interface (FFI) <IEEE-P1076/VHDL-Issues/-/issues/10>`
+* :gl:`gitlab.com/IEEE-P1076/VHDL-Issues: Direct Programming Interface (DPI) | Foreign Function Interface (FFI) <IEEE-P1076/VHDL-Issues/-/issues/10>`
 
 Remote procedure calls
 ======================
