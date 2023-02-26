@@ -156,7 +156,7 @@ extlinks = {
     "web": ("https://%s", ""),
     "bbrepo": ("https://bitbucket.org/%s", "bb:"),
     "glrepo": ("https://gitlab.com/%s", "gl:"),
-    "ghrepo": ("https://github.com/%s", "gh:"),
+    "gh": ("https://github.com/%s", "gh:"),
     "ghsharp": ("https://github.com/umarcor/osvb/issues/%s", "#"),
     "ghissue": ("https://github.com/umarcor/osvb/issues/%s", "issue #"),
     "ghpull": ("https://github.com/umarcor/osvb/pull/%s", "pull request #"),

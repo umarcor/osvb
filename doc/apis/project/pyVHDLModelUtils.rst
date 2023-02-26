@@ -6,11 +6,11 @@ pyVHDLModelUtils
 pyVHDLModel
 ===========
 
-:ghrepo:`vhdl/pyVHDLModel` is an abstract language model for VHDL written in Python.
+:gh:`vhdl/pyVHDLModel` is an abstract language model for VHDL written in Python.
 That is, a set of classes that represent the items found in VHDL sources, and utils for manipulating and interacting
 with those classes.
 The generation of an specific object tree for an specific VHDL codebase is done by a frontend.
-Currently supported frontends are :ghrepo:`pyGHDL <ghdl/ghdl/tree/master/pyGHDL>` and :ghrepo:`Paebbels/pyVHDLParser`.
+Currently supported frontends are :gh:`pyGHDL <ghdl/ghdl/tree/master/pyGHDL>` and :gh:`Paebbels/pyVHDLParser`.
 
 GHDL is the most complete open source VHDL parser and analyser, and more complete than several vendor tools.
 However, GHDL is written in Ada, and it was not initially designed for the analysis features to be used standalone.
@@ -21,11 +21,11 @@ That is the case of
 :web:`TerosHDL <terostech.com>`,
 :web:`Symbolator <kevinpt.github.io/symbolator>`,
 :web:`vhdl-style-guide <vhdl-style-guide.readthedocs.io/>`,
-:ghrepo:`VHDLTool`,
-:ghrepo:`Nic30/hdlConvertor`,
+:gh:`VHDLTool`,
+:gh:`Nic30/hdlConvertor`,
 etc.
 All of those projects need some understanding of the models they are dealing with, and they use regular expressions,
-:ghrepo:`tree-sitter/tree-sitter`, :web:`ANTLR <www.antlr.org/>` or similar general purpose parser engines.
+:gh:`tree-sitter/tree-sitter`, :web:`ANTLR <www.antlr.org/>` or similar general purpose parser engines.
 That is unfortunate because many of them do use Python, so the effort duplication in the community might be
 significantly reduced if they could interact with GHDL's parser/analysis through Python.
 
@@ -37,8 +37,8 @@ are good with depending on GHDL.
 
 .. NOTE::
   Projects which don't want to depend on a binary/compiled tool (GHDL), can use a Python only frontend for pyVHDLModel.
-  That is precisely the purpose of :ghrepo:`pyVHDLParser <Paebbels/pyVHDLParser>` (actually where
-  :ghrepo:`pyVHDLModel <vhdl/pyVHDLModel>` was conceived).
+  That is precisely the purpose of :gh:`pyVHDLParser <Paebbels/pyVHDLParser>` (actually where
+  :gh:`pyVHDLModel <vhdl/pyVHDLModel>` was conceived).
   However, pyVHDLParser is not as mature as (py)GHDL yet.
 
 Utils

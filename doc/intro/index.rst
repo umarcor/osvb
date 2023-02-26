@@ -41,7 +41,7 @@ However, other libraries are not included by default.
 The missing repositories might be added as built-in VUnit modules too, but it increases the maintenance burden of VUnit
 and it's not an scalable approach.
 OSVVM does provide ``*.pro`` files, which uses a custom syntax for defining sources and the compilation order.
-Those files are used by OSVVM's own TCL scripts and also by :ghrepo:`GHDL's vendor scripts <ghdl/ghdl/tree/master/scripts/vendors>`
+Those files are used by OSVVM's own TCL scripts and also by :gh:`GHDL's vendor scripts <ghdl/ghdl/tree/master/scripts/vendors>`
 (written in PowerShell and Bash).
 Yet, writing a custom Python module for reading those files doesn't feel worth.
 Instead, the proposal in this bundle is to use ``*.core`` (YAML) files.

@@ -4,9 +4,9 @@ sigrok-cli | Pulseview
 ######################
 
 This section contains notes about reading waveforms from HDL simulators with :web:`sigrok-cli <sigrok.org/wiki/Sigrok-cli>`
-and :web:`PulseView <sigrok.org/wiki/PulseView>` (see :ghrepo:`sigrokproject`).
+and :web:`PulseView <sigrok.org/wiki/PulseView>` (see :gh:`sigrokproject`).
 
-While :ghrepo:`PulseView <sigrokproject/pulseview>` is primarily meant for data captured from real devices (logic
+While :gh:`PulseView <sigrokproject/pulseview>` is primarily meant for data captured from real devices (logic
 analyzers, oscilloscopes, multimeters, and more), some of its features can be useful for simulation and verification of
 hardware description designs.
 Precisely, :web:`protocol decoders <sigrok.org/wiki/Protocol_decoders>` are a nice feature to complement Verification
@@ -25,7 +25,7 @@ The file format that PulseView uses internally is :web:`sigrok.org/wiki/File_for
 Hence, any other waveform needs to be converted, and possibly filtered. Currently supported input/output formats are
 listed at :web:`sigrok.org/wiki/Input_output_formats <sigrok.org/wiki/Input_output_formats>`.
 
-Sticking to VCD, several features are (unfortunately) currently missing in :ghrepo:`libsigrok <sigrokproject/libsigrok>`
+Sticking to VCD, several features are (unfortunately) currently missing in :gh:`libsigrok <sigrokproject/libsigrok>`
 and PulseView:
 
 * Arrays of signals, i.e. multi-bit signals, are not supported.
@@ -58,7 +58,7 @@ Should nested groups be supported, three different types can be generated:
   unsigned/signed decimal, as an hexadecimal value, etc. Moreover, any multi-bit signal can be optionally shown as an
   analog channel. This is specially useful for fixed-point types (in VHDL, `sfixed` and `ufixed`). For reference,
   GtkWave supports almost all of these features; however, displaying fixed-point values as analog channels has some
-  limitations (see :ghrepo:`gtkwave/gtkwave#9 <gtkwave/gtkwave/issues/9>`).
+  limitations (see :gh:`gtkwave/gtkwave#9 <gtkwave/gtkwave/issues/9>`).
 * level-1 and above: hierarchy of the design, according to the structure of HDL sources. This is described in VCD
   through `scope module`.
 * within a hierarchy level: nested groups of multi-bit signals would allow to describe interfaces such as Wishbone, AXI,
@@ -163,7 +163,7 @@ Information is available in:
 
 * :web:`GtkWave User's Guide <gtkwave.sourceforge.net/gtkwave.pdf>` and GtkWave's codebase.
 * GHDL's codebase.
-* :ghrepo:`nturley/ghw-notes`.
+* :gh:`nturley/ghw-notes`.
 
 Generating waveforms with GHDL
 ==============================

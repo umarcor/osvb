@@ -45,20 +45,20 @@ Since VCD files are text files, some tools use VCDGZ for referring to VCD compre
 VCD/EVCD can be read by multiple open source tools:
 
 * :awesome:`GTKWave <gtkwave>`
-* :ghrepo:`veripool/dinotrace`
+* :gh:`veripool/dinotrace`
 * :ref:`Notebook:sigrok`
-* :ghrepo:`psurply/dwfv`
-* :web:`wavedrom.com`, :ghrepo:`wavedrom/vcdrom` and :ghrepo:`wavedrom/zoom`.
-* :ghrepo:`Nic30/d3-wave`
-* :ghrepo:`raczben/fliplot`
-* :ghrepo:`lachlansneff/ligeia`
-* :ghrepo:`yne/vcd`
-* :ghrepo:`toem/impulse.vscode`
-* :ghrepo:`bmpenuelas/hdlcomposer`
-* :ghrepo:`phillbush/vcd2svg`
-* :ghrepo:`Ben1152000/sootty`
-* :ghrepo:`Toroid-io/vcd2wavedrom`
-* :ghrepo:`cirosantilli/vcdvcd`
+* :gh:`psurply/dwfv`
+* :web:`wavedrom.com`, :gh:`wavedrom/vcdrom` and :gh:`wavedrom/zoom`.
+* :gh:`Nic30/d3-wave`
+* :gh:`raczben/fliplot`
+* :gh:`lachlansneff/ligeia`
+* :gh:`yne/vcd`
+* :gh:`toem/impulse.vscode`
+* :gh:`bmpenuelas/hdlcomposer`
+* :gh:`phillbush/vcd2svg`
+* :gh:`Ben1152000/sootty`
+* :gh:`Toroid-io/vcd2wavedrom`
+* :gh:`cirosantilli/vcdvcd`
 
 However, being a 20+ year old format defined for Verilog, VCD has certain limitations:
 
@@ -82,35 +82,35 @@ He also contributed a reader to GTKWave, which allows visualizing them.
   GTKWave provides multiple tools for converting waveforms between any of the supported formats.
   That is not trivial because some conversions are lossy or suboptimal.
   See appendix A of the :web:`GTKWave User's Guide <gtkwave.sourceforge.net/gtkwave.pdf>` and subdir
-  :ghrepo:`gtkwave/gtkwave: gtkwave3-gtk3/src/helpers <gtkwave/gtkwave/tree/master/gtkwave3-gtk3/src/helpers>`.
-  See also :ghrepo:`gtkwave/gtkwave#70 <gtkwave/gtkwave/issues/70>`.
+  :gh:`gtkwave/gtkwave: gtkwave3-gtk3/src/helpers <gtkwave/gtkwave/tree/master/gtkwave3-gtk3/src/helpers>`.
+  See also :gh:`gtkwave/gtkwave#70 <gtkwave/gtkwave/issues/70>`.
   However, as far as we are aware, no other independent repository exists which is focused on providing a toolkit for
   manipulating *any* waveform programmatically.
   If GTKWave helpers are buildable/usable independently of GTKWave, it might be desirable to provide bindings in Python,
   Rust,... along with an API to the database.
 
-Recently, Lachlan Sneff implemented Streamed Value Change Blocks (SVCB) in :ghrepo:`lachlansneff/ligeia`, a
+Recently, Lachlan Sneff implemented Streamed Value Change Blocks (SVCB) in :gh:`lachlansneff/ligeia`, a
 work-in-progress "*replacement for gtkwave, written in Rust with high-performance and larger-than-memory traces in mind*".
 
 Apart from dealing with large waveforms, there are some other formats which are used for documentation purposes:
 
-* :ghrepo:`WaveJSON <drom/wavedrom/wiki/WaveJSON>`
+* :gh:`WaveJSON <drom/wavedrom/wiki/WaveJSON>`
 * LaTeX (:web:`tikz-timing <ctan.org/pkg/tikz-timing>`)
 
 Moreover, there are several work in progress solutions for providing TCL plumbing to allow using vendor waveform viewers
 and GTKWave automatically and/or interactively:
 
-* :ghrepo:`VUnit/vunit#690 <VUnit/vunit/pull/690>`
-* :ghrepo:`VUnit/vunit#622 <VUnit/vunit/pull/622>`
+* :gh:`VUnit/vunit#690 <VUnit/vunit/pull/690>`
+* :gh:`VUnit/vunit#622 <VUnit/vunit/pull/622>`
 
 With regard to post-processing of waveforms, see the following references:
 
 * :ref:`Notebook:fpconv`
-* :ghrepo:`avidan-efody/coverage`: implementation of post-process coverage, and batch waveform search.
+* :gh:`avidan-efody/coverage`: implementation of post-process coverage, and batch waveform search.
 * :glrepo:`xiretza/ghw-rs`
-* :ghrepo:`Nic30/pyDigitalWaveTools`
-* :ghrepo:`ics-jku/wal`
-* :ghrepo:`Wren6991/asciiwave`
+* :gh:`Nic30/pyDigitalWaveTools`
+* :gh:`ics-jku/wal`
+* :gh:`Wren6991/asciiwave`
 
 .. _API:Logging:OSVR:
 

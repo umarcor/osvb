@@ -56,7 +56,7 @@ analyse possible integration strategies with regard to the other APIs in the arc
 
   Usage of pyCAPI as a utility library for multiple EDA management projects.
 
-FuseSoC does contain some Python code for reading and parsing CAPI2 files (see :ghrepo:`olofk/fusesoc: fusesoc/capi2 <olofk/fusesoc/tree/master/fusesoc/capi2>`).
+FuseSoC does contain some Python code for reading and parsing CAPI2 files (see :gh:`olofk/fusesoc: fusesoc/capi2 <olofk/fusesoc/tree/master/fusesoc/capi2>`).
 Unfortunately, it is challenging to work with.
 On the one hand, it uses :web:`pyyaml <pyyaml.org>` for reading ``*.core`` files as Python dictionaries and lists.
 As a result, the procedure for providing Python classes is manual and prone to error.
@@ -73,7 +73,7 @@ I.e., it allows providing a working proof of concept, constrainted to the simula
 
 Feedback and contributions for making pyCAPI compatible with and supported by FuseSoC, VUnit, PyFPGA, pyIPCMI, etc. are
 very welcome!
-:ghrepo:`Open an issue <umarcor/osvb/issues/new/choose>` or :web:`join the chat <gitter.im/hdl/community>`!
+:gh:`Open an issue <umarcor/osvb/issues/new/choose>` or :web:`join the chat <gitter.im/hdl/community>`!
 
 CAPI reference
 --------------
@@ -91,15 +91,15 @@ CAPI reference
 References
 ----------
 
-* :ghrepo:`yukihiko-shinoda/yaml-dataclass-config`
+* :gh:`yukihiko-shinoda/yaml-dataclass-config`
 * :web:`su0.io: Strict YAML deserialization with marshmallow <su0.io/2020/08/05/python-strict-yaml-deserialization.html>`
-* :ghrepo:`antonblanchard/microwatt: microwatt.core <antonblanchard/microwatt/blob/master/microwatt.core>`
-* :ghrepo:`VLSI-EDA/PoC: .pyIPCMI <VLSI-EDA/PoC/tree/master/.pyIPCMI>`
+* :gh:`antonblanchard/microwatt: microwatt.core <antonblanchard/microwatt/blob/master/microwatt.core>`
+* :gh:`VLSI-EDA/PoC: .pyIPCMI <VLSI-EDA/PoC/tree/master/.pyIPCMI>`
 * :gdocs:`j.mp/openfpga-diagram: Open Source (FOSS) FPGA (EDA) Tooling Interchange Formats + Toolchain parts <1DWZ0G8vehkuZTPs5N3AQqIvZZtLMGzC8i0MWPRP54O4>`
-* :ghrepo:`ghdl/ghdl-language-server#12 <ghdl/ghdl-language-server/issues/12>` :ghrepo:`ghdl/ghdl-language-server#80 <ghdl/ghdl-language-server/issues/80>`
-* :ghrepo:`cocotb[wiki]: Python Test Runner Proposal | Models <cocotb/cocotb/wiki/Python-Test-Runner-Proposal#models>`.
-* :ghrepo:`Core HAMMER settings <ucb-bar/hammer/blob/master/src/hammer-vlsi/defaults.yml>`
-* :ghrepo:`kactus2/kactus2dev`
+* :gh:`ghdl/ghdl-language-server#12 <ghdl/ghdl-language-server/issues/12>` :gh:`ghdl/ghdl-language-server#80 <ghdl/ghdl-language-server/issues/80>`
+* :gh:`cocotb[wiki]: Python Test Runner Proposal | Models <cocotb/cocotb/wiki/Python-Test-Runner-Proposal#models>`.
+* :gh:`Core HAMMER settings <ucb-bar/hammer/blob/master/src/hammer-vlsi/defaults.yml>`
+* :gh:`kactus2/kactus2dev`
 
   * :web:`research.tuni.fi/system-on-chip/tools <research.tuni.fi/system-on-chip/tools/>`
   * :web:`gitter.im/hdl/community?at=6132117a5b92082de1807f54 <gitter.im/hdl/community?at=6132117a5b92082de1807f54>`:

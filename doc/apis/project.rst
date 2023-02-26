@@ -41,13 +41,13 @@ References
 
   * :web:`tsfpga: Register code generation <tsfpga.com/registers.html>`
   * :web:`cheby <gitlab.cern.ch/cohtdrivers/cheby>`
-  * :ghrepo:`SystemRDL register description language <SystemRDL>`
-  * :ghrepo:`RgGen <rggen/rggen>`
-  * :ghrepo:`wzab/agwb`
+  * :gh:`SystemRDL register description language <SystemRDL>`
+  * :gh:`RgGen <rggen/rggen>`
+  * :gh:`wzab/agwb`
   * :web:`airhdl <airhdl.com>`
 
-* :ghrepo:`dbhi/vsc-hdl`
+* :gh:`dbhi/vsc-hdl`
 
-* :ghrepo:`orestesmas/pycirkuit`
+* :gh:`orestesmas/pycirkuit`
 
-* :ghrepo:`pieter3d/simview`
+* :gh:`pieter3d/simview`

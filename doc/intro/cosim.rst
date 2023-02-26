@@ -88,21 +88,21 @@ Remote Procedure Call (RPC) library, for decoupling the execution kernels of mul
 gRPC
 ----
 
-* :web:`grpc.io` (:ghrepo:`grpc`)
-* :ghrepo:`dbhi/gRPC`
+* :web:`grpc.io` (:gh:`grpc`)
+* :gh:`dbhi/gRPC`
 
 capnproto
 ---------
 
-* :web:`capnproto.org` (:ghrepo:`capnproto`)
-* :ghrepo:`NyanCAD`
+* :web:`capnproto.org` (:gh:`capnproto`)
+* :gh:`NyanCAD`
 
-  * :ghrepo:`CxxrtlSimServer <NyanCAD/CxxrtlSimServer>`
-  * :ghrepo:`XyceSimServer <NyanCAD/XyceSimServer>`
-  * :ghrepo:`NgspiceSimServer <NyanCAD/NgspiceSimServer>`
+  * :gh:`CxxrtlSimServer <NyanCAD/CxxrtlSimServer>`
+  * :gh:`XyceSimServer <NyanCAD/XyceSimServer>`
+  * :gh:`NgspiceSimServer <NyanCAD/NgspiceSimServer>`
 
 ZeroMQ
 ------
 
-* :web:`zeromq.org` (:ghrepo:`zeromq`)
+* :web:`zeromq.org` (:gh:`zeromq`)
 * :web:`VZMQ - ZeroMQ communication with VHDL simulation in GHDL <groups.google.com/g/alt.sources/c/R5cKBbRrUJM>`

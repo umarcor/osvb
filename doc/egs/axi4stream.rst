@@ -9,21 +9,21 @@ This is typically found in streaming Digital Signal Processing (DSP) application
 For illustration purposes, the same UUT is tested using verification components and run scripts from several frameworks.
 
 :ghsrc:`AXI4Stream/src <AXI4Stream/src>` contains the VHDL sources of a SISO AXI4 Stream loopback buffer.
-Those sources are the same as the ones in the :ghrepo:`array_axis_vcs <VUnit/vunit/tree/master/examples/vhdl/array_axis_vcs>`
+Those sources are the same as the ones in the :gh:`array_axis_vcs <VUnit/vunit/tree/master/examples/vhdl/array_axis_vcs>`
 example of VUnit's repo.
 
 VUnit's array_axis_vcs example
 ******************************
 
 :ghsrc:`AXI4Stream/test/vunit/*.vhd <AXI4Stream/test/vunit/>` are regular VUnit testbenches using VUnit's
-Verification Components (VCs), similar to the ones found in :ghrepo:`VUnit/vunit: examples/vhdl/array_axis_vcs <VUnit/vunit/tree/master/examples/vhdl/array_axis_vcs>`.
+Verification Components (VCs), similar to the ones found in :gh:`VUnit/vunit: examples/vhdl/array_axis_vcs <VUnit/vunit/tree/master/examples/vhdl/array_axis_vcs>`.
 However, several variants were added here, for testing performance with different setups.
 
 VUnit
 =====
 
 :ghsrc:`AXI4Stream/test/vunit/run.py <AXI4Stream/test/vunit/run.py>` is a regular VUnit script based on
-:ghrepo:`VUnit/vunit: examples/vhdl/array_axis_vcs/run.py <VUnit/vunit/tree/master/examples/vhdl/array_axis_vcs/run.py>`.
+:gh:`VUnit/vunit: examples/vhdl/array_axis_vcs/run.py <VUnit/vunit/tree/master/examples/vhdl/array_axis_vcs/run.py>`.
 It searches the testbenches in the same directory, and executes the tests as usual in a VUnit run.
 
 This is ``test_AXI4Stream_VUnit`` in CI.
@@ -41,14 +41,14 @@ OSVVM TBStream
 **************
 
 :ghsrc:`AXI4Stream/test/osvvm <AXI4Stream/test/osvvm>` contains VHDL sources based on OSVVM's AXI4 Stream testbench
-example: :ghrepo:`OSVVM/AXI4: AxiStream <OSVVM/AXI4/tree/master/AxiStream>`.
+example: :gh:`OSVVM/AXI4: AxiStream <OSVVM/AXI4/tree/master/AxiStream>`.
 
 OSVVM ``.pro`` files
 ====================
 
 OSVVM provides a compilation and execution infrastructure through files with extension ``.pro``, which are in fact TCL
 scripts.
-Those scripts are used in the CI workflow of :ghrepo:`osvvm/OsvvmLibraries <osvvm/OsvvmLibraries>`.
+Those scripts are used in the CI workflow of :gh:`osvvm/OsvvmLibraries <osvvm/OsvvmLibraries>`.
 
 :ghsrc:`AXI4Stream/test/osvvm/run.pro <AXI4Stream/test/osvvm/run.pro>` sources OSVVM's scripts and uses the ``analyze``
 ``simulate`` commands provided by those.
@@ -59,9 +59,9 @@ GHDL's vendor scripts
 =====================
 
 Maintainers of GHDL provide helper scripts to build vendor libraries, including Xilinx, Intel/Altera,... and OSVVM
-(see :ghrepo:`ghdl/ghdl: scripts/vendors <ghdl/ghdl/tree/master/scripts/vendors>`).
+(see :gh:`ghdl/ghdl: scripts/vendors <ghdl/ghdl/tree/master/scripts/vendors>`).
 Currently, Bash and PowerShell variants of the scripts are provided.
-Those scripts are used in the CI workflow of :ghrepo:`ghdl/extended-tests`.
+Those scripts are used in the CI workflow of :gh:`ghdl/extended-tests`.
 
 .. HINT::
   GHDL's vendor scripts are typically used along with custom simulation scripts or with VUnit.
@@ -119,5 +119,5 @@ With pyEDAA.ProjectModel
 *TBC*
 
 .. HINT::
-  Probably, use GHDL's :ghrepo:`compile-osvvm.ps1 <ghdl/ghdl/blob/master/scripts/vendors/compile-osvvm.ps1>` as a
+  Probably, use GHDL's :gh:`compile-osvvm.ps1 <ghdl/ghdl/blob/master/scripts/vendors/compile-osvvm.ps1>` as a
   reference or for generating ``*.core`` files automatically.

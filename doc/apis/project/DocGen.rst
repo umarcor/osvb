@@ -11,16 +11,16 @@ Some of the features to be implemented on top of :ref:`API:Project:pyVHDLModelUt
 
   * :web:`Symbolator <kevinpt.github.io/symbolator/>`
 
-    * :ghrepo:`hdl/symbolator`
-    * :ghrepo:`hdl/pyHDLParser`
+    * :gh:`hdl/symbolator`
+    * :gh:`hdl/pyHDLParser`
 
   * :web:`schemdraw.rtfd.io: Circuit Elements » Integrated Circuits <schemdraw.readthedocs.io/en/stable/elements/intcircuits.html>`
 
   * :web:`xhdl <hackfin.gitlab.io/xhdl/>`
-  * :ghrepo:`LaurentCabaret/pyVhdl2Sch`
+  * :gh:`LaurentCabaret/pyVhdl2Sch`
 
-* Single page HTML/reStructuredText/markdown body (see :ghrepo:`TerosHDL CLI examples <TerosTechnology/teroshdl-documenter-demo>`).
-* :web:`Sphinx <www.sphinx-doc.org>` project/domain with cross-references (placeholder: :ghrepo:`Paebbels/sphinxcontrib-vhdldomain`).
+* Single page HTML/reStructuredText/markdown body (see :gh:`TerosHDL CLI examples <TerosTechnology/teroshdl-documenter-demo>`).
+* :web:`Sphinx <www.sphinx-doc.org>` project/domain with cross-references (placeholder: :gh:`Paebbels/sphinxcontrib-vhdldomain`).
 * Diagrams:
 
   * For Sphinx (see :ref:`Integration with Sphinx » Diagrams <API:Project:DocGen:Sphinx:Diagrams>`).
@@ -91,7 +91,7 @@ Therefore, it is not possible to know where it belongs in the hierarchy of the d
 This is a limitation for generating headers and other context dependent statements.
 
 .. NOTE::
-  Should you want to help improve the implementation of this directive, :ghrepo:`let us know <umarcor/osvb/issues/new>`!
+  Should you want to help improve the implementation of this directive, :gh:`let us know <umarcor/osvb/issues/new>`!
 
 Lists and tables
 ----------------
@@ -178,12 +178,12 @@ Table style:
 
 .. NOTE::
   This is a demo for showcasing the capabilities of pyGHDL.dom and pyVHDLModel.
-  Should you want to help improve the implementation for it to be more usable in practice, :ghrepo:`let us know <umarcor/osvb/issues/new>`!
+  Should you want to help improve the implementation for it to be more usable in practice, :gh:`let us know <umarcor/osvb/issues/new>`!
 
 VHDL Domain
 -----------
 
-:ghrepo:`Paebbels/sphinxcontrib-vhdldomain` is work in progress for adding a VHDL language domain to Sphinx.
+:gh:`Paebbels/sphinxcontrib-vhdldomain` is work in progress for adding a VHDL language domain to Sphinx.
 That is, a set of nestable directives resembling the architecture of pyVHDLModel.
 The purpose is twofold:
 
@@ -192,10 +192,10 @@ The purpose is twofold:
 * Allow users to specify a pyVHDLModel project by handwriting directives in reStructuredText sources, by either pointing
   to individual files or explicitly describing all the items.
 
-See :ghrepo:`Paebbels/sphinxcontrib-vhdldomain#4 <Paebbels/sphinxcontrib-vhdldomain/issues/4>`.
+See :gh:`Paebbels/sphinxcontrib-vhdldomain#4 <Paebbels/sphinxcontrib-vhdldomain/issues/4>`.
 
-There is also :ghrepo:`CESNET/sphinx-vhdl`, which uses a custom basic parser (:ghrepo:`CESNET/sphinx-vhdl: src/sphinxvhdl/autodoc.py <CESNET/sphinx-vhdl/blob/main/src/sphinxvhdl/autodoc.py>`)
-and multiple custom Sphinx directives (:ghrepo:`CESNET/sphinx-vhdl: src/sphinxvhdl/vhdl.py <CESNET/sphinx-vhdl/blob/main/src/sphinxvhdl/vhdl.py>`).
+There is also :gh:`CESNET/sphinx-vhdl`, which uses a custom basic parser (:gh:`CESNET/sphinx-vhdl: src/sphinxvhdl/autodoc.py <CESNET/sphinx-vhdl/blob/main/src/sphinxvhdl/autodoc.py>`)
+and multiple custom Sphinx directives (:gh:`CESNET/sphinx-vhdl: src/sphinxvhdl/vhdl.py <CESNET/sphinx-vhdl/blob/main/src/sphinxvhdl/vhdl.py>`).
 
 .. _API:Project:DocGen:Sphinx:Diagrams:
 
@@ -206,7 +206,7 @@ Both GHDL and Yosys allow generating diagrams of synthesised designs.
 
 * ``ghdl synth --out=dot`` generates a :web:`Graphviz <graphviz.org/>` DOT diagram of the netlist AST.
 
-* :ghrepo:`ghdl/ghdl-yosys-plugin` allows using GHDL as a frontend for Yosys.
+* :gh:`ghdl/ghdl-yosys-plugin` allows using GHDL as a frontend for Yosys.
 
   * As explained in :ref:`ghdl.github.io/ghdl/synthesis » Yosys plugin <ghdl:Synth:plugin>`, ghdl-yosys-plugin and Yosys
     allow converting VHDL to EDIT, SMT, BTOR2, FIRRTL, etc.
@@ -217,7 +217,7 @@ Both GHDL and Yosys allow generating diagrams of synthesised designs.
   * Optionally, command :web:`aigmap <yosyshq.net/yosys/cmd_aigmap.html>` can map the logic to and/nand gates only,
     before generating the diagram.
 
-  * Alternatively, :ghrepo:`nturley/netlistsvg` allows generating SVG schematics from Yosys' JSON netlist output.
+  * Alternatively, :gh:`nturley/netlistsvg` allows generating SVG schematics from Yosys' JSON netlist output.
 
 By combining those tools, diagrams of a given VHDL design can be generated as follows:
 
@@ -228,7 +228,7 @@ By combining those tools, diagrams of a given VHDL design can be generated as fo
   ~# convert netlist.svg netlist.png
 
 .. IMPORTANT::
-  There is an Sphinx extension named :ghrepo:`sphinxcontrib-hdl-diagrams <SymbiFlow/sphinxcontrib-hdl-diagrams>`,
+  There is an Sphinx extension named :gh:`sphinxcontrib-hdl-diagrams <SymbiFlow/sphinxcontrib-hdl-diagrams>`,
   which wraps Yosys and (optionally) netlistsvg in a directive.
   That allows including diagrams in the docs without manually calling yosys and netlistsvg.
   For instance:
@@ -245,9 +245,9 @@ By combining those tools, diagrams of a given VHDL design can be generated as fo
   There is work in progress for using the extension with "natively" installed tools, as well as supporting VHDL and
   mixed-language designs.
   See
-  :ghrepo:`SymbiFlow/sphinxcontrib-hdl-diagrams#65 <SymbiFlow/sphinxcontrib-hdl-diagrams/issues/65>`,
-  :ghrepo:`SymbiFlow/sphinxcontrib-hdl-diagrams#72 <SymbiFlow/sphinxcontrib-hdl-diagrams/pull/72>`
-  and :ghrepo:`SymbiFlow/sphinxcontrib-hdl-diagrams#73 <SymbiFlow/sphinxcontrib-hdl-diagrams/pull/73>`.
+  :gh:`SymbiFlow/sphinxcontrib-hdl-diagrams#65 <SymbiFlow/sphinxcontrib-hdl-diagrams/issues/65>`,
+  :gh:`SymbiFlow/sphinxcontrib-hdl-diagrams#72 <SymbiFlow/sphinxcontrib-hdl-diagrams/pull/72>`
+  and :gh:`SymbiFlow/sphinxcontrib-hdl-diagrams#73 <SymbiFlow/sphinxcontrib-hdl-diagrams/pull/73>`.
 
 References
 ==========

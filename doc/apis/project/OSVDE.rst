@@ -10,7 +10,7 @@ It is mostly meant for VHDL designers (but not only) and particularly for users 
 .. IMPORTANT::
   OSVDE is a proof of concept for prototyping the integration of multiple pieces in the OSVB.
   It is not actively developed *per se*, but used as an umbrella for pyVHDLModel, pyGHDL, pyCAPI, etc.
-  A practical usage of the features prototyped in OSVDE is found in :ghrepo:`Hardware Studio <umarcor/hwstudio>`
+  A practical usage of the features prototyped in OSVDE is found in :gh:`Hardware Studio <umarcor/hwstudio>`
   (see :web:`umarcor.github.io/hwstudio/doc: Structure <umarcor.github.io/hwstudio/doc/#_structure>`).
 
 OSVDE is a GUI tool written in Python only, using :web:`tkinter <docs.python.org/3/library/tkinter.html>`, *the standard
@@ -64,7 +64,7 @@ Then, the Design model is used for generating the content of the GUI.
   :width: 100%
   :align: center
 
-  Repository :ghrepo:`stnolting/neorv32` opened in OSVDE.
+  Repository :gh:`stnolting/neorv32` opened in OSVDE.
 
 As shown in :numref:`fig:osvde`, at the top part of OSVDE the hierarchy of the source files is shown.
 For each VHDL source, a column shows the units (entities and/or architectures) defined in it.
@@ -100,11 +100,11 @@ Some enhancements and features we would like to integrate into OSVDE are the fol
 
 * Pretty printing, formatting...
 
-  * Fixed style (see GHDL's :ref:`--pp-html <ghdl:REF:Command>` and :ghrepo:`ghdl-dom <ghdl/ghdl/blob/master/pyGHDL/cli/dom.py>`).
+  * Fixed style (see GHDL's :ref:`--pp-html <ghdl:REF:Command>` and :gh:`ghdl-dom <ghdl/ghdl/blob/master/pyGHDL/cli/dom.py>`).
   * Customisable style (see
-    :ghrepo:`jeremiah-c-leary/vhdl-style-guide`,
-    :ghrepo:`VHDLTool`).
-  * :ghrepo:`AdiuvoEngineering/VHDL_Coding_Rules`.
+    :gh:`jeremiah-c-leary/vhdl-style-guide`,
+    :gh:`VHDLTool`).
+  * :gh:`AdiuvoEngineering/VHDL_Coding_Rules`.
 
 * pyVHDLModel/pyGHDL enhancements:
 

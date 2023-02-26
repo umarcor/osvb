@@ -21,7 +21,7 @@ some older revisions of VHDL to get the termination status.
 
   Strategies to pass the runner configuration from Python to HDL.
 
-* :ghrepo:`VUnit/vunit#772 <VUnit/vunit/issues/772>`
+* :gh:`VUnit/vunit#772 <VUnit/vunit/issues/772>`
 
 References
 ==========
@@ -30,9 +30,9 @@ References
 
 * :web:`Test Anything Protocol <testanything.org/>`
 
-  * :ghrepo:`python-tap/tappy`: a set of tools for working with the TAP in Python.
+  * :gh:`python-tap/tappy`: a set of tools for working with the TAP in Python.
 
-* :ghrepo:`FuseSoc Verification Automation (fsva) <m-kru/fsva>` is an HDL testbench runner based on
+* :gh:`FuseSoc Verification Automation (fsva) <m-kru/fsva>` is an HDL testbench runner based on
   :awesome:`FuseSoc <fusesoc>`.
   It fetches targets named with certain patterns in ``.core`` files; which can be executed in parallel; stdout/stderr
   are captured and parsed.

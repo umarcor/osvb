@@ -52,23 +52,23 @@ Each of them is subject to have some sources common/shared to others task, along
 .. NOTE::
   In fact, all the EDA ecosystem might be modelled using a similar approach. For execution, graphs need to be acyclic.
   However, a larger cyclic graph can be created by combining multiple DAGs. Therefore, diagrams such as the ones
-  shown in :ghrepo:`hdl/awesome#98 <hdl/awesome/issues/98>` might be created by visualizing the actual tasks/tools that
+  shown in :gh:`hdl/awesome#98 <hdl/awesome/issues/98>` might be created by visualizing the actual tasks/tools that
   people are using *in the wild*.
 
-A task runner which allows users to compose workflows was prototyped in :ghrepo:`dbhi/run`.
+A task runner which allows users to compose workflows was prototyped in :gh:`dbhi/run`.
 There, a graphviz dot digraph is used for defining the workflows as a Directed Acyclic Graph (DAG).
 Nodes can be either sources, jobs or artifacts.
 The actual content of each node is defined in a sibling JSON file.
-See :ghrepo:`dbhi/run: example/graph.dot <dbhi/run/blob/main/example/graph.dot>` and :ghrepo:`dbhi/run: example/config.json <dbhi/run/blob/main/example/config.json>`.
+See :gh:`dbhi/run: example/graph.dot <dbhi/run/blob/main/example/graph.dot>` and :gh:`dbhi/run: example/config.json <dbhi/run/blob/main/example/config.json>`.
 :web:`gonum <www.gonum.org/>` is used for computing the topological sort of the workflows.
 Then, a CLI is provided for listing, inducing or executing.
 In retrospect, picking golang for implementing the tool might have not been the best decision for a tool targeted at EDA
 tooling. However, the same concepts can be applied, using already available Python libraries:
 
-* :ghrepo:`pydoit/doit` (:web:`pydoit.org`) and :web:`Invoke <www.pyinvoke.org>`
+* :gh:`pydoit/doit` (:web:`pydoit.org`) and :web:`Invoke <www.pyinvoke.org>`
   are Python task execution tools and libraries, which allow defining/organizing task functions from a ``.py`` file.
 
-  * See a proof of concept for using pydoit in NEORV32: :ghrepo:`stnolting/neorv32#110 <stnolting/neorv32/pull/110>`.
+  * See a proof of concept for using pydoit in NEORV32: :gh:`stnolting/neorv32#110 <stnolting/neorv32/pull/110>`.
 
 * :web:`NetworkX <networkx.org>` is a network analysis library in Python, which provides graph algorithms for
   topological sorting and probably other of the features implemented in dbhi/run.
@@ -84,21 +84,21 @@ of the scope of this bundle/project.
 Nonetheless, there are several shared :web:`Concepts <airflow.apache.org/docs/apache-airflow/stable/concepts.html>`
 and some of their implementation decisions might be a good reference.
 
-Moreover the design document for the reimplementation of Edalize (see :ghrepo:`Edalize (Slight return) <olofk/edalize/wiki/Edalize-(Slight-return)>`)
+Moreover the design document for the reimplementation of Edalize (see :gh:`Edalize (Slight return) <olofk/edalize/wiki/Edalize-(Slight-return)>`)
 does also propose a similar architecture, even though terms such as directed acyclic graph or topological sorting are
 not explicitly used.
-Precisely, the section about :ghrepo:`Implementation <olofk/edalize/wiki/Edalize-(Slight-return)#implementation>`
+Precisely, the section about :gh:`Implementation <olofk/edalize/wiki/Edalize-(Slight-return)#implementation>`
 proposes using EDAM as the unified format for passing parameters between nodes.
 
 On the other hand, as shown in the diagram of section :ref:`API:Core`, developers of Edalize and PyFPGA have been
 lately working towards making integration easier:
 
-* Experimental support for *launchers* was added to Edalize (:ghrepo:`olofk/edalize@f8b3f66 <olofk/edalize/commit/f8b3f666a282e09b8ce06388101d179f8c70e8d4>`).
+* Experimental support for *launchers* was added to Edalize (:gh:`olofk/edalize@f8b3f66 <olofk/edalize/commit/f8b3f666a282e09b8ce06388101d179f8c70e8d4>`).
   That allows wrapping the lower level commands.
 
-* :ghrepo:`OpenFlow <PyFPGA/openflow>` was split from PyFPGA.
+* :gh:`OpenFlow <PyFPGA/openflow>` was split from PyFPGA.
   OpenFlow wraps (Docker/Podman) containers, allowing usage of EDA tools without installing them natively.
-  By default, containers from :ghrepo:`hdl/containers` are used.
+  By default, containers from :gh:`hdl/containers` are used.
 
 By combining both solutions, users can use Edalize with containers.
 Anyhow, extending OpenFlow for supporting multiple and dynamically defined workflows imposes similar challenges as the
@@ -129,32 +129,32 @@ References
 
 * :gdocs:`Open Source EDA: building, packaging, installing <10_MqFjTIYVVuOJlusJydsp4KOcmrrHk03__7ME5thOI>`
 
-* :ghrepo:`create schema for EDAM format (olofk/edalize#288) <olofk/edalize/issues/288>`
+* :gh:`create schema for EDAM format (olofk/edalize#288) <olofk/edalize/issues/288>`
 
 * SymbiFlow
 
   * :web:`SymbiFlow Publically Accessible Docs <drive.google.com/drive/folders/1euSrrszzt3Bfz792S6Ud8Ox2w7TYUZNa>`
   * :gdocs:`bit.ly/edda-conda-eda-spec: Conda based system for FPGA and ASIC Dev <1BZcSzU-ur0J02uO5FSGHdJHYGnRfr4n4Cb7PMubXOD4>`
   * :gdocs:`Next Conda Work <11XFnJ0ExBgE1pMQksw0rQerAZo3F83AVIu2YK1pbg1k>`
-  * :ghrepo:`SymbiFlow/make-env`
+  * :gh:`SymbiFlow/make-env`
   * :gdocs:`edalize.autosetup <1IMVrSmMO5wqTV3W22Bv2PeKtMHO3WSyCwHm3N-Wkwbk>`
   * :gdocs:`Tim's suggestions for a edalize v2 <1VakRJV0Pv4eM_hJnCCfh2l3bCMD3y07p6hFpc7z2Kg4>`
   * :gdraws:`VHDL version of "OpenTitan (and other SV designs) using open tools (for FPGAs and ASICS)" <16kKGSo84Xitmr5BiCJG3faNWt3maoKs-EHftUPDaM64>`
   * :gdraws:`SystemVerilog flows (for OpenTitan and other SV designs) using open tools (for FPGAs and ASICS) <1GEjCoLwY57bsuZoj5ymyXoToIEOC0H4j2SEYsqQupM8>`.
 
-* :ghrepo:`cocotb[wiki]: Python Test Runner Proposal <cocotb/cocotb/wiki/Python-Test-Runner-Proposal>`.
+* :gh:`cocotb[wiki]: Python Test Runner Proposal <cocotb/cocotb/wiki/Python-Test-Runner-Proposal>`.
 
-* :ghrepo:`Highly Agile Masks Made Effortlessly from RTL (HAMMER) <ucb-bar/hammer>`.
+* :gh:`Highly Agile Masks Made Effortlessly from RTL (HAMMER) <ucb-bar/hammer>`.
 
   * HAMMER imports tools as Python classes.
-    See :ghrepo:`ucb-bar/hammer: src/hammer-vlsi/README.md <ucb-bar/hammer/blob/master/src/hammer-vlsi/README.md#tool-library>`.
+    See :gh:`ucb-bar/hammer: src/hammer-vlsi/README.md <ucb-bar/hammer/blob/master/src/hammer-vlsi/README.md#tool-library>`.
   * :web:`HAMMER: A Platform For Agile Physical Design [EECS-2020-28] <www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-28.pdf>`.
 
 * Other task execution/automation tools:
 
-  * :ghrepo:`facebookresearch/hydra`
-  * :ghrepo:`chriscardillo/gusty`
-  * :ghrepo:`ray-project/ray`
+  * :gh:`facebookresearch/hydra`
+  * :gh:`chriscardillo/gusty`
+  * :gh:`ray-project/ray`
 
     * :web:`docs.ray.io: Ray design patterns <docs.ray.io/en/master/ray-design-patterns/index.html>`
 
@@ -162,7 +162,7 @@ References
 
     * :web:`bazel.build`
 
-      * :ghrepo:`hdl/bazel_rules_hdl`
+      * :gh:`hdl/bazel_rules_hdl`
 
     * :web:`cmake.org`
     * :web:`gradle.org`
@@ -171,20 +171,20 @@ References
     * Remote execution:
 
       * :web:`Argo Workflows - The workflow engine for Kubernetes <argoproj.github.io/argo-workflows/>`
-      * :ghrepo:`Remote Execution API <bazelbuild/remote-apis>`
+      * :gh:`Remote Execution API <bazelbuild/remote-apis>`
       * :web:`n8n.io`
 
-        * :ghrepo:`n8n-io/n8n`
+        * :gh:`n8n-io/n8n`
 
-* :ghrepo:`ktbarrett.github.io: _drafts/tool-automation.md <ktbarrett/ktbarrett.github.io/blob/master/_drafts/tool-automation.md>`
+* :gh:`ktbarrett.github.io: _drafts/tool-automation.md <ktbarrett/ktbarrett.github.io/blob/master/_drafts/tool-automation.md>`
 
   * Find a discussion about the capabilities and limitations of pydoit in :gitter:`hdl/community?at=60f6b567926ce249e5759d03`.
 
-* :ghrepo:`qarlosalberto/fpga-knife`
+* :gh:`qarlosalberto/fpga-knife`
 
 * :web:`DMTN-025: A survey of workflow management systems <dmtn-025.lsst.io>`
 
-* :ghrepo:`fvutils/vlsim`
+* :gh:`fvutils/vlsim`
 
 * `chipflow.io <https://chipflow.io/>`__
 
