@@ -5,9 +5,9 @@
 <p align="center">
   <a title="Documentation" href="https://umarcor.github.io/osvb"><img src="https://img.shields.io/website.svg?label=umarcor.github.io%2Fosvb&longCache=true&style=flat-square&url=http%3A%2F%2Fumarcor.github.io%2Fosvb%2Findex.html&logo=Github&logoColor=fff"></a><!--
   -->
-  <a title="'Doc' workflow status" href="https://github.com/umarcor/osvb/actions?query=workflow%3Adoc"><img alt="'Doc' workflow status" src="https://img.shields.io/github/workflow/status/umarcor/osvb/Doc?longCache=true&style=flat-square&label=Doc&logo=Github%20Actions&logoColor=fff"></a><!--
+  <a title="'Doc' workflow status" href="https://github.com/umarcor/osvb/actions/workflows/Doc.yml"><img alt="'Doc' workflow status" src="https://img.shields.io/github/actions/workflow/status/umarcor/osvb/Doc.yml?branch=main&longCache=true&style=flat-square&label=Doc&logo=Github%20Actions&logoColor=fff"></a><!--
   -->
-  <a title="'Test' workflow status" href="https://github.com/umarcor/osvb/actions?query=workflow%3Atest"><img alt="'Test' workflow status" src="https://img.shields.io/github/workflow/status/umarcor/osvb/Test?longCache=true&style=flat-square&label=Test&logo=Github%20Actions&logoColor=fff"></a><!--
+  <a title="'Test' workflow status" href="https://github.com/umarcor/osvb/actions/workflows/Test.yml"><img alt="'Test' workflow status" src="https://img.shields.io/github/actions/workflow/status/umarcor/osvb/Test.yml?branch=main&longCache=true&style=flat-square&label=Test&logo=Github%20Actions&logoColor=fff"></a><!--
   -->
 </p>
 
