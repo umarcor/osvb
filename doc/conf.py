@@ -31,10 +31,7 @@ sys_path.insert(0, abspath("."))
 
 # -- General configuration ------------------------------------------------
 
-needs_sphinx = "1.5"
-
 extensions = [
-    # Standard Sphinx extensions
     "sphinx.ext.autodoc",
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
@@ -49,8 +46,6 @@ autodoc_default_options = {
     "undoc-members": True,
 }
 
-templates_path = ["_templates"]
-
 source_suffix = {
     ".rst": "restructuredtext",
 }
@@ -58,7 +53,7 @@ source_suffix = {
 master_doc = "index"
 
 project = u"Open Source Verification Bundle"
-copyright = u"2021-2022, Unai Martinez-Corral and contributors"
+copyright = u"2021-2023, Unai Martinez-Corral and contributors"
 author = u"Unai Martinez-Corral and contributors"
 
 version = "latest"
@@ -87,23 +82,12 @@ ctx = ROOT / "context.json"
 if ctx.is_file():
     html_context.update(loads(ctx.open("r").read()))
 
-if (ROOT / "_theme").is_dir():
-	html_theme_path = ["."]
-	html_theme = "_theme"
-	html_theme_options = {
-		'logo_only': True,
-		'home_breadcrumbs': False,
-		'vcs_pageview_mode': 'blob',
-	}
-else:
-	html_theme = "alabaster"
+html_theme = "furo"
 
 html_static_path = ["_static"]
 
 html_logo = str(Path(html_static_path[0]) / "logo" / "osvb_banner_white.svg")
 html_favicon = str(Path(html_static_path[0]) / "logo" / "osvb.ico")
-
-htmlhelp_basename = "OSVBDoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -150,20 +134,21 @@ intersphinx_mapping = {
 }
 
 # -- Sphinx.Ext.ExtLinks --------------------------------------------------
+
 extlinks = {
     "wikipedia": ("https://en.wikipedia.org/wiki/%s", "wikipedia:"),
-    "awesome": ("https://hdl.github.io/awesome/items/%s", ""),
-    "web": ("https://%s", ""),
-    "bbrepo": ("https://bitbucket.org/%s", "bb:"),
-    "gl": ("https://gitlab.com/%s", "gl:"),
-    "gh": ("https://github.com/%s", "gh:"),
-    "ghsharp": ("https://github.com/umarcor/osvb/issues/%s", "#"),
-    "ghissue": ("https://github.com/umarcor/osvb/issues/%s", "issue #"),
-    "ghpull": ("https://github.com/umarcor/osvb/pull/%s", "pull request #"),
-    "ghsrc": ("https://github.com/umarcor/osvb/blob/main/%s", ""),
-    "gdocs": ("https://docs.google.com/document/d/%s", None),
-    "gdraws": ("https://docs.google.com/drawings/d/%s", None),
-    "pypi": ("https://pypi.org/project/%s", "pypi:"),
-    "gitter": ("https://gitter.im/%s", "gitter:"),
-    "youtube": ("https://www.youtube.com/watch?%s", "youtube:")
+    "awesome":   ("https://hdl.github.io/awesome/items/%s", ""),
+    "web":       ("https://%s", ""),
+    "bbrepo":    ("https://bitbucket.org/%s", "bb:"),
+    "gl":        ("https://gitlab.com/%s", "gl:"),
+    "gh":        ("https://github.com/%s", "gh:"),
+    "ghsharp":   ("https://github.com/umarcor/osvb/issues/%s", "#"),
+    "ghissue":   ("https://github.com/umarcor/osvb/issues/%s", "issue #"),
+    "ghpull":    ("https://github.com/umarcor/osvb/pull/%s", "pull request #"),
+    "ghsrc":     ("https://github.com/umarcor/osvb/blob/main/%s", ""),
+    "gdocs":     ("https://docs.google.com/document/d/%s", None),
+    "gdraws":    ("https://docs.google.com/drawings/d/%s", None),
+    "pypi":      ("https://pypi.org/project/%s", "pypi:"),
+    "gitter":    ("https://gitter.im/%s", "gitter:"),
+    "youtube":   ("https://www.youtube.com/watch?%s", "youtube:")
 }

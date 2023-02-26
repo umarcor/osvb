@@ -2,5 +2,6 @@
 -r ../mods/pyCAPI/requirements.txt
 -r ../mods/pyOSVDE/requirements.txt
 
+furo
 sphinx
 sphinx-autoapi

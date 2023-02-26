@@ -6,4 +6,3 @@ formats: [ html ]
 images:
   base: osvb/doc
   latex: btdi/latex
-theme: https://codeload.github.com/buildthedocs/sphinx.theme/tar.gz/v1
