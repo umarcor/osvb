@@ -136,19 +136,19 @@ intersphinx_mapping = {
 # -- Sphinx.Ext.ExtLinks --------------------------------------------------
 
 extlinks = {
-    "wikipedia": ("https://en.wikipedia.org/wiki/%s", "wikipedia:"),
-    "awesome":   ("https://hdl.github.io/awesome/items/%s", ""),
-    "web":       ("https://%s", ""),
-    "bbrepo":    ("https://bitbucket.org/%s", "bb:"),
-    "gl":        ("https://gitlab.com/%s", "gl:"),
-    "gh":        ("https://github.com/%s", "gh:"),
-    "ghsharp":   ("https://github.com/umarcor/osvb/issues/%s", "#"),
-    "ghissue":   ("https://github.com/umarcor/osvb/issues/%s", "issue #"),
-    "ghpull":    ("https://github.com/umarcor/osvb/pull/%s", "pull request #"),
-    "ghsrc":     ("https://github.com/umarcor/osvb/blob/main/%s", ""),
+    "wikipedia": ("https://en.wikipedia.org/wiki/%s", "w:%s"),
+    "awesome":   ("https://hdl.github.io/awesome/items/%s", "%s"),
+    "web":       ("https://%s", "%s"),
+    "bbrepo":    ("https://bitbucket.org/%s", "bb:%s"),
+    "gl":        ("https://gitlab.com/%s", "gl:%s"),
+    "gh":        ("https://github.com/%s", "gh:%s"),
+    "ghsharp":   ("https://github.com/umarcor/osvb/issues/%s", "#%s"),
+    "ghissue":   ("https://github.com/umarcor/osvb/issues/%s", "issue #%s"),
+    "ghpull":    ("https://github.com/umarcor/osvb/pull/%s", "pull request #%s"),
+    "ghsrc":     ("https://github.com/umarcor/osvb/blob/main/%s", "%s"),
     "gdocs":     ("https://docs.google.com/document/d/%s", None),
     "gdraws":    ("https://docs.google.com/drawings/d/%s", None),
-    "pypi":      ("https://pypi.org/project/%s", "pypi:"),
-    "gitter":    ("https://gitter.im/%s", "gitter:"),
-    "youtube":   ("https://www.youtube.com/watch?%s", "youtube:")
+    "pypi":      ("https://pypi.org/project/%s", "pypi:%s"),
+    "gitter":    ("https://gitter.im/%s", "gitter:%s"),
+    "youtube":   ("https://www.youtube.com/watch?%s", "youtube:%s")
 }
