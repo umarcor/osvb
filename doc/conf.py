@@ -139,7 +139,7 @@ extlinks = {
     "wikipedia": ("https://en.wikipedia.org/wiki/%s", "w:%s"),
     "awesome":   ("https://hdl.github.io/awesome/items/%s", "%s"),
     "web":       ("https://%s", "%s"),
-    "bbrepo":    ("https://bitbucket.org/%s", "bb:%s"),
+    "bb":        ("https://bitbucket.org/%s", "bb:%s"),
     "gl":        ("https://gitlab.com/%s", "gl:%s"),
     "gh":        ("https://github.com/%s", "gh:%s"),
     "ghsharp":   ("https://github.com/umarcor/osvb/issues/%s", "#%s"),

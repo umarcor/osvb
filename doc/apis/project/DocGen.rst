@@ -252,4 +252,4 @@ By combining those tools, diagrams of a given VHDL design can be generated as fo
 References
 ==========
 
-* :bbrepo:`cdelker/schemdraw` (:web:`schemdraw.rtfd.io`).
+* :bb:`cdelker/schemdraw` (:web:`schemdraw.rtfd.io`).
