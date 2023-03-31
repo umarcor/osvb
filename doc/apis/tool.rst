@@ -150,6 +150,10 @@ References
     See :gh:`ucb-bar/hammer: src/hammer-vlsi/README.md <ucb-bar/hammer/blob/master/src/hammer-vlsi/README.md#tool-library>`.
   * :web:`HAMMER: A Platform For Agile Physical Design [EECS-2020-28] <www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-28.pdf>`.
 
+* :gh:`sifive/wake`
+
+  * :web:`sifive.github.io/wake/contents.html`
+
 * Other task execution/automation tools:
 
   * :gh:`facebookresearch/hydra`
