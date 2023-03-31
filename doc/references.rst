@@ -5,6 +5,8 @@ References
 
 * :gh:`umarcor/VHDLNumericUserGuides`
 
+* :gh:`tmeissner/cocotb_with_ghdl`
+
 * :gh:`efard/DSPHDL`
 
 * :gh:`hVHDL`
