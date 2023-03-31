@@ -42,7 +42,7 @@ VCD is simple and compact, which allowed it to be used in fields other than Veri
 For instance, GHDL supports dumping VCD files.
 Since VCD files are text files, some tools use VCDGZ for referring to VCD compressed using zlib/gzip.
 
-VCD/EVCD can be read by multiple open source tools:
+VCD/EVCD can be read by multiple tools:
 
 * :awesome:`GTKWave <gtkwave>`
 * :gh:`veripool/dinotrace`
@@ -59,6 +59,7 @@ VCD/EVCD can be read by multiple open source tools:
 * :gh:`Ben1152000/sootty`
 * :gh:`Toroid-io/vcd2wavedrom`
 * :gh:`cirosantilli/vcdvcd`
+* :web:`wavetrace.io`
 
 However, being a 20+ year old format defined for Verilog, VCD has certain limitations:
 
@@ -66,7 +67,7 @@ However, being a 20+ year old format defined for Verilog, VCD has certain limita
 * Periodic signals are not compressed, so they take a lot of space.
 * File size is huge, because it is plain text.
 
-Anthony J. Bybell, has gathered much knowledge about alternatives through the decades he's been building and maintaining
+Anthony J. Bybell has gathered much knowledge about alternatives through the decades he's been building and maintaining
 GTKWave.
 It supports FST, LXT, LXT2 and VZT formats.
 See appendices C, D and F of the :web:`GTKWave User's Guide <gtkwave.sourceforge.net/gtkwave.pdf>`.
