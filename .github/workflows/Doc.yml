@@ -24,7 +24,7 @@ jobs:
     - name: '🛳️ Build osvb/doc'
       run: |
         docker build -t osvb/doc - <<-EOF
-        FROM ghcr.io/hdl/debian/bullseye/sim/osvb
+        FROM ghcr.io/hdl/sim/osvb@sha256:ca08fcc7906bd34108f9bc9ef9d981045e65b09cc4961a5d271468888cfea7dc
         ENV PYTHONPATH=/src/mods
         RUN apt update -qq && apt install -y \
           git \
