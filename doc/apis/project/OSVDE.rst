@@ -14,7 +14,7 @@ It is mostly meant for VHDL designers (but not only) and particularly for users 
   (see :web:`umarcor.github.io/hwstudio/doc: Structure <umarcor.github.io/hwstudio/doc/#_structure>`).
 
 OSVDE is a GUI tool written in Python only, using :web:`tkinter <docs.python.org/3/library/tkinter.html>`, *the standard
-Python interface to the Tk GUI toolkit* (see :py:doc:`faq/gui`).
+Python interface to the Tk GUI toolkit* (see :doc:`py:faq/gui` and :doc:`py:library/tkinter`).
 The motivation for using both Python and tkinter is reducing the dependencies to the bare minimum available on several
 plataforms.
 As said, the purpose of OSVDE is not to provide the best performance for (very) large designs, but it's for prototyping

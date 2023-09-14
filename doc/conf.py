@@ -122,7 +122,7 @@ texinfo_documents = [
 # -- Sphinx.Ext.InterSphinx -----------------------------------------------
 
 intersphinx_mapping = {
-    "python":     ("https://docs.python.org/3/", None),
+    "py":         ("https://docs.python.org/3/", None),
     "edaa":       ("https://edaa-org.github.io/", None),
     "ghdl":       ("https://ghdl.github.io/ghdl", None),
     "ghdl-cosim": ("https://ghdl.github.io/ghdl-cosim", None),

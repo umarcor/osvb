@@ -33,7 +33,7 @@ Integration with Sphinx
 
 :web:`Sphinx <www.sphinx-doc.org>` is the *de facto* static site generator (SSG) used for building documentation of
 Python projects.
-It was originally created for :doc:`Python <python:contents>`, and it has support for documenting software projects in several
+It was originally created for :doc:`Python <py:contents>`, and it has support for documenting software projects in several
 languages. Since many open source EDA projects and CLIs are written in Python, Sphinx is probably the most used SSG.
 It's used by SymbiFlow, GHDL, VUnit, pyVHDLModel/pyVHDLParser, cocotb, TerosHDL, Boolector, edalize/fusesoc,
 Wishbone (FOSSi), SpinalHDL, tsfpga...

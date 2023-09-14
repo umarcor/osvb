@@ -62,7 +62,7 @@ On the one hand, it uses :web:`pyyaml <pyyaml.org>` for reading ``*.core`` files
 As a result, the procedure for providing Python classes is manual and prone to error.
 On the other hand, the format is documented in the sources of the code, but the code itself is undocumented.
 
-Conversely, pyCAPI is a proof of concept based on Python :mod:`python:dataclasses` for direct (un)marshalling of YAML
+Conversely, pyCAPI is a proof of concept based on Python :mod:`py:dataclasses` for direct (un)marshalling of YAML
 to/from Python classes.
 Hence, the CAPI2 format is not supported as-is yet: some non compliant fields were modified, and the prototype is
 limited to reading filesets.
