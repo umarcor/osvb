@@ -20,7 +20,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 
-from sys import argv as sys_argv, exit as sys_exit
+from sys import exit as sys_exit
 
 import tkinter as tk
 from tkinter import messagebox as mbox
