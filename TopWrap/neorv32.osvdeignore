@@ -1,0 +1,5 @@
+/sim/
+/rtl/core/mem/
+/rtl/system_integration/
+/rtl/test_setups/
+/rtl/processor_templates/

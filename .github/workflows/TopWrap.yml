@@ -1,0 +1,25 @@
+name: TopWrap
+
+on:
+  push:
+  pull_request:
+
+env:
+  CI: true
+  DOCKER_BUILDKIT: 1
+
+jobs:
+
+  doc:
+    runs-on: ubuntu-latest
+    name: 'TopWrap'
+    steps:
+
+    - name: '🧰 Checkout'
+      uses: actions/checkout@v3
+
+    - name: '🛳️ Build osvb/topwrap'
+      run: docker build -t osvb/topwrap - < TopWrap/Dockerfile
+
+    - name: '🚧 Test TopWrap'
+      run: docker run --rm -v $(pwd):/wrk osvb/topwrap /wrk/TopWrap/run.sh
