@@ -59,7 +59,7 @@ author = u"Unai Martinez-Corral and contributors"
 version = "latest"
 release = version  # The full version, including alpha/beta/rc tags.
 
-language = None
+language = 'en'
 
 exclude_patterns = []
 
