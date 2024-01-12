@@ -1,0 +1,415 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Simple Flip-Flop" href="../egs/sff.html" /><link rel="prev" title="Runner" href="runner.html" />
+
+    <link rel="shortcut icon" href="../_static/osvb.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Logging - Open Source Verification Bundle latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Open Source Verification Bundle latest documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/osvb_banner_white.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Open Source Verification Bundle latest documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/frameworks.html">Frameworks and Methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/sim.html">Simulators | Compilers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cosim.html">Co-simulation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://edaa-org.github.io/ConceptualModel.html">EDA² Conceptual Model ➚</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="project.html">Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project/pyVHDLModelUtils.html">pyVHDLModelUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/OSVDE.html">Open Source VHDL Design Explorer (OSVDE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/DocGen.html">Documentation generation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tool.html">Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runner.html">Runner</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Logging</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../egs/sff.html">Simple Flip-Flop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../egs/axi4stream.html">SISO AXI4 Stream</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/fpconv.html">Fixed-point conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/sigrok.html">sigrok-cli | Pulseview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="logging">
+<span id="api-logging"></span><h1>Logging<a class="headerlink" href="#logging" title="Link to this heading">#</a></h1>
+<p>Unarguably, the most relevant feature of a testing/verification ecosystem is a robust solution for reporting test results
+and for providing feedback to the users.
+Since most executions are to be run unattended, spotting regressions needs to be reliable and must provide a quick
+procedure for reproducing issues locally.
+Therefore, logging features are tightly related to <a class="reference internal" href="tool.html#api-tool"><span class="std std-ref">Tool</span></a> and <a class="reference internal" href="runner.html#api-runner"><span class="std std-ref">Runner</span></a>.</p>
+<section id="terminal">
+<h2>Terminal<a class="headerlink" href="#terminal" title="Link to this heading">#</a></h2>
+<p>In the terminal, VUnit provides a coloured summary of the tests and the results at the end of the execution of a
+<code class="docutils literal notranslate"><span class="pre">run.py</span></code> script.
+By default, logging is saved to files and not shown in the terminal.
+However, CLI option <code class="docutils literal notranslate"><span class="pre">-v</span></code> allows printing the content.
+Moreover, VUnit’s VHDL library <code class="docutils literal notranslate"><span class="pre">logging</span></code> allows using custom loggers with fine grained control of the scope and the
+consumers (CSV files and/or display/screen).</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://vunit.github.io/_images/vunit_demo.gif"><img alt="Interactive VUnit session" src="https://vunit.github.io/_images/vunit_demo.gif" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">An interactive VUnit session.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Nonetheless, in complex projects, users do typically handle several run scripts, for testing different units/modules of
+the designs.
+The recommended approach for those cases is using <a class="reference external" href="https://docs.pytest.org/">pytest</a>, a framework built on top of the
+built-in <a class="reference external" href="https://docs.python.org/3/library/unittest.html#module-unittest" title="(in Python v3.12)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest</span></code></a> unit testing framework in Python.
+Similarly to VUnit, pytest provides automatic discovery, marks and hooks for fine grained control of test execution.</p>
+</section>
+<section id="waveforms">
+<h2>Waveforms<a class="headerlink" href="#waveforms" title="Link to this heading">#</a></h2>
+<p>The most widespread format for dumping waveforms is Value Change Dump (VCD), defined in the Verilog language (IEEE Std
+1364-1995).
+Six years later, an Extended VCD (EVCD) was defined in IEEE Std 1364-2001.
+VCD is simple and compact, which allowed it to be used in fields other than Verilog simulation tools.
+For instance, GHDL supports dumping VCD files.
+Since VCD files are text files, some tools use VCDGZ for referring to VCD compressed using zlib/gzip.</p>
+<p>VCD/EVCD can be read by multiple tools:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://hdl.github.io/awesome/items/gtkwave">GTKWave</a></p></li>
+<li><p><a class="reference external" href="https://github.com/veripool/dinotrace">gh:veripool/dinotrace</a></p></li>
+<li><p><a class="reference internal" href="../notebook/sigrok.html#notebook-sigrok"><span class="std std-ref">sigrok-cli | Pulseview</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/psurply/dwfv">gh:psurply/dwfv</a></p></li>
+<li><p><a class="reference external" href="https://wavedrom.com">wavedrom.com</a>, <a class="reference external" href="https://github.com/wavedrom/vcdrom">gh:wavedrom/vcdrom</a> and <a class="reference external" href="https://github.com/wavedrom/zoom">gh:wavedrom/zoom</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/Nic30/d3-wave">gh:Nic30/d3-wave</a></p></li>
+<li><p><a class="reference external" href="https://github.com/raczben/fliplot">gh:raczben/fliplot</a></p></li>
+<li><p><a class="reference external" href="https://github.com/lachlansneff/ligeia">gh:lachlansneff/ligeia</a></p></li>
+<li><p><a class="reference external" href="https://github.com/yne/vcd">gh:yne/vcd</a></p></li>
+<li><p><a class="reference external" href="https://github.com/toem/impulse.vscode">gh:toem/impulse.vscode</a></p></li>
+<li><p><a class="reference external" href="https://github.com/bmpenuelas/hdlcomposer">gh:bmpenuelas/hdlcomposer</a></p></li>
+<li><p><a class="reference external" href="https://github.com/phillbush/vcd2svg">gh:phillbush/vcd2svg</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Ben1152000/sootty">gh:Ben1152000/sootty</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Toroid-io/vcd2wavedrom">gh:Toroid-io/vcd2wavedrom</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cirosantilli/vcdvcd">gh:cirosantilli/vcdvcd</a></p></li>
+<li><p><a class="reference external" href="https://wavetrace.io">wavetrace.io</a></p></li>
+</ul>
+<p>However, being a 20+ year old format defined for Verilog, VCD has certain limitations:</p>
+<ul class="simple">
+<li><p>Data cannot be accessed randomly, as it has to be sequentially parsed.</p></li>
+<li><p>Periodic signals are not compressed, so they take a lot of space.</p></li>
+<li><p>File size is huge, because it is plain text.</p></li>
+</ul>
+<p>Anthony J. Bybell has gathered much knowledge about alternatives through the decades he’s been building and maintaining
+GTKWave.
+It supports FST, LXT, LXT2 and VZT formats.
+See appendices C, D and F of the <a class="reference external" href="https://gtkwave.sourceforge.net/gtkwave.pdf">GTKWave User’s Guide</a>.
+GHDL supports saving/reading waveforms as FST files, which are much smaller than VCD and they handle the same signal
+types.</p>
+<p>On the other hand, neither VCD nor FST can handle certain signal types from the VHDL language.
+There is neither any equivalent in the VHDL LRM.
+Tristan Gingold, author of GHDL, implemented a format named GHW for allowing all VHDL types to be dumped.
+He also contributed a reader to GTKWave, which allows visualizing them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>GTKWave provides multiple tools for converting waveforms between any of the supported formats.
+That is not trivial because some conversions are lossy or suboptimal.
+See appendix A of the <a class="reference external" href="https://gtkwave.sourceforge.net/gtkwave.pdf">GTKWave User’s Guide</a> and subdir
+<a class="reference external" href="https://github.com/gtkwave/gtkwave/tree/master/gtkwave3-gtk3/src/helpers">gtkwave/gtkwave: gtkwave3-gtk3/src/helpers</a>.
+See also <a class="reference external" href="https://github.com/gtkwave/gtkwave/issues/70">gtkwave/gtkwave#70</a>.
+However, as far as we are aware, no other independent repository exists which is focused on providing a toolkit for
+manipulating <em>any</em> waveform programmatically.
+If GTKWave helpers are buildable/usable independently of GTKWave, it might be desirable to provide bindings in Python,
+Rust,… along with an API to the database.</p>
+</div>
+<p>Recently, Lachlan Sneff implemented Streamed Value Change Blocks (SVCB) in <a class="reference external" href="https://github.com/lachlansneff/ligeia">gh:lachlansneff/ligeia</a>, a
+work-in-progress “<em>replacement for gtkwave, written in Rust with high-performance and larger-than-memory traces in mind</em>”.</p>
+<p>Apart from dealing with large waveforms, there are some other formats which are used for documentation purposes:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/drom/wavedrom/wiki/WaveJSON">WaveJSON</a></p></li>
+<li><p>LaTeX (<a class="reference external" href="https://ctan.org/pkg/tikz-timing">tikz-timing</a>)</p></li>
+</ul>
+<p>Moreover, there are several work in progress solutions for providing TCL plumbing to allow using vendor waveform viewers
+and GTKWave automatically and/or interactively:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/VUnit/vunit/pull/690">VUnit/vunit#690</a></p></li>
+<li><p><a class="reference external" href="https://github.com/VUnit/vunit/pull/622">VUnit/vunit#622</a></p></li>
+</ul>
+<p>With regard to post-processing of waveforms, see the following references:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../notebook/fpconv.html#notebook-fpconv"><span class="std std-ref">Fixed-point conversion</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/avidan-efody/coverage">gh:avidan-efody/coverage</a>: implementation of post-process coverage, and batch waveform search.</p></li>
+<li><p><a class="reference external" href="https://gitlab.com/xiretza/ghw-rs">gl:xiretza/ghw-rs</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Nic30/pyDigitalWaveTools">gh:Nic30/pyDigitalWaveTools</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ics-jku/wal">gh:ics-jku/wal</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Wren6991/asciiwave">gh:Wren6991/asciiwave</a></p></li>
+</ul>
+</section>
+<section id="pyedaa-reports">
+<span id="api-logging-osvr"></span><h2>pyEDAA.Reports<a class="headerlink" href="#pyedaa-reports" title="Link to this heading">#</a></h2>
+<p>See <a class="reference external" href="https://edaa-org.github.io/pyEDAA.Reports/index.html" title="(in pyEDAA.Reports vlatest)"><span>The pyEDAA.Reports Documentation</span></a>.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../egs/sff.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Simple Flip-Flop</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="runner.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Runner</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021-2023, Unai Martinez-Corral and contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Logging</a><ul>
+<li><a class="reference internal" href="#terminal">Terminal</a></li>
+<li><a class="reference internal" href="#waveforms">Waveforms</a></li>
+<li><a class="reference internal" href="#pyedaa-reports">pyEDAA.Reports</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

@@ -1,0 +1,562 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Simulators | Compilers" href="sim.html" /><link rel="prev" title="Overview" href="index.html" />
+
+    <link rel="shortcut icon" href="../_static/osvb.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Frameworks and Methodologies - Open Source Verification Bundle latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Open Source Verification Bundle latest documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/osvb_banner_white.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Open Source Verification Bundle latest documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Frameworks and Methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sim.html">Simulators | Compilers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cosim.html">Co-simulation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://edaa-org.github.io/ConceptualModel.html">EDA² Conceptual Model ➚</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apis/core.html">Core</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../apis/project.html">Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apis/project/pyVHDLModelUtils.html">pyVHDLModelUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/project/OSVDE.html">Open Source VHDL Design Explorer (OSVDE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/project/DocGen.html">Documentation generation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/tool.html">Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runner.html">Runner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/logging.html">Logging</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../egs/sff.html">Simple Flip-Flop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../egs/axi4stream.html">SISO AXI4 Stream</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/fpconv.html">Fixed-point conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/sigrok.html">sigrok-cli | Pulseview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="frameworks-and-methodologies">
+<span id="projects"></span><h1>Frameworks and Methodologies<a class="headerlink" href="#frameworks-and-methodologies" title="Link to this heading">#</a></h1>
+<section id="cocotb">
+<h2>cocotb<a class="headerlink" href="#cocotb" title="Link to this heading">#</a></h2>
+<p>Cocotb is a coroutine based co-simulation library for writing VHDL and Verilog testbenches in Python.
+It was initially written and open sourced by <a class="reference external" href="https://potential.ventures/cocotb">Potential Ventures</a> in 2013.
+The project went dead for some months between 2017 and 2018.
+Since 2019, it is maintained by members of the <a class="reference external" href="https://www.fossi-foundation.org/">FOSSI Foundation</a> and other
+contributors.</p>
+<p>Cocotb provides shared libraries written in C++, which allows simulators to load Python scripts and interact with them
+at runtime through indirect co-simulation interfaces: VPI, VHPI or FLI (see <a class="reference internal" href="cosim.html#co-simulation"><span class="std std-ref">Co-simulation</span></a>).
+Therefore, users can write testbenches for existing HDL designs using Python only.
+Direct interfaces such as DPI or CXXRTL are not supported.</p>
+<p>The provided compile and execution plumbing is based on Makefiles and environment variables.
+That is loved by some users and hated by others.
+There is work in progress for providing alternative build/execution workflows, without explicitly forcing users to use
+an specific approach.
+Using VUnit’s simulator interface is one of such alternatives, which would provide a Python based solution to the most
+pythonic cocotb users.</p>
+<p>Cocotb provides logging features based on Python’s <code class="docutils literal notranslate"><span class="pre">logging</span></code> library.
+Integration of this logging approach into VUnit’s Python runner is not straightforward.
+Since cocotb’s co-simulation scripts are loaded by the simulator in an independent instance of Python, neither VUnit nor
+cocotb are explicitly aware of the other Python instance.
+Moreover, different versions of Python might be used.
+Anyway, simulations can be successfully executed and logs from both frameworks are usable.</p>
+<p>There are some test management features included in cocotb.
+Those allow running multiple tests with a single call/execution, instead of requiring a call for each test.
+However, this feature is not as well implemented/tested as the codebase related to co-simulation.
+There are different sensibilities about preserving this feature in the bundle, or removing it in favour of VUnit’s
+runner interface.</p>
+<p>The list of simulators supported by cocotb is longer than the ones supported by VUnit (see <a class="reference external" href="https://docs.cocotb.org/en/stable/simulator_support.html#simulator-support" title="(in cocotb v1.8)"><span>Simulator Support</span></a>
+and <a class="reference external" href="https://vunit.github.io/installing.html#installing" title="(in VUnit)"><span>Installing</span></a>).
+The most notable difference is that cocotb supports iverilog and verilator, while the only open source simulator
+supported by VUnit is GHDL.
+Therefore, usage of this bundle with open source simulators is limited to VHDL designs at the moment.
+Nevertheless, there is interest in evaluating again whether iverilog’s improved System Verilog support can suffice for
+VUnit.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cocotb/cocotb">gh:cocotb/cocotb</a></p></li>
+<li><p><a class="reference external" href="https://github.com/themperek/cocotb-test">gh:themperek/cocotb-test</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ktbarrett/pyvertb">gh:ktbarrett/pyvertb</a></p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Compared to other frameworks, the cocotb ecosystem is more distributed.
+Others have most of the resources gathered in single GitHub repository.
+Conversely, there is much activity around cocotb in repositories outside of the main repository.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/aignacio/ravenoc/tree/master/tb">aignacio/ravenoc: tb</a></p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://github.com/benbr8/rstb">gh:benbr8/rstb</a> is an alternative implementation of the same approach, using Rust instead of Python.</p>
+</div>
+</section>
+<section id="hgdb">
+<h2>hgdb<a class="headerlink" href="#hgdb" title="Link to this heading">#</a></h2>
+<p><em>TBC</em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Kuree/hgdb">gh:Kuree/hgdb</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Kuree/pysv">gh:Kuree/pysv</a></p></li>
+</ul>
+</section>
+<section id="osvvm">
+<h2>OSVVM<a class="headerlink" href="#osvvm" title="Link to this heading">#</a></h2>
+<p>OSVVM provides an ASIC level verification methodology for VHDL that can be used on small FPGA projects.
+The HDL libraries and utilities were initially provided by Jim Lewis as a learning resource in
+<a class="reference external" href="https://synthworks.com">SynthWorks</a>’ training courses, for attendants to see the concepts applied.
+In 2019 the libraries were uploaded to GitHub, and in 2020 the license was changed to Apache, since it was accepted as a
+pilot program for IEEE Open Source.</p>
+<p>The OSVVM utility library offers capabilities similar to those provided by other verification languages (such as
+SystemVerilog and UVM):</p>
+<ul class="simple">
+<li><p>Transaction-Level Modeling</p></li>
+<li><p>Constrained Random test generation</p></li>
+<li><p>Functional Coverage with hooks for UCIS coverage database integration</p></li>
+<li><p>Intelligent Coverage Random test generation</p></li>
+<li><p>Utilities for testbench process synchronization generation</p></li>
+<li><p>Utilities for clock and reset generation</p></li>
+<li><p>Transcript files</p></li>
+<li><p>Error logging and reporting - Alerts and Affirmations</p></li>
+<li><p>Message filtering - Logs</p></li>
+<li><p>Scoreboards and FIFOs (data structures for verification)</p></li>
+<li><p>Memory models</p></li>
+</ul>
+<p>The OSVVM model library provides the verification components for AXI4, AXI4 Lite, AXI4 Stream and UART.</p>
+<p>The provided compile and execution plumbing is written in TCL, since it is mostly meant to be used interactively inside
+the built-in shell in most vendor simulators.
+Alternative installation scripts are provided by maintainers of GHDL through their <a class="reference external" href="https://github.com/ghdl/ghdl/tree/master/scripts/vendors">vendor scripts</a>.
+However, those are for GHDL only, not for any simulator.</p>
+<p>Many HDL utilities are duplicated between OSVVM and VUnit.
+Nevertheless, the philosophy of both projects is different, and not necessarily conflictive.
+OSVVM uses the most modern features of the language for achieving nicest looking descriptions for making advanced
+features approachable.
+As a result, it is on the bleeding-edge of the features that simulators do support.
+Conversely, VUnit has a more conservative philosophy and tries to support the widest range of simulators, avoiding the
+most recent and not broadly supported features.</p>
+<p>Some years ago, maintainers of OSVVM and VUnit did try isolating some common HDL libraries that both projects could use
+for e.g. logging features.
+It didn’t work back then, but there is interest in maybe trying it again in the future.
+Nevertheless, having duplicated features is not an issue in the context of this bundle, since it allows each user to
+pick their preferred approach.</p>
+<p>The main stopper for using VUnit’s Python features for running OSVVM’s tests is that the primary unit in OSVVM’s
+methodology are VHDL configurations, and VUnit only supports entities as primary units.
+There is common interest in hopefully extending VUnit and supporting configurations as entrypoints.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/OSVVM/OSVVM">gh:OSVVM/OSVVM</a></p></li>
+<li><p><a class="reference external" href="https://github.com/OSVVM/OsvvmLibraries">gh:OSVVM/OsvvmLibraries</a></p></li>
+<li><p><a class="reference external" href="https://github.com/OSVVM/OSVVM-Scripts">gh:OSVVM/OSVVM-Scripts</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ghdl/ghdl/tree/master/scripts/vendors">ghdl/ghdl: scripts/vendors</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/ghdl/extended-tests">ghdl/extended-tests</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="renode">
+<h2>Renode<a class="headerlink" href="#renode" title="Link to this heading">#</a></h2>
+<p>Renode (developed by <a class="reference external" href="https://www.antmicro.com/">Antmicro</a>) is not an HDL testing/verification framework per se.
+It is presented as a development framework for accelerating IoT and embedded systems development by simulating physical
+hardware systems (including the CPU, peripherals, sensors, environment and wire or wireless medium between nodes).
+Precisely, in the context of IoT and embedded system, software and wire(less) communication play a crucial role in
+Renode.
+It allows running, debugging and testing unmodified embedded software on a workstation or laptop.</p>
+<p>However, simulation models for custom hardware and in-development CPUs are not always available.
+Moreover, it is sometimes desirable to have bit-accurate and cycle-accurate simulation models for testing custom
+accelerators along with well-known CPUs and other peripherals.
+As a result, there is work in progress for supporting HDL models to be added as nodes into the Renode infrastructure.
+All cosimulation strategies explained in <a class="reference internal" href="cosim.html#co-simulation"><span class="std std-ref">Co-simulation</span></a> are subject to be integrated, either using existing
+Verification Components (VCs) or with ad-hoc middleware.
+Find a sample about how to integrate <em>verilated</em> models in <a class="reference external" href="https://github.com/antmicro/renode-verilator-integration">antmicro/renode-verilator-integration</a>.
+It supports a verilated bus master and AXI4.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://renode.io">Renode</a></p>
+<ul>
+<li><p><a class="reference external" href="https://antmicro.com/blog/2021/02/renode-for-education-research-and-demonstration/">Using Renode for education, research and demonstration</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://github.com/dbhi/vboard">gh:dbhi/vboard</a> includes multiple references about “<em>Virtual development board for HDL design</em>”.
+Most of those are ad-hoc solutions, which are lacking the <em>project management</em> layer for making them plug and play.
+However, some of them implement interfaces or HDL languages which are not supported in Renode yet.</p>
+</div>
+</section>
+<section id="svunit">
+<h2>SVUnit<a class="headerlink" href="#svunit" title="Link to this heading">#</a></h2>
+<p><em>TBC</em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/tudortimi/svunit">gh:tudortimi/svunit</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dpretet/svut">gh:dpretet/svut</a></p></li>
+</ul>
+</section>
+<section id="uvm">
+<h2>UVM<a class="headerlink" href="#uvm" title="Link to this heading">#</a></h2>
+<p>Universal Verification Methodology (UVM) is a standardized methodology for verifying ASIC designs.
+The main implementation of UVM is available in SystemVerilog only.
+Unfortunately, no open source simulator supports enough of SystemVerilog for using UVM.
+At the same time, vendors don’t typically support UVM in their low-end license tiers.
+Therefore, although it is probably the most used methodology by ASIC designers and large companies, usage by small and
+middle companies, academics, hackers and hobbyist is less significant.</p>
+<p>Lately, several alternatives were proposed for implementing UVM in languages other than SystemVerilog.
+For instance, even though iverilog cannot execute UVM in SystemVerilog, there are two projects for using UVM with
+iverilog through cocotb:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/tpoikela/uvm-python">gh:tpoikela/uvm-python</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyuvm/pyuvm">gh:pyuvm/pyuvm</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/cocotb/cocotb/issues/2418">pyuvm: The Python version of the UVM (cocotb/cocotb#2418)</a></p></li>
+<li><p><a class="reference external" href="https://blogs.sw.siemens.com/verificationhorizons/2021/03/22/cocotb-bus-functional-models/">siemens.com/verificationhorizons: Cocotb Bus Functional Models</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lately, it seems that uvm-python is being merged into pyuvm.</p>
+</div>
+<p>Similarly, there is a C/C++ implementation, which uses DPI, VPI, VHPI or FLI for interacting with the RTL code: <a class="reference external" href="https://uvm.io">uvm.io</a>.</p>
+<p>Furthermore, there work in progress for adding System Verilog support to verilator, including both synthesizable and
+non-synthesizable constructs. See <a class="reference internal" href="sim.html#simulators-verilator"><span class="std std-ref">Verilator</span></a>.</p>
+</section>
+<section id="uvvm">
+<h2>UVVM<a class="headerlink" href="#uvvm" title="Link to this heading">#</a></h2>
+<p><em>TBC</em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/UVVM/UVVM">UVVM</a></p></li>
+</ul>
+</section>
+<section id="vunit">
+<h2>VUnit<a class="headerlink" href="#vunit" title="Link to this heading">#</a></h2>
+<p>VUnit is an open source unit testing framework for VHDL/SystemVerilog.
+It was developed and maintained by Lars Asplund and Olof Kraigher and it was initially released in 2015.
+Several users contributed and maintain verification components.
+Unai Martinez-Corral contributed co-simulation features to be used with GHDL’s implementation of VHPIDIRECT (see
+<a class="reference internal" href="cosim.html#co-simulation"><span class="std std-ref">Co-simulation</span></a>).</p>
+<p>The main focus of VUnit is providing the functionality needed to realize continuous and automated testing of HDL code.
+It provides a Python API for declaring sources and library names, for parameterizing tests and for defining simulator
+execution parameters.
+The simulator interface is coupled with a test runner implemented both in Python and in HDL.
+That allows hardware designers to define tests in HDL, thus, complementing traditional HDL only testing methodologies.
+It brings multiple concepts for Test Driven Design (TDD) from software into the hardware design.</p>
+<p>Optional HDL libraries include utilities for checks, logging, handling arrays, randomization, etc. as well as a
+communication package for modelling abstract messaging channels.
+Verification components for several standard interfaces are provided based on the communication package.
+Custom types are also provided for allowing dynamic allocation of pointers (accesses).</p>
+<p>VUnit includes the core of OSVVM as a submodule.
+It also includes <a class="reference external" href="https://github.com/Paebbels/JSON-for-VHDL">JSON-for-VHDL</a>, which allows passing arbitrarily complex generics to
+the testbenches, by providing them as encoded JSON strings.</p>
+<p>Using the OSVVM Libraries and UVVM with VUnit is possible but not straightforward.
+In VUnit, libraries and sources are declared in a Python script, using VUnit’s API.
+Users have three options:</p>
+<ul class="simple">
+<li><p>Manually declaring which sources belong to each library, in the Python run script.</p></li>
+<li><p>Using the TCL scripts provided by OSVVM/UVVM for pre-compiling the frameworks, and then provide the locations to the
+pre-built sources in the Python script.</p></li>
+<li><p>Using GHDL’s vendor scripts for pre-compiling the frameworks, and then provide the locations by passing
+<a class="reference external" href="https://ghdl.github.io/ghdl/using/InvokingGHDL.html#cmdoption-ghdl-P" title="(in GHDL v4.0)"><code class="xref std std-option docutils literal notranslate"><span class="pre">-P</span></code></a> to GHDL in the Python script.</p></li>
+</ul>
+<p>None of them is ideal.
+The first one requires all users to repeat some code which might be easily reused.
+Others require dealing with paths/locations specific to each host/system.
+Instead, the approach in this bundle uses <code class="docutils literal notranslate"><span class="pre">*.core</span></code> files and <a class="reference internal" href="../apis/core.html#api-core"><span class="std std-ref">Core</span></a>.</p>
+<p>With regard to simulator support, VUnit does currently not support any open source Verilog or System Verilog simulator.
+However, it was last evaluated 3-4 years ago (see <a class="reference external" href="https://github.com/VUnit/vunit/issues/188">VUnit/vunit#188</a>).
+Since both iverilog and iverilog were improved, and specially System Verilog support, it might be possible to use them
+with VUnit nowadays.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/VUnit/vunit">gh:VUnit/vunit</a></p></li>
+<li><p><a class="reference external" href="https://github.com/VUnit/vunit_action">gh:VUnit/vunit_action</a></p></li>
+<li><p><a class="reference external" href="https://github.com/VUnit/tdd-intro">gh:VUnit/tdd-intro</a></p></li>
+<li><p><a class="reference external" href="https://github.com/VUnit/cosim">gh:VUnit/cosim</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://github.com/Malcolmnixon/VhdlTest">Malcolmnixon/VhdlTest</a> is a proof of concept of a minimal implementation of the
+Python runner in VUnit.
+It’s for VHDL testbenches only, and supports GHDL or Active-HDL.
+It requires a YAML configuration file for specifying the project, instead of using a Python script.
+This feature is related to <a class="reference internal" href="../apis/core.html#api-core"><span class="std std-ref">Core</span></a>.</p>
+</div>
+</section>
+<section id="learning-teaching">
+<h2>Learning/teaching<a class="headerlink" href="#learning-teaching" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://uobdv.github.io/Design-Verification/">Course content for the Design Verification module at the University of Bristol</a></p></li>
+<li><p><a class="reference external" href="https://github.com/umarcor/umarcor/blob/main/references/VHDL.bib">umarcor: references/VHDL.bib</a></p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="sim.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Simulators | Compilers</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Overview</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021-2023, Unai Martinez-Corral and contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Frameworks and Methodologies</a><ul>
+<li><a class="reference internal" href="#cocotb">cocotb</a></li>
+<li><a class="reference internal" href="#hgdb">hgdb</a></li>
+<li><a class="reference internal" href="#osvvm">OSVVM</a></li>
+<li><a class="reference internal" href="#renode">Renode</a></li>
+<li><a class="reference internal" href="#svunit">SVUnit</a></li>
+<li><a class="reference internal" href="#uvm">UVM</a></li>
+<li><a class="reference internal" href="#uvvm">UVVM</a></li>
+<li><a class="reference internal" href="#vunit">VUnit</a></li>
+<li><a class="reference internal" href="#learning-teaching">Learning/teaching</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

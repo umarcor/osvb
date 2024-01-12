@@ -1,0 +1,543 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="References" href="../references.html" /><link rel="prev" title="Fixed-point conversion" href="fpconv.html" />
+
+    <link rel="shortcut icon" href="../_static/osvb.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>sigrok-cli | Pulseview - Open Source Verification Bundle latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Open Source Verification Bundle latest documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/osvb_banner_white.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Open Source Verification Bundle latest documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/frameworks.html">Frameworks and Methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/sim.html">Simulators | Compilers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cosim.html">Co-simulation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://edaa-org.github.io/ConceptualModel.html">EDA² Conceptual Model ➚</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apis/core.html">Core</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../apis/project.html">Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apis/project/pyVHDLModelUtils.html">pyVHDLModelUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/project/OSVDE.html">Open Source VHDL Design Explorer (OSVDE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/project/DocGen.html">Documentation generation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/tool.html">Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runner.html">Runner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/logging.html">Logging</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../egs/sff.html">Simple Flip-Flop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../egs/axi4stream.html">SISO AXI4 Stream</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fpconv.html">Fixed-point conversion</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">sigrok-cli | Pulseview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="sigrok-cli-pulseview">
+<span id="notebook-sigrok"></span><h1>sigrok-cli | Pulseview<a class="headerlink" href="#sigrok-cli-pulseview" title="Link to this heading">#</a></h1>
+<p>This section contains notes about reading waveforms from HDL simulators with <a class="reference external" href="https://sigrok.org/wiki/Sigrok-cli">sigrok-cli</a>
+and <a class="reference external" href="https://sigrok.org/wiki/PulseView">PulseView</a> (see <a class="reference external" href="https://github.com/sigrokproject">gh:sigrokproject</a>).</p>
+<p>While <a class="reference external" href="https://github.com/sigrokproject/pulseview">PulseView</a> is primarily meant for data captured from real devices (logic
+analyzers, oscilloscopes, multimeters, and more), some of its features can be useful for simulation and verification of
+hardware description designs.
+Precisely, <a class="reference external" href="https://sigrok.org/wiki/Protocol_decoders">protocol decoders</a> are a nice feature to complement Verification
+Components (e.g. Vunit’s <a class="reference external" href="https://vunit.github.io/verification_components/user_guide.html">VCL</a>), Bus Functional Models
+(BFMs) and/or monitors.
+Apart from vendor products, in-house custom protocol decoders can be used as a definition of the internal APIs.
+Moreover, analog signal visualization can be useful to show digital words that are meant to be used as inputs to DACs.
+Actually, mixed-signal cosimulations (as when combining GHDL and Xyce) produce both digital and analog traces.</p>
+<p>The most widespread waveform format used by EDA tools is VCD: <a class="reference external" href="https://en.wikipedia.org/wiki/Value_change_dump">w:Value_change_dump</a>.
+However, not all VHDL types can be represented in VCD files.
+<a class="reference external" href="https://hdl.github.io/awesome/items/ghdl">GHDL</a> supports a format named GHW, which is meant to dump traces from VHDL simulations.
+Visualization of any of these types (and others) is supported by <a class="reference external" href="https://hdl.github.io/awesome/items/gtkwave">GtkWave</a>.</p>
+<p>The file format that PulseView uses internally is <a class="reference external" href="https://sigrok.org/wiki/File_format:Sigrok">sigrok.org/wiki/File_format:Sigrok</a>.
+Hence, any other waveform needs to be converted, and possibly filtered. Currently supported input/output formats are
+listed at <a class="reference external" href="https://sigrok.org/wiki/Input_output_formats">sigrok.org/wiki/Input_output_formats</a>.</p>
+<p>Sticking to VCD, several features are (unfortunately) currently missing in <a class="reference external" href="https://github.com/sigrokproject/libsigrok">libsigrok</a>
+and PulseView:</p>
+<ul class="simple">
+<li><p>Arrays of signals, i.e. multi-bit signals, are not supported.</p></li>
+<li><p>Hierarchy of modules is not preserved.</p></li>
+<li><p>By design, signal type is <cite>boolean</cite> (0 or 1).</p></li>
+<li><p>They cannot handle huge dumps. While fast and responsive with time resolutions in the order of ms, us or ns, they have
+a hard time with ps or fs. These values are uncommon in physical capture devices, but relatively frequent in hardware
+modelling.</p></li>
+<li><p>Waveform formats other than VCD are not supported.</p></li>
+</ul>
+<p>Fortunately, there is work in progress by user <cite>gsi</cite>, for improving and extending the VCD frontend in libsigrok. See
+<cite>wip/vcd-*</cite> branches in <a class="reference external" href="https://repo.or.cz/libsigrok/gsi.git/refs">repo.or.cz/libsigrok/gsi.git/refs</a>.</p>
+<section id="required-enhancements-and-possible-workarounds">
+<h2>Required enhancements and possible workarounds<a class="headerlink" href="#required-enhancements-and-possible-workarounds" title="Link to this heading">#</a></h2>
+<section id="nested-signal-groups">
+<h3>Nested signal groups<a class="headerlink" href="#nested-signal-groups" title="Link to this heading">#</a></h3>
+<p>Although multi-bit signals are not supported yet, the concept of signal groups exists in PulseView. This is used to
+group 1-bit signals that belong to the same interface. Currently, PulseView picks channel groups from file imports other
+than VCD or from acquisition device drivers. At the same time, the VCD import frontend of libsigrok can generate nested
+channel groups.
+Hence, PulseView should pick up and display the groups transparently. The main remaining question is whether the
+internal infrastructure of libsigrok supports nested groups.</p>
+<p>Should nested groups be supported, three different types can be generated:</p>
+<ul class="simple">
+<li><p>level-0: multi-bit signals, i.e. groups of 1-bit signals that can be represented as a binary array, as an
+unsigned/signed decimal, as an hexadecimal value, etc. Moreover, any multi-bit signal can be optionally shown as an
+analog channel. This is specially useful for fixed-point types (in VHDL, <cite>sfixed</cite> and <cite>ufixed</cite>). For reference,
+GtkWave supports almost all of these features; however, displaying fixed-point values as analog channels has some
+limitations (see <a class="reference external" href="https://github.com/gtkwave/gtkwave/issues/9">gtkwave/gtkwave#9</a>).</p></li>
+<li><p>level-1 and above: hierarchy of the design, according to the structure of HDL sources. This is described in VCD
+through <cite>scope module</cite>.</p></li>
+<li><p>within a hierarchy level: nested groups of multi-bit signals would allow to describe interfaces such as Wishbone, AXI,
+or Avalon. Hence, protocol decoders could be written and used to display nice labels on top of them. However, this is
+typically done through naming conventions, so generation of these groups should probably be handled in PulseView and
+not in the VCD frontend.</p></li>
+</ul>
+<p>The in-progress VCD import frontend can parse scopes and generate signal names with dot separated labels in their names.
+This feature can be used to extract the hierarchy for visualization purposes.</p>
+<p>Regarding visualization, it is currently not possible to collapse groups of multi-bit signals (not even level-0 groups).
+Ideally, a collapsible tree view or anchors would be shown.</p>
+<p>At the moment, a possible workaround for level-0 groups is to create dummy <cite>integer</cite> or <cite>real</cite> signals in the HDL design,
+and convert multi-bit signals (in VHDL, <cite>to_integer</cite> and <cite>to_real</cite> can be used). However, this is not desirable, as it
+requires additional coding for each signal to be visualized.</p>
+</section>
+<section id="value-logic-signals">
+<h3>9-value logic signals<a class="headerlink" href="#value-logic-signals" title="Link to this heading">#</a></h3>
+<p>In hardware description projects, types such as <cite>std_logic</cite> or <cite>std_logic_vector</cite> are very common. These are 9-value
+enumeration types, as opposed to <cite>boolean</cite>. Unfortunately, sigrok and PulseView are built around <cite>boolean</cite> values.
+Changing it is a non-trivial enhancement that might have many unexpected consequences.</p>
+<p>The in-progress VCD import frontend converts values such as <cite>U</cite> to zero. This allows to import waveforms without
+crashing. However, reliability of protocol decoders is doubtful in these contexts. Users should implement alternative
+solutions to check the stability and strengh of signals.</p>
+</section>
+<section id="performance">
+<h3>Performance<a class="headerlink" href="#performance" title="Link to this heading">#</a></h3>
+<p>Compared to GtkWave, PulseView has serious issues to handle wavefroms with small time scales. For example, the following
+waveform requires several seconds to load:</p>
+<div class="highlight-vcd notranslate"><div class="highlight"><pre><span></span>$timescale
+  1 ps
+$end
+$scope module tb $end
+$var reg 1 ! clk $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+#1000000000
+1!
+#2000000000
+0!
+#3000000000
+1!
+#4000000000
+0!
+#5000000000
+1!
+</pre></div>
+</div>
+<p>And the following, which is the same wave with a smaller scale, produces a crash:</p>
+<div class="highlight-vcd notranslate"><div class="highlight"><pre><span></span>$timescale
+  1 fs
+$end
+$scope module tb $end
+$var reg 1 ! clk $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+#1000000000000
+1!
+#2000000000000
+0!
+#3000000000000
+1!
+#4000000000000
+0!
+#5000000000000
+1!
+</pre></div>
+</div>
+<p>More than 9G of RAM are used, it takes minutes to load the first ~50 us, and in the end it is frozen.</p>
+<p>As a workaround, both libsigrok and PulseView allow downsampling when VCD files are imported. It is also possible to
+<em>skip samples until timestamp</em> or to <em>compress idle periods</em>. These features should allow to avoid crashes with
+simulations that last milliseconds or seconds with clock frequencies of MHz.</p>
+<p>Moreover, GHDL’s <em>mcode</em> backend allows to set the base time resolution of the simulation. See
+<a class="reference external" href="https://ghdl.github.io/ghdl/using/InvokingGHDL.html#cmdoption-ghdl-time-resolution" title="(in GHDL v4.0)"><code class="xref std std-option docutils literal notranslate"><span class="pre">--time-resolution</span></code></a> examples in subdir <a class="reference external" href="https://github.com/umarcor/osvb/blob/main/sigrok/resolution">sigrok/resolution</a>.</p>
+</section>
+<section id="other-waveform-formats">
+<h3>Other waveform formats<a class="headerlink" href="#other-waveform-formats" title="Link to this heading">#</a></h3>
+<p>In the wiki page about VCD, there are references to other waveform formats supported by GtkWave:
+<a class="reference external" href="https://sigrok.org/wiki/File_format:Vcd">sigrok.org/wiki/File_format:Vcd</a>.
+However, EVCD, FST, IDX and GHW are not explicitly documented.
+Hence, formats other than VCD are unlikely to be supported in libsigrok/PulseView in the near future.
+In the mid-long term, it would be nice if PulseView provided a frontend compatible with GtkWave’s utils/internals for
+handling large waveforms.
+It seems that GtkWave implements some clever memory map traversal to avoid handling the entire file in memory.</p>
+<p>Information is available in:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gtkwave.sourceforge.net/gtkwave.pdf">GtkWave User’s Guide</a> and GtkWave’s codebase.</p></li>
+<li><p>GHDL’s codebase.</p></li>
+<li><p><a class="reference external" href="https://github.com/nturley/ghw-notes">gh:nturley/ghw-notes</a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="generating-waveforms-with-ghdl">
+<h2>Generating waveforms with GHDL<a class="headerlink" href="#generating-waveforms-with-ghdl" title="Link to this heading">#</a></h2>
+<p>In this section waveform dump features of GHDL are introduced. This is a complement to the information available in the
+docs: <a class="reference external" href="https://ghdl.github.io/ghdl/using/Simulation.html#export-waves" title="(in GHDL v4.0)"><span>Export waveforms</span></a>.
+The purpose of these examples is to provide a test suite that allows users to evaluate the features and performance of
+upstream and in-progress branches.</p>
+<section id="resolution">
+<h3><a class="reference external" href="https://github.com/umarcor/osvb/blob/main/sigrok/resolution">Resolution</a><a class="headerlink" href="#resolution" title="Link to this heading">#</a></h3>
+<p>GHDL’s management of the time resolution during simulation is different depending on the backend. With LLVM or GCC, the
+resolution is <cite>1 fs</cite>, and so is the timescale of the resulting VCD files. It cannot be modified, because the time scale
+needs to be global. However, with mcode, GHDL automatically adjusts the resolution to the smallest time unit in the
+design. Furthermore, CLI option <a class="reference external" href="https://ghdl.github.io/ghdl/using/InvokingGHDL.html#cmdoption-ghdl-time-resolution" title="(in GHDL v4.0)"><code class="xref std std-option docutils literal notranslate"><span class="pre">--time-resolution</span></code></a> allows to override it. Subdir
+<a class="reference external" href="https://github.com/umarcor/osvb/blob/main/sigrok/resolution">sigrok/resolution</a> contains three testbenches and a shell script to generate 15 waveforms
+with different time resolutions (12 with mcode and 3 with LLVM). Each waveform is saved to 5 different file formats, so
+75 files are generated.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>backend</p></th>
+<th class="head"><p>design</p></th>
+<th class="head"><p>CLI</p></th>
+<th class="head"><p>VCD</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mcode</p></td>
+<td><p>ns</p></td>
+<td><p>auto</p></td>
+<td><p>ns</p></td>
+</tr>
+<tr class="row-odd"><td><p>mcode</p></td>
+<td><p>us</p></td>
+<td><p>auto</p></td>
+<td><p>us</p></td>
+</tr>
+<tr class="row-even"><td><p>mcode</p></td>
+<td><p>ms</p></td>
+<td><p>auto</p></td>
+<td><p>ms</p></td>
+</tr>
+<tr class="row-odd"><td><p>mcode</p></td>
+<td><p>ns or us or ms</p></td>
+<td><p>ps</p></td>
+<td><p>ps</p></td>
+</tr>
+<tr class="row-even"><td><p>mcode</p></td>
+<td><p>ns or us or ms</p></td>
+<td><p>ns</p></td>
+<td><p>ns</p></td>
+</tr>
+<tr class="row-odd"><td><p>mcode</p></td>
+<td><p>us or ms</p></td>
+<td><p>us</p></td>
+<td><p>us</p></td>
+</tr>
+<tr class="row-even"><td><p>mcode</p></td>
+<td><p>ms</p></td>
+<td><p>ms</p></td>
+<td><p>ms</p></td>
+</tr>
+<tr class="row-odd"><td><p>LLVM</p></td>
+<td><p>ns or us or ms</p></td>
+<td></td>
+<td><p>fs</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><p>backend: used GHDL backend.</p></li>
+<li><p>design: smallest time unit in the design.</p></li>
+<li><p>CLI: time resolution argument.</p></li>
+<li><p>VCD: resulting time scale in the VCD.</p></li>
+</ul>
+</section>
+<section id="hierarchy">
+<h3><a class="reference external" href="https://github.com/umarcor/osvb/blob/main/sigrok/hierarchy">Hierarchy</a><a class="headerlink" href="#hierarchy" title="Link to this heading">#</a></h3>
+<p>libsigrok does currently not support nested name spaces (<cite>module</cite> keyword). This example generates a waveform from a
+testbench with an instantiated entity. The waveform includes such <cite>module</cite> keywords. The waveform can be loaded in
+PulseView without errors, but all the signals are flattened; so, the hierarchy is lost.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../references.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">References</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="fpconv.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Fixed-point conversion</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021-2023, Unai Martinez-Corral and contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">sigrok-cli | Pulseview</a><ul>
+<li><a class="reference internal" href="#required-enhancements-and-possible-workarounds">Required enhancements and possible workarounds</a><ul>
+<li><a class="reference internal" href="#nested-signal-groups">Nested signal groups</a></li>
+<li><a class="reference internal" href="#value-logic-signals">9-value logic signals</a></li>
+<li><a class="reference internal" href="#performance">Performance</a></li>
+<li><a class="reference internal" href="#other-waveform-formats">Other waveform formats</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#generating-waveforms-with-ghdl">Generating waveforms with GHDL</a><ul>
+<li><a class="reference internal" href="#resolution">Resolution</a></li>
+<li><a class="reference internal" href="#hierarchy">Hierarchy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

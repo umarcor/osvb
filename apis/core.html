@@ -1,0 +1,516 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Project" href="project.html" /><link rel="prev" title="Co-simulation" href="../intro/cosim.html" />
+
+    <link rel="shortcut icon" href="../_static/osvb.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Core - Open Source Verification Bundle latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Open Source Verification Bundle latest documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/osvb_banner_white.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Open Source Verification Bundle latest documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/frameworks.html">Frameworks and Methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/sim.html">Simulators | Compilers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cosim.html">Co-simulation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://edaa-org.github.io/ConceptualModel.html">EDA² Conceptual Model ➚</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Core</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="project.html">Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project/pyVHDLModelUtils.html">pyVHDLModelUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/OSVDE.html">Open Source VHDL Design Explorer (OSVDE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/DocGen.html">Documentation generation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tool.html">Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runner.html">Runner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../egs/sff.html">Simple Flip-Flop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../egs/axi4stream.html">SISO AXI4 Stream</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/fpconv.html">Fixed-point conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/sigrok.html">sigrok-cli | Pulseview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="core">
+<span id="api-core"></span><h1>Core<a class="headerlink" href="#core" title="Link to this heading">#</a></h1>
+<p>This section covers the definition of configuration/declaration files for users to describe the sources and parameters
+that compose an HDL project.
+Several JSON/YAML/INI formats are supported by different tools in the ecosystem.
+Here, we don’t want to focus as much on the specific file format as we do want to understand the structure of the data.
+A Python module is proposed for interacting with those file formats.</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://hdl.github.io/awesome/items/fusesoc">FuseSoC</a> is a package manager and build abstraction tool for FPGA/ASIC development, written in
+Python. It is based on a declarative data sctructure, defined as a YAML configuration file format named Core API (CAPI).
+The current version 2 of the format is named <code class="docutils literal notranslate"><span class="pre">CAPI2</span></code> (see <a class="reference external" href="https://fusesoc.rtfd.io/en/latest/ref/capi2.html">fusesoc.rtfd.io: ref/capi2</a>).
+A single YAML file can be used for defining all the sources and parameters related to multiple tools for simulation,
+verification, synthesis, etc.</p>
+<p>Initially, FuseSoC was a monolith that allowed interacting with FPGA/ASIC tools directly.
+Later, <a class="reference external" href="https://hdl.github.io/awesome/items/edalize">Edalize</a> was split, and an API named EDA Metadata (EDAM) was proposed for the interaction
+from FuseSoC or other frontends.
+<a class="reference external" href="https://hdl.github.io/awesome/items/hdlmake">Hdlmake</a> is one of the projects that can use Edalize through EDAM.</p>
+<p>Nevertheless, the proposal for funneling all open source project management tools through Edalize didn’t engage the
+broad open source hardware tooling community. Multiple projects (such as
+<a class="reference external" href="https://hdl.github.io/awesome/items/vunit">VUnit</a>,
+<a class="reference external" href="https://hdl.github.io/awesome/items/pyipcmi">pyIPCMI</a>,
+<a class="reference external" href="https://hdl.github.io/awesome/items/pyfpga">PyFPGA</a>,
+<a class="reference external" href="https://hdl.github.io/awesome/items/tsfpga">tsfpga</a>
+or
+<a class="reference external" href="https://hdl.github.io/awesome/items/xeda">Xeda</a>
+) provide independent APIs and CLIs for interacting with FPGA/ASIC tools.
+Most of them are also standalone monoliths with custom configuration file formats.
+Therefore, workflows are not compatible, and users need duplicated configurations for addressing the requirements of
+each tool.</p>
+<p>There have been some integration efforts; for instance, supporting VUnit scripts as FuseSoC/Edalize targets.
+However, there is a paradigm conflict, since FuseSoC expects to be the entrypoint and Edalize is to be the backend.
+Therefore, integration of other tools is only conceived as plugins in the already constrained framework.
+Doing so breaks the workflows that the user bases of other projects do rely on.</p>
+<p>The proposal in this bundle is to provide a reusable Python module named pyCAPI, for reading CAPI files and manipulating
+the data through a pythonic API.
+pyCAPI allows FPGA/ASIC tool management projects to consume <code class="docutils literal notranslate"><span class="pre">*.core</span></code> configuration files non-intrusively, by providing
+complementary import APIs.
+Thus the CLIs in the existing workflows are preserved, without forcing FuseSoC as a frontend and/or Edalize as a
+backend.
+Hopefully, pyCAPI reduces the burden for users to try and learn new tools, while developers/maintainers can carefully
+analyse possible integration strategies with regard to the other APIs in the architecture.</p>
+<figure class="align-center" id="id1">
+<img alt="pyCAPI usage block diagram" src="../_images/pyCAPI.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Usage of pyCAPI as a utility library for multiple EDA management projects.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>FuseSoC does contain some Python code for reading and parsing CAPI2 files (see <a class="reference external" href="https://github.com/olofk/fusesoc/tree/master/fusesoc/capi2">olofk/fusesoc: fusesoc/capi2</a>).
+Unfortunately, it is challenging to work with.
+On the one hand, it uses <a class="reference external" href="https://pyyaml.org">pyyaml</a> for reading <code class="docutils literal notranslate"><span class="pre">*.core</span></code> files as Python dictionaries and lists.
+As a result, the procedure for providing Python classes is manual and prone to error.
+On the other hand, the format is documented in the sources of the code, but the code itself is undocumented.</p>
+<p>Conversely, pyCAPI is a proof of concept based on Python <a class="reference external" href="https://docs.python.org/3/library/dataclasses.html#module-dataclasses" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">dataclasses</span></code></a> for direct (un)marshalling of YAML
+to/from Python classes.
+Hence, the CAPI2 format is not supported as-is yet: some non compliant fields were modified, and the prototype is
+limited to reading filesets.
+This work-in-progress version of CAPI is marked as <code class="docutils literal notranslate"><span class="pre">3</span></code>, for avoiding conflicts with existing <code class="docutils literal notranslate"><span class="pre">*.core</span></code> files.
+Still, pyCAPI does already allow VUnit to read <code class="docutils literal notranslate"><span class="pre">*.core</span></code> files for declaring HDL sources and the <code class="docutils literal notranslate"><span class="pre">logical_name</span></code> of
+the libraries where they need to be compiled.
+I.e., it allows providing a working proof of concept, constrainted to the simulation/verification scope of this bundle.</p>
+<p>Feedback and contributions for making pyCAPI compatible with and supported by FuseSoC, VUnit, PyFPGA, pyIPCMI, etc. are
+very welcome!
+<a class="reference external" href="https://github.com/umarcor/osvb/issues/new/choose">Open an issue</a> or <a class="reference external" href="https://gitter.im/hdl/community">join the chat</a>!</p>
+</section>
+<section id="capi-reference">
+<h2>CAPI reference<a class="headerlink" href="#capi-reference" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyCAPI.IpCoreConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCAPI.</span></span><span class="sig-name descname"><span class="pre">IpCoreConfig</span></span><a class="reference internal" href="../_modules/pyCAPI.html#IpCoreConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCAPI.IpCoreConfig" title="Link to this definition">#</a></dt>
+<dd><p>Each core file must contain an ‘ipcore’ field with the metadata of the design.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyCAPI.IpCoreConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pyCAPI.IpCoreConfig.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyCAPI.IpCoreConfig.namespace">
+<span class="sig-name descname"><span class="pre">namespace</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pyCAPI.IpCoreConfig.namespace" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyCAPI.IpCoreConfig.version">
+<span class="sig-name descname"><span class="pre">version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pyCAPI.IpCoreConfig.version" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyCAPI.FilesetConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCAPI.</span></span><span class="sig-name descname"><span class="pre">FilesetConfig</span></span><a class="reference internal" href="../_modules/pyCAPI.html#FilesetConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCAPI.FilesetConfig" title="Link to this definition">#</a></dt>
+<dd><p>A Fileset is a group of sources of the same type, to be used together.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyCAPI.FilesetConfig.file_type">
+<span class="sig-name descname"><span class="pre">file_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#pyCAPI.FilesetConfig.file_type" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyCAPI.FilesetConfig.files">
+<span class="sig-name descname"><span class="pre">files</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pyCAPI.FilesetConfig.files" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyCAPI.FilesetConfig.logical_name">
+<span class="sig-name descname"><span class="pre">logical_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#pyCAPI.FilesetConfig.logical_name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyCAPI.FilesetConfig.path">
+<span class="sig-name descname"><span class="pre">path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#pyCAPI.FilesetConfig.path" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyCAPI.Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCAPI.</span></span><span class="sig-name descname"><span class="pre">Config</span></span><a class="reference internal" href="../_modules/pyCAPI.html#Config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCAPI.Config" title="Link to this definition">#</a></dt>
+<dd><p>Definition of the CAPI 3 format for core configuration files.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyCAPI.Config.CAPI">
+<span class="sig-name descname"><span class="pre">CAPI</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pyCAPI.Config.CAPI" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyCAPI.Config.filesets">
+<span class="sig-name descname"><span class="pre">filesets</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#pyCAPI.FilesetConfig" title="pyCAPI.FilesetConfig"><span class="pre">FilesetConfig</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pyCAPI.Config.filesets" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyCAPI.Config.ipcore">
+<span class="sig-name descname"><span class="pre">ipcore</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#pyCAPI.IpCoreConfig" title="pyCAPI.IpCoreConfig"><span class="pre">IpCoreConfig</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pyCAPI.Config.ipcore" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyCAPI.LoadCoreFile">
+<span class="sig-prename descclassname"><span class="pre">pyCAPI.</span></span><span class="sig-name descname"><span class="pre">LoadCoreFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coreFilePath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyCAPI.html#LoadCoreFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCAPI.LoadCoreFile" title="Link to this definition">#</a></dt>
+<dd><p>Load a CAPI 3 compliant core configuration file and unmarshal it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>coreFilePath</strong> – location of the <code class="docutils literal notranslate"><span class="pre">*.core</span></code> file to be loaded.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyCAPI.VUnit.AddCoreFilesets">
+<span class="sig-prename descclassname"><span class="pre">pyCAPI.VUnit.</span></span><span class="sig-name descname"><span class="pre">AddCoreFilesets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vunitHandle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">core</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filesets</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyCAPI/VUnit.html#AddCoreFilesets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCAPI.VUnit.AddCoreFilesets" title="Link to this definition">#</a></dt>
+<dd><p>Add the sources of some filesets from a CAPI 3 compliant core, into a VUnit
+handle through VUnit’s API (<code class="docutils literal notranslate"><span class="pre">add_library</span></code> and <code class="docutils literal notranslate"><span class="pre">add_source_files</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vunitHandle</strong> – handle to the VUnit object instance.</p></li>
+<li><p><strong>core</strong> – CAPI 3 compliant object (coming from LoadCoreFile).</p></li>
+<li><p><strong>filesets</strong> – name of the filesets to be added into the VUnit handle.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/yukihiko-shinoda/yaml-dataclass-config">gh:yukihiko-shinoda/yaml-dataclass-config</a></p></li>
+<li><p><a class="reference external" href="https://su0.io/2020/08/05/python-strict-yaml-deserialization.html">su0.io: Strict YAML deserialization with marshmallow</a></p></li>
+<li><p><a class="reference external" href="https://github.com/antonblanchard/microwatt/blob/master/microwatt.core">antonblanchard/microwatt: microwatt.core</a></p></li>
+<li><p><a class="reference external" href="https://github.com/VLSI-EDA/PoC/tree/master/.pyIPCMI">VLSI-EDA/PoC: .pyIPCMI</a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/document/d/1DWZ0G8vehkuZTPs5N3AQqIvZZtLMGzC8i0MWPRP54O4">j.mp/openfpga-diagram: Open Source (FOSS) FPGA (EDA) Tooling Interchange Formats + Toolchain parts</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ghdl/ghdl-language-server/issues/12">ghdl/ghdl-language-server#12</a> <a class="reference external" href="https://github.com/ghdl/ghdl-language-server/issues/80">ghdl/ghdl-language-server#80</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cocotb/cocotb/wiki/Python-Test-Runner-Proposal#models">cocotb[wiki]: Python Test Runner Proposal | Models</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/ucb-bar/hammer/blob/master/src/hammer-vlsi/defaults.yml">Core HAMMER settings</a></p></li>
+<li><p><a class="reference external" href="https://github.com/kactus2/kactus2dev">gh:kactus2/kactus2dev</a></p>
+<ul>
+<li><p><a class="reference external" href="https://research.tuni.fi/system-on-chip/tools/">research.tuni.fi/system-on-chip/tools</a></p></li>
+<li><p><a class="reference external" href="https://gitter.im/hdl/community?at=6132117a5b92082de1807f54">gitter.im/hdl/community?at=6132117a5b92082de1807f54</a>:
+<em>“I also worked together with the Kactus2 devs and had monthly meeting for a few years to push that as the preferred
+solution and I’ve been periodically trying to build a reference design that uses Kactus2+FuseSoC”</em>.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://olofkindgren.blogspot.com/2016/11/ip-xact-good-bad-and-outright-madness.html">olofkindgren.blogspot.com: IP-XACT: The good, the bad and the outright madness</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=vYJjIoV0G3U">youtube.com: ORPSoCv3 - OpenRISC Project Meeting 2012</a></p></li>
+<li><p><a class="reference external" href="https://github.com/fvutils/ivpm">gh:fvutils/ivpm</a></p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="project.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Project</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../intro/cosim.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Co-simulation</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021-2023, Unai Martinez-Corral and contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Core</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#capi-reference">CAPI reference</a><ul>
+<li><a class="reference internal" href="#pyCAPI.IpCoreConfig"><code class="docutils literal notranslate"><span class="pre">IpCoreConfig</span></code></a><ul>
+<li><a class="reference internal" href="#pyCAPI.IpCoreConfig.name"><code class="docutils literal notranslate"><span class="pre">IpCoreConfig.name</span></code></a></li>
+<li><a class="reference internal" href="#pyCAPI.IpCoreConfig.namespace"><code class="docutils literal notranslate"><span class="pre">IpCoreConfig.namespace</span></code></a></li>
+<li><a class="reference internal" href="#pyCAPI.IpCoreConfig.version"><code class="docutils literal notranslate"><span class="pre">IpCoreConfig.version</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pyCAPI.FilesetConfig"><code class="docutils literal notranslate"><span class="pre">FilesetConfig</span></code></a><ul>
+<li><a class="reference internal" href="#pyCAPI.FilesetConfig.file_type"><code class="docutils literal notranslate"><span class="pre">FilesetConfig.file_type</span></code></a></li>
+<li><a class="reference internal" href="#pyCAPI.FilesetConfig.files"><code class="docutils literal notranslate"><span class="pre">FilesetConfig.files</span></code></a></li>
+<li><a class="reference internal" href="#pyCAPI.FilesetConfig.logical_name"><code class="docutils literal notranslate"><span class="pre">FilesetConfig.logical_name</span></code></a></li>
+<li><a class="reference internal" href="#pyCAPI.FilesetConfig.path"><code class="docutils literal notranslate"><span class="pre">FilesetConfig.path</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pyCAPI.Config"><code class="docutils literal notranslate"><span class="pre">Config</span></code></a><ul>
+<li><a class="reference internal" href="#pyCAPI.Config.CAPI"><code class="docutils literal notranslate"><span class="pre">Config.CAPI</span></code></a></li>
+<li><a class="reference internal" href="#pyCAPI.Config.filesets"><code class="docutils literal notranslate"><span class="pre">Config.filesets</span></code></a></li>
+<li><a class="reference internal" href="#pyCAPI.Config.ipcore"><code class="docutils literal notranslate"><span class="pre">Config.ipcore</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pyCAPI.LoadCoreFile"><code class="docutils literal notranslate"><span class="pre">LoadCoreFile()</span></code></a></li>
+<li><a class="reference internal" href="#pyCAPI.VUnit.AddCoreFilesets"><code class="docutils literal notranslate"><span class="pre">AddCoreFilesets()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

@@ -1,0 +1,420 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Core" href="../apis/core.html" /><link rel="prev" title="Simulators | Compilers" href="sim.html" />
+
+    <link rel="shortcut icon" href="../_static/osvb.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Co-simulation - Open Source Verification Bundle latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Open Source Verification Bundle latest documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/osvb_banner_white.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Open Source Verification Bundle latest documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frameworks.html">Frameworks and Methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sim.html">Simulators | Compilers</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Co-simulation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://edaa-org.github.io/ConceptualModel.html">EDA² Conceptual Model ➚</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apis/core.html">Core</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../apis/project.html">Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apis/project/pyVHDLModelUtils.html">pyVHDLModelUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/project/OSVDE.html">Open Source VHDL Design Explorer (OSVDE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/project/DocGen.html">Documentation generation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/tool.html">Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runner.html">Runner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/logging.html">Logging</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../egs/sff.html">Simple Flip-Flop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../egs/axi4stream.html">SISO AXI4 Stream</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/fpconv.html">Fixed-point conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/sigrok.html">sigrok-cli | Pulseview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="co-simulation">
+<span id="id1"></span><h1>Co-simulation<a class="headerlink" href="#co-simulation" title="Link to this heading">#</a></h1>
+<p>Advanced verification strategies do typically raise the abstraction level of the workflow, bringing hardware design close
+to software development. In this context, engineers have a natural trend towards using more flexible languages with vast
+libraries implementing advanced domain-specific functionalities. Some of the most common non-HDL languages used for
+verification are C/C++ and Python.</p>
+<section id="standard-interfaces">
+<h2>Standard interfaces<a class="headerlink" href="#standard-interfaces" title="Link to this heading">#</a></h2>
+<p>Traditional HDL languages and most simulators support one or multiple standard or non-standard co-simulation interfaces for
+runtime interaction between HDLs and software languages (typically C/C++, as a reference). Here, standard interfaces are
+summarized.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Licensing constraints of many vendor tools do not allow discussing features and/or perfomance publicly. Therefore, this
+section contains references to interfaces supported by open source tools only, which don’t have such knowledge limitations.</p>
+</div>
+<section id="vpi">
+<h3>VPI<a class="headerlink" href="#vpi" title="Link to this heading">#</a></h3>
+<p>Verilog Procedural Interface (VPI) is the standard co-simulation interface in Verilog 2005. It was originally known
+as PLI 2.0, because it replaced the deprecated Program Language Interface (PLI) defined in earlier versions of the language.</p>
+<p>The usage of VPI is based on registering callbacks at specific events using the provided C API. C functions can also invoke
+standard verilog system tasks. A relevant feature of this co-simulation approach is that HDL sources are unmodified. Registering
+co-simulation callbacks is independent from the sources that compose the design and/or the HDL testbench.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.verilab.com/files/snug_2012_paper71_final.pdf">I Spy with My VPI: Monitoring signals by name, for the UVM register package and more</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Non-intuitively, GHDL implements VPI for interacting with VHDL sources. Back in 2000-2008, there was no standard interface
+available for VHDL, so the author of GHDL implemented VPI for allowing co-simulation.</p>
+</div>
+</section>
+<section id="dpi">
+<h3>DPI<a class="headerlink" href="#dpi" title="Link to this heading">#</a></h3>
+<p>Direct Programming Interface (DPI) is an standard co-simulation interface defined in System Verilog. It is mainly meant for
+co-simulation with C, C++ or SystemC. However, unlike VPI, setting up a DPI co-simulation consists of two layers. On the one
+hand, the resources to be used with foreign languages are explicitly declared in the System Verilog sources. On the other hand,
+sources in a foreign language provide the complementary bodies that match the prototypes of the resources declared in the first
+layer. In other words, DPI allows users/developers to define custom APIs between System Verilog and foreign languages that
+understand C/C++ semantics.</p>
+</section>
+<section id="vhpi">
+<h3>VHPI<a class="headerlink" href="#vhpi" title="Link to this heading">#</a></h3>
+<p>VHDL Procedural Interface (VHPI) is the standard co-simulation interface in VHDL 2008 and VHDL 2019. It is heavily inspired
+on VPI, so the workflow/usage is equivalent: a C/C++ API allows registering callbacks and models, without modifying HDL sources.</p>
+<p>The definition and descriptions of VHPI are software-centric, i.e. mostly meant for complex software tool developers having
+access to the full HDL hierarchy from an advanced software API. It is, therefore, a very powerful API with a very steep learning
+curve. As a result, adoption by vendors has been slow and uneven. At the same time, there was not a critical mass of VHDL use
+cases, and the apparent lack of interest from users didn’t push vendors further.</p>
+</section>
+<section id="vffi-vdpi">
+<h3>VFFI/VDPI<a class="headerlink" href="#vffi-vdpi" title="Link to this heading">#</a></h3>
+<p>Back in 2005-2006, the author of GHDL implemented a co-simulation feature named VHPIDIRECT. It is, essentially, a Foreign
+Function Interface (FFI) for executing foreign subprograms from VHDL. Function/procedure prototypes are declared in VHDL with
+an specific <code class="docutils literal notranslate"><span class="pre">FOREIGN</span></code> attribute. Matching foreign (C/C++) bodies can be provided through pre-built shared libraries and/or
+as C sources/objects to be used during elaboration/linking.</p>
+<p>The implementation of VHPIDIRECT in GHDL was inspired on some draft of VHPI, which was apparently modified before making it
+into the VHDL 2008 standard. As a result, although the VHPIDIRECT is used/defined in the LRM, GHDL’s implementation is not
+compliant. Precisely, the standard requires some specific intermediate structs (fat pointers) to be used between VHDL and
+the foreign langauge; however, GHDL’s implementation passes arguments directly (by value or by reference).</p>
+<p>It is rather obvious that System Verilog’s DPI resembles GHDL’s VHPIDIRECT just as much as VHPI was inpired by VPI. In 2011,
+a Language Change Specification (LCS) proposal was submitted for VHDL 201X to support a DPI. It didn’t make it due to the
+workload in the VHDL Analysis and Standardization Group (VASG). However, since Q2 2020, the VASG is working on gathering
+and updating a proposal for standardizing an interface named VHDL Foreign Function Interface (VFFI) or VHDL Direct Programming
+Interface (VDPI), which formalizes the direct implementation available in GHDL and makes it generic enough for any vendor.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gitlab.com/IEEE-P1076/VHDL-Issues/-/issues/10">gitlab.com/IEEE-P1076/VHDL-Issues: Direct Programming Interface (DPI) | Foreign Function Interface (FFI)</a></p></li>
+</ul>
+</section>
+</section>
+<section id="remote-procedure-calls">
+<h2>Remote procedure calls<a class="headerlink" href="#remote-procedure-calls" title="Link to this heading">#</a></h2>
+<p>Typically, simulators expect to be the root and managers of the execution. Therefore, although setting callbacks and/or
+foreign function calls is possible through any of the standard interfaces, actually co-executing simulations with
+arbitray software threads is not trivial. As a result, several proposals exist for binding standard interfaces to some
+Remote Procedure Call (RPC) library, for decoupling the execution kernels of multiple tools.</p>
+<section id="grpc">
+<h3>gRPC<a class="headerlink" href="#grpc" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://grpc.io">grpc.io</a> (<a class="reference external" href="https://github.com/grpc">gh:grpc</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/dbhi/gRPC">gh:dbhi/gRPC</a></p></li>
+</ul>
+</section>
+<section id="capnproto">
+<h3>capnproto<a class="headerlink" href="#capnproto" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://capnproto.org">capnproto.org</a> (<a class="reference external" href="https://github.com/capnproto">gh:capnproto</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/NyanCAD">gh:NyanCAD</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/NyanCAD/CxxrtlSimServer">CxxrtlSimServer</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NyanCAD/XyceSimServer">XyceSimServer</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NyanCAD/NgspiceSimServer">NgspiceSimServer</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="zeromq">
+<h3>ZeroMQ<a class="headerlink" href="#zeromq" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://zeromq.org">zeromq.org</a> (<a class="reference external" href="https://github.com/zeromq">gh:zeromq</a>)</p></li>
+<li><p><a class="reference external" href="https://groups.google.com/g/alt.sources/c/R5cKBbRrUJM">VZMQ - ZeroMQ communication with VHDL simulation in GHDL</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../apis/core.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Core</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="sim.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Simulators | Compilers</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021-2023, Unai Martinez-Corral and contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Co-simulation</a><ul>
+<li><a class="reference internal" href="#standard-interfaces">Standard interfaces</a><ul>
+<li><a class="reference internal" href="#vpi">VPI</a></li>
+<li><a class="reference internal" href="#dpi">DPI</a></li>
+<li><a class="reference internal" href="#vhpi">VHPI</a></li>
+<li><a class="reference internal" href="#vffi-vdpi">VFFI/VDPI</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#remote-procedure-calls">Remote procedure calls</a><ul>
+<li><a class="reference internal" href="#grpc">gRPC</a></li>
+<li><a class="reference internal" href="#capnproto">capnproto</a></li>
+<li><a class="reference internal" href="#zeromq">ZeroMQ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

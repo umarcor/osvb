@@ -1,0 +1,465 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Open Source VHDL Design Explorer (OSVDE)" href="OSVDE.html" /><link rel="prev" title="Project" href="../project.html" />
+
+    <link rel="shortcut icon" href="../../_static/osvb.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>pyVHDLModelUtils - Open Source Verification Bundle latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Open Source Verification Bundle latest documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/osvb_banner_white.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Open Source Verification Bundle latest documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/frameworks.html">Frameworks and Methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/sim.html">Simulators | Compilers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/cosim.html">Co-simulation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://edaa-org.github.io/ConceptualModel.html">EDA² Conceptual Model ➚</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Core</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../project.html">Project</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">pyVHDLModelUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OSVDE.html">Open Source VHDL Design Explorer (OSVDE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DocGen.html">Documentation generation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tool.html">Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runner.html">Runner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logging.html">Logging</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../egs/sff.html">Simple Flip-Flop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../egs/axi4stream.html">SISO AXI4 Stream</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Notebook</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../notebook/fpconv.html">Fixed-point conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebook/sigrok.html">sigrok-cli | Pulseview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="pyvhdlmodelutils">
+<span id="api-project-pyvhdlmodelutils"></span><h1>pyVHDLModelUtils<a class="headerlink" href="#pyvhdlmodelutils" title="Link to this heading">#</a></h1>
+<section id="pyvhdlmodel">
+<h2>pyVHDLModel<a class="headerlink" href="#pyvhdlmodel" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/vhdl/pyVHDLModel">gh:vhdl/pyVHDLModel</a> is an abstract language model for VHDL written in Python.
+That is, a set of classes that represent the items found in VHDL sources, and utils for manipulating and interacting
+with those classes.
+The generation of an specific object tree for an specific VHDL codebase is done by a frontend.
+Currently supported frontends are <a class="reference external" href="https://github.com/ghdl/ghdl/tree/master/pyGHDL">pyGHDL</a> and <a class="reference external" href="https://github.com/Paebbels/pyVHDLParser">gh:Paebbels/pyVHDLParser</a>.</p>
+<p>GHDL is the most complete open source VHDL parser and analyser, and more complete than several vendor tools.
+However, GHDL is written in Ada, and it was not initially designed for the analysis features to be used standalone.
+Therefore, most developers of tooling around the VHDL language do typically not use GHDL but try reimplementing the
+parsing themselves.
+That is the case of
+<a class="reference external" href="https://vunit.github.io">VUnit</a>,
+<a class="reference external" href="https://terostech.com">TerosHDL</a>,
+<a class="reference external" href="https://kevinpt.github.io/symbolator">Symbolator</a>,
+<a class="reference external" href="https://vhdl-style-guide.readthedocs.io/">vhdl-style-guide</a>,
+<a class="reference external" href="https://github.com/VHDLTool">gh:VHDLTool</a>,
+<a class="reference external" href="https://github.com/Nic30/hdlConvertor">gh:Nic30/hdlConvertor</a>,
+etc.
+All of those projects need some understanding of the models they are dealing with, and they use regular expressions,
+<a class="reference external" href="https://github.com/tree-sitter/tree-sitter">gh:tree-sitter/tree-sitter</a>, <a class="reference external" href="https://www.antlr.org/">ANTLR</a> or similar general purpose parser engines.
+That is unfortunate because many of them do use Python, so the effort duplication in the community might be
+significantly reduced if they could interact with GHDL’s parser/analysis through Python.</p>
+<p>Since 2021, pyVHDLModel and pyGHDL provide a ready-to-use solution.
+By using those, developers can get a <em>pythonic</em> representation of VHDL sources, using less than 10 lines of Python code
+which depend on GHDL and Python only.
+We believe that projects such as the ones mentioned above could greatly benefit from using pyVHDLModel, as long as they
+are good with depending on GHDL.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Projects which don’t want to depend on a binary/compiled tool (GHDL), can use a Python only frontend for pyVHDLModel.
+That is precisely the purpose of <a class="reference external" href="https://github.com/Paebbels/pyVHDLParser">pyVHDLParser</a> (actually where
+<a class="reference external" href="https://github.com/vhdl/pyVHDLModel">pyVHDLModel</a> was conceived).
+However, pyVHDLParser is not as mature as (py)GHDL yet.</p>
+</div>
+</section>
+<section id="utils">
+<h2>Utils<a class="headerlink" href="#utils" title="Link to this heading">#</a></h2>
+<p>pyVHDLModel and pyGHDL are still being shaped and enhanced in order to provide higher abstraction features on top of parsing.
+Moreover, there are some helper functions written on top of pyVHDLModel, which don’t fit in the same repository but can
+be reused by multiple projects.
+<a class="reference external" href="https://github.com/umarcor/osvb/blob/main/mods/pyVHDLModelUtils">pyVHDLModelUtils</a> collects some of those helpers, until we decide a better location for them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are aware that reworking an stable codebase is not the most appealing task, so developers of existing tools might
+not be willing to use pyVHDLModel straightaway.
+In this context, the main purpose of pyVHDLModelUtils, <a class="reference internal" href="OSVDE.html#api-project-osvde"><span class="std std-ref">Open Source VHDL Design Explorer (OSVDE)</span></a> and <a class="reference internal" href="DocGen.html#api-project-docgen"><span class="std std-ref">Documentation generation</span></a>
+is to showcase pyVHDLModel and to build a critical mass for creating higher abstraction features on top.
+Potential users of pyVHDLModel are all the developers of tools which benefit from programmatically using knowledge
+about a VHDL codebase.</p>
+</div>
+</section>
+<section id="pyvhdlmodelutils-reference">
+<h2>pyVHDLModelUtils reference<a class="headerlink" href="#pyvhdlmodelutils-reference" title="Link to this heading">#</a></h2>
+<section id="resolve">
+<h3>resolve<a class="headerlink" href="#resolve" title="Link to this heading">#</a></h3>
+<p>Currently, pyVHDLModel and pyGHDL.dom provide a SyntaxModel only.
+That is, the model is built from parsing the sources, without further analysis or elaboration.
+As a result, symbols and cross-references between units are not resolved.
+This package provides some <em>naive</em> Symbol resolution features.
+In the future, we expect to use pyGHDL.libghdl for elaboration.</p>
+<dl class="py function" id="module-pyVHDLModelUtils.resolve">
+<dt class="sig sig-object py" id="pyVHDLModelUtils.resolve.ArchitecturesToEntities">
+<span class="sig-prename descclassname"><span class="pre">pyVHDLModelUtils.resolve.</span></span><span class="sig-name descname"><span class="pre">ArchitecturesToEntities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">design</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://ghdl.github.io/ghdl/pyGHDL/pyGHDL.dom.NonStandard.html#pyGHDL.dom.NonStandard.Design" title="(in GHDL v4.0)"><span class="pre">Design</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/pyVHDLModelUtils/resolve.html#ArchitecturesToEntities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyVHDLModelUtils.resolve.ArchitecturesToEntities" title="Link to this definition">#</a></dt>
+<dd><p>Resolve architectures to entities by simple name matching.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyVHDLModelUtils.resolve.Symbols">
+<span class="sig-prename descclassname"><span class="pre">pyVHDLModelUtils.resolve.</span></span><span class="sig-name descname"><span class="pre">Symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">design</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://ghdl.github.io/ghdl/pyGHDL/pyGHDL.dom.NonStandard.html#pyGHDL.dom.NonStandard.Design" title="(in GHDL v4.0)"><span class="pre">Design</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/pyVHDLModelUtils/resolve.html#Symbols"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyVHDLModelUtils.resolve.Symbols" title="Link to this definition">#</a></dt>
+<dd><p>Resolve some symbols after parsing, but without complete analysis and elaboration.</p>
+</dd></dl>
+
+</section>
+<section id="fmt">
+<h3>fmt<a class="headerlink" href="#fmt" title="Link to this heading">#</a></h3>
+<p>Getting an string representation of some elements such as (sub)types might be cumbersome.
+This package handles formatting those.</p>
+<dl class="py function" id="module-pyVHDLModelUtils.fmt">
+<dt class="sig sig-object py" id="pyVHDLModelUtils.fmt.SubtypeIndication">
+<span class="sig-prename descclassname"><span class="pre">pyVHDLModelUtils.fmt.</span></span><span class="sig-name descname"><span class="pre">SubtypeIndication</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subtypeIndication</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://ghdl.github.io/ghdl/pyGHDL/pyGHDL.dom.Symbol.html#pyGHDL.dom.Symbol.SimpleSubtypeSymbol" title="(in GHDL v4.0)"><span class="pre">SimpleSubtypeSymbol</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://ghdl.github.io/ghdl/pyGHDL/pyGHDL.dom.Symbol.html#pyGHDL.dom.Symbol.ConstrainedCompositeSubtypeSymbol" title="(in GHDL v4.0)"><span class="pre">ConstrainedCompositeSubtypeSymbol</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/pyVHDLModelUtils/fmt.html#SubtypeIndication"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyVHDLModelUtils.fmt.SubtypeIndication" title="Link to this definition">#</a></dt>
+<dd><p>Format the subtype indication of generics/ports as an string.</p>
+</dd></dl>
+
+</section>
+<section id="sphinx">
+<h3>sphinx<a class="headerlink" href="#sphinx" title="Link to this heading">#</a></h3>
+<p>Since Sphinx is written in Python, packages can be imported and used for generating content.
+This package provides functions for including the documentation of hardware designs in Sphinx projects.</p>
+<dl class="py function" id="module-pyVHDLModelUtils.sphinx">
+<dt class="sig sig-object py" id="pyVHDLModelUtils.sphinx.initDesign">
+<span class="sig-prename descclassname"><span class="pre">pyVHDLModelUtils.sphinx.</span></span><span class="sig-name descname"><span class="pre">initDesign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.12)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/pyVHDLModelUtils/sphinx.html#initDesign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyVHDLModelUtils.sphinx.initDesign" title="Link to this definition">#</a></dt>
+<dd><p>Initialize a Design and analyze sources.</p>
+<p>Each argument after <cite>root</cite> defines a library name and the type is expected to be a list of patterns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>root</strong> – Location of the root for all provided relative paths. This is relative to the base directory of the build.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyVHDLModelUtils.sphinx.printDocumentationOf">
+<span class="sig-prename descclassname"><span class="pre">pyVHDLModelUtils.sphinx.</span></span><span class="sig-name descname"><span class="pre">printDocumentationOf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'rst:list'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/pyVHDLModelUtils/sphinx.html#printDocumentationOf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyVHDLModelUtils.sphinx.printDocumentationOf" title="Link to this definition">#</a></dt>
+<dd><p>Generate documentation of resources (either a unit or a whole file).</p>
+<p>Supported syntaxes:</p>
+<ul class="simple">
+<li><p>libraryName.entityName</p></li>
+<li><p>TODO: libraryName.entityName(architectureName)</p></li>
+<li><p>TODO: libraryName.packageName</p></li>
+<li><p>TODO: libraryName.configurationName</p></li>
+<li><p>TODO: libraryName.architectureName</p></li>
+<li><p>TODO: relative/path/to/file</p></li>
+<li><p>TODO: absolute/path/to/file</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>targets</strong> – list of resources to generate the documentation for.</p></li>
+<li><p><strong>style</strong> – format of the output. Supported values are: ‘rst:list’ and ‘rst:table’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyVHDLModelUtils.sphinx.printDocumentationOfEntity_rstList">
+<span class="sig-prename descclassname"><span class="pre">pyVHDLModelUtils.sphinx.</span></span><span class="sig-name descname"><span class="pre">printDocumentationOfEntity_rstList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://ghdl.github.io/ghdl/pyGHDL/pyGHDL.dom.DesignUnit.html#pyGHDL.dom.DesignUnit.Entity" title="(in GHDL v4.0)"><span class="pre">Entity</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://ghdl.github.io/ghdl/pyGHDL/pyGHDL.dom.NonStandard.html#pyGHDL.dom.NonStandard.Library" title="(in GHDL v4.0)"><span class="pre">Library</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/pyVHDLModelUtils/sphinx.html#printDocumentationOfEntity_rstList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyVHDLModelUtils.sphinx.printDocumentationOfEntity_rstList" title="Link to this definition">#</a></dt>
+<dd><p>Print documentation of an Entity using style ‘rst:list’.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyVHDLModelUtils.sphinx.printDocumentationOfEntity_rstTable">
+<span class="sig-prename descclassname"><span class="pre">pyVHDLModelUtils.sphinx.</span></span><span class="sig-name descname"><span class="pre">printDocumentationOfEntity_rstTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://ghdl.github.io/ghdl/pyGHDL/pyGHDL.dom.DesignUnit.html#pyGHDL.dom.DesignUnit.Entity" title="(in GHDL v4.0)"><span class="pre">Entity</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://ghdl.github.io/ghdl/pyGHDL/pyGHDL.dom.NonStandard.html#pyGHDL.dom.NonStandard.Library" title="(in GHDL v4.0)"><span class="pre">Library</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/pyVHDLModelUtils/sphinx.html#printDocumentationOfEntity_rstTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyVHDLModelUtils.sphinx.printDocumentationOfEntity_rstTable" title="Link to this definition">#</a></dt>
+<dd><p>Print documentation of an Entity using style ‘rst:table’ (through ‘tabulate’).</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="OSVDE.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Open Source VHDL Design Explorer (OSVDE)</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../project.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Project</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021-2023, Unai Martinez-Corral and contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">pyVHDLModelUtils</a><ul>
+<li><a class="reference internal" href="#pyvhdlmodel">pyVHDLModel</a></li>
+<li><a class="reference internal" href="#utils">Utils</a></li>
+<li><a class="reference internal" href="#pyvhdlmodelutils-reference">pyVHDLModelUtils reference</a><ul>
+<li><a class="reference internal" href="#resolve">resolve</a><ul>
+<li><a class="reference internal" href="#pyVHDLModelUtils.resolve.ArchitecturesToEntities"><code class="docutils literal notranslate"><span class="pre">ArchitecturesToEntities()</span></code></a></li>
+<li><a class="reference internal" href="#pyVHDLModelUtils.resolve.Symbols"><code class="docutils literal notranslate"><span class="pre">Symbols()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fmt">fmt</a><ul>
+<li><a class="reference internal" href="#pyVHDLModelUtils.fmt.SubtypeIndication"><code class="docutils literal notranslate"><span class="pre">SubtypeIndication()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sphinx">sphinx</a><ul>
+<li><a class="reference internal" href="#pyVHDLModelUtils.sphinx.initDesign"><code class="docutils literal notranslate"><span class="pre">initDesign()</span></code></a></li>
+<li><a class="reference internal" href="#pyVHDLModelUtils.sphinx.printDocumentationOf"><code class="docutils literal notranslate"><span class="pre">printDocumentationOf()</span></code></a></li>
+<li><a class="reference internal" href="#pyVHDLModelUtils.sphinx.printDocumentationOfEntity_rstList"><code class="docutils literal notranslate"><span class="pre">printDocumentationOfEntity_rstList()</span></code></a></li>
+<li><a class="reference internal" href="#pyVHDLModelUtils.sphinx.printDocumentationOfEntity_rstTable"><code class="docutils literal notranslate"><span class="pre">printDocumentationOfEntity_rstTable()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>
